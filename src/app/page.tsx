@@ -3,7 +3,7 @@ import { Hero } from "@/components/home/Hero";
 import { Problems } from "@/components/home/Problems";
 import { Services } from "@/components/home/Services";
 import { Process } from "@/components/home/Process";
-import { Testimonials } from "@/components/home/Testimonials";
+import { TechFoundation } from "@/components/home/TechFoundation";
 import { AboutPreview } from "@/components/home/AboutPreview";
 import { FAQ } from "@/components/home/FAQ";
 import { CTA } from "@/components/home/CTA";
@@ -152,7 +152,7 @@ export default function HomePage() {
       <Problems />
       <Services />
       <Process />
-      <Testimonials />
+      <TechFoundation />
       <AboutPreview />
       <CTA />
       <FAQ />
