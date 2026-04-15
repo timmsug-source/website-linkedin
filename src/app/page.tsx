@@ -154,8 +154,8 @@ export default function HomePage() {
       <Process />
       <Testimonials />
       <AboutPreview />
-      <FAQ />
       <CTA />
+      <FAQ />
     </>
   );
 }
