@@ -1,0 +1,21 @@
+{
+  "name": "Timm Schurig – Marketing für Fitness-Coaches",
+  "short_name": "Timm Schurig",
+  "description": "Landingpages, Automatisierungen & KI-Chatbots für Fitness- und Ernährungscoaches",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#00bc7d",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

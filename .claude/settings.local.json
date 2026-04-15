@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//Users/timmschurig/Downloads/**)",
+      "Bash(unzip -l /Users/timmschurig/Downloads/timm-schurig---fitness-\\\\&-nutrition-growth.zip)",
+      "Bash(brew install:*)",
+      "Read(//private/tmp/fitness-design/src/**)",
+      "Read(//private/tmp/fitness-design/src/components/home/**)",
+      "Bash(python3 -c ':*)",
+      "Bash(python3 -c \"import pdfplumber; print\\('pdfplumber ok'\\)\")",
+      "Bash(python3 -c \"import pypdf; print\\('pypdf ok'\\)\")",
+      "Bash(python3 -c \"from pdfminer.high_level import extract_text; print\\('pdfminer ok'\\)\")",
+      "Bash(pip3 install:*)",
+      "Bash(npm install:*)",
+      "Bash(npm run:*)",
+      "Bash(gh auth:*)",
+      "Bash(git init:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m ':*)"
+    ]
+  }
+}
