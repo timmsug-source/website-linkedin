@@ -9,13 +9,13 @@ type Service = (typeof serviceData)[keyof typeof serviceData];
 
 export function ServiceCTA({ service }: { service: Service }) {
   return (
-    <section className="py-24 px-6 bg-white" aria-label="Jetzt starten">
+    <section className="pt-12 pb-20 px-6 bg-white" aria-label="Jetzt starten">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="relative bg-slate-900 rounded-[3rem] p-12 md:p-20 overflow-hidden text-center shadow-2xl"
+          className="relative bg-slate-900 rounded-[3rem] p-8 md:p-14 lg:py-16 lg:px-20 overflow-hidden text-center shadow-2xl"
         >
           {/* Decorative Elements */}
           <div
@@ -31,10 +31,10 @@ export function ServiceCTA({ service }: { service: Service }) {
             <p className="text-accent font-bold text-sm uppercase tracking-[0.2em] mb-4">
               Bereit loszulegen?
             </p>
-            <h2 className="text-4xl md:text-5xl font-display font-extrabold text-white leading-tight mb-6">
+            <h2 className="text-3xl md:text-4xl font-display font-extrabold text-white leading-tight mb-4">
               {service.ctaHeadline}
             </h2>
-            <p className="text-xl text-slate-300 leading-relaxed mb-12">
+            <p className="text-lg text-slate-300 leading-relaxed mb-8">
               {service.ctaSubline}
             </p>
 
