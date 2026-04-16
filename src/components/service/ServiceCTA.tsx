@@ -1,13 +1,15 @@
-"use client";
-
 import { motion } from "framer-motion";
 import { ArrowRight, MessageCircle } from "lucide-react";
-import { CALENDLY_URL, WHATSAPP_URL } from "@/lib/utils";
+import { CALENDLY_URL, WHATSAPP_URL, cn } from "@/lib/utils";
 import type { serviceData } from "@/lib/serviceData";
 
 type Service = (typeof serviceData)[keyof typeof serviceData];
 
 export function ServiceCTA({ service }: { service: Service }) {
+  const isWhatsApp = service.id === "whatsapp-marketing";
+  const isLandingPage = service.id === "landingpage-erstellung";
+  const isChatbot = service.id === "ki-chatbot";
+
   return (
     <section className="py-24 px-6" aria-label="Jetzt starten">
       <div className="max-w-7xl mx-auto">
@@ -15,8 +17,18 @@ export function ServiceCTA({ service }: { service: Service }) {
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="relative bg-slate-900 rounded-[3rem] p-12 md:p-20 overflow-hidden text-center"
+          className={cn(
+            "relative rounded-[3rem] p-12 md:p-20 overflow-hidden text-center transition-all duration-700",
+            isWhatsApp
+              ? "bg-gradient-to-br from-emerald-900 via-slate-900 to-blue-900"
+              : isLandingPage
+                ? "bg-gradient-to-br from-indigo-900 via-slate-900 to-accent/20"
+                : isChatbot
+                  ? "bg-gradient-to-br from-[#0c1222] to-black"
+                  : "bg-slate-900"
+          )}
         >
+          {/* Decorative Elements */}
           <div
             className="absolute top-0 right-0 w-96 h-96 bg-accent/20 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2 pointer-events-none"
             aria-hidden="true"
@@ -42,7 +54,7 @@ export function ServiceCTA({ service }: { service: Service }) {
                 href={CALENDLY_URL}
                 target="_blank"
                 rel="noreferrer noopener"
-                className="inline-flex items-center justify-center bg-accent hover:bg-accent/90 text-white rounded-full px-10 h-16 text-xl font-bold w-full sm:w-auto shadow-lg shadow-accent/20 transition-all"
+                className="inline-flex items-center justify-center bg-accent hover:bg-accent/90 text-white rounded-full px-10 h-16 text-xl font-bold w-full sm:w-auto shadow-lg shadow-accent/20 transition-all border-b-4 border-accent-dark/30 active:border-b-0 active:translate-y-1"
               >
                 Kostenloses Erstgespräch
                 <ArrowRight className="ml-2" size={22} />
@@ -51,10 +63,10 @@ export function ServiceCTA({ service }: { service: Service }) {
                 href={WHATSAPP_URL}
                 target="_blank"
                 rel="noreferrer noopener"
-                className="flex items-center gap-3 text-white font-bold text-lg hover:text-accent transition-colors"
+                className="flex items-center gap-3 text-white font-bold text-lg hover:text-accent transition-all group"
               >
                 <div
-                  className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center shrink-0"
+                  className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center shrink-0 group-hover:bg-accent/20 transition-colors"
                   aria-hidden="true"
                 >
                   <MessageCircle size={24} />

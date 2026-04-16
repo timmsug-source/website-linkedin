@@ -1,35 +1,53 @@
-"use client";
-
 import { motion } from "framer-motion";
-import { CheckCircle2, ArrowRight } from "lucide-react";
-import { CALENDLY_URL } from "@/lib/utils";
+import { CheckCircle2, ArrowRight, Zap } from "lucide-react";
+import { CALENDLY_URL, cn } from "@/lib/utils";
 import type { serviceData } from "@/lib/serviceData";
 
 type Service = (typeof serviceData)[keyof typeof serviceData];
 
 export function ServiceSolution({ service }: { service: Service }) {
+  const isLandingPage = service.id === "landingpage-erstellung";
+  const isWhatsApp = service.id === "whatsapp-marketing";
+  const isAutomation = service.id === "automatisierungen" || service.id === "automatisiertes-onboarding";
+
   return (
     <section
-      className="py-24 px-6 bg-white relative overflow-hidden"
+      className={cn(
+        "py-24 px-6 relative overflow-hidden",
+        isLandingPage ? "bg-white" : "bg-slate-50"
+      )}
       aria-label="Die Lösung"
     >
+      {/* Decorative Blobs */}
       <div
-        className="absolute top-0 right-0 w-1/2 h-full bg-accent/3 -skew-x-12 translate-x-1/4 pointer-events-none"
+        className={cn(
+          "absolute top-0 right-0 w-1/2 h-full pointer-events-none transition-all duration-700",
+          isLandingPage ? "bg-accent/[0.02] skew-x-0" : "bg-accent/3 -skew-x-12 translate-x-1/4"
+        )}
         aria-hidden="true"
       />
 
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Left: Visual */}
+        <div className={cn(
+          "grid grid-cols-1 lg:grid-cols-2 gap-16 items-center",
+          isWhatsApp ? "lg:flex lg:flex-row-reverse" : ""
+        )}>
+          {/* Visual Side */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="order-2 lg:order-1"
+            className={cn(
+              "relative",
+              isWhatsApp ? "lg:w-1/2" : ""
+            )}
           >
-            <div className="bg-slate-50 rounded-[2.5rem] p-10 border border-slate-100 shadow-lg">
+            <div className={cn(
+              "rounded-[2.5rem] p-10 border shadow-xl transition-all duration-500",
+              isLandingPage ? "bg-white border-slate-200" : "bg-white border-slate-100"
+            )}>
               <p className="text-sm font-bold uppercase tracking-widest text-accent mb-8">
-                Schritt für Schritt
+                {isAutomation ? "Automatisierter Ablauf" : isWhatsApp ? "Der Prozess" : "Schritt für Schritt"}
               </p>
               <ol className="space-y-6" aria-label="Ablauf der Zusammenarbeit">
                 {service.process.map((step, i) => (
@@ -42,7 +60,7 @@ export function ServiceSolution({ service }: { service: Service }) {
                     className="flex items-start gap-4"
                   >
                     <div
-                      className="w-8 h-8 rounded-full bg-white border-2 border-accent text-accent flex items-center justify-center text-sm font-extrabold shrink-0 shadow-sm"
+                      className="w-10 h-10 rounded-xl bg-accent/10 text-accent flex items-center justify-center text-sm font-extrabold shrink-0 shadow-sm border border-accent/20"
                       aria-label={`Schritt ${i + 1}`}
                     >
                       {i + 1}
@@ -59,14 +77,35 @@ export function ServiceSolution({ service }: { service: Service }) {
                 ))}
               </ol>
             </div>
+
+            {/* Overlay badge for creativity */}
+            {isAutomation && (
+              <motion.div
+                animate={{ rotate: [0, 5, 0] }}
+                transition={{ duration: 5, repeat: Infinity }}
+                className="absolute -bottom-6 -right-6 bg-slate-900 border border-slate-800 p-6 rounded-3xl shadow-2xl hidden md:block"
+              >
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center text-accent">
+                    <Zap size={20} fill="currentColor" />
+                  </div>
+                  <div>
+                    <p className="text-[10px] font-bold text-slate-500 uppercase">Effizienz Boost</p>
+                    <p className="text-white font-bold">+120%</p>
+                  </div>
+                </div>
+              </motion.div>
+            )}
           </motion.div>
 
-          {/* Right: Text */}
+          {/* Text Side */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="order-1 lg:order-2"
+            className={cn(
+              isWhatsApp ? "lg:w-1/2" : ""
+            )}
           >
             <div className="inline-flex items-center gap-3 bg-accent/10 border border-accent/20 rounded-2xl px-5 py-3 mb-8">
               <CheckCircle2 size={20} className="text-accent" aria-hidden="true" />
@@ -83,15 +122,15 @@ export function ServiceSolution({ service }: { service: Service }) {
               {service.solution}
             </p>
 
-            <div className="space-y-3 mb-10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4 mb-10">
               {service.solutionPoints.map((point, i) => (
-                <div key={i} className="flex items-center gap-3">
+                <div key={i} className="flex items-center gap-3 bg-white border border-slate-100 p-4 rounded-2xl shadow-sm hover:border-accent/20 transition-all">
                   <CheckCircle2
-                    size={18}
+                    size={20}
                     className="text-accent shrink-0"
                     aria-hidden="true"
                   />
-                  <span className="text-slate-700 font-medium">{point}</span>
+                  <span className="text-slate-700 font-semibold text-sm">{point}</span>
                 </div>
               ))}
             </div>
@@ -100,9 +139,9 @@ export function ServiceSolution({ service }: { service: Service }) {
               href={CALENDLY_URL}
               target="_blank"
               rel="noreferrer noopener"
-              className="inline-flex items-center gap-2 text-accent font-bold hover:gap-3 transition-all"
+              className="inline-flex items-center gap-2 bg-slate-900 text-white hover:bg-slate-800 px-8 py-4 rounded-full font-bold transition-all shadow-lg hover:shadow-slate-200"
             >
-              Jetzt kostenlos besprechen <ArrowRight size={18} />
+              Jetzt Beratung anfordern <ArrowRight size={18} />
             </a>
           </motion.div>
         </div>
