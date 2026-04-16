@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, Calendar, User, Tag } from "lucide-react";
 import { buildMetadata } from "@/lib/seo";
 import { SITE_URL, CALENDLY_URL } from "@/lib/utils";
@@ -201,48 +202,59 @@ export default function BlogPage() {
                 <h2 className="text-xl font-bold text-slate-900 mb-6">
                   Alle Artikel
                 </h2>
-                <div className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
                   {regularPosts.map((post) => (
-                    <article
+                    <Link
                       key={post.slug}
-                      className="group flex flex-col sm:flex-row gap-6 p-6 bg-white border border-slate-100 rounded-2xl hover:shadow-md hover:border-accent/20 transition-all"
+                      href={`/blog/${post.slug}`}
+                      className="group flex flex-col bg-white border border-slate-100 rounded-[2rem] hover:shadow-xl hover:border-accent/20 transition-all overflow-hidden h-full"
                     >
-                      <div className="flex-1">
-                        <div className="flex flex-wrap items-center gap-3 mb-3">
-                          <span className="bg-slate-100 text-slate-600 text-xs font-bold px-3 py-1 rounded-full">
-                            {post.category}
-                          </span>
-                          <span className="text-xs text-slate-400">
-                            {post.readTime} Lesezeit
-                          </span>
+                      <article className="flex flex-col h-full">
+                        {/* Image */}
+                        <div className="relative w-full h-48 bg-slate-100 overflow-hidden shrink-0">
+                          {post.headerImage ? (
+                            <Image
+                              src={post.headerImage}
+                              alt={post.title}
+                              fill
+                              className="object-cover group-hover:scale-105 transition-transform duration-500"
+                              sizes="(max-width: 768px) 100vw, 300px"
+                            />
+                          ) : (
+                            <div className="w-full h-full bg-slate-100 flex items-center justify-center text-slate-300">
+                              Kein Bild
+                            </div>
+                          )}
                         </div>
-                        <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-accent transition-colors leading-snug">
-                          {post.title}
-                        </h3>
-                        <p className="text-slate-600 text-sm leading-relaxed mb-4">
-                          {post.excerpt}
-                        </p>
-                        <div className="flex items-center justify-between">
-                          <div className="flex items-center gap-4 text-xs text-slate-400">
-                            <span className="flex items-center gap-1">
-                              <Calendar size={12} aria-hidden="true" />
-                              {post.date}
+
+                        {/* Content */}
+                        <div className="p-6 flex flex-col flex-1">
+                          <div className="flex flex-wrap items-center gap-3 mb-4">
+                            <span className="bg-slate-100 text-slate-600 text-xs font-bold px-3 py-1 rounded-full">
+                              {post.category}
                             </span>
-                            <span className="flex items-center gap-1">
-                              <User size={12} aria-hidden="true" />
-                              {post.author}
+                            <span className="text-xs text-slate-400 font-medium">
+                              {post.readTime} Lesezeit
                             </span>
                           </div>
-                          <Link
-                            href={`/blog/${post.slug}`}
-                            className="inline-flex items-center gap-1 text-accent font-bold text-sm hover:gap-2 transition-all"
-                            aria-label={`${post.title} weiterlesen`}
-                          >
-                            Lesen <ArrowRight size={14} />
-                          </Link>
+                          <h3 className="text-lg font-bold text-slate-900 mb-3 group-hover:text-accent transition-colors leading-snug line-clamp-3">
+                            {post.title}
+                          </h3>
+                          <p className="text-slate-600 text-sm leading-relaxed mb-6 line-clamp-2 flex-1">
+                            {post.excerpt}
+                          </p>
+                          <div className="flex items-center justify-between mt-auto pt-4 border-t border-slate-50">
+                            <div className="flex items-center gap-2 text-xs text-slate-400 font-medium">
+                              <Calendar size={14} aria-hidden="true" />
+                              {post.date}
+                            </div>
+                            <div className="inline-flex items-center gap-1 text-accent font-bold text-sm group-hover:gap-2 transition-all">
+                              Lesen <ArrowRight size={14} />
+                            </div>
+                          </div>
                         </div>
-                      </div>
-                    </article>
+                      </article>
+                    </Link>
                   ))}
                 </div>
               </section>
