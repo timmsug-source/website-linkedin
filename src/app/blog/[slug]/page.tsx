@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowLeft, ArrowRight, Calendar, User, Clock, ChevronRight } from "lucide-react";
 import { blogPosts } from "@/lib/blogData";
 import { buildMetadata } from "@/lib/seo";
@@ -143,6 +144,18 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                                 </span>
                             </div>
                         </div>
+
+                        {/* Header Image */}
+                        <div className="mt-10 mb-2 relative w-full h-[400px] rounded-[2rem] overflow-hidden shadow-2xl shadow-slate-200">
+                            <Image
+                                src={post.headerImage}
+                                alt={post.title}
+                                fill
+                                className="object-cover"
+                                sizes="(max-width: 768px) 100vw, 800px"
+                                priority
+                            />
+                        </div>
                     </header>
 
                     {/* Content Body */}
@@ -159,18 +172,61 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                 [&>a]:text-accent [&>a]:underline [&>a:hover]:text-accent-dark
                 [&>blockquote]:border-l-4 [&>blockquote]:border-accent [&>blockquote]:pl-6 [&>blockquote]:italic [&>blockquote]:text-slate-700 [&>blockquote]:bg-slate-50 [&>blockquote]:py-3 [&>blockquote]:pr-4 [&>blockquote]:rounded-r-xl [&>blockquote]:mb-8
               "
-                            dangerouslySetInnerHTML={{ __html: post.content }}
-                        />
+                        >
+                            <div dangerouslySetInnerHTML={{ __html: post.contentTop }} />
+
+                            {/* Content Image rendering in the middle of text */}
+                            <div className="my-12 relative w-full h-[350px] rounded-2xl overflow-hidden shadow-xl shadow-slate-100">
+                                <Image
+                                    src={post.contentImage}
+                                    alt={`Illustration zu ${post.title}`}
+                                    fill
+                                    className="object-cover"
+                                    sizes="(max-width: 768px) 100vw, 800px"
+                                />
+                            </div>
+
+                            <div dangerouslySetInnerHTML={{ __html: post.contentBottom }} />
+                        </div>
 
                         {/* Tags / Footer of Article */}
                         <div className="max-w-3xl mx-auto mt-16 pt-8 border-t border-slate-100">
                             <Link
                                 href="/blog"
-                                className="inline-flex items-center gap-2 text-slate-500 hover:text-accent font-medium transition-colors"
+                                className="inline-flex items-center gap-2 text-slate-500 hover:text-accent font-medium transition-colors mb-16"
                             >
                                 <ArrowLeft size={18} />
                                 Zurück zur Übersicht
                             </Link>
+
+                            {/* Related internal guides */}
+                            <div className="pt-12 border-t border-slate-200">
+                                <h3 className="text-2xl font-bold text-slate-900 mb-8">Weiterführende Ratgeber</h3>
+                                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                    {blogPosts
+                                        .filter((p) => p.slug !== post.slug)
+                                        .slice(0, 3)
+                                        .map((relatedPost) => (
+                                            <Link
+                                                key={relatedPost.slug}
+                                                href={`/blog/${relatedPost.slug}`}
+                                                className="group bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:bg-white hover:shadow-xl hover:border-accent/20 transition-all flex flex-col justify-between"
+                                            >
+                                                <div>
+                                                    <span className="text-xs font-bold text-accent px-2 py-1 bg-accent/10 rounded-md mb-3 inline-block">
+                                                        {relatedPost.category}
+                                                    </span>
+                                                    <h4 className="font-bold text-slate-900 mb-4 group-hover:text-accent transition-colors text-sm leading-snug">
+                                                        {relatedPost.title}
+                                                    </h4>
+                                                </div>
+                                                <div className="flex items-center text-xs font-bold text-slate-500 gap-1 group-hover:text-accent transition-colors mt-4 border-t border-slate-200 pt-4">
+                                                    Weiterlesen <ArrowRight size={12} />
+                                                </div>
+                                            </Link>
+                                        ))}
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

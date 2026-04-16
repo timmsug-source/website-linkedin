@@ -10,11 +10,14 @@ export interface BlogPost {
     readTime: string;
     featured: boolean;
     keyword: string;
-    content: string; // The rich HTML/Markdown content for the blog post
+    headerImage: string;
+    contentImage: string;
+    contentTop: string;
+    contentBottom: string;
 }
 
-// Helper to generate a dummy content block for placeholder posts
-const generateDummyContent = (keyword: string) => `
+// Helper to generate dummy content block for placeholder posts
+const generateContentTop = (keyword: string) => `
 <h2>Einführung: Das Wichtigste über ${keyword}</h2>
 <p>Wenn du als Fitness- oder Ernährungscoach planbar neue Kunden gewinnen willst, dann führt kein Weg an einem systematischen Prozess vorbei. In diesem Artikel schauen wir uns an, warum <strong class="text-slate-900">${keyword}</strong> ein entscheidender Hebel für dein Business ist und worauf du bei der Umsetzung zwingend achten solltest.</p>
 
@@ -25,7 +28,9 @@ const generateDummyContent = (keyword: string) => `
   <li>Interessenten wissen nicht, was sie als Nächstes tun sollen</li>
   <li>Der organische Content wird nicht in messbare Leads umgewandelt</li>
 </ul>
+`;
 
+const generateContentBottom = (keyword: string) => `
 <h3>Die 3 wichtigsten Schritte zur Optimierung</h3>
 <p>Werfen wir einen genauen Blick auf die Schritte, die du heute noch implementieren solltest, um spürbare Ergebnisse zu sehen.</p>
 
@@ -54,7 +59,10 @@ export const blogPosts: BlogPost[] = [
         readTime: "8 Min.",
         featured: true,
         keyword: "LinkedIn für Fitness Coaches",
-        content: generateDummyContent("LinkedIn für Fitness Coaches"),
+        headerImage: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?fm=webp&q=60&w=800",
+        contentImage: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?fm=webp&q=60&w=800",
+        contentTop: generateContentTop("LinkedIn für Fitness Coaches"),
+        contentBottom: generateContentBottom("LinkedIn für Fitness Coaches"),
     },
     {
         slug: "landingpage-leads-verliert",
@@ -67,7 +75,10 @@ export const blogPosts: BlogPost[] = [
         readTime: "6 Min.",
         featured: true,
         keyword: "Personal Trainer Landingpage",
-        content: generateDummyContent("Personal Trainer Landingpages"),
+        headerImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?fm=webp&q=60&w=800",
+        contentImage: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?fm=webp&q=60&w=800",
+        contentTop: generateContentTop("Personal Trainer Landingpages"),
+        contentBottom: generateContentBottom("Personal Trainer Landingpages"),
     },
     {
         slug: "whatsapp-coaching-funnel",
@@ -80,7 +91,10 @@ export const blogPosts: BlogPost[] = [
         readTime: "7 Min.",
         featured: false,
         keyword: "WhatsApp im Coaching nutzen",
-        content: generateDummyContent("WhatsApp im Coaching"),
+        headerImage: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?fm=webp&q=60&w=800",
+        contentImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?fm=webp&q=60&w=800",
+        contentTop: generateContentTop("WhatsApp im Coaching"),
+        contentBottom: generateContentBottom("WhatsApp im Coaching"),
     },
     {
         slug: "ki-chatbot-personal-trainer",
@@ -93,7 +107,10 @@ export const blogPosts: BlogPost[] = [
         readTime: "5 Min.",
         featured: false,
         keyword: "KI Chatbot Personal Trainer",
-        content: generateDummyContent("KI-Chatbot für Personal Trainer"),
+        headerImage: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?fm=webp&q=60&w=800",
+        contentImage: "https://images.unsplash.com/photo-1485694212953-eb3eabfd63cc?fm=webp&q=60&w=800",
+        contentTop: generateContentTop("KI-Chatbot für Personal Trainer"),
+        contentBottom: generateContentBottom("KI-Chatbot für Personal Trainer"),
     },
     {
         slug: "automatisiertes-onboarding-coach",
@@ -106,7 +123,10 @@ export const blogPosts: BlogPost[] = [
         readTime: "6 Min.",
         featured: false,
         keyword: "automatisiertes Onboarding Coach",
-        content: generateDummyContent("Automatisiertes Onboarding"),
+        headerImage: "https://images.unsplash.com/photo-1552664730-d307ca884978?fm=webp&q=60&w=800",
+        contentImage: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?fm=webp&q=60&w=800",
+        contentTop: generateContentTop("Automatisiertes Onboarding"),
+        contentBottom: generateContentBottom("Automatisiertes Onboarding"),
     },
     {
         slug: "email-funnel-fitness-coaches",
@@ -119,7 +139,10 @@ export const blogPosts: BlogPost[] = [
         readTime: "9 Min.",
         featured: false,
         keyword: "E-Mail Funnel für Coaches",
-        content: generateDummyContent("E-Mail Funnel Setup"),
+        headerImage: "https://images.unsplash.com/photo-1563986768494-4dee2763ff0f?fm=webp&q=60&w=800",
+        contentImage: "https://images.unsplash.com/photo-1588196749597-9ff0468925b1?fm=webp&q=60&w=800",
+        contentTop: generateContentTop("E-Mail Funnel Setup"),
+        contentBottom: generateContentBottom("E-Mail Funnel Setup"),
     },
     {
         slug: "linkedin-organisch-kunden",
@@ -132,7 +155,10 @@ export const blogPosts: BlogPost[] = [
         readTime: "7 Min.",
         featured: false,
         keyword: "LinkedIn Profil Ernährungscoach",
-        content: generateDummyContent("LinkedIn für Ernährungscoaches"),
+        headerImage: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?fm=webp&q=60&w=800",
+        contentImage: "https://images.unsplash.com/photo-1498837167922-41c012202392?fm=webp&q=60&w=800",
+        contentTop: generateContentTop("LinkedIn für Ernährungscoaches"),
+        contentBottom: generateContentBottom("LinkedIn für Ernährungscoaches"),
     },
     {
         slug: "was-kostet-marketing-fitness-coaches",
@@ -145,6 +171,9 @@ export const blogPosts: BlogPost[] = [
         readTime: "5 Min.",
         featured: false,
         keyword: "Was kostet Marketing für Fitness Coaches",
-        content: generateDummyContent("Marketing Budgets für Fitness Coaches"),
+        headerImage: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?fm=webp&q=60&w=800",
+        contentImage: "https://images.unsplash.com/photo-1553729459-efe14ef6055d?fm=webp&q=60&w=800",
+        contentTop: generateContentTop("Marketing Budgets für Fitness Coaches"),
+        contentBottom: generateContentBottom("Marketing Budgets für Fitness Coaches"),
     },
 ];
