@@ -1,160 +1,164 @@
 import type { Metadata } from "next";
-import { ArrowRight, CheckCircle2, MessageCircle, Star } from "lucide-react";
-import { WHATSAPP_URL, CALENDLY_URL } from "@/lib/utils";
+import { ArrowRight, AlertCircle, CheckCircle2, MonitorSmartphone, Rocket, Clock, MessageCircle } from "lucide-react";
+import { CALENDLY_URL, WHATSAPP_URL } from "@/lib/utils";
 
 export const metadata: Metadata = {
-  title: "Marketing System für Fitness Coaches – Kostenloses Erstgespräch",
+  title: "Exklusives LinkedIn Angebot | Timm Schurig",
   description:
-    "Landingpages, Automatisierungen & KI-Chatbots speziell für Personal Trainer. Mehr LinkedIn-Kunden, weniger manueller Aufwand. Jetzt kostenloses Erstgespräch sichern.",
+    "Eine hochkonvertierende Landingpage für dein Fitness-Coaching. Jetzt zum exklusiven LinkedIn-Sonderpreis sichern.",
   robots: { index: false, follow: false },
 };
 
-const benefits = [
-  "Mehr qualifizierte Leads über LinkedIn",
-  "Automatisches Follow-up – kein Lead geht verloren",
-  "KI-Chatbot antwortet 24/7 für dich",
-  "Professionelle Landingpage in 1–2 Wochen",
-  "DSGVO-konform und 100% PageSpeed",
-];
-
-const socialProof = [
-  { text: "+12 qualifizierte Leads/Monat", name: "Markus R., Personal Trainer" },
-  { text: "Onboarding-Zeit: 3h → 20 Min.", name: "Jana K., Ernährungscoach" },
-  { text: "8 Neukunden im ersten Monat", name: "Stefan B., Fitness Coach" },
-];
-
-export default function FitnessCoachLPPage() {
+export default function LinkedInFunnelPage() {
   return (
-    <main className="min-h-screen bg-white">
-      {/* Minimal Header */}
-      <header className="py-6 px-6 border-b border-slate-100">
-        <div className="max-w-4xl mx-auto flex items-center justify-between">
-          <span className="text-xl font-display font-extrabold tracking-tight text-slate-900">
-            TIMM<span className="text-accent">SCHURIG</span>
+    <main className="min-h-screen bg-white pb-20">
+      {/* Top Offer Bar (Replaces Navbar) */}
+      <div className="bg-slate-900 py-3 px-6 text-white fixed top-0 w-full z-50">
+        <div className="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
+          <span className="text-sm font-medium opacity-90 inline-flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
+            Timm Schurig · Exklusives LinkedIn-Angebot
           </span>
-          <a
-            href={WHATSAPP_URL}
-            target="_blank"
-            rel="noreferrer noopener"
-            className="flex items-center gap-2 bg-[#25D366] text-white rounded-full px-4 py-2 text-sm font-bold"
-          >
-            <MessageCircle size={16} fill="currentColor" />
-            WhatsApp
-          </a>
+          <div className="bg-accent/20 border border-accent/40 text-accent font-bold px-4 py-1.5 rounded-full text-sm inline-flex items-center gap-2 shadow-lg shadow-accent/10">
+            Sonderpreis: 150€ (statt 450€)
+          </div>
         </div>
-      </header>
+      </div>
 
-      {/* Hero */}
-      <section className="py-20 px-6">
-        <div className="max-w-2xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 text-accent text-sm font-bold mb-6">
-            Speziell für Personal Trainer & Fitness Coaches
+      {/* Hero & Problem Section */}
+      <section className="pt-40 pb-20 px-6">
+        <div className="max-w-3xl mx-auto text-center">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100 text-slate-600 text-sm font-bold mb-8">
+            Für Fitness- & Ernährungscoaches
           </div>
-          <h1 className="text-4xl md:text-5xl font-display font-extrabold text-slate-900 leading-tight mb-6">
-            Mehr Kunden über LinkedIn –{" "}
-            <span className="text-accent">vollautomatisch</span>
+
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-extrabold text-slate-900 leading-[1.15] mb-6">
+            Du betreibst viel Akquise auf LinkedIn, aber <span className="text-accent">kaum jemand bucht?</span>
           </h1>
-          <p className="text-lg text-slate-600 leading-relaxed mb-10">
-            Landingpages, KI-Chatbots und Automatisierungen, die rund um die
-            Uhr Leads generieren und qualifizieren. Du coachst, das System
-            akquiriert.
-          </p>
 
-          {/* Benefits */}
-          <ul className="text-left max-w-md mx-auto space-y-3 mb-10">
-            {benefits.map((benefit, i) => (
-              <li key={i} className="flex items-center gap-3">
-                <CheckCircle2 size={18} className="text-accent shrink-0" />
-                <span className="text-slate-700">{benefit}</span>
-              </li>
-            ))}
-          </ul>
-
-          {/* CTAs */}
-          <div className="flex flex-col gap-4 items-center">
-            <a
-              href={CALENDLY_URL}
-              target="_blank"
-              rel="noreferrer noopener"
-              className="inline-flex items-center justify-center bg-accent hover:bg-accent/90 text-white rounded-full px-10 h-16 text-xl font-bold w-full max-w-sm shadow-lg shadow-accent/20 transition-all"
-            >
-              Kostenloses Erstgespräch
-              <ArrowRight className="ml-2" size={22} />
-            </a>
-            <a
-              href={WHATSAPP_URL}
-              target="_blank"
-              rel="noreferrer noopener"
-              className="inline-flex items-center justify-center gap-2 text-slate-600 font-medium hover:text-accent transition-colors"
-            >
-              <MessageCircle size={18} />
-              Oder per WhatsApp schreiben
-            </a>
+          {/* Problem Box */}
+          <div className="bg-slate-50 border border-slate-200 rounded-[2rem] p-8 md:p-10 my-14 text-left shadow-lg shadow-slate-200/50">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="bg-red-100 p-2 rounded-full text-red-500">
+                <AlertCircle size={24} />
+              </div>
+              <h2 className="text-2xl font-bold text-slate-900">Das Problem</h2>
+            </div>
+            <p className="text-lg text-slate-700 leading-relaxed mb-6 font-medium">
+              Du steckst Stunden in DMs, baust Netzwerke auf und schreibst Beiträge. Die Leute antworten sogar auf deine Nachrichten – aber wenn es darum geht, ans Telefon zu gehen oder ein Erstgespräch zu buchen, springen sie ab.
+            </p>
+            <p className="text-lg text-slate-700 leading-relaxed font-medium">
+              <strong className="text-slate-900">Der Grund:</strong> Wenn Interessenten dich auf LinkedIn finden, suchen sie nach einem Profil oder einer Webseite, die <span className="underline decoration-red-300 underline-offset-4">maximales Vertrauen</span> ausstrahlt. Fehlt dieser zentrale Ort, sind sie weg.
+            </p>
           </div>
-          <p className="mt-4 text-slate-400 text-sm">
-            Kostenlos & unverbindlich · 30 Minuten
-          </p>
         </div>
       </section>
 
-      {/* Social Proof */}
-      <section className="py-16 px-6 bg-slate-50">
-        <div className="max-w-2xl mx-auto">
-          <div className="flex justify-center mb-6" aria-label="5-Sterne-Bewertungen">
-            {[...Array(5)].map((_, i) => (
-              <Star
-                key={i}
-                size={20}
-                className="text-amber-400 fill-amber-400"
-                aria-hidden="true"
-              />
-            ))}
+      {/* Lösung Section */}
+      <section className="py-20 px-6">
+        <div className="max-w-4xl mx-auto bg-slate-900 rounded-[3rem] p-10 md:p-16 text-white text-center shadow-2xl overflow-hidden relative">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-accent opacity-20 blur-[100px] rounded-full pointer-events-none"></div>
+
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-white border border-white/20 text-sm font-bold mb-8 backdrop-blur-sm">
+            <CheckCircle2 size={16} className="text-accent" /> Die Lösung
           </div>
-          <div className="space-y-4">
-            {socialProof.map((proof, i) => (
-              <div
-                key={i}
-                className="bg-white rounded-2xl p-6 border border-slate-100 flex items-center gap-4"
-              >
-                <div className="text-accent font-bold text-lg shrink-0">
-                  ✓ {proof.text}
+
+          <h2 className="text-3xl md:text-4xl font-display font-extrabold mb-8">
+            Eine laser-fokussierte Landingpage, die aus LinkedIn-Leads echte Meetings macht.
+          </h2>
+
+          <p className="text-lg text-slate-300 leading-relaxed max-w-2xl mx-auto mb-12">
+            Wir bauen dir keine generische 10-Unterseiten-Webseite, auf der sich niemand zurechtfindet. Du bekommst einen hochkonvertierenden One-Pager, der exakt ein Ziel hat: <strong className="text-white">Vertrauen aufbauen & Erstgespräche generieren.</strong>
+          </p>
+
+          <div className="grid md:grid-cols-2 gap-6 text-left">
+            <div className="bg-slate-800/50 border border-slate-700/50 p-6 rounded-2xl">
+              <MonitorSmartphone className="text-accent mb-4" size={32} />
+              <h3 className="text-xl font-bold mb-2">Modernes Design</h3>
+              <p className="text-slate-400 text-sm">Premium Look, der dein Coaching hochwertig erscheinen lässt und Einwände im Vorfeld löst.</p>
+            </div>
+            <div className="bg-slate-800/50 border border-slate-700/50 p-6 rounded-2xl">
+              <Rocket className="text-accent mb-4" size={32} />
+              <h3 className="text-xl font-bold mb-2">Hochkonvertierend</h3>
+              <p className="text-slate-400 text-sm">Klare CTAs, psychologisch durchdachte Struktur und extrem schnelle Ladezeiten für maximale Conversion.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Ablauf Section */}
+      <section className="py-24 px-6">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-display font-extrabold text-slate-900 mb-4">
+              Der schnelle Ablauf
+            </h2>
+            <p className="text-slate-600">Von der Idee bis zur Live-Schaltung in Rekordzeit.</p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 relative">
+            <div className="hidden md:block absolute top-8 left-16 right-16 h-0.5 bg-slate-100 z-0"></div>
+
+            {[
+              { num: "01", title: "Kick-off Call", desc: "Wir besprechen in 30 Min. dein Angebot, deine Zielgruppe und deine Wünsche." },
+              { num: "02", title: "Design & Copy", desc: "Wir bauen das komplette Design und schreiben starke Texte, die verkaufen." },
+              { num: "03", title: "Live-Gang", desc: "Abnahme, letzte Anpassungen und die Seite geht auf deiner Domain online." }
+            ].map((step, i) => (
+              <div key={i} className="relative z-10 bg-white border border-slate-100 p-8 rounded-3xl shadow-xl shadow-slate-200/40 text-center">
+                <div className="w-16 h-16 bg-accent text-white font-display font-extrabold text-2xl rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-accent/30">
+                  {step.num}
                 </div>
-                <div className="text-slate-500 text-sm">– {proof.name}</div>
+                <h3 className="text-xl font-bold text-slate-900 mb-3">{step.title}</h3>
+                <p className="text-slate-600 text-sm">{step.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Final CTA */}
-      <section className="py-16 px-6 text-center">
-        <div className="max-w-lg mx-auto">
-          <h2 className="text-3xl font-display font-extrabold text-slate-900 mb-4">
-            Bereit loszulegen?
+      {/* CTA mit Angebot */}
+      <section className="py-20 px-6">
+        <div className="max-w-3xl mx-auto bg-slate-50 border border-slate-200 rounded-[3rem] p-10 md:p-16 text-center shadow-2xl shadow-slate-200/50 relative overflow-hidden">
+          <div className="absolute -top-24 -right-24 w-64 h-64 bg-accent opacity-10 blur-3xl rounded-full"></div>
+
+          <Clock className="w-16 h-16 text-accent mx-auto mb-6" />
+          <h2 className="text-3xl md:text-5xl font-display font-extrabold text-slate-900 mb-6 leading-tight">
+            Sichere dir das LinkedIn-Sonderangebot
           </h2>
-          <a
-            href={CALENDLY_URL}
-            target="_blank"
-            rel="noreferrer noopener"
-            className="inline-flex items-center justify-center bg-accent hover:bg-accent/90 text-white rounded-full px-10 h-14 text-lg font-bold w-full shadow-lg shadow-accent/20 transition-all"
-          >
-            Kostenloses Erstgespräch buchen
-            <ArrowRight className="ml-2" size={20} />
-          </a>
-          <p className="mt-4 text-slate-400 text-sm">
-            Kostenlos & unverbindlich · 30 Minuten Strategie-Check
+
+          <div className="bg-white rounded-2xl border border-slate-200 p-6 mb-8 inline-block shadow-sm">
+            <p className="text-slate-500 line-through mb-1 text-sm font-bold">Normalpreis: 450€</p>
+            <p className="text-4xl font-extrabold text-slate-900">
+              Nur <span className="text-accent">150€</span>
+            </p>
+            <p className="text-xs text-slate-400 mt-2">Einmalig. Transparent. Keine versteckten Kosten.</p>
+          </div>
+
+          <p className="text-lg text-slate-600 mb-10 max-w-xl mx-auto">
+            Da du über meine LinkedIn-Akquise hier bist, biete ich dir an, deine Landingpage für einen unschlagbaren Bruchteil des Normalpreises aufzubauen.
           </p>
+
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a
+              href={CALENDLY_URL}
+              target="_blank"
+              rel="noreferrer noopener"
+              className="inline-flex justify-center items-center gap-2 bg-accent hover:bg-accent/90 text-white rounded-full px-8 h-16 text-lg font-bold w-full sm:w-auto shadow-lg shadow-accent/30 transition-all hover:scale-105"
+            >
+              Angebot für 150€ sichern <ArrowRight size={20} />
+            </a>
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noreferrer noopener"
+              className="inline-flex justify-center items-center gap-2 bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 rounded-full px-8 h-16 text-lg font-bold w-full sm:w-auto shadow-sm transition-all"
+            >
+              <MessageCircle size={20} className="text-[#25D366]" />
+              Fragen? WhatsApp
+            </a>
+          </div>
         </div>
       </section>
-
-      {/* Minimal Footer */}
-      <footer className="py-6 px-6 border-t border-slate-100 text-center text-sm text-slate-400">
-        <span>© {new Date().getFullYear()} Timm Schurig</span>
-        {" · "}
-        <a href="/impressum" className="hover:text-accent">Impressum</a>
-        {" · "}
-        <a href="/datenschutz" className="hover:text-accent">Datenschutz</a>
-      </footer>
     </main>
   );
 }
