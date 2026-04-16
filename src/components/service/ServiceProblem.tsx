@@ -18,7 +18,7 @@ export function ServiceProblem({ service }: { service: Service }) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="bg-slate-900 rounded-[3rem] p-8 md:p-16 lg:p-20 relative overflow-hidden border border-red-500/20 shadow-2xl shadow-red-500/5"
+          className="bg-slate-900 rounded-[3rem] p-8 md:p-16 lg:p-20 relative overflow-hidden border border-red-500/40 shadow-2xl shadow-red-500/10"
         >
           {/* Background Glows for the card */}
           <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
