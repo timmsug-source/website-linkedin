@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { CheckCircle2, ArrowRight, Zap } from "lucide-react";
 import { CALENDLY_URL, cn } from "@/lib/utils";

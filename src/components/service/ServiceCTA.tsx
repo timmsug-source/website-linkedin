@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { ArrowRight, MessageCircle } from "lucide-react";
 import { CALENDLY_URL, WHATSAPP_URL, cn } from "@/lib/utils";
