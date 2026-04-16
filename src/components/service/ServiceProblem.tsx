@@ -18,11 +18,20 @@ export function ServiceProblem({ service }: { service: Service }) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="bg-slate-900 rounded-[3rem] p-8 md:p-16 lg:p-20 relative overflow-hidden border-2 border-red-500/60 shadow-2xl shadow-red-900/20"
+          className="bg-slate-900 rounded-[3rem] p-8 md:p-16 lg:p-20 relative overflow-hidden border-2 border-red-500 shadow-[0_0_40px_rgba(239,68,68,0.15)] group"
         >
+          {/* Shimmer Effect */}
+          <motion.div
+            initial={{ x: "-100%" }}
+            animate={{ x: "200%" }}
+            transition={{ duration: 3, repeat: Infinity, repeatDelay: 5, ease: "linear" }}
+            className="absolute inset-0 z-10 w-1/2 h-full bg-gradient-to-r from-transparent via-red-500/5 to-transparent skew-x-12 pointer-events-none"
+            aria-hidden="true"
+          />
+
           {/* Background Glows for the card */}
           <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
-            <div className="absolute top-0 left-1/4 w-96 h-96 bg-red-500/10 rounded-full blur-[120px]" />
+            <div className="absolute top-0 left-1/4 w-96 h-96 bg-red-500/20 rounded-full blur-[120px]" />
             <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent/5 rounded-full blur-[120px]" />
           </div>
 
