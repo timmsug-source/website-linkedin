@@ -6,12 +6,12 @@ import { CALENDLY_URL, WHATSAPP_URL } from "@/lib/utils";
 import Image from "next/image";
 
 const portfolioItems = [
-  { img: "/images/portfolio/fitness-1.png", cat: "Personal Training", title: "Bestform Coaching" },
-  { img: "/images/portfolio/strength-1.png", cat: "Kraftsport", title: "Iron Performance" },
-  { img: "/images/portfolio/yoga-1.png", cat: "Yoga & Mindset", title: "Innere Ruhe" },
-  { img: "/images/portfolio/transformation-1.png", cat: "Online Coaching", title: "Transformation Pro" },
-  { img: "/images/portfolio/yoga-2.png", cat: "Vinyasa Flow", title: "Yoga & Energie" },
-  { img: "/images/portfolio/premium-fitness-1.png", cat: "High-End Coaching", title: "Elite Vitality" }
+  { img: "/images/portfolio/fitness-1.webp", cat: "Personal Training", title: "Bestform Coaching" },
+  { img: "/images/portfolio/strength-1.webp", cat: "Kraftsport", title: "Iron Performance" },
+  { img: "/images/portfolio/yoga-1.webp", cat: "Yoga & Mindset", title: "Innere Ruhe" },
+  { img: "/images/portfolio/transformation-1.webp", cat: "Online Coaching", title: "Transformation Pro" },
+  { img: "/images/portfolio/yoga-2.webp", cat: "Vinyasa Flow", title: "Yoga & Energie" },
+  { img: "/images/portfolio/premium-fitness-1.webp", cat: "High-End Coaching", title: "Elite Vitality" }
 ];
 
 export default function LinkedInFunnelPage() {
@@ -22,6 +22,7 @@ export default function LinkedInFunnelPage() {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         className="bg-slate-900 py-3 px-6 text-white fixed top-0 w-full z-50 border-b border-white/10"
+        style={{ willChange: "transform" }}
       >
         <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
           <span className="text-sm font-medium opacity-90 inline-flex items-center gap-2">
@@ -39,11 +40,12 @@ export default function LinkedInFunnelPage() {
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/lp/hero-bg-dark.png"
+            src="/images/lp/hero-bg-dark.webp"
             alt="Premium Fitness Hub"
             fill
             className="object-cover opacity-60"
             priority
+            quality={85}
           />
           {/* Dark Gradients for drama and readability */}
           <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-transparent"></div>
@@ -58,6 +60,7 @@ export default function LinkedInFunnelPage() {
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
+              style={{ willChange: "transform, opacity" }}
             >
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 backdrop-blur-sm text-slate-300 text-sm font-bold mb-8 border border-white/10">
                 Speziell für LinkedIn Outbound
@@ -93,11 +96,11 @@ export default function LinkedInFunnelPage() {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               className="relative"
+              style={{ willChange: "transform, opacity" }}
             >
               <div className="absolute -inset-4 bg-accent/10 blur-3xl rounded-[3rem] opacity-30"></div>
 
-              <div className="relative bg-white/10 backdrop-blur-2xl border border-white/20 rounded-[3rem] p-8 md:p-12 shadow-2xl group overflow-hidden">
-                {/* Visual accents in the card */}
+              <div className="relative bg-white/10 backdrop-blur-xl border border-white/20 rounded-[3rem] p-8 md:p-12 shadow-2xl group overflow-hidden">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-accent/10 blur-3xl -z-10"></div>
 
                 <div className="absolute top-8 right-10">
@@ -169,8 +172,9 @@ export default function LinkedInFunnelPage() {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.2 }}
             className="bg-white border border-slate-100 rounded-[2.5rem] p-8 md:p-14 shadow-xl shadow-slate-200/50 relative overflow-hidden"
+            style={{ willChange: "transform, opacity" }}
           >
             <div className="absolute top-0 right-0 w-32 h-32 bg-red-500/5 blur-3xl opacity-50 rounded-full"></div>
 
@@ -214,9 +218,10 @@ export default function LinkedInFunnelPage() {
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
+                viewport={{ once: true, amount: 0.1 }}
+                transition={{ delay: i * 0.05 }}
                 className="p-8 rounded-[2rem] bg-white border border-slate-100 shadow-lg shadow-slate-100 hover:border-accent/30 transition-all hover:shadow-xl group"
+                style={{ willChange: "transform, opacity" }}
               >
                 <div className="text-accent mb-6 group-hover:scale-110 transition-transform origin-left">{feature.icon}</div>
                 <h3 className="text-xl font-bold text-slate-900 mb-3">{feature.title}</h3>
@@ -241,9 +246,10 @@ export default function LinkedInFunnelPage() {
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
+                viewport={{ once: true, amount: 0.1 }}
+                transition={{ delay: i * 0.05 }}
                 className="group relative bg-white rounded-[2rem] overflow-hidden shadow-lg shadow-slate-200/60 border border-slate-100"
+                style={{ willChange: "transform, opacity" }}
               >
                 {/* Image Container */}
                 <div className="aspect-[4/3] relative overflow-hidden">
@@ -251,10 +257,10 @@ export default function LinkedInFunnelPage() {
                     src={item.img}
                     alt={item.title}
                     fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    quality={75}
                   />
-                  {/* Overlay Gradient */}
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>
 
@@ -267,7 +273,7 @@ export default function LinkedInFunnelPage() {
 
                 {/* Hover Content */}
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20">
-                  <div className="text-center p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                  <div className="text-center p-6 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
                     <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
                     <p className="text-white/80 text-sm">Projekt ansehen</p>
                   </div>
@@ -309,10 +315,11 @@ export default function LinkedInFunnelPage() {
       {/* Final Offer CTA */}
       <section className="py-24 px-6 text-center">
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
+          initial={{ opacity: 0, scale: 0.98 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.5 }}
           className="max-w-3xl mx-auto"
+          style={{ willChange: "transform, opacity" }}
         >
           <div className="flex justify-center mb-10">
             <div className="flex">
@@ -334,7 +341,7 @@ export default function LinkedInFunnelPage() {
               href={CALENDLY_URL}
               target="_blank"
               rel="noreferrer noopener"
-              className="inline-flex items-center justify-center bg-accent hover:bg-accent/90 text-white rounded-full px-12 h-20 text-xl font-bold w-full max-w-md shadow-2xl shadow-accent/30 transition-all hover:scale-[1.03]"
+              className="inline-flex items-center justify-center bg-accent hover:bg-accent/90 text-white rounded-full px-12 h-20 text-xl font-bold w-full max-w-md shadow-2xl shadow-accent/30 transition-all hover:scale-[1.02]"
             >
               Jetzt für 150€ sichern
               <ArrowRight className="ml-2" size={24} />

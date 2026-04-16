@@ -34,7 +34,8 @@ function BentoCard({
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
+      viewport={{ once: true, amount: 0.1 }}
+      style={{ willChange: "transform, opacity" }}
       className={cn(
         "group relative overflow-hidden rounded-[2.5rem] border border-slate-200 bg-white p-8 transition-all hover:border-accent/50 hover:shadow-xl hover:shadow-accent/5",
         className
@@ -75,7 +76,8 @@ export function BentoExperience() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.2 }}
+          style={{ willChange: "transform, opacity" }}
           className="mb-16 text-center"
         >
           <p className="mb-4 text-sm font-bold uppercase tracking-[0.2em] text-accent">

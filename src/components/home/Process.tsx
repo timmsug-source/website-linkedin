@@ -101,15 +101,15 @@ export function Process() {
 
                   {/* Content */}
                   <div
-                    className={`w-full md:w-1/2 pl-20 md:pl-0 ${
-                      isEven ? "md:pr-20 md:text-right" : "md:ml-auto md:pl-20"
-                    }`}
+                    className={`w-full md:w-1/2 pl-20 md:pl-0 ${isEven ? "md:pr-20 md:text-right" : "md:ml-auto md:pl-20"
+                      }`}
                   >
                     <motion.div
                       initial={{ opacity: 0, x: isEven ? -50 : 50 }}
                       whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true, margin: "-100px" }}
+                      viewport={{ once: true, margin: "-100px", amount: 0.1 }}
                       transition={{ duration: 0.6 }}
+                      style={{ willChange: "transform, opacity" }}
                       className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow"
                     >
                       <span className="text-accent font-bold text-sm uppercase tracking-widest mb-2 block">

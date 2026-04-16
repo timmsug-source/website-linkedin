@@ -54,7 +54,8 @@ export function FAQ() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.1 }}
+          style={{ willChange: "transform, opacity" }}
           className="text-center mb-16"
         >
           <h2 className="text-4xl font-display font-extrabold text-slate-900">
@@ -72,7 +73,8 @@ export function FAQ() {
               key={index}
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.1 }}
+              style={{ willChange: "transform, opacity" }}
               transition={{ delay: index * 0.05 }}
               className="bg-white border border-slate-200 rounded-2xl overflow-hidden"
               role="listitem"
@@ -91,9 +93,8 @@ export function FAQ() {
                 </span>
                 <ChevronDown
                   size={20}
-                  className={`shrink-0 text-accent transition-transform duration-300 ${
-                    openIndex === index ? "rotate-180" : ""
-                  }`}
+                  className={`shrink-0 text-accent transition-transform duration-300 ${openIndex === index ? "rotate-180" : ""
+                    }`}
                   aria-hidden="true"
                 />
               </button>

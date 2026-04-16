@@ -38,7 +38,8 @@ export function AboutPreview() {
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.1 }}
+            style={{ willChange: "transform, opacity" }}
           >
             <p className="text-accent font-bold text-sm uppercase tracking-[0.2em] mb-4">
               Über mich
