@@ -8,27 +8,14 @@ import type { serviceData } from "@/lib/serviceData";
 type Service = (typeof serviceData)[keyof typeof serviceData];
 
 export function ServiceCTA({ service }: { service: Service }) {
-  const isWhatsApp = service.id === "whatsapp-marketing";
-  const isLandingPage = service.id === "landingpage-erstellung";
-  const isChatbot = service.id === "ki-chatbot";
-
   return (
-    <section className="py-24 px-6" aria-label="Jetzt starten">
+    <section className="py-24 px-6 bg-white" aria-label="Jetzt starten">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className={cn(
-            "relative rounded-[3rem] p-12 md:p-20 overflow-hidden text-center transition-all duration-700",
-            isWhatsApp
-              ? "bg-gradient-to-br from-emerald-900 via-slate-900 to-blue-900"
-              : isLandingPage
-                ? "bg-gradient-to-br from-indigo-900 via-slate-900 to-accent/20"
-                : isChatbot
-                  ? "bg-gradient-to-br from-[#0c1222] to-black"
-                  : "bg-slate-900"
-          )}
+          className="relative bg-slate-900 rounded-[3rem] p-12 md:p-20 overflow-hidden text-center shadow-2xl"
         >
           {/* Decorative Elements */}
           <div

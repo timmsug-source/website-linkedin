@@ -2,54 +2,34 @@
 
 import { motion } from "framer-motion";
 import { CheckCircle2, ArrowRight, Zap } from "lucide-react";
-import { CALENDLY_URL, cn } from "@/lib/utils";
+import { CALENDLY_URL } from "@/lib/utils";
 import type { serviceData } from "@/lib/serviceData";
 
 type Service = (typeof serviceData)[keyof typeof serviceData];
 
 export function ServiceSolution({ service }: { service: Service }) {
-  const isLandingPage = service.id === "landingpage-erstellung";
-  const isWhatsApp = service.id === "whatsapp-marketing";
-  const isAutomation = service.id === "automatisierungen" || service.id === "automatisiertes-onboarding";
-
   return (
     <section
-      className={cn(
-        "py-24 px-6 relative overflow-hidden",
-        isLandingPage ? "bg-white" : "bg-slate-50"
-      )}
+      className="py-24 px-6 bg-slate-50 relative overflow-hidden"
       aria-label="Die Lösung"
     >
-      {/* Decorative Blobs */}
       <div
-        className={cn(
-          "absolute top-0 right-0 w-1/2 h-full pointer-events-none transition-all duration-700",
-          isLandingPage ? "bg-accent/[0.02] skew-x-0" : "bg-accent/3 -skew-x-12 translate-x-1/4"
-        )}
+        className="absolute top-0 right-0 w-1/2 h-full bg-accent/3 -skew-x-12 translate-x-1/4 pointer-events-none"
         aria-hidden="true"
       />
 
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className={cn(
-          "grid grid-cols-1 lg:grid-cols-2 gap-16 items-center",
-          isWhatsApp ? "lg:flex lg:flex-row-reverse" : ""
-        )}>
-          {/* Visual Side */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          {/* Left: Visual Side */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className={cn(
-              "relative",
-              isWhatsApp ? "lg:w-1/2" : ""
-            )}
+            className="relative"
           >
-            <div className={cn(
-              "rounded-[2.5rem] p-10 border shadow-xl transition-all duration-500",
-              isLandingPage ? "bg-white border-slate-200" : "bg-white border-slate-100"
-            )}>
+            <div className="bg-white rounded-[2.5rem] p-10 border border-slate-100 shadow-xl transition-all duration-500">
               <p className="text-sm font-bold uppercase tracking-widest text-accent mb-8">
-                {isAutomation ? "Automatisierter Ablauf" : isWhatsApp ? "Der Prozess" : "Schritt für Schritt"}
+                Schritt für Schritt zum Erfolg
               </p>
               <ol className="space-y-6" aria-label="Ablauf der Zusammenarbeit">
                 {service.process.map((step, i) => (
@@ -80,34 +60,29 @@ export function ServiceSolution({ service }: { service: Service }) {
               </ol>
             </div>
 
-            {/* Overlay badge for creativity */}
-            {isAutomation && (
-              <motion.div
-                animate={{ rotate: [0, 5, 0] }}
-                transition={{ duration: 5, repeat: Infinity }}
-                className="absolute -bottom-6 -right-6 bg-slate-900 border border-slate-800 p-6 rounded-3xl shadow-2xl hidden md:block"
-              >
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center text-accent">
-                    <Zap size={20} fill="currentColor" />
-                  </div>
-                  <div>
-                    <p className="text-[10px] font-bold text-slate-500 uppercase">Effizienz Boost</p>
-                    <p className="text-white font-bold">+120%</p>
-                  </div>
+            {/* Optional badge for consistent high-touch feel */}
+            <motion.div
+              animate={{ rotate: [0, 5, 0], y: [0, -5, 0] }}
+              transition={{ duration: 5, repeat: Infinity }}
+              className="absolute -bottom-6 -right-6 bg-slate-900 border border-slate-800 p-6 rounded-3xl shadow-2xl hidden md:block"
+            >
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center text-accent">
+                  <Zap size={20} fill="currentColor" />
                 </div>
-              </motion.div>
-            )}
+                <div>
+                  <p className="text-[10px] font-bold text-slate-500 uppercase">Quality First</p>
+                  <p className="text-white font-bold">100% Fokus</p>
+                </div>
+              </div>
+            </motion.div>
           </motion.div>
 
-          {/* Text Side */}
+          {/* Right: Text Side */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className={cn(
-              isWhatsApp ? "lg:w-1/2" : ""
-            )}
           >
             <div className="inline-flex items-center gap-3 bg-accent/10 border border-accent/20 rounded-2xl px-5 py-3 mb-8">
               <CheckCircle2 size={20} className="text-accent" aria-hidden="true" />
