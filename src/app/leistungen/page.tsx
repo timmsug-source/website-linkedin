@@ -4,6 +4,8 @@ import { ArrowRight, Layout, Cpu, MessageSquare, Mail, UserPlus } from "lucide-r
 import { buildMetadata } from "@/lib/seo";
 import { SITE_URL, CALENDLY_URL } from "@/lib/utils";
 import { CTA } from "@/components/home/CTA";
+import { ServiceFlow } from "@/components/leistungen/ServiceFlow";
+import { ServiceFAQ } from "@/components/leistungen/ServiceFAQ";
 
 export const metadata: Metadata = buildMetadata({
   title: "Leistungen – Landingpages, Automatisierungen & KI-Chatbots für Coaches",
@@ -226,6 +228,9 @@ export default function LeistungenPage() {
           </div>
         </div>
       </section>
+
+      <ServiceFlow />
+      <ServiceFAQ />
 
       <CTA />
     </>
