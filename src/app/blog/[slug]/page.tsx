@@ -163,14 +163,14 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                     <div className="bg-white rounded-[2.5rem] p-8 md:p-14 lg:p-16 shadow-xl shadow-slate-200/50 border border-slate-100">
                         <div
                             className="max-w-3xl mx-auto custom-prose text-lg text-slate-600 leading-relaxed
-                [&>h2]:text-3xl [&>h2]:font-display [&>h2]:font-bold [&>h2]:text-slate-900 [&>h2]:mt-12 [&>h2]:mb-6
-                [&>h3]:text-2xl [&>h3]:font-display [&>h3]:font-bold [&>h3]:text-slate-900 [&>h3]:mt-10 [&>h3]:mb-4
-                [&>h4]:text-xl [&>h4]:font-bold [&>h4]:text-slate-900 [&>h4]:mt-8 [&>h4]:mb-3
-                [&>p]:mb-6
-                [&>ul]:list-disc [&>ul]:pl-6 [&>ul]:mb-8 [&>ul]:space-y-3 [&>ul>li]:pl-2
-                [&>ol]:list-decimal [&>ol]:pl-6 [&>ol]:mb-8 [&>ol]:space-y-3
-                [&>a]:text-accent [&>a]:underline [&>a:hover]:text-accent-dark
-                [&>blockquote]:border-l-4 [&>blockquote]:border-accent [&>blockquote]:pl-6 [&>blockquote]:italic [&>blockquote]:text-slate-700 [&>blockquote]:bg-slate-50 [&>blockquote]:py-3 [&>blockquote]:pr-4 [&>blockquote]:rounded-r-xl [&>blockquote]:mb-8
+                [&_h2]:text-3xl [&_h2]:font-display [&_h2]:font-bold [&_h2]:text-slate-900 [&_h2]:mt-12 [&_h2]:mb-6
+                [&_h3]:text-2xl [&_h3]:font-display [&_h3]:font-bold [&_h3]:text-slate-900 [&_h3]:mt-10 [&_h3]:mb-4
+                [&_h4]:text-xl [&_h4]:font-bold [&_h4]:text-slate-900 [&_h4]:mt-8 [&_h4]:mb-3
+                [&_p]:mb-6
+                [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:mb-8 [&_ul]:space-y-3 [&_ul_li]:pl-2
+                [&_ol]:list-decimal [&_ol]:pl-6 [&_ol]:mb-8 [&_ol]:space-y-3
+                [&_a]:text-accent [&_a]:underline [&_a:hover]:text-accent-dark
+                [&_blockquote]:border-l-4 [&_blockquote]:border-accent [&_blockquote]:pl-6 [&_blockquote]:italic [&_blockquote]:text-slate-700 [&_blockquote]:bg-slate-50 [&_blockquote]:py-3 [&_blockquote]:pr-4 [&_blockquote]:rounded-r-xl [&_blockquote]:mb-8
               "
                         >
                             <div dangerouslySetInnerHTML={{ __html: post.contentTop }} />
@@ -201,7 +201,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
                             {/* Related internal guides */}
                             <div className="pt-12 border-t border-slate-200">
-                                <h3 className="text-2xl font-bold text-slate-900 mb-8">Weiterführende Ratgeber</h3>
+                                <h2 className="text-2xl font-bold text-slate-900 mb-8">Weiterführende Ratgeber</h2>
                                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                                     {blogPosts
                                         .filter((p) => p.slug !== post.slug)
@@ -216,9 +216,10 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                                                     <span className="text-xs font-bold text-accent px-2 py-1 bg-accent/10 rounded-md mb-3 inline-block">
                                                         {relatedPost.category}
                                                     </span>
-                                                    <h4 className="font-bold text-slate-900 mb-4 group-hover:text-accent transition-colors text-sm leading-snug">
+                                                    <h3 className="font-bold text-slate-900 mb-4 group-hover:text-accent transition-colors text-sm leading-snug">
                                                         {relatedPost.title}
-                                                    </h4>
+                                                    </h3>
+
                                                 </div>
                                                 <div className="flex items-center text-xs font-bold text-slate-500 gap-1 group-hover:text-accent transition-colors mt-4 border-t border-slate-200 pt-4">
                                                     Weiterlesen <ArrowRight size={12} />
