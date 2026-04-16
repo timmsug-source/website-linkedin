@@ -3,7 +3,16 @@
 import { motion } from "framer-motion";
 import { ArrowRight, AlertCircle, CheckCircle2, MonitorSmartphone, Rocket, Clock, MessageCircle, Star, ShieldCheck } from "lucide-react";
 import { CALENDLY_URL, WHATSAPP_URL } from "@/lib/utils";
-import Link from "next/link";
+import Image from "next/image";
+
+const portfolioItems = [
+  { img: "/images/portfolio/fitness-1.png", cat: "Fitness", title: "Personal Training" },
+  { img: "/images/portfolio/lifestyle-1.png", cat: "Lifestyle", title: "Mindset Coaching" },
+  { img: "/images/portfolio/business-1.png", cat: "Business", title: "Strategie-Beratung" },
+  { img: "/images/portfolio/nutrition-1.png", cat: "Ernährung", title: "Nutrition Pro" },
+  { img: "/images/portfolio/yoga-1.png", cat: "Yoga", title: "Elite Studios" },
+  { img: "/images/portfolio/personal-training-1.png", cat: "Training", title: "Transformation" }
+];
 
 export default function LinkedInFunnelPage() {
   return (
@@ -71,7 +80,6 @@ export default function LinkedInFunnelPage() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="relative"
             >
-              {/* Glow behind card */}
               <div className="absolute -inset-4 bg-accent/20 blur-2xl rounded-[3rem] opacity-50"></div>
 
               <div className="relative bg-white border border-slate-200 rounded-[2.5rem] p-8 md:p-10 shadow-2xl hover:shadow-accent/10 transition-shadow duration-500 group">
@@ -202,8 +210,59 @@ export default function LinkedInFunnelPage() {
         </div>
       </section>
 
+      {/* Portfolio/Referenzen Section */}
+      <section className="py-24 px-6 bg-slate-50">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <span className="text-sm font-bold text-accent uppercase tracking-widest mb-4 block">Ergebnisse statt Versprechen</span>
+            <h2 className="text-3xl md:text-5xl font-display font-extrabold text-slate-900 mb-6 font-display">Webdesign-Referenzen unserer Agentur</h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {portfolioItems.map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="group relative bg-white rounded-[2rem] overflow-hidden shadow-lg shadow-slate-200/60 border border-slate-100"
+              >
+                {/* Image Container */}
+                <div className="aspect-[4/3] relative overflow-hidden">
+                  <Image
+                    src={item.img}
+                    alt={item.title}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  />
+                  {/* Overlay Gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                </div>
+
+                {/* Floating Label */}
+                <div className="absolute bottom-6 left-6 z-10">
+                  <span className="bg-slate-900/80 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-widest px-4 py-2 rounded-full border border-white/10 shadow-lg">
+                    {item.cat}
+                  </span>
+                </div>
+
+                {/* Hover Content */}
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20">
+                  <div className="text-center p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                    <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
+                    <p className="text-white/80 text-sm">Case Study ansehen</p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Steps Section */}
-      <section className="py-24 px-6 bg-slate-900 text-white rounded-[3rem] mx-4 my-20 overflow-hidden relative">
+      <section className="py-24 px-6 bg-slate-900 text-white rounded-[3rem] mx-4 my-20 overflow-hidden relative shadow-2xl">
         <div className="absolute top-0 right-0 w-full h-full bg-accent/5 blur-[120px] rounded-full pointer-events-none"></div>
 
         <div className="max-w-4xl mx-auto">
