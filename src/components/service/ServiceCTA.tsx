@@ -15,7 +15,7 @@ export function ServiceCTA({ service }: { service: Service }) {
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="relative bg-slate-900 rounded-[3rem] p-12 md:p-20 overflow-hidden text-center shadow-2xl"
+          className="relative bg-slate-900 rounded-[3rem] p-12 md:p-20 overflow-hidden text-center shadow-2xl border border-red-500/20 shadow-red-500/5"
         >
           {/* Decorative Elements */}
           <div
