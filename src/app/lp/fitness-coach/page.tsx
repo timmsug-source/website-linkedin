@@ -35,14 +35,22 @@ export default function LinkedInFunnelPage() {
       </motion.div>
 
       {/* Hero Section */}
-      <section className="pt-48 pb-20 px-6 relative">
-        {/* Background Decor */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full -z-10 pointer-events-none">
-          <div className="absolute top-20 right-0 w-[500px] h-[500px] bg-accent/5 blur-[120px] rounded-full opacity-50"></div>
-          <div className="absolute top-40 left-0 w-[500px] h-[500px] bg-blue-400/5 blur-[120px] rounded-full opacity-30"></div>
+      <section className="min-h-[90vh] flex items-center pt-32 pb-20 px-6 relative mt-12 overflow-hidden">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/images/lp/hero-bg.png"
+            alt="Fitness & Design Hub"
+            fill
+            className="object-cover opacity-30 grayscale-[0.2]"
+            priority
+          />
+          {/* Gradients for readability and blending */}
+          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/95 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-white/50"></div>
         </div>
 
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-6xl mx-auto relative z-10 w-full">
           <div className="grid lg:grid-cols-[1.2fr,0.8fr] gap-12 lg:gap-20 items-center">
 
             {/* Left: Content */}
@@ -51,24 +59,30 @@ export default function LinkedInFunnelPage() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100 text-slate-600 text-sm font-bold mb-8">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900/5 backdrop-blur-sm text-slate-600 text-sm font-bold mb-8 border border-slate-900/10">
                 Speziell für LinkedIn Outbound
               </div>
 
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-extrabold text-slate-900 leading-[1.1] mb-8">
+              <h1 className="text-4xl md:text-5xl lg:text-7xl font-display font-extrabold text-slate-900 leading-[1.05] mb-8 tracking-tight">
                 Verwandle dein LinkedIn Profil in eine <span className="text-accent">Meeting-Maschine</span>.
               </h1>
 
-              <p className="text-xl text-slate-600 leading-relaxed mb-10 max-w-xl">
+              <p className="text-xl text-slate-600 leading-relaxed mb-10 max-w-xl font-medium">
                 Du machst Akquise, aber die Leute buchen nicht? Wir bauen dir eine Landingpage, die aus "Profilbesuchern" zahlende Coaching-Kunden macht.
               </p>
 
-              <div className="flex flex-wrap gap-6 items-center">
-                <div className="flex items-center gap-2 text-slate-500 font-medium">
-                  <ShieldCheck size={20} className="text-accent" /> Professionelles Branding
+              <div className="flex flex-wrap gap-8 items-center">
+                <div className="flex items-center gap-2 text-slate-700 font-bold">
+                  <div className="w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center">
+                    <ShieldCheck size={18} className="text-accent" />
+                  </div>
+                  Premium Branding
                 </div>
-                <div className="flex items-center gap-2 text-slate-500 font-medium">
-                  <ShieldCheck size={20} className="text-accent" /> High-Speed Ladezeiten
+                <div className="flex items-center gap-2 text-slate-700 font-bold">
+                  <div className="w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center">
+                    <Rocket size={18} className="text-accent" />
+                  </div>
+                  High-Speed Performance
                 </div>
               </div>
             </motion.div>
@@ -82,9 +96,9 @@ export default function LinkedInFunnelPage() {
             >
               <div className="absolute -inset-4 bg-accent/20 blur-2xl rounded-[3rem] opacity-50"></div>
 
-              <div className="relative bg-white border border-slate-200 rounded-[2.5rem] p-8 md:p-10 shadow-2xl hover:shadow-accent/10 transition-shadow duration-500 group">
+              <div className="relative bg-white/80 backdrop-blur-xl border border-slate-200/50 rounded-[2.5rem] p-8 md:p-10 shadow-2xl hover:shadow-accent/10 transition-shadow duration-500 group">
                 <div className="absolute top-6 right-8">
-                  <div className="bg-accent text-white text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full animate-bounce">
+                  <div className="bg-accent text-white text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full animate-bounce shadow-lg shadow-accent/20">
                     Limitiert
                   </div>
                 </div>
@@ -99,9 +113,9 @@ export default function LinkedInFunnelPage() {
                     <span>Regulärer Preis</span>
                     <span>450€</span>
                   </div>
-                  <div className="flex items-center justify-between bg-accent/5 border border-accent/10 p-4 rounded-2xl">
+                  <div className="flex items-center justify-between bg-accent/5 border border-accent/10 p-5 rounded-3xl">
                     <span className="text-slate-900 font-bold">Dein Sonderpreis</span>
-                    <span className="text-3xl font-black text-accent">150€</span>
+                    <span className="text-4xl font-black text-accent tracking-tighter">150€</span>
                   </div>
                 </div>
 
@@ -112,9 +126,9 @@ export default function LinkedInFunnelPage() {
                     "Inkl. Domain & Hosting Setup",
                     "Live in max. 7 Tagen"
                   ].map((item, i) => (
-                    <div key={i} className="flex items-center gap-3 text-sm text-slate-700 font-medium">
-                      <div className="w-5 h-5 rounded-full bg-accent/10 flex items-center justify-center shrink-0">
-                        <CheckCircle2 size={12} className="text-accent" />
+                    <div key={i} className="flex items-center gap-3 text-sm text-slate-700 font-semibold">
+                      <div className="w-6 h-6 rounded-full bg-accent/10 flex items-center justify-center shrink-0">
+                        <CheckCircle2 size={14} className="text-accent" />
                       </div>
                       {item}
                     </div>
@@ -126,9 +140,9 @@ export default function LinkedInFunnelPage() {
                     href={CALENDLY_URL}
                     target="_blank"
                     rel="noreferrer noopener"
-                    className="flex items-center justify-center gap-2 bg-accent hover:bg-accent/90 text-white rounded-full h-14 font-bold transition-all shadow-lg shadow-accent/20 group-hover:scale-[1.02] active:scale-[0.98]"
+                    className="flex items-center justify-center gap-2 bg-accent hover:bg-accent/90 text-white rounded-full h-16 text-lg font-bold transition-all shadow-xl shadow-accent/20 group-hover:scale-[1.02] active:scale-[0.98]"
                   >
-                    Platz sichern <ArrowRight size={18} />
+                    Platz sichern <ArrowRight size={20} />
                   </a>
                   <a
                     href={WHATSAPP_URL}
