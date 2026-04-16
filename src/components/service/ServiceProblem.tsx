@@ -18,8 +18,8 @@ export function ServiceProblem({ service }: { service: Service }) {
           {/* Rotating Neon Border Layer */}
           <motion.div
             animate={{ rotate: 360 }}
-            transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
-            className="absolute inset-[-200%] bg-[conic-gradient(from_90deg_at_50%_50%,transparent_20%,#ef4444_50%,transparent_80%)] opacity-60"
+            transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+            className="absolute inset-[-200%] bg-[conic-gradient(from_90deg_at_50%_50%,transparent_30%,#ff0000_50%,transparent_70%)] opacity-80"
           />
 
           <motion.div
@@ -83,6 +83,7 @@ export function ServiceProblem({ service }: { service: Service }) {
             </div>
           </motion.div>
         </div>
+      </div>
     </section>
   );
 }
