@@ -6,12 +6,12 @@ import { CALENDLY_URL, WHATSAPP_URL } from "@/lib/utils";
 import Image from "next/image";
 
 const portfolioItems = [
-  { img: "/images/portfolio/fitness-1.png", cat: "Fitness", title: "Personal Training" },
-  { img: "/images/portfolio/lifestyle-1.png", cat: "Lifestyle", title: "Mindset Coaching" },
-  { img: "/images/portfolio/business-1.png", cat: "Business", title: "Strategie-Beratung" },
-  { img: "/images/portfolio/nutrition-1.png", cat: "Ernährung", title: "Nutrition Pro" },
-  { img: "/images/portfolio/yoga-1.png", cat: "Yoga", title: "Elite Studios" },
-  { img: "/images/portfolio/personal-training-1.png", cat: "Training", title: "Transformation" }
+  { img: "/images/portfolio/fitness-1.png", cat: "Personal Training", title: "Bestform Coaching" },
+  { img: "/images/portfolio/strength-1.png", cat: "Kraftsport", title: "Iron Performance" },
+  { img: "/images/portfolio/yoga-1.png", cat: "Yoga & Mindset", title: "Innere Ruhe" },
+  { img: "/images/portfolio/transformation-1.png", cat: "Online Coaching", title: "Transformation Pro" },
+  { img: "/images/portfolio/yoga-2.png", cat: "Vinyasa Flow", title: "Yoga & Energie" },
+  { img: "/images/portfolio/premium-fitness-1.png", cat: "High-End Coaching", title: "Elite Vitality" }
 ];
 
 export default function LinkedInFunnelPage() {
@@ -85,13 +85,13 @@ export default function LinkedInFunnelPage() {
               <div className="relative bg-white border border-slate-200 rounded-[2.5rem] p-8 md:p-10 shadow-2xl hover:shadow-accent/10 transition-shadow duration-500 group">
                 <div className="absolute top-6 right-8">
                   <div className="bg-accent text-white text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full animate-bounce">
-                    Limited
+                    Limitiert
                   </div>
                 </div>
 
                 <div className="mb-8">
                   <h3 className="text-2xl font-bold text-slate-900 mb-2">LinkedIn Special</h3>
-                  <p className="text-slate-500 text-sm">Valid today for your outreach</p>
+                  <p className="text-slate-500 text-sm">Gültig für deine heutige Akquise</p>
                 </div>
 
                 <div className="space-y-4 mb-10">
@@ -107,10 +107,10 @@ export default function LinkedInFunnelPage() {
 
                 <div className="space-y-4 mb-10">
                   {[
-                    "Custom Design & Copy",
+                    "Individuelles Design & Copy",
                     "Optimiert für LinkedIn Conversions",
                     "Inkl. Domain & Hosting Setup",
-                    "Ready in max. 7 Tagen"
+                    "Live in max. 7 Tagen"
                   ].map((item, i) => (
                     <div key={i} className="flex items-center gap-3 text-sm text-slate-700 font-medium">
                       <div className="w-5 h-5 rounded-full bg-accent/10 flex items-center justify-center shrink-0">
@@ -252,7 +252,7 @@ export default function LinkedInFunnelPage() {
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20">
                   <div className="text-center p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                     <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
-                    <p className="text-white/80 text-sm">Case Study ansehen</p>
+                    <p className="text-white/80 text-sm">Projekt ansehen</p>
                   </div>
                 </div>
               </motion.div>
