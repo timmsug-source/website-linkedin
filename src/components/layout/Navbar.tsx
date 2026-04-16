@@ -31,6 +31,10 @@ export function Navbar() {
     setIsOpen(false);
   }, [pathname]);
 
+  if (pathname?.startsWith("/lp/")) {
+    return null;
+  }
+
   return (
     <nav
       className={cn(

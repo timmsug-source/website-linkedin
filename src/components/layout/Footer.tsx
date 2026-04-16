@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { MessageCircle, Linkedin, Mail, MapPin } from "lucide-react";
 import { WHATSAPP_URL, EMAIL, LINKEDIN_URL } from "@/lib/utils";
 
@@ -21,6 +24,11 @@ const targetLinks = [
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
+  const pathname = usePathname();
+
+  if (pathname?.startsWith("/lp/")) {
+    return null;
+  }
 
   return (
     <footer
