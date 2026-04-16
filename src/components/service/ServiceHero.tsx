@@ -29,13 +29,6 @@ export function ServiceHero({ service }: { service: Service }) {
         >
           {/* Left: Text */}
           <div>
-            <Link
-              href="/leistungen"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-slate-500 hover:text-accent transition-colors mb-8"
-            >
-              <ArrowLeft size={16} />
-              Alle Leistungen
-            </Link>
 
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 text-accent text-sm font-bold mb-6">
               <Star size={14} fill="currentColor" />
