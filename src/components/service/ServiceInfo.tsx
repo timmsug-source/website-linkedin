@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ShieldCheck, ChevronDown, ArrowRight } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import type { serviceData } from "@/lib/serviceData";
 
 type Service = (typeof serviceData)[keyof typeof serviceData];
@@ -97,9 +98,8 @@ export function ServiceInfo({ service }: { service: Service }) {
                   <span className="font-bold text-slate-900 pr-4">{item.q}</span>
                   <ChevronDown
                     size={20}
-                    className={`shrink-0 text-accent transition-transform duration-300 ${
-                      openFaq === i ? "rotate-180" : ""
-                    }`}
+                    className={`shrink-0 text-accent transition-transform duration-300 ${openFaq === i ? "rotate-180" : ""
+                      }`}
                     aria-hidden="true"
                   />
                 </button>
@@ -128,28 +128,39 @@ export function ServiceInfo({ service }: { service: Service }) {
       {/* Related Services */}
       {service.relatedServices && service.relatedServices.length > 0 && (
         <section
-          className="py-20 px-6 bg-slate-50 border-t border-slate-100"
+          className="py-20 px-6 bg-white border-t border-slate-100"
           aria-label="Weitere Leistungen"
         >
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-2xl font-display font-bold text-slate-900 mb-8 text-center">
+            <h2 className="text-2xl font-display font-bold text-slate-900 mb-12 text-center">
               Ergänzende Leistungen
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {service.relatedServices.map((rel, i) => (
                 <Link
                   key={i}
                   href={`/leistungen/${rel.id}`}
-                  className="group bg-white p-6 rounded-2xl border border-slate-100 hover:shadow-lg hover:border-accent/20 transition-all"
+                  className="group bg-white rounded-[2rem] border border-slate-100 hover:shadow-xl hover:border-accent/20 transition-all overflow-hidden flex flex-col"
                 >
-                  <h3 className="font-bold text-slate-900 mb-2 group-hover:text-accent transition-colors">
-                    {rel.title}
-                  </h3>
-                  <p className="text-slate-500 text-sm mb-4 leading-relaxed">
-                    {rel.teaser}
-                  </p>
-                  <div className="flex items-center text-accent text-sm font-bold gap-1 group-hover:gap-2 transition-all">
-                    Mehr erfahren <ArrowRight size={14} />
+                  <div className="aspect-[16/10] overflow-hidden relative">
+                    <Image
+                      src={`/images/services/${rel.id}.png`}
+                      alt={rel.title}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent" />
+                  </div>
+                  <div className="p-6 flex flex-col flex-1">
+                    <h3 className="font-bold text-slate-900 mb-2 group-hover:text-accent transition-colors">
+                      {rel.title}
+                    </h3>
+                    <p className="text-slate-500 text-sm mb-6 leading-relaxed flex-1">
+                      {rel.teaser}
+                    </p>
+                    <div className="flex items-center text-accent text-sm font-bold gap-1 group-hover:gap-2 transition-all">
+                      Mehr erfahren <ArrowRight size={14} />
+                    </div>
                   </div>
                 </Link>
               ))}
