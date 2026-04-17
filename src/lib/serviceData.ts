@@ -14,6 +14,12 @@ export interface RelatedService {
   teaser: string;
 }
 
+export interface ServiceFeature {
+  number: string;
+  title: string;
+  body: string;
+}
+
 export interface ServiceEntry {
   id: string;
   title: string;
@@ -27,6 +33,7 @@ export interface ServiceEntry {
   heroHeadline: string;
   heroSubline: string;
   heroChecklist: string[];
+  heroFeatures?: ServiceFeature[];
   heroStat: ServiceStat[];
   // Problem
   problemHeadline: string;
@@ -70,6 +77,38 @@ export const serviceData: Record<string, ServiceEntry> = {
       "SEO-Grundoptimierung inklusive",
       "Conversion-optimiertes Copywriting",
       "CRM- & Calendly-Integration",
+    ],
+    heroFeatures: [
+      {
+        number: "01",
+        title: "High-End Performance",
+        body: "Du erhältst eine Website, die in Millisekunden lädt. Durch sauberen Code und modernste Optimierung erreichen wir Bestwerte bei den Google Core Web Vitals. Das sorgt für eine erstklassige User Experience und ist dein Ticket für Top-Rankings.",
+      },
+      {
+        number: "02",
+        title: "KI-Ready Architektur",
+        body: "Deine Website wird so strukturiert, dass sie nicht nur von Menschen, sondern auch von KI-Systemen (wie ChatGPT oder Google Gemini) perfekt ausgelesen werden kann. Damit bist du technologisch ganz vorne mit dabei und wirst als Experten-Quelle zitiert.",
+      },
+      {
+        number: "03",
+        title: "Conversion-Optimiertes Design",
+        body: "Keine digitale Visitenkarte, sondern ein echtes Verkaufstool. Ich gestalte ein Interface, das Besucher gezielt führt und psychologisch so aufgebaut ist, dass aus Interessenten zahlende Kunden werden – optimiert auf jedem Endgerät.",
+      },
+      {
+        number: "04",
+        title: "Konsequentes Mobile-First",
+        body: "Über 70 % der Nutzer sind mobil unterwegs. Ich entwickle deine Website konsequent nach dem Mobile-First-Prinzip. Das bedeutet: Perfekte Darstellung, intuitive Bedienung und blitzschnelle Ladezeiten auf dem Smartphone – ohne Kompromisse bei der Desktop-Version.",
+      },
+      {
+        number: "05",
+        title: "Strategisches SEO & Sichtbarkeit",
+        body: "Deine Website wird von Grund auf für Suchmaschinen optimiert. Wir setzen nicht nur auf Keywords, sondern auf eine saubere technische Struktur und semantische Inhalte. Das Ziel: Top-Platzierungen bei Google, damit deine Zielgruppe dich genau dann findet, wenn sie nach deiner Lösung sucht.",
+      },
+      {
+        number: "06",
+        title: "Lebenslange technische Partnerschaft",
+        body: "Mit dem Livegang beginnt unser Service erst richtig. Du bekommst ein \"Rundum-Sorglos-Paket\": Ich übernehme die komplette Wartung, die Sicherheits-Updates und die laufende technische Anpassung. Du hast den Kopf frei für dein Business.",
+      },
     ],
     heroStat: [
       { value: "1–2 Wo.", label: "bis sie live ist" },

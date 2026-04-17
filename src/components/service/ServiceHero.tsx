@@ -64,39 +64,47 @@ export function ServiceHero({ service }: { service: Service }) {
 
           {/* Right: Stats / Visual card */}
           <div className="relative">
-            <div className="bg-slate-50 rounded-[3rem] p-10 border border-slate-100 shadow-xl">
-              <p className="text-sm font-bold uppercase tracking-widest text-accent mb-8">
+            <div className="bg-slate-50 rounded-[3rem] p-8 border border-slate-100 shadow-xl">
+              <p className="text-sm font-bold uppercase tracking-widest text-accent mb-6">
                 Was du bekommst
               </p>
-              <ul className="space-y-5">
-                {service.heroChecklist.map((item, i) => (
-                  <li key={i} className="flex items-start gap-4">
-                    <div
-                      className="w-6 h-6 rounded-full bg-accent/10 text-accent flex items-center justify-center shrink-0 mt-0.5"
-                      aria-hidden="true"
-                    >
-                      <svg
-                        viewBox="0 0 12 12"
-                        fill="none"
-                        className="w-3 h-3"
+
+              {service.heroFeatures ? (
+                /* Rich feature list (e.g. Webdesign) */
+                <ul className="space-y-4 max-h-[420px] overflow-y-auto pr-1">
+                  {service.heroFeatures.map((f) => (
+                    <li key={f.number} className="flex gap-4 bg-white rounded-2xl p-4 border border-slate-100">
+                      <span className="text-accent font-bold text-xs uppercase tracking-widest shrink-0 pt-0.5 w-6">
+                        {f.number}
+                      </span>
+                      <div>
+                        <p className="font-bold text-slate-900 text-sm leading-snug mb-1">{f.title}</p>
+                        <p className="text-slate-500 text-xs leading-relaxed">{f.body}</p>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                /* Simple checklist (other services) */
+                <ul className="space-y-5">
+                  {service.heroChecklist.map((item, i) => (
+                    <li key={i} className="flex items-start gap-4">
+                      <div
+                        className="w-6 h-6 rounded-full bg-accent/10 text-accent flex items-center justify-center shrink-0 mt-0.5"
                         aria-hidden="true"
                       >
-                        <path
-                          d="M2 6l3 3 5-5"
-                          stroke="currentColor"
-                          strokeWidth="1.5"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                    </div>
-                    <span className="text-slate-700 font-medium">{item}</span>
-                  </li>
-                ))}
-              </ul>
+                        <svg viewBox="0 0 12 12" fill="none" className="w-3 h-3" aria-hidden="true">
+                          <path d="M2 6l3 3 5-5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                      </div>
+                      <span className="text-slate-700 font-medium">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              )}
 
               {service.heroStat && (
-                <div className="mt-10 pt-8 border-t border-slate-200 grid grid-cols-2 gap-6">
+                <div className="mt-6 pt-6 border-t border-slate-200 grid grid-cols-2 gap-6">
                   {service.heroStat.map((stat, i) => (
                     <div key={i}>
                       <p className="text-3xl font-display font-extrabold text-accent">

@@ -101,6 +101,26 @@ export function ServiceSolution({ service }: { service: Service }) {
             </a>
           </div>
         </div>
+
+        {/* Feature grid – only when heroFeatures present (e.g. Webdesign) */}
+        {service.heroFeatures && (
+          <div className="mt-20">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {service.heroFeatures.map((f) => (
+                <div
+                  key={f.number}
+                  className="bg-white rounded-2xl border border-slate-100 p-6 shadow-sm hover:shadow-md transition-[box-shadow]"
+                >
+                  <span className="text-accent font-bold text-xs uppercase tracking-widest block mb-3">
+                    {f.number}
+                  </span>
+                  <h3 className="font-bold text-slate-900 mb-2">{f.title}</h3>
+                  <p className="text-slate-500 text-sm leading-relaxed">{f.body}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );
