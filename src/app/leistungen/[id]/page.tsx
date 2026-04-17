@@ -21,6 +21,7 @@ import { ServiceCTA } from "@/components/service/ServiceCTA";
 import { ServiceInfo } from "@/components/service/ServiceInfo";
 import { ServiceFlow } from "@/components/leistungen/ServiceFlow";
 import { WebdesignReasons } from "@/components/service/WebdesignReasons";
+import { WebdesignAbout } from "@/components/service/WebdesignAbout";
 
 type Props = { params: Promise<{ id: string }> };
 
@@ -144,7 +145,7 @@ export default async function ServiceDetailPage({ params }: Props) {
       {/* 5. RISIKEN (nur Webdesign) */}
       {id === "webdesign" && <WebdesignReasons />}
 
-      {/* 6. CTA */}
+      {/* 6. CTA + ÜBER MICH (nur Webdesign) */}
       {id === "webdesign" ? (
         <section className="py-12 px-6 bg-white">
           <div className="max-w-5xl mx-auto">
@@ -169,7 +170,10 @@ export default async function ServiceDetailPage({ params }: Props) {
         <ServiceCTA service={service} />
       )}
 
-      {/* 7. ALLGEMEINE INFOS */}
+      {/* 7. ÜBER MICH (nur Webdesign) */}
+      {id === "webdesign" && <WebdesignAbout />}
+
+      {/* 8. ALLGEMEINE INFOS */}
       <ServiceInfo service={service} hideFeatures={id === "webdesign"} />
     </>
   );
