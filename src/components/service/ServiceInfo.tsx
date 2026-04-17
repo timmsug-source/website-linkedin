@@ -9,60 +9,62 @@ import type { serviceData } from "@/lib/serviceData";
 
 type Service = (typeof serviceData)[keyof typeof serviceData];
 
-export function ServiceInfo({ service }: { service: Service }) {
+export function ServiceInfo({ service, hideFeatures }: { service: Service; hideFeatures?: boolean }) {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   return (
     <>
       {/* Features Grid */}
-      <section
-        className="py-24 px-6 bg-slate-50"
-        aria-label={`${service.title} – Was du bekommst`}
-      >
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0, margin: "-50px" }}
-            className="text-center mb-16"
-          >
-            <p className="text-accent font-bold text-sm uppercase tracking-[0.2em] mb-4">
-              Leistungsumfang
-            </p>
-            <h2 className="text-4xl font-display font-extrabold text-slate-900">
-              Was du bekommst
-            </h2>
-            <p className="mt-4 text-slate-600 max-w-xl mx-auto">
-              Kein Standard-Paket – alles wird individuell auf dein
-              Coaching-Business zugeschnitten.
-            </p>
-          </motion.div>
+      {!hideFeatures && (
+        <section
+          className="py-24 px-6 bg-slate-50"
+          aria-label={`${service.title} – Was du bekommst`}
+        >
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0, margin: "-50px" }}
+              className="text-center mb-16"
+            >
+              <p className="text-accent font-bold text-sm uppercase tracking-[0.2em] mb-4">
+                Leistungsumfang
+              </p>
+              <h2 className="text-4xl font-display font-extrabold text-slate-900">
+                Was du bekommst
+              </h2>
+              <p className="mt-4 text-slate-600 max-w-xl mx-auto">
+                Kein Standard-Paket – alles wird individuell auf dein
+                Coaching-Business zugeschnitten.
+              </p>
+            </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {service.features.map((feature, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0, margin: "-50px" }}
-                transition={{ delay: i * 0.07 }}
-                className="bg-white rounded-3xl p-8 border border-slate-100 hover:border-accent/30 hover:shadow-lg transition-all group"
-              >
-                <div
-                  className="w-10 h-10 rounded-xl bg-accent/10 text-accent flex items-center justify-center mb-5 group-hover:scale-110 transition-transform"
-                  aria-hidden="true"
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {service.features.map((feature, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0, margin: "-50px" }}
+                  transition={{ delay: i * 0.07 }}
+                  className="bg-white rounded-3xl p-8 border border-slate-100 hover:border-accent/30 hover:shadow-lg transition-all group"
                 >
-                  <ShieldCheck size={20} />
-                </div>
-                <h3 className="font-bold text-slate-900 mb-2">{feature.title}</h3>
-                <p className="text-slate-600 text-sm leading-relaxed">
-                  {feature.desc}
-                </p>
-              </motion.div>
-            ))}
+                  <div
+                    className="w-10 h-10 rounded-xl bg-accent/10 text-accent flex items-center justify-center mb-5 group-hover:scale-110 transition-transform"
+                    aria-hidden="true"
+                  >
+                    <ShieldCheck size={20} />
+                  </div>
+                  <h3 className="font-bold text-slate-900 mb-2">{feature.title}</h3>
+                  <p className="text-slate-600 text-sm leading-relaxed">
+                    {feature.desc}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* FAQ */}
       <section

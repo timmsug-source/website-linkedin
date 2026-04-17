@@ -170,7 +170,7 @@ export default async function ServiceDetailPage({ params }: Props) {
       )}
 
       {/* 7. ALLGEMEINE INFOS */}
-      <ServiceInfo service={service} />
+      <ServiceInfo service={service} hideFeatures={id === "webdesign"} />
     </>
   );
 }

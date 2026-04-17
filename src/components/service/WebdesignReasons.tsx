@@ -41,21 +41,21 @@ const reasons = [
 
 export function WebdesignReasons() {
   return (
-    <section className="py-24 px-6 bg-slate-900 overflow-hidden" aria-label="Warum du eine professionelle Website brauchst">
+    <section className="py-24 px-6 bg-slate-50 overflow-hidden" aria-label="Warum du eine professionelle Website brauchst">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16 max-w-3xl mx-auto">
           <div className="inline-flex items-center gap-3 bg-red-500/10 border border-red-500/20 rounded-2xl px-5 py-3 mb-8">
-            <AlertTriangle size={18} className="text-red-400" aria-hidden="true" />
-            <span className="text-red-400 font-bold text-sm uppercase tracking-widest">
+            <AlertTriangle size={18} className="text-red-500" aria-hidden="true" />
+            <span className="text-red-500 font-bold text-sm uppercase tracking-widest">
               Das Risiko
             </span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-display font-extrabold text-white leading-tight mb-6">
+          <h2 className="text-4xl md:text-5xl font-display font-extrabold text-slate-900 leading-tight mb-6">
             Warum du dir eine mittelmäßige Website{" "}
-            <span className="text-red-400">nicht leisten kannst.</span>
+            <span className="text-red-500">nicht leisten kannst.</span>
           </h2>
-          <p className="text-lg text-slate-400 leading-relaxed">
+          <p className="text-lg text-slate-600 leading-relaxed">
             Dein digitaler Auftritt ist entweder dein härtester Mitarbeiter oder dein größtes Hindernis.
           </p>
         </div>
@@ -67,20 +67,20 @@ export function WebdesignReasons() {
             return (
               <div
                 key={item.number}
-                className="bg-white/5 border border-white/10 rounded-2xl p-7 hover:border-red-500/30 hover:bg-white/8 transition-[border-color,background-color] group"
+                className="bg-white border border-slate-100 rounded-2xl p-7 hover:border-red-500/20 hover:shadow-md transition-[border-color,box-shadow] group"
               >
                 <div className="flex items-start gap-4 mb-4">
                   <div className="w-11 h-11 rounded-xl bg-red-500/10 flex items-center justify-center shrink-0">
-                    <Icon size={22} className="text-red-400" aria-hidden="true" />
+                    <Icon size={22} className="text-red-500" aria-hidden="true" />
                   </div>
-                  <span className="text-red-400/60 font-bold text-sm uppercase tracking-widest pt-2">
+                  <span className="text-red-400 font-bold text-sm uppercase tracking-widest pt-2">
                     {item.number}
                   </span>
                 </div>
-                <h3 className="font-bold text-white text-base mb-3 leading-snug">
+                <h3 className="font-bold text-slate-900 text-base mb-3 leading-snug">
                   {item.title}
                 </h3>
-                <p className="text-slate-400 text-sm leading-relaxed">{item.body}</p>
+                <p className="text-slate-500 text-sm leading-relaxed">{item.body}</p>
               </div>
             );
           })}
