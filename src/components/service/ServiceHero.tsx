@@ -1,8 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowRight, ArrowLeft, MessageCircle, Star } from "lucide-react";
+import { ArrowRight, MessageCircle, Star } from "lucide-react";
 import { CALENDLY_URL, WHATSAPP_URL } from "@/lib/utils";
 import type { serviceData } from "@/lib/serviceData";
 
@@ -11,7 +10,7 @@ type Service = (typeof serviceData)[keyof typeof serviceData];
 export function ServiceHero({ service }: { service: Service }) {
   return (
     <section
-      className="relative pt-12 pb-24 px-6 overflow-hidden bg-white transition-colors duration-700"
+      className="relative pt-12 pb-24 px-6 overflow-hidden bg-white"
       aria-label={`${service.title} – Hero`}
     >
       {/* Decorative blobs */}
@@ -21,15 +20,9 @@ export function ServiceHero({ service }: { service: Service }) {
       </div>
 
       <div className="max-w-7xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, x: -30 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
-        >
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left: Text */}
           <div>
-
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 text-accent text-sm font-bold mb-6">
               <Star size={14} fill="currentColor" />
               {service.badge ?? "Speziell für Fitness- & Ernährungscoaches"}
@@ -48,7 +41,7 @@ export function ServiceHero({ service }: { service: Service }) {
                 href={CALENDLY_URL}
                 target="_blank"
                 rel="noreferrer noopener"
-                className="inline-flex items-center justify-center bg-accent hover:bg-accent/90 text-white rounded-full px-8 h-14 text-lg font-bold shadow-lg shadow-accent/20 transition-all"
+                className="inline-flex items-center justify-center bg-accent hover:bg-accent/90 text-white rounded-full px-8 h-14 text-lg font-bold shadow-lg shadow-accent/20 transition-[box-shadow,background-color]"
               >
                 Kostenloses Erstgespräch
                 <ArrowRight className="ml-2" size={20} />
@@ -57,7 +50,7 @@ export function ServiceHero({ service }: { service: Service }) {
                 href={WHATSAPP_URL}
                 target="_blank"
                 rel="noreferrer noopener"
-                className="inline-flex items-center justify-center gap-2 rounded-full px-8 h-14 text-lg font-semibold border border-slate-200 bg-white text-slate-700 hover:border-accent hover:text-accent transition-all"
+                className="inline-flex items-center justify-center gap-2 rounded-full px-8 h-14 text-lg font-semibold border border-slate-200 bg-white text-slate-700 hover:border-accent hover:text-accent transition-[border-color,color]"
               >
                 <MessageCircle size={20} />
                 WhatsApp
@@ -70,13 +63,8 @@ export function ServiceHero({ service }: { service: Service }) {
           </div>
 
           {/* Right: Stats / Visual card */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.2 }}
-            className="relative"
-          >
-            <div className="bg-slate-50 rounded-[3rem] p-10 border border-slate-100 shadow-xl transition-all duration-500">
+          <div className="relative">
+            <div className="bg-slate-50 rounded-[3rem] p-10 border border-slate-100 shadow-xl">
               <p className="text-sm font-bold uppercase tracking-widest text-accent mb-8">
                 Was du bekommst
               </p>
@@ -122,9 +110,7 @@ export function ServiceHero({ service }: { service: Service }) {
             </div>
 
             {/* Floating badge */}
-            <motion.div
-              animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 4, repeat: Infinity }}
+            <div
               className="absolute -top-5 -right-5 z-10 bg-white px-5 py-3 rounded-2xl shadow-xl border border-slate-100 flex items-center gap-3"
               aria-hidden="true"
             >
@@ -132,9 +118,9 @@ export function ServiceHero({ service }: { service: Service }) {
               <span className="text-sm font-bold text-slate-900">
                 {service.floatingBadge ?? "Fertig in 1–2 Wochen"}
               </span>
-            </motion.div>
-          </motion.div>
-        </motion.div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
