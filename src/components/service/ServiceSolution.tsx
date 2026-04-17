@@ -19,10 +19,10 @@ export function ServiceSolution({ service }: { service: Service }) {
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Left side */}
+          {/* Left side – second on mobile, first on desktop */}
           {service.solutionIntro ? (
             /* Rich intro text (e.g. Webdesign) */
-            <div className="space-y-6">
+            <div className="space-y-6 order-2 lg:order-1">
               {service.solutionIntro.map((para, i) => (
                 <p
                   key={i}
@@ -52,7 +52,7 @@ export function ServiceSolution({ service }: { service: Service }) {
             </div>
           ) : (
             /* Process steps card (other services) */
-            <div className="relative">
+            <div className="relative order-2 lg:order-1">
               <div className="bg-white rounded-[2.5rem] p-10 border border-slate-100 shadow-xl">
                 <p className="text-sm font-bold uppercase tracking-widest text-accent mb-8">
                   Schritt für Schritt zum Erfolg
@@ -79,8 +79,8 @@ export function ServiceSolution({ service }: { service: Service }) {
             </div>
           )}
 
-          {/* Right: Text Side */}
-          <div>
+          {/* Right: Text Side – first on mobile, second on desktop */}
+          <div className="order-1 lg:order-2">
             <div className="inline-flex items-center gap-3 bg-accent/10 border border-accent/20 rounded-2xl px-5 py-3 mb-8">
               <CheckCircle2 size={20} className="text-accent" aria-hidden="true" />
               <span className="text-accent font-bold text-sm uppercase tracking-widest">
