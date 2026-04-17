@@ -71,10 +71,11 @@ export function TechFoundation() {
                             {features.map((feature, index) => (
                                 <motion.div
                                     key={index}
-                                    initial={{ opacity: 0, x: -20 }}
-                                    whileInView={{ opacity: 1, x: 0 }}
+                                    initial={{ opacity: 0 }}
+                                    whileInView={{ opacity: 1 }}
                                     viewport={{ once: true, amount: 0, margin: "-50px" }}
-                                    transition={{ delay: index * 0.1 + 0.2 }}
+                                    transition={{ duration: 0.4, delay: index * 0.05 }}
+                                    style={{ willChange: "opacity" }}
                                     className="flex items-start gap-4 group"
                                 >
                                     <div className={cn(

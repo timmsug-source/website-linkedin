@@ -84,10 +84,11 @@ export function AboutPreview() {
               return (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, y: 15 }}
-                  whileInView={{ opacity: 1, y: 0 }}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
                   viewport={{ once: true, amount: 0, margin: "-50px" }}
-                  transition={{ delay: index * 0.1 }}
+                  transition={{ duration: 0.4, delay: index * 0.05 }}
+                  style={{ willChange: "opacity" }}
                   className="flex gap-5 p-6 rounded-2xl border border-slate-100 hover:border-accent/30 hover:shadow-md transition-all bg-slate-50/50"
                 >
                   <div className="w-12 h-12 rounded-xl bg-accent/10 text-accent flex items-center justify-center shrink-0">

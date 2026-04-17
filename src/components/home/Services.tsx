@@ -43,10 +43,11 @@ function ServiceCard({ service, index }: ServiceCardProps) {
   const Icon = service.icon;
   return (
     <motion.article
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
       viewport={{ once: true, amount: 0, margin: "-50px" }}
-      transition={{ delay: index * 0.1 }}
+      transition={{ duration: 0.4, delay: index * 0.05 }}
+      style={{ willChange: "opacity" }}
     >
       <Link
         href={`/leistungen/${service.id}`}

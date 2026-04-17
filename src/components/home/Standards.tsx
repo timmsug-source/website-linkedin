@@ -75,10 +75,11 @@ export function Standards() {
             return (
               <motion.article
                 key={item.number}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
                 viewport={{ once: true, amount: 0, margin: "-50px" }}
-                transition={{ delay: index * 0.1 }}
+                transition={{ duration: 0.4, delay: index * 0.05 }}
+                style={{ willChange: "opacity" }}
                 className="bg-white rounded-[1.5rem] border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 p-8 flex flex-col gap-5"
               >
                 <div className="flex items-start gap-5">
