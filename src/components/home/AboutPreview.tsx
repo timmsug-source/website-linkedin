@@ -82,14 +82,9 @@ export function AboutPreview() {
             {differentiators.map((item, index) => {
               const Icon = item.icon;
               return (
-                <motion.div
+                <div
                   key={index}
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true, amount: 0, margin: "-50px" }}
-                  transition={{ duration: 0.4, delay: index * 0.05 }}
-                  style={{ willChange: "opacity" }}
-                  className="flex gap-5 p-6 rounded-2xl border border-slate-100 hover:border-accent/30 hover:shadow-md transition-all bg-slate-50/50"
+                  className="flex gap-5 p-6 rounded-2xl border border-slate-100 hover:border-accent/30 hover:shadow-md transition-[box-shadow,border-color] bg-slate-50/50"
                 >
                   <div className="w-12 h-12 rounded-xl bg-accent/10 text-accent flex items-center justify-center shrink-0">
                     <Icon size={22} />
@@ -102,7 +97,7 @@ export function AboutPreview() {
                       {item.description}
                     </p>
                   </div>
-                </motion.div>
+                </div>
               );
             })}
           </motion.div>

@@ -73,14 +73,9 @@ export function Standards() {
           {standards.map((item, index) => {
             const Icon = item.icon;
             return (
-              <motion.article
+              <article
                 key={item.number}
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true, amount: 0, margin: "-50px" }}
-                transition={{ duration: 0.4, delay: index * 0.05 }}
-                style={{ willChange: "opacity" }}
-                className="bg-white rounded-[1.5rem] border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 p-8 flex flex-col gap-5"
+                className="bg-white rounded-[1.5rem] border border-slate-100 shadow-sm hover:shadow-xl transition-[box-shadow] duration-300 p-8 flex flex-col gap-5"
               >
                 <div className="flex items-start gap-5">
                   <div
@@ -107,7 +102,7 @@ export function Standards() {
                     {item.advantage}
                   </p>
                 </div>
-              </motion.article>
+              </article>
             );
           })}
         </div>

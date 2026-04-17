@@ -42,16 +42,10 @@ interface ServiceCardProps {
 function ServiceCard({ service, index }: ServiceCardProps) {
   const Icon = service.icon;
   return (
-    <motion.article
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      viewport={{ once: true, amount: 0, margin: "-50px" }}
-      transition={{ duration: 0.4, delay: index * 0.05 }}
-      style={{ willChange: "opacity" }}
-    >
+    <article>
       <Link
         href={`/leistungen/${service.id}`}
-        className="group block h-full border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden bg-white rounded-[1.5rem] p-8"
+        className="group block h-full border border-slate-100 shadow-sm hover:shadow-xl transition-[box-shadow,transform] duration-300 overflow-hidden bg-white rounded-[1.5rem] p-8"
         aria-label={`Mehr über ${service.title} erfahren`}
       >
         <div
@@ -70,7 +64,7 @@ function ServiceCard({ service, index }: ServiceCardProps) {
           Mehr erfahren <ArrowRight size={16} />
         </div>
       </Link>
-    </motion.article>
+    </article>
   );
 }
 
