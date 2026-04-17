@@ -6,24 +6,23 @@ import { Process } from "@/components/home/Process";
 import { TechFoundation } from "@/components/home/TechFoundation";
 import { AboutPreview } from "@/components/home/AboutPreview";
 import { FAQ } from "@/components/home/FAQ";
+import { Standards } from "@/components/home/Standards";
 import { CTA } from "@/components/home/CTA";
 import { buildMetadata } from "@/lib/seo";
 import { SITE_URL } from "@/lib/utils";
 
 export const metadata: Metadata = buildMetadata({
-  title:
-    "Timm Schurig – Webdesign, Automatisierung & SEO | Digital-Agentur",
+  title: "Webdesign Agentur | Neue Standards durch KI-Optimierung",
   description:
-    "Professionelles Webdesign, intelligente Automatisierungen und nachhaltige SEO-Strategien für Unternehmen. Websites, die wirklich Kunden bringen. Kostenloses Erstgespräch buchen.",
+    "Deine Webdesign Agentur für die Ära der KI. Wir definieren Standards neu: Blitzschnelle Ladezeiten, modernes Design & maximale Sichtbarkeit.",
   alternates: {
     canonical: SITE_URL,
   },
   openGraph: {
     url: SITE_URL,
-    title:
-      "Timm Schurig – Webdesign, Automatisierung & SEO",
+    title: "Webdesign Agentur | Neue Standards durch KI-Optimierung",
     description:
-      "Professionelles Webdesign, Automatisierungen und SEO & GEO – alles aus einer Hand für nachhaltiges Wachstum.",
+      "Deine Webdesign Agentur für die Ära der KI. Wir definieren Standards neu: Blitzschnelle Ladezeiten, modernes Design & maximale Sichtbarkeit.",
   },
 });
 
@@ -133,6 +132,7 @@ export default function HomePage() {
       <Hero />
       <Problems />
       <Services />
+      <Standards />
       <Process />
       <TechFoundation />
       <AboutPreview />
