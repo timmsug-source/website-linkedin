@@ -32,7 +32,7 @@ export function ServiceFAQ() {
     const [openIndex, setOpenIndex] = useState<number | null>(0);
 
     return (
-        <section className="py-24 px-6 bg-slate-900 border-t border-slate-800" aria-label="Welche Leistung passt zu mir?">
+        <section className="py-24 px-6 bg-slate-50" aria-label="Welche Leistung passt zu mir?">
             <div className="max-w-4xl mx-auto">
                 <div className="text-center mb-16">
                     <motion.p
@@ -48,7 +48,7 @@ export function ServiceFAQ() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0, margin: "-50px" }}
                         transition={{ delay: 0.1 }}
-                        className="text-3xl md:text-5xl font-display font-extrabold text-white mb-6"
+                        className="text-3xl md:text-5xl font-display font-extrabold text-slate-900 mb-6"
                     >
                         Welche Leistungen passen zu mir?
                     </motion.h2>
@@ -57,7 +57,7 @@ export function ServiceFAQ() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0, margin: "-50px" }}
                         transition={{ delay: 0.2 }}
-                        className="text-lg text-slate-400 max-w-2xl mx-auto"
+                        className="text-lg text-slate-600 max-w-2xl mx-auto"
                     >
                         Jedes Coaching-Business steht an einem anderen Punkt. Finde heraus, welche
                         Systeme deinen aktuellen Engpass am besten lösen.
@@ -77,8 +77,8 @@ export function ServiceFAQ() {
                                 className={cn(
                                     "border rounded-3xl overflow-hidden transition-all duration-300",
                                     isOpen
-                                        ? "bg-slate-800/80 border-accent/30 shadow-[0_0_30px_rgba(34,197,94,0.05)]"
-                                        : "bg-slate-800/20 border-slate-700/50 hover:border-slate-600 hover:bg-slate-800/40"
+                                        ? "bg-white border-accent/30 shadow-md"
+                                        : "bg-white border-slate-200 hover:border-slate-300 hover:shadow-sm"
                                 )}
                             >
                                 <button
@@ -88,7 +88,7 @@ export function ServiceFAQ() {
                                 >
                                     <span className={cn(
                                         "font-bold text-lg leading-tight transition-colors",
-                                        isOpen ? "text-white" : "text-slate-200"
+                                        isOpen ? "text-slate-900" : "text-slate-700"
                                     )}>
                                         {faq.question}
                                     </span>
@@ -96,7 +96,7 @@ export function ServiceFAQ() {
                                         "w-10 h-10 rounded-full flex items-center justify-center shrink-0 transition-transform duration-300 border",
                                         isOpen
                                             ? "bg-accent/10 border-accent/20 text-accent rotate-180"
-                                            : "bg-slate-800 border-slate-700 text-slate-400"
+                                            : "bg-slate-100 border-slate-200 text-slate-400"
                                     )}>
                                         <ChevronDown size={20} />
                                     </div>
@@ -109,11 +109,11 @@ export function ServiceFAQ() {
                                             exit={{ height: 0, opacity: 0 }}
                                             transition={{ duration: 0.3 }}
                                         >
-                                            <div className="px-8 pb-8 text-slate-300 leading-relaxed relative">
+                                            <div className="px-8 pb-8 text-slate-600 leading-relaxed relative">
                                                 {/* Render simple markdown bold */}
                                                 <div
                                                     dangerouslySetInnerHTML={{
-                                                        __html: faq.answer.replace(/\*\*(.*?)\*\*/g, '<strong class="text-white font-bold">$1</strong>')
+                                                        __html: faq.answer.replace(/\*\*(.*?)\*\*/g, '<strong class="text-slate-900 font-bold">$1</strong>')
                                                     }}
                                                 />
                                             </div>
