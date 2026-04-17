@@ -54,7 +54,7 @@ export function Process() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.1 }}
+          viewport={{ once: true, amount: 0, margin: "-50px" }}
           className="text-center mb-20"
         >
           <p className="text-accent font-bold text-sm uppercase tracking-[0.2em] mb-4">
@@ -107,7 +107,7 @@ export function Process() {
                     <motion.div
                       initial={{ opacity: 0, x: isEven ? -50 : 50 }}
                       whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true, margin: "-100px", amount: 0.1 }}
+                      viewport={{ once: true, amount: 0, margin: "-50px" }}
                       transition={{ duration: 0.6 }}
                       style={{ willChange: "transform, opacity" }}
                       className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow"

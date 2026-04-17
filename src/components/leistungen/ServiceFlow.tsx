@@ -54,7 +54,7 @@ export function ServiceFlow() {
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: true, amount: 0, margin: "-50px" }}
                         className="text-accent font-bold text-sm uppercase tracking-[0.2em] mb-4"
                     >
                         Das System
@@ -62,7 +62,7 @@ export function ServiceFlow() {
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: true, amount: 0, margin: "-50px" }}
                         transition={{ delay: 0.1 }}
                         className="text-3xl md:text-5xl font-display font-extrabold text-slate-900 mb-6"
                     >
@@ -71,7 +71,7 @@ export function ServiceFlow() {
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: true, amount: 0, margin: "-50px" }}
                         transition={{ delay: 0.2 }}
                         className="text-lg text-slate-600 max-w-2xl mx-auto"
                     >
@@ -87,7 +87,7 @@ export function ServiceFlow() {
                             className="h-full bg-accent"
                             initial={{ width: "0%" }}
                             whileInView={{ width: "100%" }}
-                            viewport={{ once: true }}
+                            viewport={{ once: true, amount: 0, margin: "-50px" }}
                             transition={{ duration: 1.5, ease: "easeInOut" }}
                         />
                     </div>
@@ -105,7 +105,7 @@ export function ServiceFlow() {
                                                 className="w-full bg-accent"
                                                 initial={{ height: "0%" }}
                                                 whileInView={{ height: "100%" }}
-                                                viewport={{ once: true }}
+                                                viewport={{ once: true, amount: 0, margin: "-50px" }}
                                                 transition={{ duration: 0.8, delay: 0.2 + index * 0.2 }}
                                             />
                                         </div>
@@ -114,7 +114,7 @@ export function ServiceFlow() {
                                     <motion.div
                                         initial={{ opacity: 0, y: 20, scale: 0.8 }}
                                         whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                                        viewport={{ once: true }}
+                                        viewport={{ once: true, amount: 0, margin: "-50px" }}
                                         transition={{ delay: index * 0.2 }}
                                         className="flex lg:flex-col gap-6 lg:gap-4 items-start lg:items-center"
                                     >

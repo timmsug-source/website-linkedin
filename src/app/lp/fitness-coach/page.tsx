@@ -172,7 +172,7 @@ export default function LinkedInFunnelPage() {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
+            viewport={{ once: true, amount: 0, margin: "-50px" }}
             className="bg-white border border-slate-100 rounded-[2.5rem] p-8 md:p-14 shadow-xl shadow-slate-200/50 relative overflow-hidden"
             style={{ willChange: "transform, opacity" }}
           >
@@ -218,7 +218,7 @@ export default function LinkedInFunnelPage() {
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.1 }}
+                viewport={{ once: true, amount: 0, margin: "-50px" }}
                 transition={{ delay: i * 0.05 }}
                 className="p-8 rounded-[2rem] bg-white border border-slate-100 shadow-lg shadow-slate-100 hover:border-accent/30 transition-all hover:shadow-xl group"
                 style={{ willChange: "transform, opacity" }}
@@ -246,7 +246,7 @@ export default function LinkedInFunnelPage() {
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.1 }}
+                viewport={{ once: true, amount: 0, margin: "-50px" }}
                 transition={{ delay: i * 0.05 }}
                 className="group relative bg-white rounded-[2rem] overflow-hidden shadow-lg shadow-slate-200/60 border border-slate-100"
                 style={{ willChange: "transform, opacity" }}
@@ -317,7 +317,7 @@ export default function LinkedInFunnelPage() {
         <motion.div
           initial={{ opacity: 0, scale: 0.98 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true, amount: 0.5 }}
+          viewport={{ once: true, amount: 0, margin: "-50px" }}
           className="max-w-3xl mx-auto"
           style={{ willChange: "transform, opacity" }}
         >

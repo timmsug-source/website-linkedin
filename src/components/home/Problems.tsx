@@ -48,7 +48,7 @@ export function Problems() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.1 }}
+          viewport={{ once: true, amount: 0, margin: "-50px" }}
           className="text-center mb-16"
         >
           <p className="text-accent font-bold text-sm uppercase tracking-[0.2em] mb-4">
@@ -71,7 +71,7 @@ export function Problems() {
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.1 }}
+                viewport={{ once: true, amount: 0, margin: "-50px" }}
                 transition={{ delay: index * 0.1 }}
                 className="bg-white border border-slate-100 rounded-3xl p-8 hover:shadow-lg hover:border-accent/30 transition-all group shadow-sm"
               >
@@ -92,7 +92,7 @@ export function Problems() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.1 }}
+          viewport={{ once: true, amount: 0, margin: "-50px" }}
           className="text-center mt-16"
         >
           <p className="text-2xl font-display font-bold text-slate-900">

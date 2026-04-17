@@ -24,7 +24,7 @@ export function ServiceSolution({ service }: { service: Service }) {
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0, margin: "-50px" }}
             className="relative"
           >
             <div className="bg-white rounded-[2.5rem] p-10 border border-slate-100 shadow-xl transition-all duration-500">
@@ -37,7 +37,7 @@ export function ServiceSolution({ service }: { service: Service }) {
                     key={i}
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: true, amount: 0, margin: "-50px" }}
                     transition={{ delay: i * 0.1 }}
                     className="flex items-start gap-4"
                   >
@@ -82,7 +82,7 @@ export function ServiceSolution({ service }: { service: Service }) {
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0, margin: "-50px" }}
           >
             <div className="inline-flex items-center gap-3 bg-accent/10 border border-accent/20 rounded-2xl px-5 py-3 mb-8">
               <CheckCircle2 size={20} className="text-accent" aria-hidden="true" />

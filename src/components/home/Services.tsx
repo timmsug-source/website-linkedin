@@ -45,7 +45,7 @@ function ServiceCard({ service, index }: ServiceCardProps) {
     <motion.article
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.1 }}
+      viewport={{ once: true, amount: 0, margin: "-50px" }}
       transition={{ delay: index * 0.1 }}
     >
       <Link
@@ -84,7 +84,7 @@ export function Services() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: true, amount: 0, margin: "-50px" }}
           className="text-center mb-20"
         >
           <p className="text-accent font-bold text-sm uppercase tracking-[0.2em] mb-4">

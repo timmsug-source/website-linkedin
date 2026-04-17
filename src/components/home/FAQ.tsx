@@ -54,7 +54,7 @@ export function FAQ() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.1 }}
+          viewport={{ once: true, amount: 0, margin: "-50px" }}
           className="text-center mb-16"
         >
           <h2 className="text-4xl font-display font-extrabold text-slate-900">
@@ -72,7 +72,7 @@ export function FAQ() {
               key={index}
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.1 }}
+              viewport={{ once: true, amount: 0, margin: "-50px" }}
               transition={{ delay: index * 0.05 }}
               className="bg-white border border-slate-200 rounded-2xl overflow-hidden"
               role="listitem"

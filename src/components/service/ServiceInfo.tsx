@@ -23,7 +23,7 @@ export function ServiceInfo({ service }: { service: Service }) {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0, margin: "-50px" }}
             className="text-center mb-16"
           >
             <p className="text-accent font-bold text-sm uppercase tracking-[0.2em] mb-4">
@@ -44,7 +44,7 @@ export function ServiceInfo({ service }: { service: Service }) {
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, amount: 0, margin: "-50px" }}
                 transition={{ delay: i * 0.07 }}
                 className="bg-white rounded-3xl p-8 border border-slate-100 hover:border-accent/30 hover:shadow-lg transition-all group"
               >
@@ -73,7 +73,7 @@ export function ServiceInfo({ service }: { service: Service }) {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0, margin: "-50px" }}
             className="text-center mb-14"
           >
             <h2 className="text-4xl font-display font-extrabold text-slate-900">

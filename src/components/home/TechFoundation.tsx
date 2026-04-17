@@ -50,7 +50,7 @@ export function TechFoundation() {
                         <motion.h2
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true, amount: 0.1 }}
+                            viewport={{ once: true, amount: 0, margin: "-50px" }}
                             className="text-4xl md:text-5xl lg:text-6xl font-display font-extrabold text-slate-900 leading-tight mb-6"
                         >
                             Warum ganzheitliches Digital-<br />
@@ -60,7 +60,7 @@ export function TechFoundation() {
                         <motion.p
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true, amount: 0.1 }}
+                            viewport={{ once: true, amount: 0, margin: "-50px" }}
                             transition={{ delay: 0.1 }}
                             className="text-lg text-slate-600 mb-12 max-w-2xl"
                         >
@@ -73,7 +73,7 @@ export function TechFoundation() {
                                     key={index}
                                     initial={{ opacity: 0, x: -20 }}
                                     whileInView={{ opacity: 1, x: 0 }}
-                                    viewport={{ once: true, amount: 0.1 }}
+                                    viewport={{ once: true, amount: 0, margin: "-50px" }}
                                     transition={{ delay: index * 0.1 + 0.2 }}
                                     className="flex items-start gap-4 group"
                                 >
@@ -100,7 +100,7 @@ export function TechFoundation() {
                         <motion.div
                             initial={{ opacity: 0, scale: 0.9, rotate: 2 }}
                             whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
-                            viewport={{ once: true, amount: 0.1 }}
+                            viewport={{ once: true, amount: 0, margin: "-50px" }}
                             className="bg-white rounded-[2.5rem] shadow-2xl border border-slate-100 p-8 md:p-12 relative z-10"
                         >
                             <div className="flex items-center gap-2 mb-8">
@@ -116,7 +116,7 @@ export function TechFoundation() {
                                         key={i}
                                         initial={{ height: 0 }}
                                         whileInView={{ height: `${height}%` }}
-                                        viewport={{ once: true }}
+                                        viewport={{ once: true, amount: 0, margin: "-50px" }}
                                         transition={{ delay: i * 0.1, duration: 1 }}
                                         className={cn(
                                             "flex-1 rounded-t-xl relative group",
@@ -136,7 +136,7 @@ export function TechFoundation() {
                                 <motion.div
                                     initial={{ opacity: 0, y: 10 }}
                                     whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true }}
+                                    viewport={{ once: true, amount: 0, margin: "-50px" }}
                                     transition={{ delay: 0.6 }}
                                     className="bg-slate-50 rounded-2xl p-6 border border-slate-100"
                                 >
@@ -146,7 +146,7 @@ export function TechFoundation() {
                                 <motion.div
                                     initial={{ opacity: 0, y: 10 }}
                                     whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true }}
+                                    viewport={{ once: true, amount: 0, margin: "-50px" }}
                                     transition={{ delay: 0.7 }}
                                     className="bg-emerald-50 rounded-2xl p-6 border border-emerald-100"
                                 >
@@ -169,7 +169,7 @@ export function TechFoundation() {
                                     <motion.div
                                         initial={{ width: 0 }}
                                         whileInView={{ width: "100%" }}
-                                        viewport={{ once: true }}
+                                        viewport={{ once: true, amount: 0, margin: "-50px" }}
                                         transition={{ duration: 2, delay: 0.8 }}
                                         className="h-full bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.5)]"
                                     />

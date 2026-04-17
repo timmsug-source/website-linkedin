@@ -38,7 +38,7 @@ export function ServiceFAQ() {
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: true, amount: 0, margin: "-50px" }}
                         className="text-accent font-bold text-sm uppercase tracking-[0.2em] mb-4"
                     >
                         Finde dein Setup
@@ -46,7 +46,7 @@ export function ServiceFAQ() {
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: true, amount: 0, margin: "-50px" }}
                         transition={{ delay: 0.1 }}
                         className="text-3xl md:text-5xl font-display font-extrabold text-white mb-6"
                     >
@@ -55,7 +55,7 @@ export function ServiceFAQ() {
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: true, amount: 0, margin: "-50px" }}
                         transition={{ delay: 0.2 }}
                         className="text-lg text-slate-400 max-w-2xl mx-auto"
                     >
@@ -72,7 +72,7 @@ export function ServiceFAQ() {
                                 key={index}
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
+                                viewport={{ once: true, amount: 0, margin: "-50px" }}
                                 transition={{ delay: index * 0.1 }}
                                 className={cn(
                                     "border rounded-3xl overflow-hidden transition-all duration-300",

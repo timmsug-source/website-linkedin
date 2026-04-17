@@ -11,7 +11,7 @@ export function CTA() {
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0, margin: "-50px" }}
           className="relative bg-slate-900 rounded-[3rem] p-12 md:p-20 overflow-hidden text-center"
         >
           {/* Background Accents */}

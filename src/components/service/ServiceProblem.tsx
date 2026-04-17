@@ -25,7 +25,7 @@ export function ServiceProblem({ service }: { service: Service }) {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0, margin: "-50px" }}
             transition={{ duration: 0.8 }}
             className="bg-slate-900 rounded-[3rem] p-8 md:p-16 lg:p-20 relative overflow-hidden z-10"
           >
@@ -40,7 +40,7 @@ export function ServiceProblem({ service }: { service: Service }) {
               <motion.div
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, amount: 0, margin: "-50px" }}
                 transition={{ duration: 0.7, delay: 0.2 }}
               >
                 <div className="inline-flex items-center gap-3 bg-red-500/10 border border-red-500/20 rounded-2xl px-5 py-3 mb-8">
@@ -66,7 +66,7 @@ export function ServiceProblem({ service }: { service: Service }) {
                     key={i}
                     initial={{ opacity: 0, y: 15 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: true, amount: 0, margin: "-50px" }}
                     transition={{ delay: 0.3 + i * 0.08 }}
                     className="flex items-start gap-4 bg-white/5 border border-white/10 rounded-2xl px-6 py-5 hover:border-red-500/20 transition-colors"
                   >

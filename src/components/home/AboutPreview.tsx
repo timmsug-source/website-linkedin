@@ -38,7 +38,7 @@ export function AboutPreview() {
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.1 }}
+            viewport={{ once: true, amount: 0, margin: "-50px" }}
           >
             <p className="text-accent font-bold text-sm uppercase tracking-[0.2em] mb-4">
               Über mich
@@ -76,7 +76,7 @@ export function AboutPreview() {
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.1 }}
+            viewport={{ once: true, amount: 0, margin: "-50px" }}
             className="space-y-6"
           >
             {differentiators.map((item, index) => {
@@ -86,7 +86,7 @@ export function AboutPreview() {
                   key={index}
                   initial={{ opacity: 0, y: 15 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.1 }}
+                  viewport={{ once: true, amount: 0, margin: "-50px" }}
                   transition={{ delay: index * 0.1 }}
                   className="flex gap-5 p-6 rounded-2xl border border-slate-100 hover:border-accent/30 hover:shadow-md transition-all bg-slate-50/50"
                 >

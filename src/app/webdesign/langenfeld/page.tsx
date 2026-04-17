@@ -155,7 +155,7 @@ export default function WebdesignLangenfeld() {
                                 key={i}
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true, amount: 0.1 }}
+                                viewport={{ once: true, amount: 0, margin: "-50px" }}
                                 transition={{ delay: i * 0.05 }}
                                 className="p-8 rounded-[2rem] bg-white border border-slate-100 shadow-lg hover:border-accent/30 transition-all group"
                             >
@@ -197,7 +197,7 @@ export default function WebdesignLangenfeld() {
                 <motion.div
                     initial={{ opacity: 0, scale: 0.98 }}
                     whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true, amount: 0.5 }}
+                    viewport={{ once: true, amount: 0, margin: "-50px" }}
                     className="max-w-3xl mx-auto"
                 >
                     <h2 className="text-4xl md:text-5xl font-display font-extrabold text-slate-900 mb-6 tracking-tight">

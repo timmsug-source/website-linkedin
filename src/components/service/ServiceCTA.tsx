@@ -14,7 +14,7 @@ export function ServiceCTA({ service }: { service: Service }) {
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0, margin: "-50px" }}
           className="relative bg-slate-900 rounded-[3rem] p-8 md:p-14 lg:py-16 lg:px-20 overflow-hidden text-center shadow-2xl"
         >
           {/* Decorative Elements */}
