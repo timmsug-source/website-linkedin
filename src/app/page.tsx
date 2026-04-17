@@ -12,18 +12,18 @@ import { SITE_URL } from "@/lib/utils";
 
 export const metadata: Metadata = buildMetadata({
   title:
-    "Timm Schurig – Marketing & Automatisierung für Fitness- & Ernährungscoaches | LinkedIn-Spezialist",
+    "Timm Schurig – Webdesign, Automatisierung & SEO | Digital-Agentur",
   description:
-    "Ich helfe Fitness- und Ernährungscoaches im DACH-Raum, über LinkedIn planbar neue Kunden zu gewinnen – mit Landingpages, KI-Chatbots, WhatsApp-Marketing und vollautomatisiertem Onboarding. Kostenloses Erstgespräch buchen.",
+    "Professionelles Webdesign, intelligente Automatisierungen und nachhaltige SEO-Strategien für Unternehmen. Websites, die wirklich Kunden bringen. Kostenloses Erstgespräch buchen.",
   alternates: {
     canonical: SITE_URL,
   },
   openGraph: {
     url: SITE_URL,
     title:
-      "Timm Schurig – Marketing & Automatisierung für Fitness- & Ernährungscoaches",
+      "Timm Schurig – Webdesign, Automatisierung & SEO",
     description:
-      "Landingpages, KI-Chatbots, WhatsApp & E-Mail Marketing, Automatisierungen – exklusiv für Coaches im DACH-Raum. LinkedIn-First Ansatz.",
+      "Professionelles Webdesign, Automatisierungen und SEO & GEO – alles aus einer Hand für nachhaltiges Wachstum.",
   },
 });
 
@@ -36,7 +36,7 @@ const jsonLd = {
       url: SITE_URL,
       name: "Timm Schurig",
       description:
-        "Marketing & Automatisierung für Fitness- und Ernährungscoaches im DACH-Raum",
+        "Webdesign, Automatisierung & SEO für Unternehmen",
       inLanguage: "de-DE",
     },
     {
@@ -44,65 +44,55 @@ const jsonLd = {
       "@id": `${SITE_URL}/#person`,
       name: "Timm Schurig",
       url: SITE_URL,
-      jobTitle: "Marketing & Automatisierungs-Experte für Fitness-Coaches",
+      jobTitle: "Webdesigner & Digital-Stratege",
       description:
-        "Spezialist für LinkedIn-Kundengewinnung, Landingpages, KI-Chatbots und Marketing-Automatisierung für Fitness- und Ernährungscoaches.",
+        "Spezialist für Webdesign, Marketing-Automatisierung und lokale SEO & GEO-Strategien.",
       knowsAbout: [
-        "LinkedIn Marketing",
+        "Webdesign",
         "Marketing Automatisierung",
-        "KI-Chatbots",
-        "WhatsApp Marketing",
+        "SEO",
+        "Generative Engine Optimization",
         "Landingpage Erstellung",
-        "Fitness Coach Marketing",
+        "Zapier & Make",
       ],
-      areaServed: {
-        "@type": "GeoCircle",
-        geoMidpoint: {
-          "@type": "GeoCoordinates",
-          latitude: "51.165691",
-          longitude: "10.451526",
-        },
-        description: "DACH-Raum (Deutschland, Österreich, Schweiz)",
-      },
     },
     {
       "@type": "LocalBusiness",
       "@id": `${SITE_URL}/#business`,
-      name: "Timm Schurig – Marketing & Automatisierung",
+      name: "Timm Schurig – Webdesign & Digital-Strategie",
       url: SITE_URL,
       description:
-        "Full-Service Marketing und Automatisierung für Fitness- und Ernährungscoaches im DACH-Raum",
-      serviceArea: "DE, AT, CH",
+        "Webdesign, Automatisierungen und SEO & GEO für Unternehmen",
       priceRange: "€€",
       hasOfferCatalog: {
         "@type": "OfferCatalog",
-        name: "Marketing Services für Fitness-Coaches",
+        name: "Digital-Services",
         itemListElement: [
           {
             "@type": "Offer",
             itemOffered: {
               "@type": "Service",
-              name: "Landingpage Erstellung für Fitness Coaches",
+              name: "Webdesign",
               description:
-                "Hochkonvertierende Landingpages für Fitness- und Ernährungscoaches",
+                "Professionelle Websites und Landingpages mit 100% PageSpeed",
             },
           },
           {
             "@type": "Offer",
             itemOffered: {
               "@type": "Service",
-              name: "KI-Chatbot für Fitness Coaches",
+              name: "Automatisierungen",
               description:
-                "Intelligente Chatbots für automatische Lead-Qualifizierung und Terminbuchung",
+                "Intelligente Workflow-Automatisierung mit Zapier & Make",
             },
           },
           {
             "@type": "Offer",
             itemOffered: {
               "@type": "Service",
-              name: "WhatsApp Marketing für Fitness Coaches",
+              name: "SEO & GEO",
               description:
-                "WhatsApp-Automatisierungen und Sequenzen für Coach-Marketing",
+                "Lokale SEO-Optimierung und Generative Engine Optimization",
             },
           },
         ],
@@ -114,26 +104,18 @@ const jsonLd = {
       mainEntity: [
         {
           "@type": "Question",
-          name: "Für wen sind die Dienstleistungen von Timm Schurig geeignet?",
+          name: "Für wen sind die Leistungen von Timm Schurig geeignet?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Die Lösungen sind speziell für Fitness- und Ernährungscoaches konzipiert, die bereits Kunden über LinkedIn gewinnen oder gewinnen wollen und ihre Prozesse professionalisieren oder automatisieren möchten.",
+            text: "Selbstständige, Freiberufler und kleine bis mittelständische Unternehmen, die ihre Online-Präsenz professionalisieren und mehr Kunden gewinnen möchten.",
           },
         },
         {
           "@type": "Question",
-          name: "Muss ich technisch versiert sein?",
+          name: "Was ist GEO?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Nein. Timm Schurig kümmert sich um die gesamte technische Umsetzung und liefert schlüsselfertige Systeme, die einfach zu bedienen sind.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Wie lange dauert die Umsetzung einer Landingpage?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Eine Landingpage ist meist innerhalb von 1–2 Wochen live. Komplexe Automatisierungen und KI-Chatbots dauern in der Regel 3–4 Wochen.",
+            text: "GEO (Generative Engine Optimization) optimiert Inhalte so, dass KI-basierte Suchen wie ChatGPT, Perplexity oder Google Gemini ein Unternehmen als Experten empfehlen.",
           },
         },
       ],

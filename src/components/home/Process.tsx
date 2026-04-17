@@ -2,31 +2,31 @@
 
 import { useRef } from "react";
 import { motion, useScroll, useSpring } from "framer-motion";
-import { Search, PenTool, Code, Rocket } from "lucide-react";
+import { Globe, Search, Cpu, Rocket } from "lucide-react";
 
 const steps = [
   {
     title: "Analyse & Strategie",
     description:
-      "Wir analysieren dein aktuelles Setup und identifizieren gemeinsam die größten Hebel für Automatisierung und Lead-Generierung.",
+      "Wir analysieren dein aktuelles Setup – Website, SEO und Prozesse – und identifizieren gemeinsam die größten Hebel für Wachstum.",
     icon: Search,
   },
   {
-    title: "Konzeption",
+    title: "Konzeption & Design",
     description:
-      "Ich erstelle ein individuelles Konzept für deine Landingpages, Workflows und Marketing-Sequenzen – maßgeschneidert für deine Nische.",
-    icon: PenTool,
+      "Individuelles Design und klares Konzept für deine Website, Automatisierungen oder SEO-Strategie – maßgeschneidert für dein Business.",
+    icon: Globe,
   },
   {
     title: "Umsetzung",
     description:
-      "Ich baue alle technischen Lösungen, Chatbots, Automatisierungen und Marketing-Flows – du musst dich um nichts kümmern.",
-    icon: Code,
+      "Ich baue alles – von der Website über Automatisierungen bis zu SEO-Inhalten – technisch sauber und auf dich zugeschnitten.",
+    icon: Cpu,
   },
   {
     title: "Launch & Optimierung",
     description:
-      "Wir gehen live. Ich optimiere kontinuierlich basierend auf echtem Nutzerfeedback und Daten – damit du dauerhaft wächst.",
+      "Wir gehen live. Ich optimiere kontinuierlich basierend auf echten Daten – damit du dauerhaft wächst.",
     icon: Rocket,
   },
 ];
@@ -54,7 +54,7 @@ export function Process() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.1 }}
           className="text-center mb-20"
         >
           <p className="text-accent font-bold text-sm uppercase tracking-[0.2em] mb-4">
@@ -65,7 +65,7 @@ export function Process() {
             <span className="text-accent">System</span>
           </h2>
           <p className="mt-4 text-slate-600 text-lg">
-            In vier klaren Schritten zu mehr Zeit und besseren Ergebnissen.
+            In vier klaren Schritten zu mehr Sichtbarkeit und besseren Ergebnissen.
           </p>
         </motion.div>
 

@@ -1,32 +1,32 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Clock, Users, Repeat, TrendingDown } from "lucide-react";
+import { Clock, Globe, TrendingDown, Search } from "lucide-react";
 
 const problems = [
   {
-    icon: Clock,
-    title: "Deine Zeit verpufft",
+    icon: Globe,
+    title: "Deine Website bringt keine Kunden",
     description:
-      "Stunden für manuelles Follow-up, Onboarding und Copy-Paste-Aufgaben – statt dich auf deine Kunden zu fokussieren.",
+      "Du hast eine Website, aber kaum Anfragen? Ohne klare Conversion-Optimierung und professionelles Design bleibt sie unsichtbar.",
   },
   {
     icon: TrendingDown,
-    title: "LinkedIn-Anfragen werden nicht zu Kunden",
+    title: "Du wirst bei Google nicht gefunden",
     description:
-      "Du bekommst zwar Kontaktanfragen, aber keine klare Seite, die Vertrauen aufbaut und Termine generiert.",
+      "95 % aller Klicks gehen an die ersten 3 Ergebnisse. Ohne SEO-Strategie existierst du für potenzielle Kunden schlicht nicht.",
   },
   {
-    icon: Repeat,
-    title: "Manuelle Prozesse bremsen dich aus",
+    icon: Clock,
+    title: "Manuelle Prozesse fressen deine Zeit",
     description:
-      "Von der Rechnungsstellung bis zur Terminbestätigung: Jeder Handgriff kostet Zeit, die du für dein Coaching brauchst.",
+      "Follow-ups, Datenpflege, Terminbestätigungen – alles manuell. Das kostet Stunden, die du besser in dein Business investieren könntest.",
   },
   {
-    icon: Users,
-    title: "Neukunden-Gewinnung ist unplanbar",
+    icon: Search,
+    title: "KI-Suchen empfehlen dich nicht",
     description:
-      "Mal funktioniert es, mal nicht. Ein System, das kontinuierlich Leads generiert, fehlt dir bisher.",
+      "ChatGPT, Perplexity & Co. verändern die Suche grundlegend. Wer nicht für GEO optimiert ist, verliert schon heute Kunden an die Konkurrenz.",
   },
 ];
 
@@ -34,7 +34,7 @@ export function Problems() {
   return (
     <section
       className="py-24 px-6 bg-slate-900 relative overflow-hidden"
-      aria-label="Herausforderungen als Fitness- oder Ernährungscoach"
+      aria-label="Herausforderungen für Unternehmen"
     >
       <div
         className="absolute inset-0 opacity-20 pointer-events-none"
@@ -48,21 +48,18 @@ export function Problems() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          style={{ willChange: "transform, opacity" }}
+          viewport={{ once: true, amount: 0.1 }}
           className="text-center mb-16"
         >
           <p className="text-accent font-bold text-sm uppercase tracking-[0.2em] mb-4">
-            Das kennt jeder Coach
+            Das kennen viele Unternehmer
           </p>
           <h2 className="text-4xl md:text-5xl font-display font-extrabold text-white leading-tight">
-            Dein LinkedIn-Profil bringt{" "}
-            <span className="text-accent">keine Kunden?</span>
+            Deine Online-Präsenz{" "}
+            <span className="text-accent">kostet dich Kunden.</span>
           </h2>
           <p className="mt-6 text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
-            Du investierst täglich Zeit in LinkedIn – aber die Anfragen landen
-            nirgendwo, manuelle Aufgaben fressen deine Energie und echte
-            Systeme fehlen.
+            Fast jedes Unternehmen hat diese Probleme – und fast keines löst sie systematisch.
           </p>
         </motion.div>
 
@@ -74,7 +71,7 @@ export function Problems() {
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, amount: 0.1 }}
                 transition={{ delay: index * 0.1 }}
                 className="bg-white/5 border border-white/10 rounded-3xl p-8 hover:bg-white/10 hover:border-accent/30 transition-all group"
               >
@@ -95,7 +92,7 @@ export function Problems() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.1 }}
           className="text-center mt-16"
         >
           <p className="text-2xl font-display font-bold text-white">

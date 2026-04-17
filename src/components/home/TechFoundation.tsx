@@ -6,36 +6,34 @@ import {
     Clock,
     ShieldCheck,
     Target,
-    Zap,
-    BarChart3
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const features = [
     {
-        title: "Skalierbarkeit ohne Limit",
-        description: "Manuelle Prozesse stoßen an Grenzen. Automatisierungen wachsen mit deinem Erfolg mit, ohne dass du mehr Personal einstellen musst.",
+        title: "Nachhaltige Sichtbarkeit",
+        description: "Wer nicht bei Google gefunden wird, verliert täglich Kunden. Mit SEO und GEO investierst du in eine Sichtbarkeit, die dauerhaft Früchte trägt.",
         icon: <TrendingUp className="w-6 h-6" />,
         iconColor: "text-blue-500",
         bgColor: "bg-blue-50",
     },
     {
-        title: "Zeit ist deine Währung",
-        description: "Jede Stunde, die du nicht mit administrativen Aufgaben verbringst, kannst du in die Strategie oder die Arbeit mit deinen Kunden investieren.",
+        title: "Zeit ist dein wertvollstes Gut",
+        description: "Jede Stunde, die du nicht mit Admin-Aufgaben verbringst, kannst du in deine Kunden investieren. Automatisierung macht das möglich.",
         icon: <Clock className="w-6 h-6" />,
         iconColor: "text-purple-500",
         bgColor: "bg-purple-50",
     },
     {
         title: "Vertrauen auf den ersten Klick",
-        description: "In einer digitalen Welt ist deine Website dein Aushängeschild. Ein professioneller Auftritt entscheidet in Sekunden über 'Buchen' oder 'Verlassen'.",
+        description: "Eine professionelle Website entscheidet in Sekunden über 'Anfrage stellen' oder 'Zurück zur Suche'. Premium Design ist kein Luxus, sondern Investition.",
         icon: <ShieldCheck className="w-6 h-6" />,
         iconColor: "text-emerald-500",
         bgColor: "bg-emerald-50",
     },
     {
-        title: "Präzises Targeting",
-        description: "Durch intelligentes Tracking und optimierte Funnels sprichst du genau die Menschen an, die dein Angebot wirklich brauchen.",
+        title: "Die richtigen Kunden ansprechen",
+        description: "Mit gezielter SEO-Strategie und optimierten Inhalten sprichst du genau die Menschen an, die dein Angebot wirklich suchen.",
         icon: <Target className="w-6 h-6" />,
         iconColor: "text-orange-500",
         bgColor: "bg-orange-50",
@@ -53,22 +51,20 @@ export function TechFoundation() {
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, amount: 0.1 }}
-                            style={{ willChange: "transform, opacity" }}
                             className="text-4xl md:text-5xl lg:text-6xl font-display font-extrabold text-slate-900 leading-tight mb-6"
                         >
-                            Warum Technik das Fundament <br />
-                            <span className="text-accent underline decoration-accent/20 underline-offset-8">deines Wachstums</span> ist.
+                            Warum ganzheitliches Digital-<br />
+                            <span className="text-accent underline decoration-accent/20 underline-offset-8">Marketing</span> entscheidend ist.
                         </motion.h2>
 
                         <motion.p
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, amount: 0.1 }}
-                            style={{ willChange: "transform, opacity" }}
                             transition={{ delay: 0.1 }}
                             className="text-lg text-slate-600 mb-12 max-w-2xl"
                         >
-                            Viele Unternehmer sehen Technik als notwendiges Übel. Ich sehe sie als deinen größten Hebel. Wer heute nicht automatisiert und digitalisiert, verliert morgen den Anschluss an den Markt.
+                            Eine schöne Website alleine reicht nicht. Erst das Zusammenspiel aus Design, SEO und smarten Automatisierungen macht deinen Online-Auftritt zur Wachstumsmaschine.
                         </motion.p>
 
                         <div className="grid sm:grid-cols-1 gap-8">
@@ -78,7 +74,6 @@ export function TechFoundation() {
                                     initial={{ opacity: 0, x: -20 }}
                                     whileInView={{ opacity: 1, x: 0 }}
                                     viewport={{ once: true, amount: 0.1 }}
-                                    style={{ willChange: "transform, opacity" }}
                                     transition={{ delay: index * 0.1 + 0.2 }}
                                     className="flex items-start gap-4 group"
                                 >
@@ -106,18 +101,17 @@ export function TechFoundation() {
                             initial={{ opacity: 0, scale: 0.9, rotate: 2 }}
                             whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
                             viewport={{ once: true, amount: 0.1 }}
-                            style={{ willChange: "transform, opacity" }}
                             className="bg-white rounded-[2.5rem] shadow-2xl border border-slate-100 p-8 md:p-12 relative z-10"
                         >
                             <div className="flex items-center gap-2 mb-8">
                                 <div className="w-3 h-3 rounded-full bg-red-400" />
                                 <div className="w-3 h-3 rounded-full bg-amber-400" />
                                 <div className="w-3 h-3 rounded-full bg-emerald-400" />
-                                <span className="ml-auto text-[10px] font-bold text-slate-400 uppercase tracking-widest">Growth Analytics</span>
+                                <span className="ml-auto text-[10px] font-bold text-slate-400 uppercase tracking-widest">Website Performance</span>
                             </div>
 
                             <div className="flex items-end gap-3 h-48 mb-12 px-4">
-                                {[40, 70, 50, 90, 60, 80].map((height, i) => (
+                                {[35, 55, 45, 90, 65, 80].map((height, i) => (
                                     <motion.div
                                         key={i}
                                         initial={{ height: 0 }}
@@ -131,7 +125,7 @@ export function TechFoundation() {
                                     >
                                         {i === 3 && (
                                             <div className="absolute -top-12 left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-white shadow-xl flex items-center justify-center text-accent border border-accent/10">
-                                                <Zap size={20} fill="currentColor" />
+                                                <TrendingUp size={20} />
                                             </div>
                                         )}
                                     </motion.div>
@@ -146,8 +140,8 @@ export function TechFoundation() {
                                     transition={{ delay: 0.6 }}
                                     className="bg-slate-50 rounded-2xl p-6 border border-slate-100"
                                 >
-                                    <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-2">Effizienz</p>
-                                    <p className="text-3xl font-extrabold text-slate-900">+85%</p>
+                                    <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-2">PageSpeed</p>
+                                    <p className="text-3xl font-extrabold text-slate-900">100</p>
                                 </motion.div>
                                 <motion.div
                                     initial={{ opacity: 0, y: 10 }}
@@ -156,19 +150,19 @@ export function TechFoundation() {
                                     transition={{ delay: 0.7 }}
                                     className="bg-emerald-50 rounded-2xl p-6 border border-emerald-100"
                                 >
-                                    <p className="text-[10px] font-bold text-emerald-600 uppercase tracking-wider mb-2">ROI</p>
-                                    <p className="text-3xl font-extrabold text-emerald-700">3.5x</p>
+                                    <p className="text-[10px] font-bold text-emerald-600 uppercase tracking-wider mb-2">Google Rank</p>
+                                    <p className="text-3xl font-extrabold text-emerald-700">Top 3</p>
                                 </motion.div>
                             </div>
 
                             <div className="bg-slate-900 rounded-2xl p-5 overflow-hidden relative">
                                 <div className="flex items-center gap-3 relative z-10">
                                     <div className="w-8 h-8 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-500">
-                                        <BarChart3 size={16} />
+                                        <TrendingUp size={16} />
                                     </div>
                                     <div>
                                         <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Status</p>
-                                        <p className="text-white font-bold">System optimiert</p>
+                                        <p className="text-white font-bold">Sichtbarkeit optimiert</p>
                                     </div>
                                 </div>
                                 <div className="mt-4 h-1.5 w-full bg-slate-800 rounded-full overflow-hidden">

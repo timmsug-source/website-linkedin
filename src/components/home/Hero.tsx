@@ -4,8 +4,9 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import {
   ArrowRight,
-  Linkedin,
-  Zap,
+  Globe,
+  Cpu,
+  Search,
   CheckCircle2,
   MessageCircle,
 } from "lucide-react";
@@ -35,20 +36,18 @@ export function Hero() {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 text-accent text-sm font-bold mb-6">
-            <Linkedin size={16} />
-            <span>Exklusiv für LinkedIn-Coaches im DACH-Raum</span>
+            <Globe size={16} />
+            <span>Webdesign · SEO · Automatisierung</span>
           </div>
 
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-extrabold text-slate-900 leading-[1.05] tracking-tight">
-            Skaliere dein{" "}
-            <span className="text-accent">Coaching-Business</span> durch
-            technische Exzellenz.
+            Websites, die{" "}
+            <span className="text-accent">wirklich</span>{" "}
+            Kunden bringen.
           </h1>
 
           <p className="mt-8 text-xl text-slate-600 leading-relaxed max-w-xl">
-            Ich befreie Fitness- und Ernährungscoaches von manuellem Chaos.
-            Landingpages, Automatisierungen und KI-Chatbots, die für dich
-            arbeiten – <strong>24/7</strong>.
+            Professionelles Webdesign, intelligente Automatisierungen und nachhaltige SEO-Strategien – alles aus einer Hand.
           </p>
 
           <div className="mt-10 flex flex-col sm:flex-row gap-4">
@@ -69,23 +68,18 @@ export function Hero() {
             </Link>
           </div>
 
-          {/* Social Proof */}
-          <div className="mt-12 flex items-center gap-6">
-            <div className="flex -space-x-3">
-              {socialProofAvatars.map((i) => (
-                <div
-                  key={i}
-                  className="w-12 h-12 rounded-full border-4 border-white bg-gradient-to-br from-accent/30 to-accent/60 shadow-sm flex items-center justify-center text-white font-bold text-sm"
-                  aria-hidden="true"
-                >
-                  {String.fromCharCode(64 + i)}
-                </div>
-              ))}
-            </div>
-            <div className="text-sm text-slate-500">
-              <span className="font-bold text-slate-900">15+ Coaches</span>{" "}
-              vertrauen bereits auf meine Lösungen
-            </div>
+          {/* Trust badges */}
+          <div className="mt-12 flex flex-wrap items-center gap-6">
+            {[
+              { icon: Globe, label: "Webdesign" },
+              { icon: Cpu, label: "Automatisierung" },
+              { icon: Search, label: "SEO & GEO" },
+            ].map(({ icon: Icon, label }) => (
+              <div key={label} className="flex items-center gap-2 text-slate-500 text-sm font-semibold">
+                <CheckCircle2 size={16} className="text-accent" />
+                {label}
+              </div>
+            ))}
           </div>
         </motion.div>
 
@@ -122,7 +116,7 @@ export function Hero() {
                 target="_blank"
                 rel="noreferrer noopener"
                 className="inline-flex items-center justify-center w-full bg-[#25D366] hover:bg-[#25D366]/90 text-white font-bold py-5 rounded-2xl transition-all shadow-lg shadow-[#25D366]/20 text-lg gap-3"
-                aria-label="WhatsApp Chat mit Timm Schurig starten"
+                aria-label="WhatsApp Chat starten"
               >
                 <MessageCircle size={24} fill="currentColor" />
                 Chat starten
@@ -143,11 +137,11 @@ export function Hero() {
             aria-hidden="true"
           >
             <div className="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center text-accent">
-              <Zap size={20} />
+              <Search size={20} />
             </div>
             <div>
-              <p className="text-xs text-slate-500 font-medium">Antwortzeit</p>
-              <p className="text-sm font-bold text-slate-900">&lt; 2 Stunden</p>
+              <p className="text-xs text-slate-500 font-medium">SEO & GEO</p>
+              <p className="text-sm font-bold text-slate-900">Top 3 Rankings</p>
             </div>
           </motion.div>
 

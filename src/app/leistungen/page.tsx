@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Layout, Cpu, MessageSquare, Mail, UserPlus } from "lucide-react";
+import { ArrowRight, Globe, Cpu, Search } from "lucide-react";
 import { buildMetadata } from "@/lib/seo";
 import { SITE_URL, CALENDLY_URL } from "@/lib/utils";
 import { CTA } from "@/components/home/CTA";
@@ -8,16 +8,16 @@ import { ServiceFlow } from "@/components/leistungen/ServiceFlow";
 import { ServiceFAQ } from "@/components/leistungen/ServiceFAQ";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Leistungen – Landingpages, Automatisierungen & KI-Chatbots für Coaches",
+  title: "Leistungen – Webdesign, Automatisierungen & SEO für Unternehmen",
   description:
-    "Alle Leistungen von Timm Schurig: Landingpage Erstellung, Automatisierungen, WhatsApp Marketing, E-Mail Marketing, KI-Chatbots und automatisiertes Onboarding für Fitness- und Ernährungscoaches.",
+    "Alle Leistungen von Timm Schurig: Professionelles Webdesign, intelligente Automatisierungen und nachhaltige SEO & GEO-Strategien für Unternehmen.",
   keywords: [
-    "Landingpage Fitness Coach erstellen lassen",
-    "Automatisierung Fitness Coach",
-    "WhatsApp Marketing Fitness Coach",
-    "KI Chatbot Fitness Coach",
-    "E-Mail Marketing Personal Trainer",
-    "Onboarding automatisieren Coach",
+    "Webdesign Agentur",
+    "Website erstellen lassen",
+    "Business Automatisierung",
+    "SEO Agentur",
+    "Lokale SEO",
+    "Generative Engine Optimization",
   ],
   alternates: { canonical: `${SITE_URL}/leistungen` },
   openGraph: { url: `${SITE_URL}/leistungen` },
@@ -25,11 +25,11 @@ export const metadata: Metadata = buildMetadata({
 
 const services = [
   {
-    id: "landingpage-erstellung",
-    title: "Landingpage Erstellung",
+    id: "webdesign",
+    title: "Webdesign",
     description:
-      "Hochkonvertierende Landingpages für Fitness- und Ernährungscoaches. Mobile-First, 100% PageSpeed, SEO-optimiert – für maximale Lead-Generierung über LinkedIn.",
-    icon: Layout,
+      "Individuelle Websites und Landingpages, die Besucher in Kunden verwandeln. Mobile-First, 100% PageSpeed, SEO-optimiert – für maximale Wirkung.",
+    icon: Globe,
     color: "bg-blue-50 text-blue-600",
     features: [
       "100% PageSpeed Score",
@@ -38,7 +38,7 @@ const services = [
       "CRM-Integration",
       "Conversion-optimiertes Copywriting",
     ],
-    keyword: "Landingpage Fitness Coach erstellen lassen",
+    keyword: "Website erstellen lassen",
   },
   {
     id: "automatisierungen",
@@ -49,83 +49,35 @@ const services = [
     color: "bg-purple-50 text-purple-600",
     features: [
       "Zapier & Make Experten-Setup",
-      "Follow-up Sequenzen",
+      "CRM-Anbindung",
+      "Automatische Follow-up Sequenzen",
       "Fehler-Monitoring",
       "Terminbuchungs-Automation",
-      "CRM-Synchronisation",
     ],
-    keyword: "Automatisierung Fitness Coach",
+    keyword: "Business Automatisierung",
   },
   {
-    id: "whatsapp-marketing",
-    title: "WhatsApp Marketing",
+    id: "seo-geo",
+    title: "SEO & GEO",
     description:
-      "Automatisierte WhatsApp-Sequenzen, die Leads warmhalten und in Buchungen umwandeln. Die direkteste Kommunikation mit deiner Zielgruppe.",
-    icon: Mail,
+      "Werde bei Google gefunden und von KI-Suchen empfohlen. Lokale SEO, technische Optimierung und Generative Engine Optimization für die Zukunft.",
+    icon: Search,
     color: "bg-green-50 text-green-600",
     features: [
-      "WhatsApp Business API",
-      "Personalisierte Sequenzen",
-      "Lead-Nurturing Flows",
-      "Automatisierte Follow-ups",
-      "Opt-in Management",
+      "Technische SEO-Analyse",
+      "Lokale SEO & Google Business",
+      "Content-Strategie",
+      "GEO für KI-Suchen",
+      "Monatliches Reporting",
     ],
-    keyword: "WhatsApp Marketing Fitness Coach",
-  },
-  {
-    id: "email-marketing",
-    title: "E-Mail Marketing",
-    description:
-      "Vollautomatische E-Mail-Funnels, die deine Leads durch den Kaufprozess führen – vom ersten Kontakt bis zur Buchung deines Coachings.",
-    icon: Mail,
-    color: "bg-blue-50 text-blue-600",
-    features: [
-      "Willkommens-Sequenzen",
-      "Nurture-Flows",
-      "Reaktivierungs-Kampagnen",
-      "A/B-Testing",
-      "Segmentierung",
-    ],
-    keyword: "E-Mail Marketing Personal Trainer",
-  },
-  {
-    id: "ki-chatbot",
-    title: "KI-Chatbots",
-    description:
-      "Intelligente Assistenten, die auf dein Wissen trainiert sind – beantworten Fragen, qualifizieren Leads und buchen Termine, während du schläfst.",
-    icon: MessageSquare,
-    color: "bg-orange-50 text-orange-600",
-    features: [
-      "GPT-4 basierte KI",
-      "Website & WhatsApp Integration",
-      "Direkte Terminbuchung",
-      "Lead-Qualifizierung",
-      "24/7 Verfügbarkeit",
-    ],
-    keyword: "KI Chatbot Fitness Coach",
-  },
-  {
-    id: "automatisiertes-onboarding",
-    title: "Automatisiertes Onboarding",
-    description:
-      "Ein professionelles Onboarding-Erlebnis für neue Kunden ab der ersten Sekunde – vollautomatisch. Verträge, Zahlung, Zugang, Willkommen.",
-    icon: UserPlus,
-    color: "bg-accent/10 text-accent",
-    features: [
-      "Digitale Signaturen",
-      "Automatische Rechnungsstellung",
-      "Sofortiger Plattform-Zugang",
-      "Willkommens-Sequenz",
-      "Feedback-Automation",
-    ],
-    keyword: "Onboarding automatisieren Coach",
+    keyword: "SEO Agentur lokal",
   },
 ];
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "ItemList",
-  name: "Leistungen für Fitness- und Ernährungscoaches",
+  name: "Leistungen – Webdesign, Automatisierungen & SEO",
   url: `${SITE_URL}/leistungen`,
   itemListElement: services.map((service, index) => ({
     "@type": "ListItem",
@@ -158,13 +110,11 @@ export default function LeistungenPage() {
             Alle Leistungen
           </p>
           <h1 className="text-5xl md:text-6xl font-display font-extrabold text-slate-900 mb-6 leading-tight">
-            Marketing & Technik für{" "}
-            <span className="text-accent">Fitness-Coaches</span>
+            Webdesign, Automatisierung &{" "}
+            <span className="text-accent">SEO</span>
           </h1>
           <p className="text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed mb-10">
-            Full-Service aus einer Hand – von der Landingpage bis zum
-            vollautomatisierten Onboarding. Alles, was du brauchst, um über
-            LinkedIn planbar Kunden zu gewinnen.
+            Drei Leistungen, die perfekt ineinandergreifen – für eine Online-Präsenz, die wirklich wächst.
           </p>
           <a
             href={CALENDLY_URL}
@@ -181,7 +131,7 @@ export default function LeistungenPage() {
       {/* Services Grid */}
       <section className="py-24 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {services.map((service) => {
               const Icon = service.icon;
               return (

@@ -6,39 +6,39 @@ import { ChevronDown } from "lucide-react";
 
 export const faqItems = [
   {
-    question: "Für wen sind deine Dienstleistungen geeignet?",
+    question: "Für wen sind deine Leistungen geeignet?",
     answer:
-      "Meine Lösungen sind speziell für Fitness- und Ernährungscoaches konzipiert, die bereits Kunden über LinkedIn gewinnen oder gewinnen wollen und ihre Prozesse professionalisieren oder automatisieren möchten. Ideal bist du, wenn du bereits erste Kunden hast und jetzt planbar skalieren willst.",
+      "Meine Leistungen richten sich an Selbstständige, Freiberufler und kleine bis mittelständische Unternehmen, die ihre Online-Präsenz professionalisieren, mehr Kunden über Google gewinnen oder wiederkehrende Prozesse automatisieren möchten.",
   },
   {
     question: "Muss ich technisch versiert sein?",
     answer:
-      "Nein, absolut nicht. Ich kümmere mich um die gesamte technische Umsetzung. Du erhältst von mir schlüsselfertige Systeme, die einfach zu bedienen sind. Ich erkläre dir alles verständlich und stehe bei Fragen immer zur Verfügung.",
+      "Nein, absolut nicht. Ich kümmere mich um die gesamte technische Umsetzung. Du bekommst schlüsselfertige Lösungen mit verständlicher Dokumentation – ganz ohne Vorkenntnisse.",
   },
   {
-    question: "Wie lange dauert die Umsetzung?",
+    question: "Wie lange dauert die Umsetzung einer Website?",
     answer:
-      "Das hängt vom Umfang ab. Eine Landingpage ist meist innerhalb von 1–2 Wochen live. Komplexe Automatisierungen und KI-Chatbots dauern in der Regel 3–4 Wochen. Wir besprechen das im kostenlosen Erstgespräch und ich gebe dir eine realistische Zeitplanung.",
+      "Eine einfache Landingpage ist meist in 1–2 Wochen live. Eine vollständige Unternehmenswebsite dauert je nach Umfang 2–4 Wochen. Automatisierungen und SEO-Pakete staffeln sich entsprechend.",
   },
   {
-    question: "Welche Tools nutzt du?",
+    question: "Welche Tools nutzt du für Automatisierungen?",
     answer:
-      "Ich arbeite primär mit modernen No-Code und Low-Code Tools wie Zapier, Make, sowie spezialisierten KI-Frameworks. Für Websites nutze ich performante Technologien (Next.js, React) für maximale Geschwindigkeit und SEO. Die Tool-Auswahl richte ich immer nach deinem Budget und deinen Anforderungen.",
+      "Ich arbeite primär mit Zapier, Make, n8n und spezialisierten CRM-Integrationen. Für Websites nutze ich Next.js und React für maximale Performance (100 PageSpeed). Die Tool-Auswahl richte ich immer nach deinen Anforderungen.",
   },
   {
     question: "Bietest du auch laufende Betreuung an?",
     answer:
-      "Ja, nach dem Projektstart stehe ich dir für Wartung, Updates und weitere Optimierungen zur Verfügung. Wir können das individuell als Retainer vereinbaren, damit dein System immer aktuell und optimal performt.",
+      "Ja. Nach dem Projektstart stehe ich für Wartung, Updates und Optimierungen zur Verfügung. Wir können das individuell als Retainer vereinbaren, damit dein System immer aktuell performt.",
   },
   {
-    question: "Was kostet das?",
+    question: "Was kostet eine Website / SEO / Automatisierung?",
     answer:
-      "Die Preise hängen vom Umfang des Projekts ab. Ich biete keine Einheitslösungen, sondern maßgeschneiderte Pakete. Im kostenlosen Erstgespräch analysieren wir gemeinsam deine Situation und ich mache dir ein transparentes Angebot – ohne versteckte Kosten.",
+      "Die Preise hängen vom Umfang ab. Websites starten ab 500€, SEO-Pakete ab 400€/Monat, Automatisierungen ab 300€. Im kostenlosen Erstgespräch mache ich dir ein transparentes Angebot – ohne versteckte Kosten.",
   },
   {
-    question: "Warum LinkedIn und nicht Instagram oder TikTok?",
+    question: "Was ist GEO, und warum ist das wichtig?",
     answer:
-      "LinkedIn-Nutzer sind im Durchschnitt zahlungsbereiter, sind oft in B2B-Kontexten tätig (betriebliche Gesundheitsförderung, Unternehmenskunden) und die organische Reichweite ist noch deutlich höher als auf anderen Plattformen. Ich bin darauf spezialisiert, weil es die beste Plattform für Premium-Coaches ist.",
+      "GEO steht für Generative Engine Optimization – die Optimierung deiner Inhalte für KI-basierte Suchen wie ChatGPT, Perplexity oder Google Gemini. Da immer mehr Menschen dort suchen, ist GEO die SEO der Zukunft.",
   },
 ];
 
@@ -55,7 +55,6 @@ export function FAQ() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.1 }}
-          style={{ willChange: "transform, opacity" }}
           className="text-center mb-16"
         >
           <h2 className="text-4xl font-display font-extrabold text-slate-900">
@@ -74,7 +73,6 @@ export function FAQ() {
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.1 }}
-              style={{ willChange: "transform, opacity" }}
               transition={{ delay: index * 0.05 }}
               className="bg-white border border-slate-200 rounded-2xl overflow-hidden"
               role="listitem"

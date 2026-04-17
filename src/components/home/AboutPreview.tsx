@@ -2,27 +2,27 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowRight, Linkedin, Target, Zap } from "lucide-react";
+import { ArrowRight, Globe, Cpu, Search, Target, Zap } from "lucide-react";
 import { LINKEDIN_URL } from "@/lib/utils";
 
 const differentiators = [
   {
-    icon: Linkedin,
-    title: "LinkedIn-First Ansatz",
+    icon: Globe,
+    title: "Webdesign & Technik aus einer Hand",
     description:
-      "Der einzige Anbieter im DACH-Raum, der explizit LinkedIn als Kundengewinnungskanal für Fitness- & Ernährungscoaches bedient.",
+      "Kein Design-Ping-Pong zwischen Agenturen. Ich übernehme Design, Entwicklung und Technik komplett – schlüsselfertig.",
   },
   {
     icon: Zap,
-    title: "Komplettes Backend aus einer Hand",
+    title: "Vollständige Systemintegration",
     description:
-      "Landingpage + WhatsApp + E-Mail + KI-Chatbot + Onboarding – kein Wettbewerber bietet dieses Paket gebündelt für diese Nische an.",
+      "Website + Automatisierungen + SEO – alle drei Leistungen greifen nahtlos ineinander. Das ist ein Vorteil, den klassische Agenturen nicht bieten.",
   },
   {
     icon: Target,
-    title: "Doppelter ROI",
+    title: "Lokaler Fokus, globales Know-how",
     description:
-      "Ich spare dir Zeit durch Automatisierung UND generiere dir mehr Leads – das ist ein Argument, das klassische Ads-Agenturen nicht bieten können.",
+      "Ich kenne den lokalen Markt und kombiniere das mit modernstem Web-Know-how. Das Ergebnis: Sichtbarkeit genau dort, wo deine Kunden suchen.",
   },
 ];
 
@@ -39,25 +39,19 @@ export function AboutPreview() {
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.1 }}
-            style={{ willChange: "transform, opacity" }}
           >
             <p className="text-accent font-bold text-sm uppercase tracking-[0.2em] mb-4">
               Über mich
             </p>
             <h2 className="text-4xl md:text-5xl font-display font-extrabold text-slate-900 mb-8 leading-tight">
               Ich bin Timm Schurig.{" "}
-              <span className="text-accent">Dein technischer Partner</span> für
-              dein Coaching-Business.
+              <span className="text-accent">Dein Webdesign- & Digital-Partner.</span>
             </h2>
             <p className="text-slate-600 text-lg leading-relaxed mb-6">
-              Als Spezialist für LinkedIn-Kundengewinnung und Marketing-Technologie
-              helfe ich Fitness- und Ernährungscoaches im DACH-Raum dabei, ihre
-              manuellen Prozesse durch smarte Systeme zu ersetzen.
+              Als Webdesigner und Digital-Stratege helfe ich Unternehmen dabei, ihre Online-Präsenz in eine echte Wachstumsmaschine zu verwandeln – mit professionellen Websites, smarten Automatisierungen und einer SEO-Strategie, die wirkt.
             </p>
             <p className="text-slate-600 leading-relaxed mb-10">
-              Was mich von klassischen Marketing-Agenturen unterscheidet: Ich
-              kombiniere tiefes technisches Know-how mit einem echten Verständnis
-              für die spezifischen Herausforderungen von Coaches auf LinkedIn.
+              Was mich von klassischen Agenturen unterscheidet: Ich denke nicht in Einzellösungen, sondern in Systemen. Design, SEO und Automatisierung gibt es bei mir immer aufeinander abgestimmt.
             </p>
             <div className="flex gap-4">
               <Link
@@ -71,9 +65,8 @@ export function AboutPreview() {
                 target="_blank"
                 rel="noreferrer noopener"
                 className="inline-flex items-center gap-2 border border-slate-200 rounded-full px-6 py-3 font-semibold text-slate-700 hover:border-accent hover:text-accent transition-all"
-                aria-label="Timm Schurig auf LinkedIn folgen"
+                aria-label="Timm Schurig auf LinkedIn"
               >
-                <Linkedin size={18} />
                 LinkedIn
               </a>
             </div>
@@ -83,7 +76,7 @@ export function AboutPreview() {
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.1 }}
             className="space-y-6"
           >
             {differentiators.map((item, index) => {
@@ -93,7 +86,7 @@ export function AboutPreview() {
                   key={index}
                   initial={{ opacity: 0, y: 15 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
+                  viewport={{ once: true, amount: 0.1 }}
                   transition={{ delay: index * 0.1 }}
                   className="flex gap-5 p-6 rounded-2xl border border-slate-100 hover:border-accent/30 hover:shadow-md transition-all bg-slate-50/50"
                 >

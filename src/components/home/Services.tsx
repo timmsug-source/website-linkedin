@@ -2,68 +2,40 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import {
-  Layout,
-  Cpu,
-  MessageSquare,
-  Mail,
-  UserPlus,
-  ArrowRight,
-} from "lucide-react";
+import { Globe, Cpu, Search, ArrowRight } from "lucide-react";
 
-const technicalServices = [
+const services = [
   {
-    id: "landingpage-erstellung",
-    title: "Landingpage Erstellung",
+    id: "webdesign",
+    title: "Webdesign",
     description:
-      "Hochkonvertierende Seiten, die deine LinkedIn-Besucher in qualifizierte Leads verwandeln – mit 100% PageSpeed und SEO-Grundoptimierung.",
-    icon: Layout,
+      "Individuelle Websites und Landingpages, die Besucher in Kunden verwandeln. 100 % PageSpeed, Mobile-First und maximal conversion-optimiert.",
+    icon: Globe,
     color: "bg-blue-50 text-blue-600",
-    keyword: "Landingpage Fitness Coach erstellen lassen",
+    keyword: "Website erstellen lassen",
   },
   {
     id: "automatisierungen",
     title: "Automatisierungen",
     description:
-      "Verbinde deine Tools (Zapier, Make) zu einem nahtlosen System, das im Hintergrund für dich arbeitet – spare mindestens 10h pro Woche.",
+      "Verbinde deine Tools zu einem nahtlosen System mit Zapier, Make & Co. Spare 10+ Stunden pro Woche durch intelligente Workflow-Automatisierung.",
     icon: Cpu,
     color: "bg-purple-50 text-purple-600",
-    keyword: "Automatisierung Fitness Coach",
+    keyword: "Business Automatisierung",
   },
   {
-    id: "whatsapp-marketing",
-    title: "WhatsApp & E-Mail Marketing",
+    id: "seo-geo",
+    title: "SEO & GEO",
     description:
-      "Direkte Kommunikation mit deinen Kunden für maximale Bindung – automatisierte Sequenzen, die Leads in Buchungen verwandeln.",
-    icon: Mail,
+      "Werde bei Google gefunden und von KI-Suchen empfohlen. Lokale SEO, technische Optimierung und Generative Engine Optimization für die Zukunft.",
+    icon: Search,
     color: "bg-green-50 text-green-600",
-    keyword: "WhatsApp Marketing Fitness Coach",
-  },
-];
-
-const optimizationServices = [
-  {
-    id: "ki-chatbot",
-    title: "KI-Chatbots",
-    description:
-      "Intelligente Assistenten, die Fragen beantworten, Termine buchen und Leads qualifizieren – während du schläfst oder coachst.",
-    icon: MessageSquare,
-    color: "bg-orange-50 text-orange-600",
-    keyword: "KI Chatbot Fitness Coach",
-  },
-  {
-    id: "automatisiertes-onboarding",
-    title: "Automatisiertes Onboarding",
-    description:
-      "Ein nahtloses Erlebnis für deine neuen Kunden ab der ersten Sekunde – Verträge, Zugang, Begrüßung. Vollautomatisch.",
-    icon: UserPlus,
-    color: "bg-accent/10 text-accent",
-    keyword: "Onboarding automatisieren Coach",
+    keyword: "SEO Agentur lokal",
   },
 ];
 
 interface ServiceCardProps {
-  service: (typeof technicalServices)[0];
+  service: (typeof services)[0];
   index: number;
 }
 
@@ -73,7 +45,7 @@ function ServiceCard({ service, index }: ServiceCardProps) {
     <motion.article
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
+      viewport={{ once: true, amount: 0.1 }}
       transition={{ delay: index * 0.1 }}
     >
       <Link
@@ -106,59 +78,31 @@ export function Services() {
     <section
       id="leistungen"
       className="py-24 px-6 bg-slate-50/50"
-      aria-label="Leistungen für Fitness- und Ernährungscoaches"
+      aria-label="Leistungen"
     >
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
-          style={{ willChange: "transform, opacity" }}
           className="text-center mb-20"
         >
           <p className="text-accent font-bold text-sm uppercase tracking-[0.2em] mb-4">
             Meine Leistungen
           </p>
           <h2 className="text-4xl md:text-5xl font-display font-extrabold text-slate-900">
-            Dienstleistungen für dein{" "}
-            <span className="text-accent">Wachstum</span>
+            Alles aus einer Hand für{" "}
+            <span className="text-accent">dein Wachstum</span>
           </h2>
           <p className="mt-4 text-slate-600 max-w-2xl mx-auto text-lg">
-            Von der technischen Basis bis zur KI-gestützten Kundenbetreuung –
-            Full-Service aus einer Hand für Fitness- und Ernährungscoaches.
+            Webdesign, Automatisierungen und SEO – aufeinander abgestimmt für maximale Wirkung.
           </p>
         </motion.div>
 
-        {/* Technische Dienstleistungen */}
-        <div className="mb-20">
-          <div className="flex items-center gap-4 mb-10">
-            <div className="h-px flex-grow bg-slate-200" aria-hidden="true" />
-            <h3 className="text-xl font-bold text-slate-900 whitespace-nowrap px-2">
-              Technische Dienstleistungen
-            </h3>
-            <div className="h-px flex-grow bg-slate-200" aria-hidden="true" />
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {technicalServices.map((service, index) => (
-              <ServiceCard key={service.id} service={service} index={index} />
-            ))}
-          </div>
-        </div>
-
-        {/* Optimierung der Kundenbetreuung */}
-        <div>
-          <div className="flex items-center gap-4 mb-10">
-            <div className="h-px flex-grow bg-slate-200" aria-hidden="true" />
-            <h3 className="text-xl font-bold text-slate-900 whitespace-nowrap px-2">
-              Optimierung der Kundenbetreuung
-            </h3>
-            <div className="h-px flex-grow bg-slate-200" aria-hidden="true" />
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {optimizationServices.map((service, index) => (
-              <ServiceCard key={service.id} service={service} index={index} />
-            ))}
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {services.map((service, index) => (
+            <ServiceCard key={service.id} service={service} index={index} />
+          ))}
         </div>
       </div>
     </section>
