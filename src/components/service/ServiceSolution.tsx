@@ -1,6 +1,6 @@
 "use client";
 
-import { CheckCircle2, ArrowRight, Zap } from "lucide-react";
+import { CheckCircle2, ArrowRight } from "lucide-react";
 import { CALENDLY_URL } from "@/lib/utils";
 import type { serviceData } from "@/lib/serviceData";
 
@@ -19,47 +19,65 @@ export function ServiceSolution({ service }: { service: Service }) {
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Left: Visual Side */}
-          <div className="relative">
-            <div className="bg-white rounded-[2.5rem] p-10 border border-slate-100 shadow-xl">
-              <p className="text-sm font-bold uppercase tracking-widest text-accent mb-8">
-                Schritt für Schritt zum Erfolg
-              </p>
-              <ol className="space-y-6" aria-label="Ablauf der Zusammenarbeit">
-                {service.process.map((step, i) => (
-                  <li key={i} className="flex items-start gap-4">
-                    <div
-                      className="w-10 h-10 rounded-xl bg-accent/10 text-accent flex items-center justify-center text-sm font-extrabold shrink-0 shadow-sm border border-accent/20"
-                      aria-label={`Schritt ${i + 1}`}
-                    >
-                      {i + 1}
-                    </div>
-                    <div>
-                      <p className="font-bold text-slate-900">{step.title}</p>
-                      {step.desc && (
-                        <p className="text-slate-500 text-sm mt-1 leading-relaxed">
-                          {step.desc}
-                        </p>
-                      )}
-                    </div>
-                  </li>
-                ))}
-              </ol>
-            </div>
-
-            {/* Static badge */}
-            <div className="absolute -bottom-6 -right-6 bg-slate-900 border border-slate-800 p-6 rounded-3xl shadow-2xl hidden md:block">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center text-accent">
-                  <Zap size={20} fill="currentColor" />
+          {/* Left side */}
+          {service.solutionIntro ? (
+            /* Rich intro text (e.g. Webdesign) */
+            <div className="space-y-6">
+              {service.solutionIntro.map((para, i) => (
+                <p
+                  key={i}
+                  className={
+                    i === 0
+                      ? "text-2xl font-display font-bold text-slate-900 leading-snug"
+                      : "text-lg text-slate-600 leading-relaxed"
+                  }
+                >
+                  {para}
+                </p>
+              ))}
+              <div className="flex gap-8 pt-4 border-t border-slate-200">
+                <div>
+                  <p className="text-3xl font-display font-extrabold text-accent">100%</p>
+                  <p className="text-sm text-slate-500 mt-1">PageSpeed garantiert</p>
                 </div>
                 <div>
-                  <p className="text-[10px] font-bold text-slate-500 uppercase">Quality First</p>
-                  <p className="text-white font-bold">100% Fokus</p>
+                  <p className="text-3xl font-display font-extrabold text-accent">1–2 Wo.</p>
+                  <p className="text-sm text-slate-500 mt-1">bis zum Launch</p>
+                </div>
+                <div>
+                  <p className="text-3xl font-display font-extrabold text-accent">KI-ready</p>
+                  <p className="text-sm text-slate-500 mt-1">von Anfang an</p>
                 </div>
               </div>
             </div>
-          </div>
+          ) : (
+            /* Process steps card (other services) */
+            <div className="relative">
+              <div className="bg-white rounded-[2.5rem] p-10 border border-slate-100 shadow-xl">
+                <p className="text-sm font-bold uppercase tracking-widest text-accent mb-8">
+                  Schritt für Schritt zum Erfolg
+                </p>
+                <ol className="space-y-6" aria-label="Ablauf der Zusammenarbeit">
+                  {service.process.map((step, i) => (
+                    <li key={i} className="flex items-start gap-4">
+                      <div
+                        className="w-10 h-10 rounded-xl bg-accent/10 text-accent flex items-center justify-center text-sm font-extrabold shrink-0 shadow-sm border border-accent/20"
+                        aria-label={`Schritt ${i + 1}`}
+                      >
+                        {i + 1}
+                      </div>
+                      <div>
+                        <p className="font-bold text-slate-900">{step.title}</p>
+                        {step.desc && (
+                          <p className="text-slate-500 text-sm mt-1 leading-relaxed">{step.desc}</p>
+                        )}
+                      </div>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+            </div>
+          )}
 
           {/* Right: Text Side */}
           <div>

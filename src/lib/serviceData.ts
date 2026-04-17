@@ -40,6 +40,7 @@ export interface ServiceEntry {
   problemSubline: string;
   problemPoints: string[];
   // Solution
+  solutionIntro?: string[];
   solutionHeadline: string;
   solution: string;
   solutionPoints: string[];
@@ -123,6 +124,10 @@ export const serviceData: Record<string, ServiceEntry> = {
       "Kein Vertrauensaufbau – keine Referenzen, keine Persönlichkeit.",
       "Nicht mobil optimiert, obwohl 70 % der Besucher vom Smartphone kommen.",
       "Kein SEO-Setup – Google findet dich nicht, auch nicht lokal.",
+    ],
+    solutionIntro: [
+      "Schluss mit Kompromissen. Während herkömmliche Websites oft nur digitale Visitenkarten ohne messbaren Nutzen sind, entwickeln wir Lösungen, die strategisch auf deinen Erfolg einzahlen. Wir kombinieren technisches High-End-Webdesign mit intelligenter Verkaufspsychologie und zukunftssicherer KI-Optimierung.",
+      "Das Ergebnis ist eine Online-Präsenz, die nicht nur durch Ästhetik überzeugt, sondern aktiv für dich arbeitet: Sie zieht die richtigen Besucher an, überzeugt sie von deiner Expertise und verwandelt sie automatisiert in loyale Kunden. So definieren wir gemeinsam den neuen Standard für dein Business.",
     ],
     solutionHeadline: "Eine Website, die rund um die Uhr für dich arbeitet.",
     solution:
