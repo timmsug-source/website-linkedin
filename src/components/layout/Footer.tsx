@@ -6,27 +6,22 @@ import { MessageCircle, Linkedin, Mail, MapPin } from "lucide-react";
 import { WHATSAPP_URL, EMAIL, LINKEDIN_URL } from "@/lib/utils";
 
 const serviceLinks = [
-  { name: "Landingpage Erstellung", href: "/leistungen/landingpage-erstellung" },
+  { name: "Webdesign", href: "/leistungen/webdesign" },
   { name: "Automatisierungen", href: "/leistungen/automatisierungen" },
-  { name: "WhatsApp Marketing", href: "/leistungen/whatsapp-marketing" },
-  { name: "E-Mail Marketing", href: "/leistungen/email-marketing" },
-  { name: "KI-Chatbots", href: "/leistungen/ki-chatbot" },
-  { name: "Automatisiertes Onboarding", href: "/leistungen/automatisiertes-onboarding" },
+  { name: "SEO & GEO", href: "/leistungen/seo-geo" },
 ];
 
-const targetLinks = [
-  { name: "Für Fitness Coaches", href: "/fuer-fitness-coaches" },
-  { name: "Für Ernährungscoaches", href: "/fuer-ernaehrungscoaches" },
-  { name: "Ergebnisse & Case Studies", href: "/ergebnisse" },
+const infoLinks = [
   { name: "Über mich", href: "/ueber-uns" },
-  { name: "Blog & Ratgeber", href: "/blog" },
+  { name: "Blog", href: "/blog" },
+  { name: "Kontakt", href: "/kontakt" },
 ];
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
   const pathname = usePathname();
 
-  if (pathname?.startsWith("/lp/")) {
+  if (pathname?.startsWith("/lp/") || pathname?.startsWith("/webdesign/")) {
     return null;
   }
 
@@ -45,10 +40,7 @@ export function Footer() {
             TIMM<span className="text-accent">SCHURIG</span>
           </Link>
           <p className="mt-4 text-slate-600 max-w-sm leading-relaxed text-sm">
-            Ich helfe Fitness- und Ernährungscoaches dabei, ihre Prozesse zu
-            automatisieren und über LinkedIn planbar neue Kunden zu gewinnen.
-            Full-Service aus einer Hand – von der Landingpage bis zum
-            KI-Chatbot.
+            Professionelles Webdesign, intelligente Automatisierungen und nachhaltige SEO-Strategien – alles aus einer Hand für nachhaltiges Wachstum.
           </p>
           <div className="flex gap-4 mt-6">
             <a
@@ -98,13 +90,13 @@ export function Footer() {
           </ul>
         </div>
 
-        {/* Target Audience */}
+        {/* Info Links */}
         <div className="col-span-1 md:col-span-2">
           <h3 className="font-bold text-slate-900 mb-6 text-sm uppercase tracking-widest">
-            Für wen?
+            Informationen
           </h3>
           <ul className="space-y-3 text-slate-600 text-sm">
-            {targetLinks.map((link) => (
+            {infoLinks.map((link) => (
               <li key={link.href}>
                 <Link
                   href={link.href}

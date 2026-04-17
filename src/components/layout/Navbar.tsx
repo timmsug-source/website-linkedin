@@ -10,8 +10,6 @@ import { cn, WHATSAPP_URL } from "@/lib/utils";
 const navLinks = [
   { name: "Home", href: "/" },
   { name: "Leistungen", href: "/leistungen" },
-  { name: "Für Coaches", href: "/fuer-fitness-coaches" },
-  { name: "Ergebnisse", href: "/ergebnisse" },
   { name: "Blog", href: "/blog" },
   { name: "Kontakt", href: "/kontakt" },
 ];
@@ -31,7 +29,7 @@ export function Navbar() {
     setIsOpen(false);
   }, [pathname]);
 
-  if (pathname?.startsWith("/lp/")) {
+  if (pathname?.startsWith("/lp/") || pathname?.startsWith("/webdesign/")) {
     return null;
   }
 
