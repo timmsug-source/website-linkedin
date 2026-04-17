@@ -104,27 +104,68 @@ export default function LeistungenPage() {
       />
 
       {/* Hero */}
-      <section className="pt-36 pb-20 px-6 bg-slate-50">
-        <div className="max-w-4xl mx-auto text-center">
-          <p className="text-accent font-bold text-sm uppercase tracking-[0.2em] mb-4">
-            Alle Leistungen
-          </p>
-          <h1 className="text-5xl md:text-6xl font-display font-extrabold text-slate-900 mb-6 leading-tight">
-            Webdesign, Automatisierung &{" "}
-            <span className="text-accent">SEO</span>
-          </h1>
-          <p className="text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed mb-10">
-            Drei Leistungen, die perfekt ineinandergreifen – für eine Online-Präsenz, die wirklich wächst.
-          </p>
-          <a
-            href={CALENDLY_URL}
-            target="_blank"
-            rel="noreferrer noopener"
-            className="inline-flex items-center justify-center bg-accent hover:bg-accent/90 text-white rounded-full px-8 h-14 text-lg font-bold shadow-lg shadow-accent/20 transition-all"
-          >
-            Kostenloses Erstgespräch buchen
-            <ArrowRight className="ml-2" size={20} />
-          </a>
+      <section className="pt-36 pb-20 px-6 bg-slate-50 overflow-hidden">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* Left: Text + CTA */}
+            <div>
+              <p className="text-accent font-bold text-sm uppercase tracking-[0.2em] mb-4">
+                Alle Leistungen
+              </p>
+              <h1 className="text-5xl md:text-6xl font-display font-extrabold text-slate-900 mb-6 leading-tight">
+                Webdesign, Automatisierung &{" "}
+                <span className="text-accent">SEO</span>
+              </h1>
+              <p className="text-xl text-slate-600 leading-relaxed mb-10">
+                Drei Leistungen, die perfekt ineinandergreifen – für eine Online-Präsenz, die wirklich wächst.
+              </p>
+              <a
+                href={CALENDLY_URL}
+                target="_blank"
+                rel="noreferrer noopener"
+                className="inline-flex items-center justify-center bg-accent hover:bg-accent/90 text-white rounded-full px-8 h-14 text-lg font-bold shadow-lg shadow-accent/20 transition-[background-color,box-shadow]"
+              >
+                Kostenloses Erstgespräch buchen
+                <ArrowRight className="ml-2" size={20} />
+              </a>
+            </div>
+
+            {/* Right: Service preview card */}
+            <div className="bg-white rounded-[2rem] border border-slate-100 shadow-xl p-8 space-y-4">
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-slate-400 mb-6">
+                Was du bekommst
+              </p>
+              {services.map((service) => {
+                const Icon = service.icon;
+                return (
+                  <div
+                    key={service.id}
+                    className="flex items-center gap-5 p-4 rounded-2xl bg-slate-50 border border-slate-100"
+                  >
+                    <div
+                      className={`w-11 h-11 rounded-xl ${service.color} flex items-center justify-center shrink-0`}
+                      aria-hidden="true"
+                    >
+                      <Icon size={22} />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <p className="font-bold text-slate-900 text-sm">{service.title}</p>
+                      <p className="text-slate-500 text-xs leading-snug mt-0.5 truncate">
+                        {service.keyword}
+                      </p>
+                    </div>
+                    <ArrowRight size={16} className="text-accent shrink-0" aria-hidden="true" />
+                  </div>
+                );
+              })}
+              <div className="pt-4 border-t border-slate-100 flex items-center gap-3">
+                <div className="w-2 h-2 rounded-full bg-accent animate-pulse" aria-hidden="true" />
+                <p className="text-sm text-slate-500 font-medium">
+                  Alles aus einer Hand · Kostenloses Erstgespräch
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
