@@ -69,13 +69,8 @@ export function WebdesignReasons() {
                 key={item.number}
                 className="bg-white border border-slate-100 rounded-2xl p-7 hover:border-red-500/20 hover:shadow-md transition-[border-color,box-shadow] group"
               >
-                <div className="flex items-start gap-4 mb-4">
-                  <div className="w-11 h-11 rounded-xl bg-red-500/10 flex items-center justify-center shrink-0">
-                    <Icon size={22} className="text-red-500" aria-hidden="true" />
-                  </div>
-                  <span className="text-red-400 font-bold text-sm uppercase tracking-widest pt-2">
-                    {item.number}
-                  </span>
+                <div className="w-11 h-11 rounded-xl bg-red-500/10 flex items-center justify-center mb-4">
+                  <Icon size={22} className="text-red-500" aria-hidden="true" />
                 </div>
                 <h3 className="font-bold text-slate-900 text-base mb-3 leading-snug">
                   {item.title}
