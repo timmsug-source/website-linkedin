@@ -20,6 +20,7 @@ import { ServiceSolution } from "@/components/service/ServiceSolution";
 import { ServiceCTA } from "@/components/service/ServiceCTA";
 import { ServiceInfo } from "@/components/service/ServiceInfo";
 import { ServiceFlow } from "@/components/leistungen/ServiceFlow";
+import { WebdesignReasons } from "@/components/service/WebdesignReasons";
 
 type Props = { params: Promise<{ id: string }> };
 
@@ -140,7 +141,10 @@ export default async function ServiceDetailPage({ params }: Props) {
       {/* 4. ABLAUF (nur Webdesign) */}
       {id === "webdesign" && <ServiceFlow />}
 
-      {/* 5. CTA */}
+      {/* 5. RISIKEN (nur Webdesign) */}
+      {id === "webdesign" && <WebdesignReasons />}
+
+      {/* 6. CTA */}
       {id === "webdesign" ? (
         <section className="py-12 px-6 bg-white">
           <div className="max-w-5xl mx-auto">
@@ -165,7 +169,7 @@ export default async function ServiceDetailPage({ params }: Props) {
         <ServiceCTA service={service} />
       )}
 
-      {/* 6. ALLGEMEINE INFOS */}
+      {/* 7. ALLGEMEINE INFOS */}
       <ServiceInfo service={service} />
     </>
   );
