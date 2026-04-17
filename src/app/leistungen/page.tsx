@@ -4,7 +4,6 @@ import { ArrowRight, Globe, Cpu, Search } from "lucide-react";
 import { buildMetadata } from "@/lib/seo";
 import { SITE_URL, CALENDLY_URL } from "@/lib/utils";
 import { CTA } from "@/components/home/CTA";
-import { ServiceFlow } from "@/components/leistungen/ServiceFlow";
 import { ServiceFAQ } from "@/components/leistungen/ServiceFAQ";
 
 export const metadata: Metadata = buildMetadata({
@@ -220,7 +219,6 @@ export default function LeistungenPage() {
         </div>
       </section>
 
-      <ServiceFlow />
       <ServiceFAQ />
 
       <CTA />

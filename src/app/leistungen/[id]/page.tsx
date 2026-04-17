@@ -19,6 +19,7 @@ import { ServiceProblem } from "@/components/service/ServiceProblem";
 import { ServiceSolution } from "@/components/service/ServiceSolution";
 import { ServiceCTA } from "@/components/service/ServiceCTA";
 import { ServiceInfo } from "@/components/service/ServiceInfo";
+import { ServiceFlow } from "@/components/leistungen/ServiceFlow";
 
 type Props = { params: Promise<{ id: string }> };
 
@@ -136,10 +137,13 @@ export default async function ServiceDetailPage({ params }: Props) {
       {/* 3. LÖSUNG */}
       <ServiceSolution service={service} />
 
-      {/* 4. CTA */}
+      {/* 4. ABLAUF (nur Webdesign) */}
+      {id === "webdesign" && <ServiceFlow />}
+
+      {/* 5. CTA */}
       <ServiceCTA service={service} />
 
-      {/* 5. ALLGEMEINE INFOS */}
+      {/* 6. ALLGEMEINE INFOS */}
       <ServiceInfo service={service} />
     </>
   );
