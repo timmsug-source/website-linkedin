@@ -64,28 +64,74 @@ export function ServiceHero({ service }: { service: Service }) {
 
           {/* Right: Stats / Visual card */}
           <div className="relative">
-            <div className="bg-slate-50 rounded-[3rem] p-8 border border-slate-100 shadow-xl">
-              <p className="text-sm font-bold uppercase tracking-widest text-accent mb-6">
-                Was du bekommst
-              </p>
+            {service.heroFeatures ? (
+              /* Visual metrics card (e.g. Webdesign) */
+              <div className="bg-white rounded-[3rem] border border-slate-100 shadow-xl p-8 space-y-5">
+                {/* Header bar */}
+                <div className="flex items-center gap-2 pb-4 border-b border-slate-100">
+                  <div className="w-3 h-3 rounded-full bg-red-400" />
+                  <div className="w-3 h-3 rounded-full bg-amber-400" />
+                  <div className="w-3 h-3 rounded-full bg-emerald-400" />
+                  <span className="ml-auto text-[10px] font-bold text-slate-400 uppercase tracking-widest">
+                    deine-neue-website.de
+                  </span>
+                </div>
 
-              {service.heroFeatures ? (
-                /* Rich feature list (e.g. Webdesign) */
-                <ul className="space-y-4 max-h-[420px] overflow-y-auto pr-1">
-                  {service.heroFeatures.map((f) => (
-                    <li key={f.number} className="flex gap-4 bg-white rounded-2xl p-4 border border-slate-100">
-                      <span className="text-accent font-bold text-xs uppercase tracking-widest shrink-0 pt-0.5 w-6">
-                        {f.number}
-                      </span>
-                      <div>
-                        <p className="font-bold text-slate-900 text-sm leading-snug mb-1">{f.title}</p>
-                        <p className="text-slate-500 text-xs leading-relaxed">{f.body}</p>
+                {/* PageSpeed Score */}
+                <div className="flex items-center justify-between bg-slate-50 rounded-2xl px-5 py-4">
+                  <div>
+                    <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">PageSpeed Score</p>
+                    <p className="text-4xl font-display font-extrabold text-emerald-500">100</p>
+                  </div>
+                  <div className="w-16 h-16 rounded-full border-4 border-emerald-500 flex items-center justify-center">
+                    <span className="text-emerald-500 font-extrabold text-lg">A+</span>
+                  </div>
+                </div>
+
+                {/* Core Web Vitals */}
+                <div>
+                  <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-3">Core Web Vitals</p>
+                  <div className="space-y-2">
+                    {[
+                      { label: "LCP – Largest Contentful Paint", value: "0.8s", pct: 90 },
+                      { label: "CLS – Layout Stability", value: "0.01", pct: 95 },
+                      { label: "INP – Interactivity", value: "48ms", pct: 85 },
+                    ].map((v) => (
+                      <div key={v.label}>
+                        <div className="flex justify-between text-xs mb-1">
+                          <span className="text-slate-500">{v.label}</span>
+                          <span className="font-bold text-emerald-600">{v.value}</span>
+                        </div>
+                        <div className="h-1.5 bg-slate-100 rounded-full overflow-hidden">
+                          <div
+                            className="h-full bg-emerald-500 rounded-full"
+                            style={{ width: `${v.pct}%` }}
+                          />
+                        </div>
                       </div>
-                    </li>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Status badges */}
+                <div className="flex flex-wrap gap-2 pt-2">
+                  {["Mobile-First", "DSGVO-konform", "KI-Ready", "SEO-optimiert"].map((badge) => (
+                    <span
+                      key={badge}
+                      className="inline-flex items-center gap-1.5 bg-accent/10 text-accent text-xs font-bold px-3 py-1.5 rounded-full"
+                    >
+                      <span className="w-1.5 h-1.5 rounded-full bg-accent" aria-hidden="true" />
+                      {badge}
+                    </span>
                   ))}
-                </ul>
-              ) : (
-                /* Simple checklist (other services) */
+                </div>
+              </div>
+            ) : (
+              /* Simple checklist card (other services) */
+              <div className="bg-slate-50 rounded-[3rem] p-8 border border-slate-100 shadow-xl">
+                <p className="text-sm font-bold uppercase tracking-widest text-accent mb-6">
+                  Was du bekommst
+                </p>
                 <ul className="space-y-5">
                   {service.heroChecklist.map((item, i) => (
                     <li key={i} className="flex items-start gap-4">
@@ -101,21 +147,19 @@ export function ServiceHero({ service }: { service: Service }) {
                     </li>
                   ))}
                 </ul>
-              )}
 
-              {service.heroStat && (
-                <div className="mt-6 pt-6 border-t border-slate-200 grid grid-cols-2 gap-6">
-                  {service.heroStat.map((stat, i) => (
-                    <div key={i}>
-                      <p className="text-3xl font-display font-extrabold text-accent">
-                        {stat.value}
-                      </p>
-                      <p className="text-sm text-slate-500 mt-1">{stat.label}</p>
-                    </div>
-                  ))}
-                </div>
-              )}
-            </div>
+                {service.heroStat && (
+                  <div className="mt-6 pt-6 border-t border-slate-200 grid grid-cols-2 gap-6">
+                    {service.heroStat.map((stat, i) => (
+                      <div key={i}>
+                        <p className="text-3xl font-display font-extrabold text-accent">{stat.value}</p>
+                        <p className="text-sm text-slate-500 mt-1">{stat.label}</p>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            )}
 
             {/* Floating badge */}
             <div
