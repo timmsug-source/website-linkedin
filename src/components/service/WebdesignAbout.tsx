@@ -12,7 +12,7 @@ export function WebdesignAbout() {
           <div className="relative">
             <div className="relative rounded-[2.5rem] overflow-hidden aspect-[4/5] max-w-md mx-auto lg:mx-0 shadow-2xl">
               <Image
-                src="/images/timm-portrait.jpg"
+                src="/images/timm-portrait.jpeg"
                 alt="Timm Schurig – Webdesigner und SEO-Experte aus Langenfeld"
                 fill
                 className="object-cover object-top"
