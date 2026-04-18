@@ -7,19 +7,19 @@ const cities = [
     name: "Langenfeld",
     href: "/webdesign/langenfeld",
     image: "/images/cities/langenfeld.jpg",
-    teaser: "Webdesign f\u00fcr Unternehmen in Langenfeld, Monheim und Umgebung \u2013 individuell, schnell und bei Google gefunden.",
+    teaser: "Webdesign für Unternehmen in Langenfeld, Monheim und Umgebung – individuell, schnell und bei Google gefunden.",
   },
   {
     name: "Haan",
     href: "/webdesign/haan",
     image: "/images/cities/haan.jpg",
-    teaser: "Professionelle Websites f\u00fcr Betriebe in Haan, Solingen und Erkrath \u2013 modern gestaltet und technisch perfekt.",
+    teaser: "Professionelle Websites für Betriebe in Haan, Solingen und Erkrath – modern gestaltet und technisch perfekt.",
   },
   {
     name: "Leichlingen",
     href: "/webdesign/leichlingen",
     image: "/images/cities/leichlingen.jpg",
-    teaser: "Individuelle Webseiten f\u00fcr Unternehmen in Leichlingen, Leverkusen und Burscheid \u2013 die wirklich Kunden bringen.",
+    teaser: "Individuelle Webseiten für Unternehmen in Leichlingen, Leverkusen und Burscheid – die wirklich Kunden bringen.",
   },
 ];
 
@@ -40,7 +40,7 @@ export function WebdesignCities() {
             Webdesign in deiner <span className="text-accent">Stadt.</span>
           </h2>
           <p className="mt-4 text-slate-500 max-w-xl mx-auto text-base leading-relaxed">
-            Als Webdesigner aus der Region kenne ich den lokalen Markt \u2013 und wei\u00df, was Kunden in deiner Stadt wirklich \u00fcberzeugt.
+            Als Webdesigner aus der Region kenne ich den lokalen Markt – und weiß, was Kunden in deiner Stadt wirklich überzeugt.
           </p>
         </div>
 

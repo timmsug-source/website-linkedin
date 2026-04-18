@@ -5,16 +5,16 @@ import { ArrowRight, CheckCircle2, Globe, Search, MapPin, Star, Clock, Rocket, S
 import { CALENDLY_URL, WHATSAPP_URL } from "@/lib/utils";
 
 const features = [
-    { icon: Globe, title: "Premium Webdesign", desc: "Individuelles Design \u2013 kein Template, kein Baukasten. Deine Website, wie du sie wirklich willst." },
-    { icon: Search, title: "SEO-optimiert", desc: "Von Anfang an f\u00fcr Google optimiert. Top-Rankings in Leichlingen und Umgebung." },
-    { icon: Rocket, title: "Blitzschnell live", desc: "Vom Erstgespr\u00e4ch bis zur fertigen Seite vergehen in der Regel weniger als 2 Wochen." },
-    { icon: ShieldCheck, title: "DSGVO-konform", desc: "Datenschutz, Impressum und Cookie-Management \u2013 alles rechtssicher von Anfang an." },
+    { icon: Globe, title: "Premium Webdesign", desc: "Individuelles Design – kein Template, kein Baukasten. Deine Website, wie du sie wirklich willst." },
+    { icon: Search, title: "SEO-optimiert", desc: "Von Anfang an für Google optimiert. Top-Rankings in Leichlingen und Umgebung." },
+    { icon: Rocket, title: "Blitzschnell live", desc: "Vom Erstgespräch bis zur fertigen Seite vergehen in der Regel weniger als 2 Wochen." },
+    { icon: ShieldCheck, title: "DSGVO-konform", desc: "Datenschutz, Impressum und Cookie-Management – alles rechtssicher von Anfang an." },
 ];
 
 const steps = [
-    { n: "01", t: "Kostenloses Gespr\u00e4ch", d: "Wir kl\u00e4ren dein Ziel und deine Zielgruppe." },
-    { n: "02", t: "Design & Umsetzung", d: "Wir bauen deine Website \u2013 individuell und modern." },
-    { n: "03", t: "Live & gefunden", d: "Deine Website geht online \u2013 bei Google sichtbar." },
+    { n: "01", t: "Kostenloses Gespräch", d: "Wir klären dein Ziel und deine Zielgruppe." },
+    { n: "02", t: "Design & Umsetzung", d: "Wir bauen deine Website – individuell und modern." },
+    { n: "03", t: "Live & gefunden", d: "Deine Website geht online – bei Google sichtbar." },
 ];
 
 export default function WebdesignLeichlingen() {
@@ -30,10 +30,10 @@ export default function WebdesignLeichlingen() {
                 <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
                     <span className="text-sm font-medium opacity-90 inline-flex items-center gap-2">
                         <MapPin size={14} className="text-accent" />
-                        Webdesign f\u00fcr Unternehmen in Leichlingen &amp; Umgebung
+                        Webdesign für Unternehmen in Leichlingen & Umgebung
                     </span>
                     <div className="bg-accent/20 border border-accent/40 text-accent font-bold px-4 py-1.5 rounded-full text-sm">
-                        Kostenloses Erstgespr\u00e4ch
+                        Kostenloses Erstgespräch
                     </div>
                 </div>
             </motion.div>
@@ -59,11 +59,11 @@ export default function WebdesignLeichlingen() {
                             </div>
 
                             <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-extrabold text-white leading-[1.05] mb-8 tracking-tight">
-                                Professionelles <span className="text-accent">Webdesign</span> f\u00fcr Leichlingen.
+                                Professionelles <span className="text-accent">Webdesign</span> für Leichlingen.
                             </h1>
 
                             <p className="text-xl text-slate-400 leading-relaxed mb-10 max-w-xl font-medium">
-                                Individuelle Websites f\u00fcr Unternehmen in Leichlingen, Leverkusen, Solingen und Umgebung \u2013 die bei Google gefunden werden und wirklich Kunden bringen.
+                                Ich entwickle für Unternehmen in Leichlingen und Umgebung hochperformante Websites, die bei Google gefunden werden und aus Besuchern echte Kunden machen – mit 5 Jahren Erfahrung und Fokus auf die KI-Zukunft.
                             </p>
 
                             <div className="flex flex-col sm:flex-row gap-4">
@@ -110,9 +110,9 @@ export default function WebdesignLeichlingen() {
                                         {[...Array(5)].map((_, i) => <Star key={i} size={18} fill="currentColor" className="text-amber-400" />)}
                                     </div>
                                     <p className="text-white text-lg font-semibold italic leading-relaxed">
-                                        "Timm hat unsere Website komplett neu aufgestellt. Seit dem Launch kommen monatlich 3\u20135 neue Anfragen \u00fcber Google."
+                                        "Timm hat unsere Website komplett neu aufgestellt. Seit dem Launch kommen monatlich 3–5 neue Anfragen über Google."
                                     </p>
-                                    <p className="text-slate-400 text-sm mt-3 font-medium">\u2014 Handwerksbetrieb, Leichlingen</p>
+                                    <p className="text-slate-400 text-sm mt-3 font-medium">— Handwerksbetrieb, Leichlingen</p>
                                 </div>
 
                                 <div className="space-y-4 border-t border-white/10 pt-8">
@@ -120,7 +120,7 @@ export default function WebdesignLeichlingen() {
                                         "Live in max. 2 Wochen",
                                         "Individuelles Design",
                                         "SEO-Grundoptimierung",
-                                        "Pers\u00f6nliche Betreuung",
+                                        "Persönliche Betreuung",
                                     ].map((item, i) => (
                                         <div key={i} className="flex items-center gap-3 text-sm text-slate-200 font-semibold">
                                             <div className="w-6 h-6 rounded-full bg-accent/20 flex items-center justify-center shrink-0 border border-accent/20">
@@ -196,10 +196,10 @@ export default function WebdesignLeichlingen() {
             <section className="py-24 px-6 text-center">
                 <div className="max-w-3xl mx-auto">
                     <h2 className="text-4xl md:text-5xl font-display font-extrabold text-slate-900 mb-6 tracking-tight">
-                        Bereit f\u00fcr deine neue <span className="text-accent">Website?</span>
+                        Bereit für deine neue <span className="text-accent">Website?</span>
                     </h2>
                     <p className="text-xl text-slate-500 mb-10 max-w-xl mx-auto leading-relaxed">
-                        Lass uns in einem kostenlosen Erstgespr\u00e4ch kl\u00e4ren, wie wir deine Online-Pr\u00e4senz in Leichlingen auf das n\u00e4chste Level bringen.
+                        Lass uns in einem kostenlosen Erstgespräch klären, wie wir deine Online-Präsenz in Leichlingen auf das nächste Level bringen.
                     </p>
                     <div className="flex flex-col gap-4 items-center">
                         <a
@@ -208,7 +208,7 @@ export default function WebdesignLeichlingen() {
                             rel="noreferrer noopener"
                             className="inline-flex items-center justify-center bg-accent hover:bg-accent/90 text-white rounded-full px-12 h-16 text-xl font-bold w-full max-w-md shadow-2xl shadow-accent/30 transition-[background-color]"
                         >
-                            Termin buchen \u2013 kostenlos
+                            Termin buchen – kostenlos
                             <ArrowRight className="ml-2" size={22} />
                         </a>
                         <div className="flex items-center gap-2 text-slate-400 text-sm font-medium">
@@ -221,7 +221,7 @@ export default function WebdesignLeichlingen() {
             {/* Footer */}
             <footer className="py-10 text-center border-t border-slate-100">
                 <p className="text-slate-400 text-xs font-medium uppercase tracking-widest">
-                    &copy; {new Date().getFullYear()} Timm Schurig &middot; <a href="/impressum" className="hover:text-accent">Impressum</a> &middot; <a href="/datenschutz" className="hover:text-accent">Datenschutz</a>
+                    © {new Date().getFullYear()} Timm Schurig · <a href="/impressum" className="hover:text-accent">Impressum</a> · <a href="/datenschutz" className="hover:text-accent">Datenschutz</a>
                 </p>
             </footer>
         </main>
