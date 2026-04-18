@@ -24,6 +24,7 @@ import { WebdesignReasons } from "@/components/service/WebdesignReasons";
 import { WebdesignAbout } from "@/components/service/WebdesignAbout";
 import { AutomatisierungenProcess } from "@/components/service/AutomatisierungenProcess";
 import { SeoGeoReasons } from "@/components/service/SeoGeoReasons";
+import { WebdesignCities } from "@/components/service/WebdesignCities";
 import { SeoGeoProcess } from "@/components/service/SeoGeoProcess";
 
 type Props = { params: Promise<{ id: string }> };
@@ -185,8 +186,11 @@ export default async function ServiceDetailPage({ params }: Props) {
       {/* 7. ÜBER MICH */}
       {(id === "webdesign" || id === "automatisierungen" || id === "seo-geo") && <WebdesignAbout />}
 
-      {/* 8. ALLGEMEINE INFOS */}
-      <ServiceInfo service={service} hideFeatures={id === "webdesign" || id === "automatisierungen" || id === "seo-geo"} />
+      {/* 8. STÄDTE (nur Webdesign) */}
+      {id === "webdesign" && <WebdesignCities />}
+
+      {/* 9. ALLGEMEINE INFOS */}
+      <ServiceInfo service={service} hideFeatures={id === "webdesign" || id === "automatisierungen" || id === "seo-geo"} hideRelated={id === "webdesign"} />
     </>
   );
 }

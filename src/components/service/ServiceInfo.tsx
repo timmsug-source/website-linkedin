@@ -9,7 +9,7 @@ import type { serviceData } from "@/lib/serviceData";
 
 type Service = (typeof serviceData)[keyof typeof serviceData];
 
-export function ServiceInfo({ service, hideFeatures }: { service: Service; hideFeatures?: boolean }) {
+export function ServiceInfo({ service, hideFeatures, hideRelated }: { service: Service; hideFeatures?: boolean; hideRelated?: boolean }) {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   return (
@@ -128,7 +128,7 @@ export function ServiceInfo({ service, hideFeatures }: { service: Service; hideF
       </section>
 
       {/* Related Services */}
-      {service.relatedServices && service.relatedServices.length > 0 && (
+      {!hideRelated && service.relatedServices && service.relatedServices.length > 0 && (
         <section
           className="py-20 px-6 bg-white border-t border-slate-100"
           aria-label="Weitere Leistungen"
