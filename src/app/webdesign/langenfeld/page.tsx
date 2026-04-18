@@ -137,6 +137,34 @@ export default function WebdesignLangenfeld() {
                 </div>
             </section>
 
+            {/* Local Partner */}
+            <section className="py-20 px-6 bg-white">
+                <div className="max-w-5xl mx-auto">
+                    <div className="grid lg:grid-cols-[1fr,1.2fr] gap-12 lg:gap-20 items-center">
+                        {/* Left: Headline + accent line */}
+                        <div>
+                            <p className="text-accent font-bold text-sm uppercase tracking-[0.2em] mb-4">
+                                Lokaler Experte
+                            </p>
+                            <h2 className="text-3xl md:text-4xl font-display font-extrabold text-slate-900 leading-tight">
+                                Dein Partner für digitales Wachstum direkt vor Ort.
+                            </h2>
+                            <div className="mt-6 w-16 h-1 rounded-full bg-accent" />
+                        </div>
+
+                        {/* Right: Text */}
+                        <div className="space-y-5 text-slate-600 leading-relaxed text-base">
+                            <p>
+                                Warum in die Ferne schweifen? Für erstklassiges Webdesign musst du Langenfeld nicht verlassen. Als lokaler Experte kenne ich den Markt im Rheinland und weiß, worauf es für Unternehmen zwischen Köln und Düsseldorf ankommt.
+                            </p>
+                            <p>
+                                Ich biete dir kein Standard-Design von der Stange, sondern maßgeschneiderte Lösungen, die genau auf deine Zielgruppe zugeschnitten sind. Egal ob du ein Handwerksbetrieb in Immigrath, eine Kanzlei im Zentrum oder ein Start-up im Gewerbepark Fuhrkamp bist – ich sorge dafür, dass deine digitale Präsenz so professionell ist wie deine Arbeit selbst.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             {/* Features */}
             <section className="py-24 px-6">
                 <div className="max-w-5xl mx-auto">
