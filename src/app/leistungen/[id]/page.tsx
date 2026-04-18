@@ -23,6 +23,7 @@ import { ServiceFlow } from "@/components/leistungen/ServiceFlow";
 import { WebdesignReasons } from "@/components/service/WebdesignReasons";
 import { WebdesignAbout } from "@/components/service/WebdesignAbout";
 import { AutomatisierungenProcess } from "@/components/service/AutomatisierungenProcess";
+import { SeoGeoReasons } from "@/components/service/SeoGeoReasons";
 
 type Props = { params: Promise<{ id: string }> };
 
@@ -145,6 +146,9 @@ export default async function ServiceDetailPage({ params }: Props) {
 
       {/* 4b. PROZESS (nur Automatisierungen) */}
       {id === "automatisierungen" && <AutomatisierungenProcess />}
+
+      {/* 4c. RISIKEN (nur SEO-GEO) */}
+      {id === "seo-geo" && <SeoGeoReasons />}
 
       {/* 5. RISIKEN (nur Webdesign) */}
       {id === "webdesign" && <WebdesignReasons />}
