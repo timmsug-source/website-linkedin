@@ -63,7 +63,7 @@ export default function WebdesignLangenfeld() {
                             </h1>
 
                             <p className="text-xl text-slate-400 leading-relaxed mb-10 max-w-xl font-medium">
-                                Individuelle Websites für Unternehmen in Langenfeld, Monheim, Düsseldorf und Umgebung – die bei Google gefunden werden und wirklich Kunden bringen.
+                                Ich entwickle f\u00fcr Unternehmen in Langenfeld und Umgebung hochperformante Websites, die bei Google gefunden werden und aus Besuchern echte Kunden machen \u2013 mit 5 Jahren Erfahrung und Fokus auf die KI-Zukunft.
                             </p>
 
                             <div className="flex flex-col sm:flex-row gap-4">
