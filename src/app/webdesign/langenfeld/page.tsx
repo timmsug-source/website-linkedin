@@ -191,18 +191,18 @@ export default function WebdesignLangenfeld() {
                         {[
                             {
                                 icon: TrendingDown,
-                                title: "Regionale Konkurrenz zieht an dir vorbei",
-                                body: "Während du dich auf deine Qualität verlässt, investieren Mitbewerber in Langenfeld, Monheim und Hilden in moderne Webauftritte. Wenn Kunden bei Google nach deiner Dienstleistung suchen und dich nicht auf Seite 1 finden, existierst du für sie schlichtweg nicht.",
+                                title: "Deine Konkurrenz ist digital präsenter",
+                                body: "Während du auf deine handwerkliche oder beratende Qualität setzt, investieren Mitbewerber gezielt in ein modernes Webdesign für ihr Unternehmen in Langenfeld. Wenn potenzielle Kunden bei Google nach deinen Leistungen suchen und dein eigenes Webdesign in Langenfeld nicht auf der ersten Seite erscheint, gehen die lukrativen Aufträge an andere.",
                             },
                             {
                                 icon: SmartphoneNfc,
-                                title: "Kein Vertrauen durch \"Digitalen Stillstand\"",
-                                body: "Kunden aus der Region suchen Sicherheit. Eine Website, die nicht mobil optimiert ist oder aussieht wie aus dem Jahr 2010, strahlt Unzuverlässigkeit aus. Der erste Eindruck entscheidet innerhalb von Sekunden, ob ein Langenfelder bei dir anruft oder zum nächsten Anbieter klickt.",
+                                title: "Vertrauensverlust durch ein veraltetes Image",
+                                body: "Kunden aus der Region suchen online nach Sicherheit. Wenn dein aktuelles Webdesign hier in Langenfeld nicht für Smartphones optimiert ist oder optisch im letzten Jahrzehnt feststeckt, wirkt das unprofessionell. Ein lokaler Kunde klickt dann lieber weiter zum nächsten Anbieter mit einem zeitgemäßen Webdesign aus Langenfeld.",
                             },
                         ].map((item) => {
                             const Icon = item.icon;
                             return (
-                                <div key={item.title} className="bg-white/5 border border-white/10 rounded-2xl p-7 hover:border-red-500/30 transition-[border-color]">
+                                <div key={item.title} className="bg-slate-900 border border-slate-800 rounded-2xl p-7 hover:border-red-500/30 transition-[border-color]">
                                     <div className="w-10 h-10 rounded-xl bg-red-500/15 flex items-center justify-center mb-4">
                                         <Icon size={20} className="text-red-400" />
                                     </div>
@@ -217,23 +217,23 @@ export default function WebdesignLangenfeld() {
                         {[
                             {
                                 icon: Navigation,
-                                title: "Die \"Google Maps\"-Falle",
-                                body: "Du hast ein tolles Geschäft in Langenfeld, aber im lokalen Suchergebnis tauchen nur andere auf? Ohne gezielte lokale Optimierung wirst du selbst in deiner direkten Nachbarschaft übersehen, während Kunden buchstäblich an deiner Tür vorbeilaufen.",
+                                title: "Unsichtbarkeit in der regionalen Suche",
+                                body: "Du hast ein erstklassiges Geschäft in der Stadt, aber dein Webdesign wird in Langenfeld bei Google Maps einfach nicht angezeigt? Ohne eine gezielte lokale Optimierung wirst du selbst in deiner direkten Nachbarschaft übersehen, während Kunden wegen eines besser auffindbaren Webdesigns in ganz Langenfeld zur Konkurrenz abwandern.",
                             },
                             {
                                 icon: MousePointerClick,
-                                title: "Anfragen, die im Sande verlaufen",
-                                body: "Deine aktuelle Website ist vielleicht online, aber sie arbeitet nicht für dich. Fehlende klare Handlungsaufforderungen und komplizierte Kontaktwege führen dazu, dass Interessenten abbrechen, bevor sie dich überhaupt erreichen.",
+                                title: "Keine automatisierten Kundenanfragen",
+                                body: "Deine Seite ist zwar online, aber sie generiert keine Leads. Ein schwaches Webdesign in Langenfeld ohne klare Kontaktwege führt dazu, dass Interessenten frustriert abbrechen. Dabei sollte ein professionelles Webdesign für Langenfelder Firmen wie ein digitaler Mitarbeiter funktionieren, der dir Arbeit abnimmt.",
                             },
                             {
                                 icon: Users,
-                                title: "Abhängigkeit von Empfehlungen",
-                                body: "Sich nur auf Mundpropaganda in Langenfeld zu verlassen, ist riskant. Ein moderner Webauftritt macht dich unabhängig und sorgt für einen konstanten Strom an Neukunden, auch wenn das persönliche Netzwerk gerade keine Leads liefert.",
+                                title: "Die riskante Abhängigkeit von Empfehlungen",
+                                body: "Sich nur auf Mundpropaganda zu verlassen, reicht heute oft nicht mehr aus. Ein strategisch aufgebautes Webdesign in Langenfeld macht dich unabhängig vom Zufall. Es sorgt für einen konstanten Strom an Neukunden, weil dein Webdesign in und um Langenfeld rund um die Uhr als dein bester Verkäufer überzeugt.",
                             },
                         ].map((item) => {
                             const Icon = item.icon;
                             return (
-                                <div key={item.title} className="bg-white/5 border border-white/10 rounded-2xl p-7 hover:border-red-500/30 transition-[border-color]">
+                                <div key={item.title} className="bg-slate-900 border border-slate-800 rounded-2xl p-7 hover:border-red-500/30 transition-[border-color]">
                                     <div className="w-10 h-10 rounded-xl bg-red-500/15 flex items-center justify-center mb-4">
                                         <Icon size={20} className="text-red-400" />
                                     </div>
