@@ -246,6 +246,97 @@ export default function WebdesignLangenfeld() {
                 </div>
             </section>
 
+            {/* Solution */}
+            <section className="py-24 px-6 bg-white overflow-hidden">
+                <div className="max-w-6xl mx-auto">
+
+                    {/* Header */}
+                    <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start mb-20">
+                        <div>
+                            <p className="text-accent font-bold text-sm uppercase tracking-[0.2em] mb-4">Die Lösung</p>
+                            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-extrabold text-slate-900 leading-tight">
+                                Deine Website als Motor für{" "}
+                                <span className="text-accent">regionales Wachstum.</span>
+                            </h2>
+                            <p className="mt-5 text-slate-500 text-lg leading-relaxed">
+                                Mit einem maßgeschneiderten Webdesign in Langenfeld verwandelst du digitale Hürden in echte Wettbewerbsvorteile.
+                            </p>
+                        </div>
+                        <div className="space-y-5 text-slate-600 leading-relaxed lg:pt-12">
+                            <p>
+                                Schluss mit digitalen Kompromissen. Während herkömmliche Websites oft nur wie eine statische Visitenkarte wirken, entwickle ich für dich eine Lösung, die aktiv für dein Business arbeitet. Wir kombinieren modernes Design mit lokaler SEO-Power und zukunftssicherer Technik.
+                            </p>
+                            <p>
+                                Das Ziel ist ein Webdesign für Langenfelder Unternehmen, das nicht nur durch Ästhetik überzeugt, sondern deine Expertise widerspiegelt und Besucher gezielt zur Kontaktaufnahme führt. So wirst du zur ersten Anlaufstelle in deiner Branche – direkt hier in der Region und darüber hinaus.
+                            </p>
+                        </div>
+                    </div>
+
+                    {/* 6-card grid */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                        {[
+                            {
+                                n: "01",
+                                title: "Sichtbarkeit direkt vor Ort",
+                                body: "Durch gezielte lokale Optimierung sorge ich dafür, dass dein Webdesign in Langenfeld und Umgebung ganz oben in den Suchergebnissen erscheint. Du wirst genau dann gefunden, wenn Kunden in deiner Nähe nach deiner Dienstleistung suchen.",
+                                gradient: "from-accent/20 to-accent/5",
+                            },
+                            {
+                                n: "02",
+                                title: "Vertrauen ab der ersten Sekunde",
+                                body: "Ein modernes und professionelles Erscheinungsbild sorgt für sofortige Glaubwürdigkeit. Ich gestalte ein Webdesign aus Langenfeld, das deine Qualität unterstreicht und dafür sorgt, dass Interessenten sich bei dir sicher fühlen.",
+                                gradient: "from-blue-500/20 to-blue-500/5",
+                            },
+                            {
+                                n: "03",
+                                title: "Optimiert für alle Endgeräte",
+                                body: "Da über 70 % der regionalen Suchanfragen über das Smartphone kommen, ist ein konsequentes Mobile-First Webdesign für Langenfeld bei mir Standard. Deine Seite lädt blitzschnell und sieht auf jedem Gerät perfekt aus.",
+                                gradient: "from-purple-500/20 to-purple-500/5",
+                            },
+                            {
+                                n: "04",
+                                title: "Automatisierte Kundengewinnung",
+                                body: "Deine Website wird zu deinem besten Mitarbeiter. Durch intelligente Kontaktformulare und klare Call-to-Actions sorgt mein Webdesign in Langenfeld dafür, dass aus anonymen Besuchern planbare Kundenanfragen werden.",
+                                gradient: "from-amber-500/20 to-amber-500/5",
+                            },
+                            {
+                                n: "05",
+                                title: "Vorsprung durch KI-Ready Technik",
+                                body: "Ich bereite dein Webdesign in Langenfeld auf die Zukunft vor. Deine Inhalte werden so strukturiert, dass sie nicht nur von Google, sondern auch von modernen KI-Systemen als Top-Empfehlung in der Region ausgespielt werden.",
+                                gradient: "from-cyan-500/20 to-cyan-500/5",
+                            },
+                            {
+                                n: "06",
+                                title: "Rundum-Sorglos-Betreuung",
+                                body: "Du konzentrierst dich auf dein Kerngeschäft, ich kümmere mich um den Rest. Als dein Partner für Webdesign direkt in Langenfeld übernehme ich die Wartung, Sicherheit und laufende Updates, damit dein System immer auf dem neuesten Stand bleibt.",
+                                gradient: "from-rose-500/20 to-rose-500/5",
+                            },
+                        ].map((item) => (
+                            <div
+                                key={item.n}
+                                className="group relative bg-slate-50 border border-slate-200 rounded-3xl p-7 overflow-hidden hover:border-accent/40 hover:shadow-xl hover:-translate-y-1 transition-[border-color,box-shadow,transform] duration-300"
+                            >
+                                {/* Hover gradient background */}
+                                <div className={`absolute inset-0 bg-gradient-to-br ${item.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-3xl`} />
+
+                                <div className="relative z-10">
+                                    {/* Number */}
+                                    <span className="block font-display font-extrabold text-5xl text-slate-200 group-hover:text-accent/20 leading-none mb-4 transition-colors duration-300 select-none">
+                                        {item.n}
+                                    </span>
+                                    <h3 className="font-bold text-slate-900 text-base mb-3 leading-snug group-hover:text-accent transition-colors duration-300">
+                                        {item.title}
+                                    </h3>
+                                    <p className="text-slate-500 text-sm leading-relaxed">
+                                        {item.body}
+                                    </p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
             {/* Features */}
             <section className="py-24 px-6">
                 <div className="max-w-5xl mx-auto">
