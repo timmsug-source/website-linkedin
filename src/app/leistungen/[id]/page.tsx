@@ -22,6 +22,7 @@ import { ServiceInfo } from "@/components/service/ServiceInfo";
 import { ServiceFlow } from "@/components/leistungen/ServiceFlow";
 import { WebdesignReasons } from "@/components/service/WebdesignReasons";
 import { WebdesignAbout } from "@/components/service/WebdesignAbout";
+import { AutomatisierungenProcess } from "@/components/service/AutomatisierungenProcess";
 
 type Props = { params: Promise<{ id: string }> };
 
@@ -141,6 +142,9 @@ export default async function ServiceDetailPage({ params }: Props) {
 
       {/* 4. ABLAUF (nur Webdesign) */}
       {id === "webdesign" && <ServiceFlow />}
+
+      {/* 4b. PROZESS (nur Automatisierungen) */}
+      {id === "automatisierungen" && <AutomatisierungenProcess />}
 
       {/* 5. RISIKEN (nur Webdesign) */}
       {id === "webdesign" && <WebdesignReasons />}
