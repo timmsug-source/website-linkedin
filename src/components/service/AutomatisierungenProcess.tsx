@@ -1,4 +1,4 @@
-import { Search, Wrench, ShieldCheck, ArrowRight } from "lucide-react";
+import { Search, Wrench, ShieldCheck } from "lucide-react";
 
 const steps = [
   {
@@ -26,7 +26,7 @@ const steps = [
 
 export function AutomatisierungenProcess() {
   return (
-    <section className="py-24 px-6 bg-slate-900 overflow-hidden" aria-label="In 3 Schritten zum automatisierten Business">
+    <section className="py-24 px-6 bg-slate-50 overflow-hidden" aria-label="In 3 Schritten zum automatisierten Business">
       <div className="max-w-7xl mx-auto">
 
         {/* Header */}
@@ -34,11 +34,11 @@ export function AutomatisierungenProcess() {
           <p className="text-accent font-bold text-sm uppercase tracking-[0.2em] mb-4">
             Der Ablauf
           </p>
-          <h2 className="text-4xl md:text-5xl font-display font-extrabold text-white leading-tight mb-4">
+          <h2 className="text-4xl md:text-5xl font-display font-extrabold text-slate-900 leading-tight mb-4">
             In 3 Schritten zu deinem{" "}
             <span className="text-accent">automatisierten Business.</span>
           </h2>
-          <p className="text-slate-400 text-lg leading-relaxed">
+          <p className="text-slate-600 text-lg leading-relaxed">
             Weg von manuellen Prozessen, hin zu einem System, das für dich arbeitet.
           </p>
         </div>
@@ -46,25 +46,13 @@ export function AutomatisierungenProcess() {
         {/* Steps */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 relative">
 
-          {/* Connecting line (desktop only) */}
-          <div
-            className="absolute hidden lg:block top-14 left-[calc(33.33%-1px)] right-[calc(33.33%-1px)] h-px border-t-2 border-dashed border-accent/30"
-            aria-hidden="true"
-          />
 
           {steps.map((step, i) => {
             const Icon = step.icon;
             return (
               <div key={step.number} className="relative flex flex-col">
 
-                {/* Mobile connector */}
-                {i < steps.length - 1 && (
-                  <div className="lg:hidden flex justify-center py-3" aria-hidden="true">
-                    <ArrowRight size={20} className="text-accent/40 rotate-90" />
-                  </div>
-                )}
-
-                <div className="bg-white/5 border border-white/10 rounded-3xl p-8 flex flex-col gap-5 h-full hover:border-accent/30 transition-[border-color]">
+                <div className="bg-slate-900 border border-slate-800 rounded-3xl p-8 flex flex-col gap-5 h-full hover:border-accent/30 transition-[border-color]">
 
                   {/* Step indicator + icon */}
                   <div className="flex items-center gap-4">
