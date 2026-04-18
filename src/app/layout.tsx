@@ -34,7 +34,8 @@ export default function RootLayout({
         <meta name="geo.placename" content="Deutschland" />
         <meta name="language" content="German" />
         <meta name="revisit-after" content="7 days" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.json" />
       </head>
