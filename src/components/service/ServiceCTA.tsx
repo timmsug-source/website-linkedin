@@ -47,7 +47,7 @@ export function ServiceCTA({ service }: { service: Service }) {
                     href={CALENDLY_URL}
                     target="_blank"
                     rel="noreferrer noopener"
-                    className="inline-flex items-center justify-center bg-accent hover:bg-accent/90 text-white rounded-full px-10 h-16 text-xl font-bold w-full sm:w-auto shadow-lg shadow-accent/20 transition-all border-b-4 border-accent-dark/30 active:border-b-0 active:translate-y-1"
+                    className="inline-flex items-center justify-center bg-accent hover:bg-accent/90 text-white rounded-full px-10 h-16 text-xl font-bold w-full sm:w-auto shadow-lg shadow-accent/20 transition-[background-color,box-shadow]"
                   >
                     Kostenloses Erstgespräch
                     <ArrowRight className="ml-2" size={22} />
