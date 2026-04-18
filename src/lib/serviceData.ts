@@ -370,6 +370,10 @@ export const serviceData: Record<string, ServiceEntry> = {
       "KI-Suchen wie ChatGPT empfehlen dich nicht.",
       "Du hast keine Ahnung, wie du bei Google besser ranken kannst.",
     ],
+    solutionIntro: [
+      "In einem digitalen Markt, der niemals schläft, reicht es nicht mehr aus, einfach nur online zu sein. Du musst dort stattfinden, wo die Entscheidungen getroffen werden. Wir kombinieren bewährte SEO-Methoden mit der neuen Welt der Generative Engine Optimization (GEO).",
+      "Das bedeutet für dich: Wir optimieren deine Präsenz so, dass du nicht nur in den klassischen Suchergebnissen ganz oben stehst, sondern auch von KI-Systemen als vertrauenswürdige Experten-Quelle empfohlen wirst. Wir machen dein Unternehmen zur unübersehbaren Antwort auf die Fragen deiner Kunden – lokal in Langenfeld und überall dort, wo dein Business wachsen soll.",
+    ],
     solutionHeadline: "SEO, das nachhaltig funktioniert – und GEO für die Zukunft.",
     solution:
       "Ich analysiere deine aktuelle Sichtbarkeit, identifiziere die besten Keywords und baue eine Strategie auf, die dich bei Google nach oben bringt und dich in KI-Suchen sichtbar macht.",
@@ -379,6 +383,38 @@ export const serviceData: Record<string, ServiceEntry> = {
       "Lokale SEO & Google Business Profile Optimierung",
       "Content-Erstellung für zielgerichtete Keywords",
       "GEO: Strukturierung deiner Inhalte für KI-Suchen",
+    ],
+    solutionFeatures: [
+      {
+        number: "01",
+        title: "Technische SEO-Analyse",
+        body: "Ich sorge für ein perfektes Fundament. Wir optimieren Ladezeiten, Core Web Vitals und die Indexierbarkeit deiner Seite. Nur eine technisch einwandfreie Website hat die Chance, dauerhaft auf den vorderen Plätzen bei Google zu ranken.",
+      },
+      {
+        number: "02",
+        title: "Lokale SEO-Dominanz",
+        body: "Besonders für Unternehmen aus Langenfeld und Umgebung: Ich optimiere dein Google Business Profile und setze auf gezielte lokale Keywords. So wirst du genau dann gefunden, wenn Kunden in deiner Nähe nach deiner Dienstleistung suchen.",
+      },
+      {
+        number: "03",
+        title: "Strategische Content-Architektur",
+        body: "Wir erstellen Inhalte, die nicht nur Algorithmen gefallen, sondern echte Probleme deiner Zielgruppe lösen. Durch semantisches HTML und strukturierte Daten stellen wir sicher, dass Google genau versteht, welche Expertise du anbietest.",
+      },
+      {
+        number: "04",
+        title: "GEO – Generative Engine Optimization",
+        body: "Die Zukunft der Suche. Ich bereite deine Website so auf, dass KI-Modelle wie ChatGPT, Perplexity und Google Gemini deine Inhalte finden, verstehen und dich als Top-Empfehlung in ihren Antworten zitieren.",
+      },
+      {
+        number: "05",
+        title: "Keyword- & Wettbewerbs-Insights",
+        body: "Wir raten nicht, wir wissen. Durch eine tiefgehende Analyse finden wir die Suchbegriffe mit dem höchsten Potenzial. Ich behalte deine Konkurrenz im Auge, damit wir strategische Lücken nutzen und dich an die Spitze bringen.",
+      },
+      {
+        number: "06",
+        title: "Monatliches Reporting & Monitoring",
+        body: "SEO ist kein einmaliges Event. Du erhältst von mir transparente Reports über deine Rankings, den organischen Traffic und die Sichtbarkeit in KI-Suchen. So sehen wir genau, was funktioniert, und passen die Strategie laufend an.",
+      },
     ],
     process: [
       { title: "SEO-Audit", desc: "Analyse deiner aktuellen Sichtbarkeit und technischer Fehler." },
