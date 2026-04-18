@@ -166,9 +166,9 @@ export default function WebdesignLangenfeld() {
             </section>
 
             {/* Why invisible */}
-            <section className="py-24 px-6 bg-slate-950 relative overflow-hidden">
+            <section className="py-24 px-6 bg-slate-50 relative overflow-hidden">
                 {/* Background glow */}
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-red-500/10 blur-[120px] rounded-full pointer-events-none" />
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-red-500/5 blur-[120px] rounded-full pointer-events-none" />
 
                 <div className="max-w-6xl mx-auto relative z-10">
                     {/* Header */}
@@ -177,11 +177,11 @@ export default function WebdesignLangenfeld() {
                             <AlertTriangle size={15} className="text-red-400" />
                             <span className="text-red-400 font-bold text-xs uppercase tracking-widest">Das Problem</span>
                         </div>
-                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-extrabold text-white leading-tight mb-5">
+                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-extrabold text-slate-900 leading-tight mb-5">
                             Warum viele Unternehmen in Langenfeld{" "}
-                            <span className="text-red-400">online unsichtbar</span> bleiben.
+                            <span className="text-red-500">online unsichtbar</span> bleiben.
                         </h2>
-                        <p className="text-slate-400 text-lg leading-relaxed">
+                        <p className="text-slate-500 text-lg leading-relaxed">
                             Eine veraltete Website ist teurer als eine neue – sie kostet dich jeden Tag potenzielle Kunden direkt vor deiner Haustür.
                         </p>
                     </div>
