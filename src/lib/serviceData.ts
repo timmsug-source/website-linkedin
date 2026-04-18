@@ -44,6 +44,7 @@ export interface ServiceEntry {
   solutionHeadline: string;
   solution: string;
   solutionPoints: string[];
+  solutionFeatures?: ServiceFeature[];
   process: ServiceStep[];
   // CTA
   ctaHeadline: string;
@@ -130,6 +131,38 @@ export const serviceData: Record<string, ServiceEntry> = {
       "Das Ergebnis ist eine Online-Präsenz, die nicht nur durch Ästhetik überzeugt, sondern aktiv für dich arbeitet: Sie zieht die richtigen Besucher an, überzeugt sie von deiner Expertise und verwandelt sie automatisiert in loyale Kunden. So definieren wir gemeinsam den neuen Standard für dein Business.",
     ],
     solutionHeadline: "Eine Website, die rund um die Uhr für dich arbeitet.",
+    solutionFeatures: [
+      {
+        number: "01",
+        title: "High-End Performance",
+        body: "Du erhältst eine Website, die in Millisekunden lädt. Durch sauberen Code und modernste Optimierung erreichen wir Bestwerte bei den Google Core Web Vitals. Das sorgt für eine erstklassige User Experience und ist dein Ticket für Top-Rankings.",
+      },
+      {
+        number: "02",
+        title: "KI-Ready Architektur",
+        body: "Deine Website wird so strukturiert, dass sie nicht nur von Menschen, sondern auch von KI-Systemen (wie ChatGPT oder Google Gemini) perfekt ausgelesen werden kann. Damit bist du technologisch ganz vorne mit dabei und wirst als Experten-Quelle zitiert.",
+      },
+      {
+        number: "03",
+        title: "Conversion-Optimiertes Design",
+        body: "Keine digitale Visitenkarte, sondern ein echtes Verkaufstool. Ich gestalte ein Interface, das Besucher gezielt führt und psychologisch so aufgebaut ist, dass aus Interessenten zahlende Kunden werden – optimiert auf jedem Endgerät.",
+      },
+      {
+        number: "04",
+        title: "Konsequentes Mobile-First",
+        body: "Über 70 % der Nutzer sind mobil unterwegs. Ich entwickle deine Website konsequent nach dem Mobile-First-Prinzip. Das bedeutet: Perfekte Darstellung, intuitive Bedienung und blitzschnelle Ladezeiten auf dem Smartphone – ohne Kompromisse bei der Desktop-Version.",
+      },
+      {
+        number: "05",
+        title: "Strategisches SEO & Sichtbarkeit",
+        body: "Deine Website wird von Grund auf für Suchmaschinen optimiert. Wir setzen nicht nur auf Keywords, sondern auf eine saubere technische Struktur und semantische Inhalte. Das Ziel: Top-Platzierungen bei Google, damit deine Zielgruppe dich genau dann findet, wenn sie nach deiner Lösung sucht.",
+      },
+      {
+        number: "06",
+        title: "Lebenslange technische Partnerschaft",
+        body: "Mit dem Livegang beginnt unser Service erst richtig. Du bekommst ein \"Rundum-Sorglos-Paket\": Ich übernehme die komplette Wartung, die Sicherheits-Updates und die laufende technische Anpassung. Du hast den Kopf frei für dein Business.",
+      },
+    ],
     solution:
       "Ich baue dir eine hochkonvertierende Website, die Vertrauen aufbaut, deine Expertise zeigt und Besucher gezielt zur Kontaktaufnahme führt – technisch einwandfrei, schnell und suchmaschinenoptimiert.",
     solutionPoints: [
@@ -215,6 +248,10 @@ export const serviceData: Record<string, ServiceEntry> = {
       "Termine werden nicht automatisch bestätigt oder erinnert.",
       "Du verbringst Stunden mit Admin-Arbeit statt mit deinen Kunden.",
     ],
+    solutionIntro: [
+      "Stell dir vor, dein Business liefe wie eine gut geölte Maschine, während du dich um die wirklich wichtigen Dinge kümmerst. Wir beenden das Zeitalter von Copy-Paste und manuellem Admin-Aufwand. Gemeinsam verwandeln wir deine starren Abläufe in dynamische Workflows, die im Hintergrund für dich arbeiten – fehlerfrei, rund um die Uhr und absolut zuverlässig.",
+      "Ich baue dir eine Infrastruktur, die deine Tools nicht nur verbindet, sondern sie intelligent miteinander kommunizieren lässt. Das Ergebnis: Mehr Fokus für deine Kunden, weniger Stress für dich und ein System, das mit deinem Erfolg mitwächst.",
+    ],
     solutionHeadline: "Ein System, das dich nie vergisst.",
     solution:
       "Ich analysiere deine aktuellen Prozesse und baue dir ein Automatisierungssystem, das deine Tools verbindet, Aufgaben selbstständig erledigt und Fehler automatisch meldet.",
@@ -224,6 +261,38 @@ export const serviceData: Record<string, ServiceEntry> = {
       "CRM-Anbindung (HubSpot, Pipedrive, Notion, etc.)",
       "Automatische E-Mail- und WhatsApp-Sequenzen",
       "Dokumentation & Schulung für dein Team",
+    ],
+    solutionFeatures: [
+      {
+        number: "01",
+        title: "Zapier & Make Experten-Setup",
+        body: "Ich verknüpfe deine Business-Tools (wie E-Mail, Kalender, CRM) über die führenden No-Code-Plattformen. Wir schaffen Workflows, die im Hintergrund laufen, damit du keine Daten mehr manuell von A nach B kopieren musst.",
+      },
+      {
+        number: "02",
+        title: "Nahtlose CRM-Integration",
+        body: "Egal ob HubSpot, Pipedrive oder Notion – ich verbinde deine Website direkt mit deinem Kundenmanagement. Jede Anfrage landet sofort an der richtigen Stelle, inklusive automatischer Zuweisung und Status-Update.",
+      },
+      {
+        number: "03",
+        title: "Intelligentes Fehler-Monitoring",
+        body: "Automatisierung muss zuverlässig sein. Ich implementiere Überwachungssysteme, die mich sofort alarmieren, falls ein Prozess hakt. So garantieren wir einen reibungslosen Ablauf ohne Datenverlust.",
+      },
+      {
+        number: "04",
+        title: "Skalierbare Infrastruktur",
+        body: "Deine Automatisierungen wachsen mit deinem Unternehmen. Ich baue die Systeme so modular auf, dass wir jederzeit neue Tools oder komplexere Schritte hinzufügen können, ohne das bestehende Setup zu gefährden.",
+      },
+      {
+        number: "05",
+        title: "Automatisierte Follow-up-Sequenzen",
+        body: "Verpasse nie wieder einen Lead. Wir richten Workflows ein, die sofort nach einer Anfrage personalisierte Bestätigungen oder Info-Material versenden. So bleibt der Kontakt warm, während du dich um andere Dinge kümmerst.",
+      },
+      {
+        number: "06",
+        title: "Terminbuchungs-Automatisierung",
+        body: "Wir integrieren Tools wie Calendly oder TidyCal so in deine Website und Prozesse, dass Termine direkt in deinem Kalender landen, Zoom-Links erstellt und Erinnerungen an Kunden versendet werden – komplett ohne manuelles Zutun.",
+      },
     ],
     process: [
       { title: "Prozessanalyse", desc: "Identifikation der größten Zeitfresser in deinem Business." },

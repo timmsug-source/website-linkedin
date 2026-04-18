@@ -21,7 +21,7 @@ export function ServiceSolution({ service }: { service: Service }) {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left side – second on mobile, first on desktop */}
           {service.solutionIntro ? (
-            /* Rich intro text (e.g. Webdesign) */
+            /* Rich intro text */
             <div className="space-y-6 order-2 lg:order-1">
               {service.solutionIntro.map((para, i) => (
                 <p
@@ -120,11 +120,11 @@ export function ServiceSolution({ service }: { service: Service }) {
           </div>
         </div>
 
-        {/* Feature grid – only when heroFeatures present (e.g. Webdesign) */}
-        {service.heroFeatures && (
+        {/* Feature grid – when solutionFeatures present */}
+        {service.solutionFeatures && (
           <div className="mt-20">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {service.heroFeatures.map((f) => (
+              {service.solutionFeatures!.map((f) => (
                 <div
                   key={f.number}
                   className="bg-white rounded-2xl border border-slate-100 p-6 shadow-sm hover:shadow-md transition-[box-shadow]"
