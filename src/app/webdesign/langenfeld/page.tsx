@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, CheckCircle2, Globe, Search, MapPin, Star, Clock, Rocket, ShieldCheck } from "lucide-react";
+import { ArrowRight, CheckCircle2, Globe, Search, MapPin, Star, Clock, Rocket, ShieldCheck, TrendingDown, SmartphoneNfc, Navigation, MousePointerClick, Users, AlertTriangle } from "lucide-react";
 import { CALENDLY_URL, WHATSAPP_URL } from "@/lib/utils";
 
 const features = [
@@ -161,6 +161,87 @@ export default function WebdesignLangenfeld() {
                                 Ich biete dir kein Standard-Design von der Stange, sondern maßgeschneiderte Lösungen, die genau auf deine Zielgruppe zugeschnitten sind. Egal ob du ein Handwerksbetrieb in Immigrath, eine Kanzlei im Zentrum oder ein Start-up im Gewerbepark Fuhrkamp bist – ich sorge dafür, dass deine digitale Präsenz so professionell ist wie deine Arbeit selbst.
                             </p>
                         </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Why invisible */}
+            <section className="py-24 px-6 bg-slate-950 relative overflow-hidden">
+                {/* Background glow */}
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-red-500/10 blur-[120px] rounded-full pointer-events-none" />
+
+                <div className="max-w-6xl mx-auto relative z-10">
+                    {/* Header */}
+                    <div className="text-center mb-16 max-w-3xl mx-auto">
+                        <div className="inline-flex items-center gap-2 bg-red-500/10 border border-red-500/20 rounded-full px-4 py-2 mb-6">
+                            <AlertTriangle size={15} className="text-red-400" />
+                            <span className="text-red-400 font-bold text-xs uppercase tracking-widest">Das Problem</span>
+                        </div>
+                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-extrabold text-white leading-tight mb-5">
+                            Warum viele Unternehmen in Langenfeld{" "}
+                            <span className="text-red-400">online unsichtbar</span> bleiben.
+                        </h2>
+                        <p className="text-slate-400 text-lg leading-relaxed">
+                            Eine veraltete Website ist teurer als eine neue – sie kostet dich jeden Tag potenzielle Kunden direkt vor deiner Haustür.
+                        </p>
+                    </div>
+
+                    {/* Cards grid – 2 cols top, then 3 bottom */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-5">
+                        {[
+                            {
+                                icon: TrendingDown,
+                                title: "Regionale Konkurrenz zieht an dir vorbei",
+                                body: "Während du dich auf deine Qualität verlässt, investieren Mitbewerber in Langenfeld, Monheim und Hilden in moderne Webauftritte. Wenn Kunden bei Google nach deiner Dienstleistung suchen und dich nicht auf Seite 1 finden, existierst du für sie schlichtweg nicht.",
+                            },
+                            {
+                                icon: SmartphoneNfc,
+                                title: "Kein Vertrauen durch \"Digitalen Stillstand\"",
+                                body: "Kunden aus der Region suchen Sicherheit. Eine Website, die nicht mobil optimiert ist oder aussieht wie aus dem Jahr 2010, strahlt Unzuverlässigkeit aus. Der erste Eindruck entscheidet innerhalb von Sekunden, ob ein Langenfelder bei dir anruft oder zum nächsten Anbieter klickt.",
+                            },
+                        ].map((item) => {
+                            const Icon = item.icon;
+                            return (
+                                <div key={item.title} className="bg-white/5 border border-white/10 rounded-2xl p-7 hover:border-red-500/30 transition-[border-color]">
+                                    <div className="w-10 h-10 rounded-xl bg-red-500/15 flex items-center justify-center mb-4">
+                                        <Icon size={20} className="text-red-400" />
+                                    </div>
+                                    <h3 className="font-bold text-white text-base mb-3 leading-snug">{item.title}</h3>
+                                    <p className="text-slate-400 text-sm leading-relaxed">{item.body}</p>
+                                </div>
+                            );
+                        })}
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+                        {[
+                            {
+                                icon: Navigation,
+                                title: "Die \"Google Maps\"-Falle",
+                                body: "Du hast ein tolles Geschäft in Langenfeld, aber im lokalen Suchergebnis tauchen nur andere auf? Ohne gezielte lokale Optimierung wirst du selbst in deiner direkten Nachbarschaft übersehen, während Kunden buchstäblich an deiner Tür vorbeilaufen.",
+                            },
+                            {
+                                icon: MousePointerClick,
+                                title: "Anfragen, die im Sande verlaufen",
+                                body: "Deine aktuelle Website ist vielleicht online, aber sie arbeitet nicht für dich. Fehlende klare Handlungsaufforderungen und komplizierte Kontaktwege führen dazu, dass Interessenten abbrechen, bevor sie dich überhaupt erreichen.",
+                            },
+                            {
+                                icon: Users,
+                                title: "Abhängigkeit von Empfehlungen",
+                                body: "Sich nur auf Mundpropaganda in Langenfeld zu verlassen, ist riskant. Ein moderner Webauftritt macht dich unabhängig und sorgt für einen konstanten Strom an Neukunden, auch wenn das persönliche Netzwerk gerade keine Leads liefert.",
+                            },
+                        ].map((item) => {
+                            const Icon = item.icon;
+                            return (
+                                <div key={item.title} className="bg-white/5 border border-white/10 rounded-2xl p-7 hover:border-red-500/30 transition-[border-color]">
+                                    <div className="w-10 h-10 rounded-xl bg-red-500/15 flex items-center justify-center mb-4">
+                                        <Icon size={20} className="text-red-400" />
+                                    </div>
+                                    <h3 className="font-bold text-white text-base mb-3 leading-snug">{item.title}</h3>
+                                    <p className="text-slate-400 text-sm leading-relaxed">{item.body}</p>
+                                </div>
+                            );
+                        })}
                     </div>
                 </div>
             </section>
