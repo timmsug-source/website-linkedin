@@ -182,8 +182,8 @@ export default async function ServiceDetailPage({ params }: Props) {
         <ServiceCTA service={service} />
       )}
 
-      {/* 7. ÜBER MICH (nur Webdesign) */}
-      {id === "webdesign" && <WebdesignAbout />}
+      {/* 7. ÜBER MICH */}
+      {(id === "webdesign" || id === "automatisierungen" || id === "seo-geo") && <WebdesignAbout />}
 
       {/* 8. ALLGEMEINE INFOS */}
       <ServiceInfo service={service} hideFeatures={id === "webdesign" || id === "automatisierungen" || id === "seo-geo"} />
