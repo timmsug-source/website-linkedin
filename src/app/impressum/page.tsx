@@ -40,9 +40,9 @@ export default function ImpressumPage() {
             <address className="not-italic leading-relaxed">
               <strong>Timm Schurig</strong>
               <br />
-              [Straße und Hausnummer]
+              Zum Glakhausener Bach 72
               <br />
-              [PLZ Ort]
+              40764 Langenfeld
               <br />
               Deutschland
             </address>
@@ -63,11 +63,10 @@ export default function ImpressumPage() {
 
           <section>
             <h2 className="text-xl font-bold text-slate-900 mb-4">
-              Umsatzsteuer-ID
+              Umsatzsteuer
             </h2>
-            <p>
-              Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:
-              [Ihre USt-IdNr.]
+            <p className="leading-relaxed">
+              Gemäß § 19 UStG wird keine Umsatzsteuer berechnet (Kleinunternehmerregelung).
             </p>
           </section>
 
@@ -78,7 +77,9 @@ export default function ImpressumPage() {
             <address className="not-italic leading-relaxed">
               Timm Schurig
               <br />
-              [Adresse wie oben]
+              Zum Glakhausener Bach 72
+              <br />
+              40764 Langenfeld
             </address>
           </section>
 
