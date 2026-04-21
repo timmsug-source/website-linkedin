@@ -22,10 +22,10 @@ const projectTypes = [
 ];
 
 const budgets = [
-    { id: "small", label: "bis 1.500 €" },
-    { id: "medium", label: "1.500 – 3.000 €" },
-    { id: "large", label: "3.000 – 5.000 €" },
-    { id: "xl", label: "5.000 € +" },
+    { id: "small", label: "bis 500 €" },
+    { id: "medium", label: "500 – 1.500 €" },
+    { id: "large", label: "1.500 – 3.000 €" },
+    { id: "xl", label: "3.000 € +" },
 ];
 
 type FormData = {
