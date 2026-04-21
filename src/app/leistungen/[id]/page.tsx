@@ -13,7 +13,7 @@ import {
 } from "lucide-react";
 import { serviceData } from "@/lib/serviceData";
 import { buildMetadata } from "@/lib/seo";
-import { SITE_URL, CALENDLY_URL, WHATSAPP_URL } from "@/lib/utils";
+import { SITE_URL, PHONE_URL, WHATSAPP_URL } from "@/lib/utils";
 import { ServiceHero } from "@/components/service/ServiceHero";
 import { ServiceProblem } from "@/components/service/ServiceProblem";
 import { ServiceSolution } from "@/components/service/ServiceSolution";
@@ -168,7 +168,7 @@ export default async function ServiceDetailPage({ params }: Props) {
                 <span className="text-accent">Lass uns sprechen.</span>
               </p>
               <a
-                href={CALENDLY_URL}
+                href={PHONE_URL}
                 target="_blank"
                 rel="noreferrer noopener"
                 className="inline-flex items-center gap-2 bg-accent hover:bg-accent/90 text-white rounded-full px-7 py-3 font-bold text-sm whitespace-nowrap transition-[background-color] shadow-lg shadow-accent/20 shrink-0"

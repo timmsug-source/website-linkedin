@@ -10,5 +10,5 @@ export const CALENDLY_URL = "https://calendly.com/timmschurig";
 export const EMAIL = "mail@timmschurig.com";
 export const SITE_URL = "https://timmschurig.com";
 export const LINKEDIN_URL = "https://www.linkedin.com/in/timm-schurig/";
-export const PHONE = "015154033900 8";
-export const PHONE_URL = "tel:+49151540339008";
+export const PHONE = "0151 4033 9008";
+export const PHONE_URL = "tel:+4915140339008";

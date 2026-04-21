@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, CheckCircle2, MapPin, Star, Clock, MessageCircle, ChevronRight, Send, Sparkles, ChevronDown } from "lucide-react";
-import { CALENDLY_URL, WHATSAPP_URL } from "@/lib/utils";
+import { PHONE_URL, WHATSAPP_URL } from "@/lib/utils";
 
 const faqs = [
     {
@@ -294,7 +294,7 @@ function HeroForm() {
                                 Danke, {form.name.split(" ")[0]}! Ich melde mich innerhalb von 24 Stunden bei dir.
                             </p>
                             <a
-                                href={CALENDLY_URL}
+                                href={PHONE_URL}
                                 target="_blank"
                                 rel="noreferrer noopener"
                                 className="inline-flex items-center gap-2 bg-accent hover:bg-accent/90 text-white rounded-xl px-6 py-3 font-bold text-sm transition-[background-color]"
@@ -528,7 +528,7 @@ export default function WebdesignLeichlingen() {
                                 30 Minuten, kein Verkaufsdruck – nur echte Antworten auf deine Fragen.
                             </p>
                             <a
-                                href={CALENDLY_URL}
+                                href={PHONE_URL}
                                 target="_blank"
                                 rel="noreferrer noopener"
                                 className="flex items-center justify-center gap-2 bg-accent hover:bg-accent/90 text-white rounded-xl px-5 py-3.5 font-bold text-sm transition-[background-color] w-full mb-3"
@@ -574,7 +574,7 @@ export default function WebdesignLeichlingen() {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     <a
-                        href={CALENDLY_URL}
+                        href={PHONE_URL}
                         target="_blank"
                         rel="noreferrer noopener"
                         className="inline-flex items-center justify-center bg-accent hover:bg-accent/90 text-white rounded-full px-10 h-14 text-base font-bold transition-[background-color] shadow-xl shadow-accent/30"

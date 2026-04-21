@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Globe, Cpu, Search } from "lucide-react";
 import { buildMetadata } from "@/lib/seo";
-import { SITE_URL, CALENDLY_URL } from "@/lib/utils";
+import { SITE_URL, PHONE_URL } from "@/lib/utils";
 import { CTA } from "@/components/home/CTA";
 import { ServiceFAQ } from "@/components/leistungen/ServiceFAQ";
 
@@ -119,7 +119,7 @@ export default function LeistungenPage() {
                 Drei Leistungen, die perfekt ineinandergreifen – für eine Online-Präsenz, die wirklich wächst.
               </p>
               <a
-                href={CALENDLY_URL}
+                href={PHONE_URL}
                 target="_blank"
                 rel="noreferrer noopener"
                 className="inline-flex items-center justify-center bg-accent hover:bg-accent/90 text-white rounded-full px-8 h-14 text-lg font-bold shadow-lg shadow-accent/20 transition-[background-color,box-shadow]"

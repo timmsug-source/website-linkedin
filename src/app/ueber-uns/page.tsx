@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Phone, CheckCircle2 } from "lucide-react";
 import { buildMetadata } from "@/lib/seo";
-import { SITE_URL, CALENDLY_URL, LINKEDIN_URL, PHONE_URL, PHONE } from "@/lib/utils";
+import { SITE_URL, LINKEDIN_URL, PHONE_URL, PHONE } from "@/lib/utils";
 import { CTA } from "@/components/home/CTA";
 
 export const metadata: Metadata = buildMetadata({
@@ -144,12 +144,10 @@ export default function UeberUnsPage() {
                 </ul>
                 <div className="pt-4 flex gap-3">
                   <a
-                    href={CALENDLY_URL}
-                    target="_blank"
-                    rel="noreferrer noopener"
+                    href={PHONE_URL}
                     className="flex-1 inline-flex items-center justify-center bg-accent hover:bg-accent/90 text-white rounded-full px-6 py-3 font-bold transition-all text-sm"
                   >
-                    Gespräch buchen
+                    Jetzt anrufen
                     <ArrowRight className="ml-2" size={16} />
                   </a>
                   <a

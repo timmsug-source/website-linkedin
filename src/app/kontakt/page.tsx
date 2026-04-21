@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { MessageCircle, Mail, Phone, Calendar, MapPin } from "lucide-react";
 import { buildMetadata } from "@/lib/seo";
-import { SITE_URL, WHATSAPP_URL, EMAIL, PHONE_URL, PHONE, CALENDLY_URL } from "@/lib/utils";
+import { SITE_URL, WHATSAPP_URL, EMAIL, PHONE_URL, PHONE } from "@/lib/utils";
 
 export const metadata: Metadata = buildMetadata({
   title: "Kontakt – Timm Schurig | Kostenloses Erstgespräch buchen",
@@ -18,10 +18,10 @@ const contactOptions = [
     title: "Kostenloses Erstgespräch",
     description:
       "30 Minuten Strategie-Check. Wir analysieren deine aktuelle Situation und schauen, was für dein Business möglich ist.",
-    action: "Termin buchen",
-    href: CALENDLY_URL,
+    action: "Jetzt anrufen",
+    href: PHONE_URL,
     highlight: true,
-    external: true,
+    external: false,
   },
   {
     icon: MessageCircle,

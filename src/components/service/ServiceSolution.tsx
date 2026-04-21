@@ -1,7 +1,7 @@
 "use client";
 
 import { CheckCircle2, ArrowRight } from "lucide-react";
-import { CALENDLY_URL } from "@/lib/utils";
+import { PHONE_URL } from "@/lib/utils";
 import type { serviceData } from "@/lib/serviceData";
 
 type Service = (typeof serviceData)[keyof typeof serviceData];
@@ -110,7 +110,7 @@ export function ServiceSolution({ service }: { service: Service }) {
             </div>
 
             <a
-              href={CALENDLY_URL}
+              href={PHONE_URL}
               target="_blank"
               rel="noreferrer noopener"
               className="inline-flex items-center gap-2 bg-slate-900 text-white hover:bg-slate-800 px-8 py-4 rounded-full font-bold transition-[background-color] shadow-lg"

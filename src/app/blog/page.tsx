@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Calendar, User, Tag } from "lucide-react";
 import { buildMetadata } from "@/lib/seo";
-import { SITE_URL, CALENDLY_URL } from "@/lib/utils";
+import { SITE_URL, PHONE_URL } from "@/lib/utils";
 
 export const metadata: Metadata = buildMetadata({
   title: "Blog – Tipps zu LinkedIn, Automatisierung & KI für Fitness-Coaches",
@@ -141,7 +141,7 @@ export default function BlogPage() {
                     Lass uns in 30 Minuten deine individuelle Strategie besprechen.
                   </p>
                   <a
-                    href={CALENDLY_URL}
+                    href={PHONE_URL}
                     target="_blank"
                     rel="noreferrer noopener"
                     className="block w-full bg-accent hover:bg-accent/90 text-white text-center rounded-xl px-4 py-3 text-sm font-bold transition-all"

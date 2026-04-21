@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { ArrowRight, MessageCircle, Star } from "lucide-react";
-import { CALENDLY_URL, WHATSAPP_URL } from "@/lib/utils";
+import { PHONE_URL, WHATSAPP_URL } from "@/lib/utils";
 import type { serviceData } from "@/lib/serviceData";
 
 type Service = (typeof serviceData)[keyof typeof serviceData];
@@ -38,7 +38,7 @@ export function ServiceHero({ service }: { service: Service }) {
 
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href={CALENDLY_URL}
+                href={PHONE_URL}
                 target="_blank"
                 rel="noreferrer noopener"
                 className="inline-flex items-center justify-center bg-accent hover:bg-accent/90 text-white rounded-full px-8 h-14 text-lg font-bold shadow-lg shadow-accent/20 transition-[box-shadow,background-color]"

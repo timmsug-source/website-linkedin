@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { CheckCircle2 } from "lucide-react";
-import { WHATSAPP_URL, CALENDLY_URL } from "@/lib/utils";
+import { WHATSAPP_URL, PHONE_URL } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Kostenloses Erstgespräch – Timm Schurig",
@@ -92,7 +92,7 @@ export default function ErstgespraechPage() {
                   Video-Call statt.
                 </p>
                 <a
-                  href={CALENDLY_URL}
+                  href={PHONE_URL}
                   target="_blank"
                   rel="noreferrer noopener"
                   className="inline-flex items-center justify-center bg-accent hover:bg-accent/90 text-white rounded-full px-8 h-14 text-lg font-bold w-full shadow-lg shadow-accent/20 transition-all"

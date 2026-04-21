@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, CheckCircle2, MapPin, Clock, TrendingDown, SmartphoneNfc, Navigation, MousePointerClick, Users, AlertTriangle, ChevronRight, Send, Sparkles } from "lucide-react";
-import { CALENDLY_URL, WHATSAPP_URL } from "@/lib/utils";
+import { PHONE_URL, WHATSAPP_URL } from "@/lib/utils";
 import { WebdesignAbout } from "@/components/service/WebdesignAbout";
 
 const projectTypes = [
@@ -113,7 +113,7 @@ function HeroForm() {
                             </div>
                             <h3 className="text-white font-extrabold text-xl mb-2">Anfrage erhalten!</h3>
                             <p className="text-slate-400 text-sm leading-relaxed mb-6">Danke, {form.name.split(" ")[0]}! Ich melde mich innerhalb von 24 Stunden bei dir.</p>
-                            <a href={CALENDLY_URL} target="_blank" rel="noreferrer noopener"
+                            <a href={PHONE_URL} target="_blank" rel="noreferrer noopener"
                                 className="inline-flex items-center gap-2 bg-accent hover:bg-accent/90 text-white rounded-xl px-6 py-3 font-bold text-sm transition-[background-color]">
                                 Direkt Termin buchen <ArrowRight size={15} />
                             </a>
@@ -182,7 +182,7 @@ export default function WebdesignLangenfeld() {
 
                             <div className="flex flex-col sm:flex-row gap-4">
                                 <a
-                                    href={CALENDLY_URL}
+                                    href={PHONE_URL}
                                     target="_blank"
                                     rel="noreferrer noopener"
                                     className="inline-flex items-center justify-center gap-3 bg-accent hover:bg-accent/90 text-white rounded-full h-16 px-10 text-lg font-bold transition-all shadow-xl shadow-accent/40"
@@ -463,7 +463,7 @@ export default function WebdesignLangenfeld() {
                     </p>
                     <div className="flex flex-col gap-4 items-center">
                         <a
-                            href={CALENDLY_URL}
+                            href={PHONE_URL}
                             target="_blank"
                             rel="noreferrer noopener"
                             className="inline-flex items-center justify-center bg-accent hover:bg-accent/90 text-white rounded-full px-12 h-16 text-xl font-bold w-full max-w-md shadow-2xl shadow-accent/30 transition-all hover:scale-[1.02]"

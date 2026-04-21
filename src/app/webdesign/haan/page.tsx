@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2, Globe, Search, MapPin, Star, Clock, Rocket, ShieldCheck } from "lucide-react";
-import { CALENDLY_URL, WHATSAPP_URL } from "@/lib/utils";
+import { PHONE_URL, WHATSAPP_URL } from "@/lib/utils";
 
 const features = [
     { icon: Globe, title: "Premium Webdesign", desc: "Individuelles Design – kein Template, kein Baukasten. Deine Website, wie du sie wirklich willst." },
@@ -68,7 +68,7 @@ export default function WebdesignHaan() {
 
                             <div className="flex flex-col sm:flex-row gap-4">
                                 <a
-                                    href={CALENDLY_URL}
+                                    href={PHONE_URL}
                                     target="_blank"
                                     rel="noreferrer noopener"
                                     className="inline-flex items-center justify-center gap-3 bg-accent hover:bg-accent/90 text-white rounded-full h-16 px-10 text-lg font-bold transition-all shadow-xl shadow-accent/40"
@@ -203,7 +203,7 @@ export default function WebdesignHaan() {
                     </p>
                     <div className="flex flex-col gap-4 items-center">
                         <a
-                            href={CALENDLY_URL}
+                            href={PHONE_URL}
                             target="_blank"
                             rel="noreferrer noopener"
                             className="inline-flex items-center justify-center bg-accent hover:bg-accent/90 text-white rounded-full px-12 h-16 text-xl font-bold w-full max-w-md shadow-2xl shadow-accent/30 transition-[background-color]"
