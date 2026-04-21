@@ -2,8 +2,74 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, CheckCircle2, MapPin, Star, Clock, MessageCircle, ChevronRight, Send, Sparkles } from "lucide-react";
+import { ArrowRight, CheckCircle2, MapPin, Star, Clock, MessageCircle, ChevronRight, Send, Sparkles, ChevronDown } from "lucide-react";
 import { CALENDLY_URL, WHATSAPP_URL } from "@/lib/utils";
+
+const faqs = [
+    {
+        q: "Warum sollte ich mich für einen Webdesigner direkt aus der Region entscheiden?",
+        a: "Ein lokaler Partner für Webdesign in Leichlingen bietet dir kurze Wege und ein echtes Verständnis für den Markt im Rheinland. Wir können uns bei Bedarf persönlich austauschen, und ich kenne die lokalen Suchgewohnheiten deiner Kunden zwischen Witzhelden und dem Stadtzentrum genau.",
+    },
+    {
+        q: "Wie lange dauert es, bis meine neue Website in Leichlingen live geht?",
+        a: "Die Projektdauer hängt vom Umfang ab, liegt aber in der Regel zwischen 4 und 8 Wochen. Da ich auf einen klaren Prozess aus Strategie, Design und technischer Umsetzung setze, erhältst du zügig ein professionelles Ergebnis für dein Webdesign in Leichlingen, ohne dass die Qualität leidet.",
+    },
+    {
+        q: "Werden meine Kunden mich bei Google finden, wenn ich Webdesign in Leichlingen bei dir buche?",
+        a: "Absolut. Jedes Projekt wird von Grund auf für Suchmaschinen optimiert. Ich sorge dafür, dass dein Webdesign in Leichlingen technisch einwandfrei ist und lokal gefunden wird, damit du gegen die Konkurrenz in der Region (wie Leverkusen oder Solingen) die Nase vorn hast.",
+    },
+    {
+        q: "Ist meine Website auch für moderne KI-Suchen wie ChatGPT vorbereitet?",
+        a: "Ja. Als einer der wenigen Anbieter integriere ich das Thema GEO (Generative Engine Optimization) direkt in mein Webdesign in Leichlingen. Ich strukturiere deine Daten so, dass KI-Modelle deine Expertise erkennen und dich als Top-Empfehlung in der Region ausspielen können.",
+    },
+    {
+        q: "Was passiert, wenn nach dem Launch technische Probleme auftreten?",
+        a: "Du bist bei mir nicht auf dich allein gestellt. Ich biete dir eine langfristige Partnerschaft für dein Webdesign in Leichlingen an. Ich kümmere mich um Wartung, Sicherheits-Updates und die laufende Performance-Optimierung, damit deine Seite immer sicher und schnell bleibt.",
+    },
+    {
+        q: "Ist das Webdesign in Leichlingen auch für kleine Betriebe bezahlbar?",
+        a: "Ich biete keine anonymen Massenpakete an, sondern individuelle Lösungen, die sich an deinen Zielen orientieren. Mein Webdesign in Leichlingen ist eine Investition, die sich durch mehr Sichtbarkeit und automatisierte Kundenanfragen schnell bezahlt macht – egal ob für Start-ups oder etablierte Handwerksbetriebe.",
+    },
+];
+
+function FaqAccordion() {
+    const [open, setOpen] = useState<number | null>(null);
+    return (
+        <div className="space-y-3">
+            {faqs.map((faq, i) => (
+                <div key={i} className="border border-slate-200 rounded-2xl overflow-hidden">
+                    <button
+                        onClick={() => setOpen(open === i ? null : i)}
+                        className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left"
+                        aria-expanded={open === i}
+                    >
+                        <span className="font-bold text-slate-900 text-sm leading-snug">{faq.q}</span>
+                        <ChevronDown
+                            size={18}
+                            className={`shrink-0 text-accent transition-transform duration-300 ${open === i ? "rotate-180" : ""}`}
+                            aria-hidden="true"
+                        />
+                    </button>
+                    <AnimatePresence>
+                        {open === i && (
+                            <motion.div
+                                initial={{ height: 0, opacity: 0 }}
+                                animate={{ height: "auto", opacity: 1 }}
+                                exit={{ height: 0, opacity: 0 }}
+                                transition={{ duration: 0.25 }}
+                                className="overflow-hidden"
+                            >
+                                <p className="text-slate-500 text-sm leading-relaxed px-6 pb-5">
+                                    {faq.a}
+                                </p>
+                            </motion.div>
+                        )}
+                    </AnimatePresence>
+                </div>
+            ))}
+        </div>
+    );
+}
 
 const vorteile = [
     "Individuelle Gestaltung garantiert",
@@ -527,6 +593,20 @@ export default function WebdesignLeichlingen() {
                 <p className="text-slate-500 text-sm mt-5 flex items-center justify-center gap-2">
                     <Clock size={14} /> Antwort in &lt; 2 Stunden
                 </p>
+            </section>
+
+            {/* FAQ */}
+            <section className="py-20 px-6 bg-white">
+                <div className="max-w-3xl mx-auto">
+                    <div className="mb-12">
+                        <p className="text-accent font-bold text-sm uppercase tracking-[0.2em] mb-3">FAQ</p>
+                        <h2 className="text-2xl md:text-3xl font-display font-extrabold text-slate-900">
+                            Häufige Fragen zum Webdesign in Leichlingen.
+                        </h2>
+                        <div className="w-12 h-1 bg-accent rounded-full mt-5" />
+                    </div>
+                    <FaqAccordion />
+                </div>
             </section>
 
             {/* Footer */}
