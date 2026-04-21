@@ -23,6 +23,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9,
   }));
 
+  const lpRoutes: MetadataRoute.Sitemap = [
+    "linkedin",
+    "fitness-coach",
+    "erstgespraech",
+    "ernaehrungscoach",
+  ].map((slug) => ({
+    url: `${SITE_URL}/lp/${slug}`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
   const cityRoutes: MetadataRoute.Sitemap = [
     "langenfeld",
     "haan",
@@ -50,5 +62,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...staticRoutes, ...serviceRoutes, ...cityRoutes, ...blogRoutes];
+  return [...staticRoutes, ...serviceRoutes, ...cityRoutes, ...lpRoutes, ...blogRoutes];
 }
