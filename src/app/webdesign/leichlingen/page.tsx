@@ -309,6 +309,85 @@ export default function WebdesignLeichlingen() {
                 </div>
             </section>
 
+            {/* Komplettpaket */}
+            <section className="py-24 px-6 bg-slate-50">
+                <div className="max-w-6xl mx-auto">
+                    {/* Header */}
+                    <div className="text-center mb-16 max-w-2xl mx-auto">
+                        <p className="text-accent font-bold text-sm uppercase tracking-[0.2em] mb-4">Das Komplettpaket</p>
+                        <h2 className="text-3xl md:text-4xl font-display font-extrabold text-slate-900 leading-tight mb-4">
+                            Dein Komplettpaket für{" "}
+                            <span className="text-accent">digitales Wachstum.</span>
+                        </h2>
+                        <p className="text-slate-500 text-lg leading-relaxed">
+                            Jedes Projekt für Webdesign in Leichlingen wird individuell nach deinen Anforderungen gebaut – für maximale Performance und Ergebnisse.
+                        </p>
+                    </div>
+
+                    {/* Cards */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                        {[
+                            {
+                                n: "01",
+                                title: "Individuelles High-End Design",
+                                body: "Vergiss Standard-Templates. Du erhältst ein Design, das exakt auf deine Marke und deine Zielgruppe zugeschnitten ist. Mein Webdesign in Leichlingen sorgt dafür, dass du dich optisch von der Konkurrenz abhebst und einen bleibenden ersten Eindruck hinterlässt.",
+                                accent: "group-hover:from-accent/15 group-hover:to-accent/5",
+                            },
+                            {
+                                n: "02",
+                                title: "Konsequente Mobile-First Optimierung",
+                                body: "Da die meisten Nutzer in der Region mobil nach Dienstleistern suchen, wird dein Webdesign in Leichlingen konsequent für Smartphones optimiert. Perfekte Darstellung, intuitive Bedienung und blitzschnelle Ladezeiten auf jedem Endgerät sind garantiert.",
+                                accent: "group-hover:from-blue-500/15 group-hover:to-blue-500/5",
+                            },
+                            {
+                                n: "03",
+                                title: "Strategisches SEO-Fundament",
+                                body: "Schon während der Entwicklung integriere ich die wichtigsten Faktoren für dein Google-Ranking. Damit dein Webdesign in Leichlingen auch gefunden wird, optimiere ich Meta-Tags, die Seitenstruktur und sorge für eine saubere technische Basis.",
+                                accent: "group-hover:from-purple-500/15 group-hover:to-purple-500/5",
+                            },
+                            {
+                                n: "04",
+                                title: "Zukunftssichere KI-Architektur (GEO)",
+                                body: "Ich bereite dich auf die neue Ära der Suche vor. Dein Webdesign in Leichlingen wird so strukturiert, dass KI-Systeme wie ChatGPT oder Google Gemini deine Inhalte verstehen und dich als Experten in der Region empfehlen können.",
+                                accent: "group-hover:from-cyan-500/15 group-hover:to-cyan-500/5",
+                            },
+                            {
+                                n: "05",
+                                title: "Conversion-Optimierte Kontaktwege",
+                                body: "Besucher sollen zu Kunden werden. Wir integrieren klare Handlungsaufforderungen (CTAs) und nutzerfreundliche Formulare. So macht mein Webdesign in Leichlingen die Kontaktaufnahme für deine Kunden so einfach wie möglich.",
+                                accent: "group-hover:from-amber-500/15 group-hover:to-amber-500/5",
+                            },
+                            {
+                                n: "06",
+                                title: "DSGVO-Sicherheit & Performance",
+                                body: "Du erhältst eine rechtssichere Website inklusive Cookie-Banner, lokaler Fonts und SSL-Verschlüsselung. Kombiniert mit High-Speed-Hosting sorgt mein Webdesign in Leichlingen für Sicherheit und eine Performance, die keine Wünsche offen lässt.",
+                                accent: "group-hover:from-rose-500/15 group-hover:to-rose-500/5",
+                            },
+                        ].map((item) => (
+                            <div
+                                key={item.n}
+                                className="group relative bg-white border border-slate-200 rounded-3xl p-7 overflow-hidden hover:border-accent/30 hover:shadow-xl hover:-translate-y-1 transition-[border-color,box-shadow,transform] duration-300 cursor-default"
+                            >
+                                {/* Hover gradient */}
+                                <div className={`absolute inset-0 bg-gradient-to-br from-transparent to-transparent ${item.accent} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
+
+                                <div className="relative z-10">
+                                    <span className="block font-display font-extrabold text-5xl text-slate-100 group-hover:text-accent/20 leading-none mb-4 transition-colors duration-300 select-none">
+                                        {item.n}
+                                    </span>
+                                    <h3 className="font-bold text-slate-900 text-base mb-3 leading-snug group-hover:text-accent transition-colors duration-300">
+                                        {item.title}
+                                    </h3>
+                                    <p className="text-slate-500 text-sm leading-relaxed">
+                                        {item.body}
+                                    </p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
             {/* Main Content + Sticky Sidebar */}
             <div className="max-w-6xl mx-auto px-6 py-16">
                 <div className="grid lg:grid-cols-[1fr,360px] gap-12 items-start">
