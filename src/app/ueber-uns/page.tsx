@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Linkedin, CheckCircle2 } from "lucide-react";
+import { ArrowRight, Phone, CheckCircle2 } from "lucide-react";
 import { buildMetadata } from "@/lib/seo";
-import { SITE_URL, CALENDLY_URL, LINKEDIN_URL } from "@/lib/utils";
+import { SITE_URL, CALENDLY_URL, LINKEDIN_URL, PHONE_URL, PHONE } from "@/lib/utils";
 import { CTA } from "@/components/home/CTA";
 
 export const metadata: Metadata = buildMetadata({
@@ -153,13 +153,11 @@ export default function UeberUnsPage() {
                     <ArrowRight className="ml-2" size={16} />
                   </a>
                   <a
-                    href={LINKEDIN_URL}
-                    target="_blank"
-                    rel="noreferrer noopener"
+                    href={PHONE_URL}
                     className="inline-flex items-center justify-center border border-slate-200 rounded-full px-4 py-3 text-slate-700 hover:border-accent hover:text-accent transition-all"
-                    aria-label="Timm Schurig auf LinkedIn"
+                    aria-label="Timm Schurig anrufen"
                   >
-                    <Linkedin size={18} />
+                    <Phone size={18} />
                   </a>
                 </div>
               </div>

@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { MessageCircle, Mail, Linkedin, Calendar, MapPin } from "lucide-react";
+import { MessageCircle, Mail, Phone, Calendar, MapPin } from "lucide-react";
 import { buildMetadata } from "@/lib/seo";
-import { SITE_URL, WHATSAPP_URL, EMAIL, LINKEDIN_URL, CALENDLY_URL } from "@/lib/utils";
+import { SITE_URL, WHATSAPP_URL, EMAIL, PHONE_URL, PHONE, CALENDLY_URL } from "@/lib/utils";
 
 export const metadata: Metadata = buildMetadata({
   title: "Kontakt – Timm Schurig | Kostenloses Erstgespräch buchen",
@@ -44,14 +44,14 @@ const contactOptions = [
     external: false,
   },
   {
-    icon: Linkedin,
-    title: "LinkedIn",
+    icon: Phone,
+    title: "Telefon",
     description:
-      "Verbinde dich auf LinkedIn für Einblicke in LinkedIn-Marketing-Strategien speziell für Coaches.",
-    action: "Auf LinkedIn verbinden",
-    href: LINKEDIN_URL,
+      "Du erreichst mich direkt unter meiner Handynummer – für kurze Rückfragen oder wenn du lieber telefonierst.",
+    action: PHONE,
+    href: PHONE_URL,
     highlight: false,
-    external: true,
+    external: false,
   },
 ];
 
