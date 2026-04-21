@@ -1,7 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { ArrowRight, CheckCircle2, MapPin, Star, Clock, MessageCircle, Phone } from "lucide-react";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ArrowRight, CheckCircle2, MapPin, Star, Clock, MessageCircle, ChevronRight, Send, Sparkles } from "lucide-react";
 import { CALENDLY_URL, WHATSAPP_URL } from "@/lib/utils";
 
 const vorteile = [
@@ -12,6 +13,235 @@ const vorteile = [
     "Mobile-First & PageSpeed 100",
     "DSGVO-konforme Umsetzung",
 ];
+
+const projectTypes = [
+    { id: "neu", label: "Neue Website", emoji: "🚀" },
+    { id: "redesign", label: "Redesign", emoji: "✏️" },
+    { id: "seo", label: "SEO / Sichtbarkeit", emoji: "📈" },
+    { id: "shop", label: "Onlineshop", emoji: "🛍️" },
+];
+
+const budgets = [
+    { id: "small", label: "bis 1.500 €" },
+    { id: "medium", label: "1.500 – 3.000 €" },
+    { id: "large", label: "3.000 – 5.000 €" },
+    { id: "xl", label: "5.000 € +" },
+];
+
+type FormData = {
+    projectType: string;
+    budget: string;
+    name: string;
+    contact: string;
+};
+
+function HeroForm() {
+    const [step, setStep] = useState(1);
+    const [form, setForm] = useState<FormData>({ projectType: "", budget: "", name: "", contact: "" });
+    const [submitted, setSubmitted] = useState(false);
+    const [loading, setLoading] = useState(false);
+
+    const handleSubmit = async () => {
+        setLoading(true);
+        // Simulate send
+        await new Promise((r) => setTimeout(r, 900));
+        setLoading(false);
+        setSubmitted(true);
+    };
+
+    const canNextStep1 = form.projectType !== "";
+    const canNextStep2 = form.budget !== "";
+    const canSubmit = form.name.trim() !== "" && form.contact.trim() !== "";
+
+    return (
+        <div className="relative">
+            <div className="absolute -inset-4 bg-accent/10 blur-3xl rounded-[3rem] opacity-30" />
+            <div className="relative bg-white/10 backdrop-blur-xl border border-white/20 rounded-[2.5rem] p-7 shadow-2xl overflow-hidden">
+
+                {/* Progress bar */}
+                {!submitted && (
+                    <div className="flex gap-1.5 mb-6">
+                        {[1, 2, 3].map((s) => (
+                            <div
+                                key={s}
+                                className={`h-1 flex-1 rounded-full transition-all duration-500 ${step >= s ? "bg-accent" : "bg-white/20"}`}
+                            />
+                        ))}
+                    </div>
+                )}
+
+                <AnimatePresence mode="wait">
+                    {/* Step 1 – Projekt-Art */}
+                    {!submitted && step === 1 && (
+                        <motion.div
+                            key="step1"
+                            initial={{ opacity: 0, x: 20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            exit={{ opacity: 0, x: -20 }}
+                            transition={{ duration: 0.25 }}
+                        >
+                            <p className="text-accent font-bold text-xs uppercase tracking-widest mb-2">Schritt 1 von 3</p>
+                            <h3 className="text-white font-bold text-lg mb-5 leading-snug">
+                                Was planst du?
+                            </h3>
+                            <div className="grid grid-cols-2 gap-2 mb-6">
+                                {projectTypes.map((pt) => (
+                                    <button
+                                        key={pt.id}
+                                        onClick={() => setForm((f) => ({ ...f, projectType: pt.id }))}
+                                        className={`flex flex-col items-center gap-1.5 px-3 py-4 rounded-xl border text-sm font-semibold transition-all ${
+                                            form.projectType === pt.id
+                                                ? "bg-accent border-accent text-white shadow-lg shadow-accent/30"
+                                                : "border-white/20 text-slate-300 hover:border-accent/60 hover:bg-white/5"
+                                        }`}
+                                    >
+                                        <span className="text-xl">{pt.emoji}</span>
+                                        {pt.label}
+                                    </button>
+                                ))}
+                            </div>
+                            <button
+                                onClick={() => canNextStep1 && setStep(2)}
+                                disabled={!canNextStep1}
+                                className="w-full flex items-center justify-center gap-2 bg-accent hover:bg-accent/90 disabled:opacity-40 disabled:cursor-not-allowed text-white rounded-xl py-3 font-bold text-sm transition-[background-color]"
+                            >
+                                Weiter <ChevronRight size={16} />
+                            </button>
+                        </motion.div>
+                    )}
+
+                    {/* Step 2 – Budget */}
+                    {!submitted && step === 2 && (
+                        <motion.div
+                            key="step2"
+                            initial={{ opacity: 0, x: 20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            exit={{ opacity: 0, x: -20 }}
+                            transition={{ duration: 0.25 }}
+                        >
+                            <p className="text-accent font-bold text-xs uppercase tracking-widest mb-2">Schritt 2 von 3</p>
+                            <h3 className="text-white font-bold text-lg mb-5 leading-snug">
+                                Welches Budget planst du ein?
+                            </h3>
+                            <div className="space-y-2 mb-6">
+                                {budgets.map((b) => (
+                                    <button
+                                        key={b.id}
+                                        onClick={() => setForm((f) => ({ ...f, budget: b.id }))}
+                                        className={`w-full flex items-center justify-between px-4 py-3 rounded-xl border text-sm font-semibold transition-all ${
+                                            form.budget === b.id
+                                                ? "bg-accent border-accent text-white shadow-lg shadow-accent/30"
+                                                : "border-white/20 text-slate-300 hover:border-accent/60 hover:bg-white/5"
+                                        }`}
+                                    >
+                                        {b.label}
+                                        {form.budget === b.id && <CheckCircle2 size={16} />}
+                                    </button>
+                                ))}
+                            </div>
+                            <div className="flex gap-2">
+                                <button
+                                    onClick={() => setStep(1)}
+                                    className="flex-1 border border-white/20 hover:border-white/40 text-white rounded-xl py-3 font-semibold text-sm transition-colors"
+                                >
+                                    Zurück
+                                </button>
+                                <button
+                                    onClick={() => canNextStep2 && setStep(3)}
+                                    disabled={!canNextStep2}
+                                    className="flex-[2] flex items-center justify-center gap-2 bg-accent hover:bg-accent/90 disabled:opacity-40 disabled:cursor-not-allowed text-white rounded-xl py-3 font-bold text-sm transition-[background-color]"
+                                >
+                                    Weiter <ChevronRight size={16} />
+                                </button>
+                            </div>
+                        </motion.div>
+                    )}
+
+                    {/* Step 3 – Kontakt */}
+                    {!submitted && step === 3 && (
+                        <motion.div
+                            key="step3"
+                            initial={{ opacity: 0, x: 20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            exit={{ opacity: 0, x: -20 }}
+                            transition={{ duration: 0.25 }}
+                        >
+                            <p className="text-accent font-bold text-xs uppercase tracking-widest mb-2">Schritt 3 von 3</p>
+                            <h3 className="text-white font-bold text-lg mb-5 leading-snug">
+                                Wie kann ich dich erreichen?
+                            </h3>
+                            <div className="space-y-3 mb-5">
+                                <input
+                                    type="text"
+                                    placeholder="Dein Name"
+                                    value={form.name}
+                                    onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
+                                    className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder-slate-400 text-sm focus:outline-none focus:border-accent transition-colors"
+                                />
+                                <input
+                                    type="text"
+                                    placeholder="E-Mail oder WhatsApp-Nummer"
+                                    value={form.contact}
+                                    onChange={(e) => setForm((f) => ({ ...f, contact: e.target.value }))}
+                                    className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder-slate-400 text-sm focus:outline-none focus:border-accent transition-colors"
+                                />
+                            </div>
+                            <p className="text-slate-500 text-xs mb-5">
+                                Keine Weitergabe an Dritte. Ich melde mich innerhalb von 24 Stunden.
+                            </p>
+                            <div className="flex gap-2">
+                                <button
+                                    onClick={() => setStep(2)}
+                                    className="flex-1 border border-white/20 hover:border-white/40 text-white rounded-xl py-3 font-semibold text-sm transition-colors"
+                                >
+                                    Zurück
+                                </button>
+                                <button
+                                    onClick={handleSubmit}
+                                    disabled={!canSubmit || loading}
+                                    className="flex-[2] flex items-center justify-center gap-2 bg-accent hover:bg-accent/90 disabled:opacity-40 disabled:cursor-not-allowed text-white rounded-xl py-3 font-bold text-sm transition-[background-color]"
+                                >
+                                    {loading ? (
+                                        <span className="animate-pulse">Wird gesendet…</span>
+                                    ) : (
+                                        <><Send size={15} /> Anfrage senden</>
+                                    )}
+                                </button>
+                            </div>
+                        </motion.div>
+                    )}
+
+                    {/* Success */}
+                    {submitted && (
+                        <motion.div
+                            key="success"
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ duration: 0.35 }}
+                            className="text-center py-6"
+                        >
+                            <div className="w-16 h-16 rounded-full bg-accent/20 border border-accent/40 flex items-center justify-center mx-auto mb-5">
+                                <Sparkles size={28} className="text-accent" />
+                            </div>
+                            <h3 className="text-white font-extrabold text-xl mb-2">Anfrage erhalten!</h3>
+                            <p className="text-slate-400 text-sm leading-relaxed mb-6">
+                                Danke, {form.name.split(" ")[0]}! Ich melde mich innerhalb von 24 Stunden bei dir.
+                            </p>
+                            <a
+                                href={CALENDLY_URL}
+                                target="_blank"
+                                rel="noreferrer noopener"
+                                className="inline-flex items-center gap-2 bg-accent hover:bg-accent/90 text-white rounded-xl px-6 py-3 font-bold text-sm transition-[background-color]"
+                            >
+                                Direkt Termin buchen <ArrowRight size={15} />
+                            </a>
+                        </motion.div>
+                    )}
+                </AnimatePresence>
+            </div>
+        </div>
+    );
+}
 
 export default function WebdesignLeichlingen() {
     return (
@@ -57,25 +287,7 @@ export default function WebdesignLeichlingen() {
                             <p className="text-xl text-slate-400 leading-relaxed mb-10 max-w-xl font-medium">
                                 Ich entwickle für Unternehmen in Leichlingen und Umgebung hochperformante Websites, die bei Google gefunden werden und aus Besuchern echte Kunden machen – mit 5 Jahren Erfahrung und Fokus auf die KI-Zukunft.
                             </p>
-                            <div className="flex flex-col sm:flex-row gap-4">
-                                <a
-                                    href={CALENDLY_URL}
-                                    target="_blank"
-                                    rel="noreferrer noopener"
-                                    className="inline-flex items-center justify-center gap-3 bg-accent hover:bg-accent/90 text-white rounded-full h-16 px-10 text-lg font-bold transition-[background-color] shadow-xl shadow-accent/40"
-                                >
-                                    Kostenlos besprechen <ArrowRight size={22} />
-                                </a>
-                                <a
-                                    href={WHATSAPP_URL}
-                                    target="_blank"
-                                    rel="noreferrer noopener"
-                                    className="inline-flex items-center justify-center gap-2 h-16 px-8 rounded-full border border-white/20 text-white text-sm font-bold hover:border-accent transition-colors"
-                                >
-                                    WhatsApp schreiben
-                                </a>
-                            </div>
-                            <div className="mt-10 flex flex-wrap gap-6">
+                            <div className="mt-6 flex flex-wrap gap-6">
                                 {["100% PageSpeed", "Mobile-First", "DSGVO-konform"].map((badge) => (
                                     <div key={badge} className="flex items-center gap-2 text-slate-400 text-sm font-semibold">
                                         <CheckCircle2 size={16} className="text-accent" />
@@ -85,34 +297,13 @@ export default function WebdesignLeichlingen() {
                             </div>
                         </motion.div>
 
+                        {/* Right: Interactive Form */}
                         <motion.div
                             initial={{ opacity: 0, scale: 0.9, y: 20 }}
                             animate={{ opacity: 1, scale: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.2 }}
-                            className="relative"
                         >
-                            <div className="absolute -inset-4 bg-accent/10 blur-3xl rounded-[3rem] opacity-30" />
-                            <div className="relative bg-white/10 backdrop-blur-xl border border-white/20 rounded-[3rem] p-8 md:p-12 shadow-2xl">
-                                <div className="mb-8">
-                                    <div className="flex mb-3">
-                                        {[...Array(5)].map((_, i) => <Star key={i} size={18} fill="currentColor" className="text-amber-400" />)}
-                                    </div>
-                                    <p className="text-white text-lg font-semibold italic leading-relaxed">
-                                        "Timm hat unsere Website komplett neu aufgestellt. Seit dem Launch kommen monatlich 3–5 neue Anfragen über Google."
-                                    </p>
-                                    <p className="text-slate-400 text-sm mt-3 font-medium">— Handwerksbetrieb, Leichlingen</p>
-                                </div>
-                                <div className="space-y-4 border-t border-white/10 pt-8">
-                                    {["Live in max. 2 Wochen", "Individuelles Design", "SEO-Grundoptimierung", "Persönliche Betreuung"].map((item, i) => (
-                                        <div key={i} className="flex items-center gap-3 text-sm text-slate-200 font-semibold">
-                                            <div className="w-6 h-6 rounded-full bg-accent/20 flex items-center justify-center shrink-0 border border-accent/20">
-                                                <CheckCircle2 size={14} className="text-accent" />
-                                            </div>
-                                            {item}
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
+                            <HeroForm />
                         </motion.div>
                     </div>
                 </div>
@@ -219,12 +410,8 @@ export default function WebdesignLeichlingen() {
 
                     {/* RIGHT: Sticky Sidebar */}
                     <div className="lg:sticky lg:top-28 space-y-5">
-
-                        {/* Vorteile Card */}
                         <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-lg">
-                            <h3 className="font-bold text-slate-900 text-base mb-5">
-                                Deine Vorteile
-                            </h3>
+                            <h3 className="font-bold text-slate-900 text-base mb-5">Deine Vorteile</h3>
                             <div className="space-y-3">
                                 {vorteile.map((v) => (
                                     <div key={v} className="flex items-start gap-3">
@@ -235,7 +422,6 @@ export default function WebdesignLeichlingen() {
                             </div>
                         </div>
 
-                        {/* CTA Card */}
                         <div className="bg-slate-900 rounded-2xl p-6">
                             <p className="text-accent font-bold text-xs uppercase tracking-widest mb-2">Bereit zu starten?</p>
                             <h3 className="font-extrabold text-white text-lg mb-3 leading-snug">
@@ -262,7 +448,6 @@ export default function WebdesignLeichlingen() {
                             </a>
                         </div>
 
-                        {/* Stats Card */}
                         <div className="bg-slate-50 border border-slate-100 rounded-2xl p-6">
                             <div className="grid grid-cols-2 gap-4">
                                 {[
@@ -279,7 +464,6 @@ export default function WebdesignLeichlingen() {
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
 
