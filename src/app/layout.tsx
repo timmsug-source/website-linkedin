@@ -29,7 +29,6 @@ export default function RootLayout({
   return (
     <html lang="de" className={`${inter.variable} ${outfit.variable}`}>
       <head>
-        <link rel="canonical" href="https://timmschurig.com" />
         <meta name="geo.region" content="DE" />
         <meta name="geo.placename" content="Deutschland" />
         <meta name="language" content="German" />
