@@ -565,7 +565,7 @@ export default function WebdesignLeichlingen() {
             </div>
 
             {/* Final CTA */}
-            <section className="py-20 px-6 bg-slate-900 mx-4 mb-10 rounded-[3rem] text-center shadow-2xl">
+            <section className="py-20 px-6 bg-slate-900 max-w-4xl mx-auto mb-10 rounded-[3rem] text-center shadow-2xl">
                 <h2 className="text-3xl md:text-4xl font-display font-extrabold text-white mb-4">
                     Bereit für deine neue <span className="text-accent">Website?</span>
                 </h2>
