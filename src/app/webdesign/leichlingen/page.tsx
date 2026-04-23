@@ -579,7 +579,7 @@ export default function WebdesignLeichlingen() {
                         rel="noreferrer noopener"
                         className="inline-flex items-center justify-center bg-accent hover:bg-accent/90 text-white rounded-full px-10 h-14 text-base font-bold transition-[background-color] shadow-xl shadow-accent/30"
                     >
-                        Termin buchen – kostenlos <ArrowRight className="ml-2" size={18} />
+                        Ruf mich gerne direkt an <ArrowRight className="ml-2" size={18} />
                     </a>
                     <a
                         href={WHATSAPP_URL}
