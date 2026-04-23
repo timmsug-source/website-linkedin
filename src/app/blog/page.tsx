@@ -49,10 +49,22 @@ const internalGuides = [
   },
 ];
 
-export default async function BlogPage() {
-  const posts = await getAllPosts();
+export default async function BlogPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ category?: string }>;
+}) {
+  const { category } = await searchParams;
+  const allPosts = await getAllPosts();
+
+  // Filtern nach Kategorie (null = alle)
+  const posts = category && category !== "Alle Themen"
+    ? allPosts.filter((p) => p.category === category)
+    : allPosts;
+
   const featuredPosts = posts.filter((p) => p.featured);
   const regularPosts = posts.filter((p) => !p.featured);
+  const activeCategory = category ?? "Alle Themen";
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -118,14 +130,25 @@ export default async function BlogPage() {
                   </h2>
                   <nav>
                     <ul className="flex flex-col gap-2">
-                      {categories.map((cat) => (
-                        <li key={cat}>
-                          <button className="w-full flex items-center px-4 py-3 rounded-xl text-sm font-medium text-slate-600 hover:bg-slate-50 hover:text-accent transition-all text-left">
-                            <Tag size={14} className="mr-2 shrink-0" aria-hidden="true" />
-                            {cat}
-                          </button>
-                        </li>
-                      ))}
+                      {categories.map((cat) => {
+                        const isActive = activeCategory === cat;
+                        const href = cat === "Alle Themen" ? "/blog" : `/blog?category=${encodeURIComponent(cat)}`;
+                        return (
+                          <li key={cat}>
+                            <Link
+                              href={href}
+                              className={`w-full flex items-center px-4 py-3 rounded-xl text-sm font-medium transition-all ${
+                                isActive
+                                  ? "bg-accent text-white"
+                                  : "text-slate-600 hover:bg-slate-50 hover:text-accent"
+                              }`}
+                            >
+                              <Tag size={14} className="mr-2 shrink-0" aria-hidden="true" />
+                              {cat}
+                            </Link>
+                          </li>
+                        );
+                      })}
                     </ul>
                   </nav>
                 </div>
@@ -150,7 +173,12 @@ export default async function BlogPage() {
             {/* Main Content */}
             <main className="lg:col-span-9">
               {posts.length === 0 ? (
-                <p className="text-slate-500 text-lg">Noch keine Beiträge vorhanden.</p>
+                <div className="text-center py-16">
+                  <p className="text-slate-400 text-lg mb-4">Keine Beiträge in dieser Kategorie.</p>
+                  <Link href="/blog" className="text-accent font-semibold hover:underline">
+                    Alle Artikel anzeigen →
+                  </Link>
+                </div>
               ) : (
                 <>
                   {/* Featured Posts */}
