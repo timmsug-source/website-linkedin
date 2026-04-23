@@ -223,7 +223,14 @@ export default async function BlogPostPage({
                     [&_ol]:list-decimal [&_ol]:pl-6 [&_ol]:mb-8 [&_ol]:space-y-3
                     [&_a]:text-accent [&_a]:underline [&_a:hover]:opacity-80
                     [&_strong]:text-slate-900
-                    [&_blockquote]:border-l-4 [&_blockquote]:border-accent [&_blockquote]:pl-6 [&_blockquote]:italic [&_blockquote]:text-slate-700 [&_blockquote]:bg-slate-50 [&_blockquote]:py-3 [&_blockquote]:pr-4 [&_blockquote]:rounded-r-xl [&_blockquote]:mb-8"
+                    [&_blockquote]:border-l-4 [&_blockquote]:border-accent [&_blockquote]:pl-6 [&_blockquote]:italic [&_blockquote]:text-slate-700 [&_blockquote]:bg-slate-50 [&_blockquote]:py-3 [&_blockquote]:pr-4 [&_blockquote]:rounded-r-xl [&_blockquote]:mb-8
+                    [&_table]:w-full [&_table]:mb-10 [&_table]:text-sm [&_table]:border-separate [&_table]:border-spacing-0 [&_table]:rounded-2xl [&_table]:overflow-hidden [&_table]:shadow-sm [&_table]:border [&_table]:border-slate-200
+                    [&_thead]:bg-slate-900
+                    [&_th]:text-white [&_th]:font-bold [&_th]:px-5 [&_th]:py-4 [&_th]:text-left [&_th]:text-xs [&_th]:uppercase [&_th]:tracking-wider
+                    [&_td]:px-5 [&_td]:py-4 [&_td]:text-slate-700 [&_td]:border-b [&_td]:border-slate-100
+                    [&_tbody_tr:last-child_td]:border-b-0
+                    [&_tbody_tr:nth-child(even)]:bg-slate-50
+                    [&_tbody_tr]:hover:bg-accent/5 [&_tbody_tr]:transition-colors"
                 >
                   <div dangerouslySetInnerHTML={{ __html: contentTopWithIds }} />
 
