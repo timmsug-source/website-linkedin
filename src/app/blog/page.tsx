@@ -11,18 +11,18 @@ import { getAllPosts } from "@/lib/blog";
 export const revalidate = 60;
 
 export const metadata: Metadata = buildMetadata({
-  title: "Blog – Tipps zu LinkedIn, Automatisierung & KI für Fitness-Coaches",
+  title: "Blog – Webdesign, SEO & digitale Trends für Unternehmen",
   description:
-    "Strategien, Tipps und Ratgeber für Fitness- und Ernährungscoaches: LinkedIn-Kundengewinnung, Automatisierung, KI-Chatbots, WhatsApp Marketing und mehr.",
+    "Praxisnahe Artikel zu Webdesign, SEO, GEO und KI-Trends. Timm Schurig schreibt über das, was Unternehmen 2026 digital wirklich weiterbringt.",
   keywords: [
-    "Wie gewinne ich Kunden als Fitness Coach",
-    "LinkedIn Tipps für Fitness Coaches",
-    "WhatsApp im Coaching nutzen",
-    "Chatbot für Fitnesstrainer",
-    "E-Mail Funnel für Coaches",
-    "automatisiertes Onboarding",
-    "LinkedIn organisch Kunden gewinnen",
-    "Ernährungscoach Marketing Strategie",
+    "Webdesign Tipps",
+    "SEO für Unternehmen",
+    "GEO Generative Engine Optimization",
+    "KI im Webdesign",
+    "lokale SEO Strategie",
+    "moderne Website erstellen lassen",
+    "digitale Trends 2026",
+    "Webdesign Blog Deutschland",
   ],
   alternates: { canonical: `${SITE_URL}/blog` },
   openGraph: { url: `${SITE_URL}/blog` },
@@ -102,8 +102,8 @@ export default async function BlogPage({
               Insights & <span className="text-accent">Ratgeber</span>
             </h1>
             <p className="text-xl text-slate-600 max-w-2xl leading-relaxed">
-              Praxisnahe Tipps und Strategien zu LinkedIn, Automatisierung und
-              KI für Fitness- und Ernährungscoaches im DACH-Raum.
+              Webdesign, SEO und digitale Trends – praxisnah erklärt. Hier
+              schreibe ich über das, was Unternehmen 2026 wirklich weiterbringt.
             </p>
           </div>
 
