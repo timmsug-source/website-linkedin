@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Calendar, User, Tag } from "lucide-react";
+import { ArrowRight, Calendar, Tag } from "lucide-react";
 import { buildMetadata } from "@/lib/seo";
 import { SITE_URL, PHONE_URL } from "@/lib/utils";
+import { getAllPosts } from "@/lib/blog";
+
+// ISR: Seite alle 60 Sekunden neu generieren → neue Posts erscheinen ohne Redeploy
+export const revalidate = 60;
 
 export const metadata: Metadata = buildMetadata({
   title: "Blog – Tipps zu LinkedIn, Automatisierung & KI für Fitness-Coaches",
@@ -32,9 +36,6 @@ const categories = [
   "Onboarding",
 ];
 
-import { blogPosts } from "@/lib/blogData";
-
-
 const internalGuides = [
   {
     title: "Der ultimative Automatisierungs-Guide für Coaches",
@@ -50,33 +51,31 @@ const internalGuides = [
   },
 ];
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Blog",
-  name: "Timm Schurig Blog – Fitness Coach Marketing",
-  url: `${SITE_URL}/blog`,
-  description:
-    "Strategien und Tipps für Fitness- und Ernährungscoaches zu LinkedIn-Kundengewinnung, Automatisierung und KI",
-  author: {
-    "@type": "Person",
-    name: "Timm Schurig",
-    url: SITE_URL,
-  },
-  blogPost: blogPosts.map((post) => ({
-    "@type": "BlogPosting",
-    headline: post.title,
-    description: post.excerpt,
-    datePublished: post.date,
+export default async function BlogPage() {
+  const posts = await getAllPosts();
+  const featuredPosts = posts.filter((p) => p.featured);
+  const regularPosts = posts.filter((p) => !p.featured);
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    name: "Timm Schurig Blog – Fitness Coach Marketing",
+    url: `${SITE_URL}/blog`,
+    description:
+      "Strategien und Tipps für Fitness- und Ernährungscoaches zu LinkedIn-Kundengewinnung, Automatisierung und KI",
     author: {
       "@type": "Person",
-      name: post.author,
+      name: "Timm Schurig",
+      url: SITE_URL,
     },
-  })),
-};
-
-export default function BlogPage() {
-  const featuredPosts = blogPosts.filter((p) => p.featured);
-  const regularPosts = blogPosts.filter((p) => !p.featured);
+    blogPost: posts.map((post) => ({
+      "@type": "BlogPosting",
+      headline: post.title,
+      description: post.excerpt,
+      datePublished: post.date,
+      author: { "@type": "Person", name: post.author },
+    })),
+  };
 
   return (
     <>
@@ -142,8 +141,6 @@ export default function BlogPage() {
                   </p>
                   <a
                     href={PHONE_URL}
-                    target="_blank"
-                    rel="noreferrer noopener"
                     className="block w-full bg-accent hover:bg-accent/90 text-white text-center rounded-xl px-4 py-3 text-sm font-bold transition-all"
                   >
                     Termin buchen
@@ -154,116 +151,120 @@ export default function BlogPage() {
 
             {/* Main Content */}
             <main className="lg:col-span-9">
-              {/* Featured Posts */}
-              <section aria-label="Empfohlene Artikel">
-                <h2 className="sr-only">Empfohlene Artikel</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-                  {featuredPosts.map((post) => (
-                    <article
-                      key={post.slug}
-                      className="group bg-slate-50 rounded-3xl overflow-hidden border border-slate-100 hover:shadow-xl hover:border-accent/20 transition-all"
-                    >
-                      <div className="p-8">
-                        <div className="flex items-center gap-2 mb-4">
-                          <span className="bg-accent/10 text-accent text-xs font-bold px-3 py-1 rounded-full">
-                            {post.category}
-                          </span>
-                          <span className="text-xs text-slate-400 font-medium">
-                            {post.readTime} Lesezeit
-                          </span>
-                        </div>
-                        <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-accent transition-colors leading-tight">
-                          {post.title}
-                        </h3>
-                        <p className="text-slate-600 text-sm leading-relaxed mb-6">
-                          {post.excerpt}
-                        </p>
-                        <div className="flex items-center justify-between">
-                          <div className="flex items-center gap-2 text-xs text-slate-400">
-                            <Calendar size={12} aria-hidden="true" />
-                            {post.date}
-                          </div>
-                          <Link
-                            href={`/blog/${post.slug}`}
-                            className="inline-flex items-center gap-1 text-accent font-bold text-sm hover:gap-2 transition-all"
-                            aria-label={`${post.title} weiterlesen`}
+              {posts.length === 0 ? (
+                <p className="text-slate-500 text-lg">Noch keine Beiträge vorhanden.</p>
+              ) : (
+                <>
+                  {/* Featured Posts */}
+                  {featuredPosts.length > 0 && (
+                    <section aria-label="Empfohlene Artikel">
+                      <h2 className="sr-only">Empfohlene Artikel</h2>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+                        {featuredPosts.map((post) => (
+                          <article
+                            key={post.slug}
+                            className="group bg-slate-50 rounded-3xl overflow-hidden border border-slate-100 hover:shadow-xl hover:border-accent/20 transition-all"
                           >
-                            Lesen <ArrowRight size={14} />
-                          </Link>
-                        </div>
+                            <div className="p-8">
+                              <div className="flex items-center gap-2 mb-4">
+                                <span className="bg-accent/10 text-accent text-xs font-bold px-3 py-1 rounded-full">
+                                  {post.category}
+                                </span>
+                                <span className="text-xs text-slate-400 font-medium">
+                                  {post.read_time} Lesezeit
+                                </span>
+                              </div>
+                              <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-accent transition-colors leading-tight">
+                                {post.title}
+                              </h3>
+                              <p className="text-slate-600 text-sm leading-relaxed mb-6">
+                                {post.excerpt}
+                              </p>
+                              <div className="flex items-center justify-between">
+                                <div className="flex items-center gap-2 text-xs text-slate-400">
+                                  <Calendar size={12} aria-hidden="true" />
+                                  {post.date}
+                                </div>
+                                <Link
+                                  href={`/blog/${post.slug}`}
+                                  className="inline-flex items-center gap-1 text-accent font-bold text-sm hover:gap-2 transition-all"
+                                  aria-label={`${post.title} weiterlesen`}
+                                >
+                                  Lesen <ArrowRight size={14} />
+                                </Link>
+                              </div>
+                            </div>
+                          </article>
+                        ))}
                       </div>
-                    </article>
-                  ))}
-                </div>
-              </section>
+                    </section>
+                  )}
 
-              {/* Regular Posts */}
-              <section aria-label="Alle Artikel">
-                <h2 className="text-xl font-bold text-slate-900 mb-6">
-                  Alle Artikel
-                </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-                  {regularPosts.map((post) => (
-                    <Link
-                      key={post.slug}
-                      href={`/blog/${post.slug}`}
-                      className="group flex flex-col bg-white border border-slate-100 rounded-[2rem] hover:shadow-xl hover:border-accent/20 transition-all overflow-hidden h-full"
-                    >
-                      <article className="flex flex-col h-full">
-                        {/* Image */}
-                        <div className="relative w-full h-48 bg-slate-100 overflow-hidden shrink-0">
-                          {post.headerImage ? (
-                            <Image
-                              src={post.headerImage}
-                              alt={post.title}
-                              fill
-                              className="object-cover group-hover:scale-105 transition-transform duration-500"
-                              sizes="(max-width: 768px) 100vw, 300px"
-                            />
-                          ) : (
-                            <div className="w-full h-full bg-slate-100 flex items-center justify-center text-slate-300">
-                              Kein Bild
-                            </div>
-                          )}
-                        </div>
-
-                        {/* Content */}
-                        <div className="p-6 flex flex-col flex-1">
-                          <div className="flex flex-wrap items-center gap-3 mb-4">
-                            <span className="bg-slate-100 text-slate-600 text-xs font-bold px-3 py-1 rounded-full">
-                              {post.category}
-                            </span>
-                            <span className="text-xs text-slate-400 font-medium">
-                              {post.readTime} Lesezeit
-                            </span>
-                          </div>
-                          <h3 className="text-lg font-bold text-slate-900 mb-3 group-hover:text-accent transition-colors leading-snug line-clamp-3">
-                            {post.title}
-                          </h3>
-                          <p className="text-slate-600 text-sm leading-relaxed mb-6 line-clamp-2 flex-1">
-                            {post.excerpt}
-                          </p>
-                          <div className="flex items-center justify-between mt-auto pt-4 border-t border-slate-50">
-                            <div className="flex items-center gap-2 text-xs text-slate-400 font-medium">
-                              <Calendar size={14} aria-hidden="true" />
-                              {post.date}
-                            </div>
-                            <div className="inline-flex items-center gap-1 text-accent font-bold text-sm group-hover:gap-2 transition-all">
-                              Lesen <ArrowRight size={14} />
-                            </div>
-                          </div>
-                        </div>
-                      </article>
-                    </Link>
-                  ))}
-                </div>
-              </section>
+                  {/* Regular Posts */}
+                  {regularPosts.length > 0 && (
+                    <section aria-label="Alle Artikel">
+                      <h2 className="text-xl font-bold text-slate-900 mb-6">
+                        Alle Artikel
+                      </h2>
+                      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+                        {regularPosts.map((post) => (
+                          <Link
+                            key={post.slug}
+                            href={`/blog/${post.slug}`}
+                            className="group flex flex-col bg-white border border-slate-100 rounded-[2rem] hover:shadow-xl hover:border-accent/20 transition-all overflow-hidden h-full"
+                          >
+                            <article className="flex flex-col h-full">
+                              <div className="relative w-full h-48 bg-slate-100 overflow-hidden shrink-0">
+                                {post.header_image ? (
+                                  <Image
+                                    src={post.header_image}
+                                    alt={post.title}
+                                    fill
+                                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                                    sizes="(max-width: 768px) 100vw, 300px"
+                                  />
+                                ) : (
+                                  <div className="w-full h-full bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center">
+                                    <span className="text-4xl font-black text-slate-300">TS</span>
+                                  </div>
+                                )}
+                              </div>
+                              <div className="p-6 flex flex-col flex-1">
+                                <div className="flex flex-wrap items-center gap-3 mb-4">
+                                  <span className="bg-slate-100 text-slate-600 text-xs font-bold px-3 py-1 rounded-full">
+                                    {post.category}
+                                  </span>
+                                  <span className="text-xs text-slate-400 font-medium">
+                                    {post.read_time} Lesezeit
+                                  </span>
+                                </div>
+                                <h3 className="text-lg font-bold text-slate-900 mb-3 group-hover:text-accent transition-colors leading-snug line-clamp-3">
+                                  {post.title}
+                                </h3>
+                                <p className="text-slate-600 text-sm leading-relaxed mb-6 line-clamp-2 flex-1">
+                                  {post.excerpt}
+                                </p>
+                                <div className="flex items-center justify-between mt-auto pt-4 border-t border-slate-50">
+                                  <div className="flex items-center gap-2 text-xs text-slate-400 font-medium">
+                                    <Calendar size={14} aria-hidden="true" />
+                                    {post.date}
+                                  </div>
+                                  <div className="inline-flex items-center gap-1 text-accent font-bold text-sm group-hover:gap-2 transition-all">
+                                    Lesen <ArrowRight size={14} />
+                                  </div>
+                                </div>
+                              </div>
+                            </article>
+                          </Link>
+                        ))}
+                      </div>
+                    </section>
+                  )}
+                </>
+              )}
 
               {/* Internal Guides */}
-              <section
-                className="mt-16 pt-16 border-t border-slate-100"
-                aria-label="Weitere Ratgeber"
-              >
+              <section className="mt-16 pt-16 border-t border-slate-100" aria-label="Weitere Ratgeber">
                 <h2 className="text-2xl font-bold text-slate-900 mb-8">
                   Weiterführende Ratgeber
                 </h2>
