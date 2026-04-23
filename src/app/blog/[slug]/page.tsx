@@ -44,6 +44,13 @@ function addHeadingIds(html: string): string {
   });
 }
 
+function wrapTables(html: string): string {
+  return html.replace(
+    /<table/gi,
+    '<div class="overflow-x-auto -mx-2 sm:mx-0 rounded-2xl mb-10"><table class="min-w-[480px] sm:min-w-0"'
+  ).replace(/<\/table>/gi, "</table></div>");
+}
+
 // ─── Metadata ────────────────────────────────────────────────────────────────
 
 export async function generateStaticParams() {
@@ -90,8 +97,8 @@ export default async function BlogPostPage({
   // Headings aus beiden Content-Blöcken extrahieren + IDs einbauen
   const allHtml = (post.content_top ?? "") + (post.content_bottom ?? "");
   const headings = extractHeadings(allHtml);
-  const contentTopWithIds = addHeadingIds(post.content_top ?? "");
-  const contentBottomWithIds = addHeadingIds(post.content_bottom ?? "");
+  const contentTopWithIds = wrapTables(addHeadingIds(post.content_top ?? ""));
+  const contentBottomWithIds = wrapTables(addHeadingIds(post.content_bottom ?? ""));
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -224,7 +231,7 @@ export default async function BlogPostPage({
                     [&_a]:text-accent [&_a]:underline [&_a:hover]:opacity-80
                     [&_strong]:text-slate-900
                     [&_blockquote]:border-l-4 [&_blockquote]:border-accent [&_blockquote]:pl-6 [&_blockquote]:italic [&_blockquote]:text-slate-700 [&_blockquote]:bg-slate-50 [&_blockquote]:py-3 [&_blockquote]:pr-4 [&_blockquote]:rounded-r-xl [&_blockquote]:mb-8
-                    [&_table]:w-full [&_table]:mb-10 [&_table]:text-sm [&_table]:border-separate [&_table]:border-spacing-0 [&_table]:rounded-2xl [&_table]:overflow-hidden [&_table]:shadow-sm [&_table]:border [&_table]:border-slate-200
+                    [&_table]:w-full [&_table]:text-sm [&_table]:border-separate [&_table]:border-spacing-0 [&_table]:rounded-2xl [&_table]:overflow-hidden [&_table]:shadow-sm [&_table]:border [&_table]:border-slate-200
                     [&_thead]:bg-slate-900
                     [&_th]:text-white [&_th]:font-bold [&_th]:px-5 [&_th]:py-4 [&_th]:text-left [&_th]:text-xs [&_th]:uppercase [&_th]:tracking-wider
                     [&_td]:px-5 [&_td]:py-4 [&_td]:text-slate-700 [&_td]:border-b [&_td]:border-slate-100
