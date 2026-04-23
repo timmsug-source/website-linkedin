@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Calendar, Tag } from "lucide-react";
+
 import { buildMetadata } from "@/lib/seo";
 import { SITE_URL, PHONE_URL } from "@/lib/utils";
 import { getAllPosts } from "@/lib/blog";
@@ -34,20 +35,6 @@ const categories = [
   "News",
 ];
 
-const internalGuides = [
-  {
-    title: "Der ultimative Automatisierungs-Guide für Coaches",
-    href: "/leistungen/automatisierungen",
-  },
-  {
-    title: "Webdesign das konvertiert: Was Coaches wirklich brauchen",
-    href: "/leistungen/webdesign",
-  },
-  {
-    title: "SEO & GEO: So wirst du lokal und KI-übergreifend gefunden",
-    href: "/leistungen/seo-geo",
-  },
-];
 
 export default async function BlogPage({
   searchParams,
@@ -289,28 +276,6 @@ export default async function BlogPage({
                 </>
               )}
 
-              {/* Internal Guides */}
-              <section className="mt-16 pt-16 border-t border-slate-100" aria-label="Weitere Ratgeber">
-                <h2 className="text-2xl font-bold text-slate-900 mb-8">
-                  Weiterführende Ratgeber
-                </h2>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  {internalGuides.map((guide, index) => (
-                    <Link
-                      key={index}
-                      href={guide.href}
-                      className="group bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:bg-white hover:shadow-xl hover:border-accent/20 transition-all"
-                    >
-                      <h3 className="font-bold text-slate-900 mb-4 group-hover:text-accent transition-colors text-sm leading-snug">
-                        {guide.title}
-                      </h3>
-                      <div className="flex items-center text-xs font-bold text-accent uppercase tracking-widest gap-1">
-                        Jetzt lesen <ArrowRight size={12} />
-                      </div>
-                    </Link>
-                  ))}
-                </div>
-              </section>
             </main>
           </div>
         </div>
