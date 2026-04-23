@@ -29,11 +29,9 @@ export const metadata: Metadata = buildMetadata({
 
 const categories = [
   "Alle Themen",
-  "LinkedIn & Kundengewinnung",
-  "Automatisierung",
-  "KI & Chatbots",
-  "Marketing",
-  "Onboarding",
+  "SEO",
+  "Webdesign",
+  "News",
 ];
 
 const internalGuides = [
