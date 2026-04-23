@@ -109,8 +109,15 @@ function HeroForm() {
 
     const handleSubmit = async () => {
         setLoading(true);
-        // Simulate send
-        await new Promise((r) => setTimeout(r, 900));
+        try {
+            await fetch("/api/contact", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ ...form, page: "Webdesign Leichlingen" }),
+            });
+        } catch (err) {
+            console.error(err);
+        }
         setLoading(false);
         setSubmitted(true);
     };
