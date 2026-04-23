@@ -176,6 +176,37 @@ export default async function BlogPostPage({
             )}
           </header>
 
+          {/* ── TOC Mobile (nur auf kleinen Screens) ── */}
+          {headings.length > 0 && (
+            <div className="lg:hidden bg-white rounded-2xl border border-slate-100 shadow-sm p-6 mb-8">
+              <div className="flex items-center gap-2 mb-5">
+                <BookOpen size={16} className="text-accent shrink-0" />
+                <span className="font-bold text-slate-900 text-sm uppercase tracking-widest">
+                  Inhaltsverzeichnis
+                </span>
+              </div>
+              <nav aria-label="Inhaltsverzeichnis Mobile">
+                <ol className="space-y-2">
+                  {headings.map((h, i) => (
+                    <li key={h.id} className={h.level === 3 ? "pl-4" : ""}>
+                      <a
+                        href={`#${h.id}`}
+                        className={`flex items-start gap-2 text-sm leading-snug transition-colors hover:text-accent group ${
+                          h.level === 2 ? "text-slate-700 font-semibold" : "text-slate-500 font-medium"
+                        }`}
+                      >
+                        <span className="text-accent/60 font-bold shrink-0 text-xs mt-0.5 group-hover:text-accent transition-colors">
+                          {String(i + 1).padStart(2, "0")}
+                        </span>
+                        {h.text}
+                      </a>
+                    </li>
+                  ))}
+                </ol>
+              </nav>
+            </div>
+          )}
+
           {/* ── Two-column layout ── */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
 
@@ -255,9 +286,9 @@ export default async function BlogPostPage({
             <aside className="lg:col-span-4">
               <div className="sticky top-28 space-y-6">
 
-                {/* Inhaltsverzeichnis */}
+                {/* Inhaltsverzeichnis (nur Desktop) */}
                 {headings.length > 0 && (
-                  <div className="bg-white rounded-2xl border border-slate-100 shadow-sm p-6">
+                  <div className="hidden lg:block bg-white rounded-2xl border border-slate-100 shadow-sm p-6">
                     <div className="flex items-center gap-2 mb-5">
                       <BookOpen size={16} className="text-accent shrink-0" />
                       <span className="font-bold text-slate-900 text-sm uppercase tracking-widest">
