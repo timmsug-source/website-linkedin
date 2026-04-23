@@ -47,10 +47,10 @@ export const defaultMetadata: Metadata = {
       "Landingpages, KI-Chatbots, WhatsApp-Marketing und Automatisierungen – exklusiv für Fitness- und Ernährungscoaches im DACH-Raum.",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Timm Schurig – Marketing für Fitness- und Ernährungscoaches",
+        alt: "Timm Schurig – Webdesign, SEO & Automatisierung",
       },
     ],
   },
@@ -60,7 +60,7 @@ export const defaultMetadata: Metadata = {
       "Timm Schurig – Marketing & Automatisierung für Fitness- & Ernährungscoaches",
     description:
       "Landingpages, KI-Chatbots, WhatsApp-Marketing und Automatisierungen – exklusiv für Coaches im DACH-Raum.",
-    images: ["/og-image.jpg"],
+    images: ["/opengraph-image"],
     creator: "@timmschurig",
   },
   alternates: {
@@ -69,9 +69,7 @@ export const defaultMetadata: Metadata = {
       "de-DE": SITE_URL,
     },
   },
-  verification: {
-    google: "your-google-verification-code",
-  },
+  // verification: { google: "DEIN_CODE_HIER" }, // Google Search Console Verification Code eintragen
 };
 
 export function buildMetadata(overrides: Partial<Metadata>): Metadata {

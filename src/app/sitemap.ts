@@ -1,7 +1,8 @@
 import type { MetadataRoute } from "next";
 import { SITE_URL } from "@/lib/utils";
+import { getAllSlugs } from "@/lib/blog";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date();
 
   const staticRoutes: MetadataRoute.Sitemap = [
@@ -23,18 +24,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9,
   }));
 
-  const lpRoutes: MetadataRoute.Sitemap = [
-    "linkedin",
-    "fitness-coach",
-    "erstgespraech",
-    "ernaehrungscoach",
-  ].map((slug) => ({
-    url: `${SITE_URL}/lp/${slug}`,
-    lastModified: now,
-    changeFrequency: "monthly" as const,
-    priority: 0.7,
-  }));
-
   const cityRoutes: MetadataRoute.Sitemap = [
     "langenfeld",
     "haan",
@@ -46,21 +35,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  const blogRoutes: MetadataRoute.Sitemap = [
-    "linkedin-fuer-fitness-coaches",
-    "landingpage-leads-verliert",
-    "whatsapp-coaching-funnel",
-    "ki-chatbot-personal-trainer",
-    "automatisiertes-onboarding-coach",
-    "email-funnel-fitness-coaches",
-    "linkedin-organisch-kunden",
-    "was-kostet-marketing-fitness-coaches",
-  ].map((slug) => ({
+  // Dynamisch aus Supabase laden
+  const slugs = await getAllSlugs();
+  const blogRoutes: MetadataRoute.Sitemap = slugs.map((slug) => ({
     url: `${SITE_URL}/blog/${slug}`,
     lastModified: now,
     changeFrequency: "monthly" as const,
-    priority: 0.6,
+    priority: 0.7,
   }));
 
-  return [...staticRoutes, ...serviceRoutes, ...cityRoutes, ...lpRoutes, ...blogRoutes];
+  return [...staticRoutes, ...serviceRoutes, ...cityRoutes, ...blogRoutes];
 }

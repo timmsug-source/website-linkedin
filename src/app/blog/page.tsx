@@ -40,12 +40,12 @@ const internalGuides = [
     href: "/leistungen/automatisierungen",
   },
   {
-    title: "KI-Chatbot Setup: Alles was du wissen musst",
-    href: "/leistungen/ki-chatbot",
+    title: "Webdesign das konvertiert: Was Coaches wirklich brauchen",
+    href: "/leistungen/webdesign",
   },
   {
-    title: "LinkedIn Lead-Gen: Von der Anfrage zum Abschluss",
-    href: "/fuer-fitness-coaches",
+    title: "SEO & GEO: So wirst du lokal und KI-übergreifend gefunden",
+    href: "/leistungen/seo-geo",
   },
 ];
 
