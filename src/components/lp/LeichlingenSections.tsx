@@ -164,9 +164,8 @@ export function LeichlingenSolution() {
     {
       title: "Modernes Design mit Vertrauensgarantie",
       body: "Wir ersetzen veraltete Optik durch ein frisches, zeitgemäßes Design, das deine Professionalität widerspiegelt. Ein ästhetischer Auftritt sorgt innerhalb der ersten Sekunde für das nötige Vertrauen, das die Basis für jede Geschäftsbeziehung bildet.",
-      colSpan: "lg:col-span-2",
+      colSpan: "lg:col-span-1",
       icon: Palette,
-      image: "/images/mockups-grid.jpg",
     },
     {
       title: "High-Speed Performance",
@@ -177,7 +176,7 @@ export function LeichlingenSolution() {
     {
       title: "Konversionsstarke Strategie",
       body: "Besucher sind gut, Kunden sind besser. Wir implementieren klare Call-to-Actions und automatisierte Prozesse, die dafür sorgen, dass aus einem bloßen „Vorbeischauen“ eine konkrete Handlung wird. Deine Website arbeitet 24/7 als dein bester Verkäufer.",
-      colSpan: "lg:col-span-1",
+      colSpan: "lg:col-span-2",
       icon: CheckCircle2,
     },
   ];
@@ -201,12 +200,27 @@ export function LeichlingenSolution() {
           </div>
         </div>
 
+        {/* Standalone Image Showcase */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-20 relative w-full aspect-video md:aspect-[21/9] rounded-[2.5rem] overflow-hidden shadow-2xl border border-slate-100"
+        >
+          <Image
+            src="/images/mockups-grid.jpg"
+            alt="Webdesign Leichlingen Mockups"
+            fill
+            className="object-cover object-center"
+          />
+        </motion.div>
+
         {/* Tiles / Kacheln */}
         <div className="mb-16">
           <h3 className="text-2xl font-display font-bold text-slate-900 mb-8">
             Wie wir dein Business in Leichlingen nach vorne bringen:
           </h3>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {features.map((feature, i) => (
               <motion.div
                 key={i}
@@ -216,19 +230,6 @@ export function LeichlingenSolution() {
                 transition={{ delay: i * 0.1 }}
                 className={`relative bg-white rounded-3xl p-8 shadow-sm border border-slate-100 overflow-hidden flex flex-col ${feature.colSpan}`}
               >
-                {/* Optional Image for wide tile */}
-                {feature.image && (
-                  <div className="absolute top-0 right-0 w-1/2 h-full opacity-10 pointer-events-none lg:opacity-100 lg:relative lg:w-full lg:h-64 lg:mb-6 lg:rounded-2xl lg:overflow-hidden">
-                    <Image
-                      src={feature.image}
-                      alt="Modernes Design"
-                      fill
-                      className="object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent lg:hidden" />
-                  </div>
-                )}
-                
                 <div className="relative z-10 flex-1">
                   <div className="w-12 h-12 rounded-2xl bg-accent/10 flex items-center justify-center mb-6">
                     <feature.icon size={24} className="text-accent" />
