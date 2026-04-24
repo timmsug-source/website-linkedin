@@ -185,35 +185,36 @@ export function LeichlingenSolution() {
     <section className="py-24 px-6 bg-slate-50" aria-label="Die Lösung für Leichlingen">
       <div className="max-w-7xl mx-auto">
         
-        {/* Intro */}
-        <div className="max-w-3xl mb-16">
-          <h2 className="text-4xl md:text-5xl font-display font-extrabold text-slate-900 leading-tight mb-6">
-            Die Lösung: Dein <span className="text-accent">digitaler Maßanzug</span> mit Funnel-Strategie
-          </h2>
-          <div className="space-y-4 text-lg text-slate-600 leading-relaxed">
-            <p>
-              Es reicht heute nicht mehr aus, einfach nur „online“ zu sein. Um im Wettbewerb im Rheinisch-Bergischen Kreis zu bestehen, muss deine Website ein aktiver Mitarbeiter deines Unternehmens werden. Mein Ansatz für Webdesign in Leichlingen löst die oben genannten Probleme nicht nur oberflächlich, sondern schafft ein technisches Fundament, das Besucher emotional bindet und rational überzeugt.
-            </p>
-            <p>
-              Wir verwandeln deine digitale Sackgasse in eine Schnellstraße zum Erfolg. Anstatt den Nutzer mit wahllosen Informationen zu überfordern, setzen wir auf eine psychologisch fundierte Führung. So eliminieren wir die Reibungspunkte, die bisher dafür gesorgt haben, dass potenzielle Kunden kurz vor dem Klick auf „Senden“ doch noch abgesprungen sind.
-            </p>
+        {/* Intro & Image */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-20">
+          <div>
+            <h2 className="text-4xl md:text-5xl font-display font-extrabold text-slate-900 leading-tight mb-6">
+              Die Lösung: Dein <span className="text-accent">digitaler Maßanzug</span> mit Funnel-Strategie
+            </h2>
+            <div className="space-y-4 text-lg text-slate-600 leading-relaxed">
+              <p>
+                Es reicht heute nicht mehr aus, einfach nur „online“ zu sein. Um im Wettbewerb im Rheinisch-Bergischen Kreis zu bestehen, muss deine Website ein aktiver Mitarbeiter deines Unternehmens werden. Mein Ansatz für Webdesign in Leichlingen löst die oben genannten Probleme nicht nur oberflächlich, sondern schafft ein technisches Fundament, das Besucher emotional bindet und rational überzeugt.
+              </p>
+              <p>
+                Wir verwandeln deine digitale Sackgasse in eine Schnellstraße zum Erfolg. Anstatt den Nutzer mit wahllosen Informationen zu überfordern, setzen wir auf eine psychologisch fundierte Führung. So eliminieren wir die Reibungspunkte, die bisher dafür gesorgt haben, dass potenzielle Kunden kurz vor dem Klick auf „Senden“ doch noch abgesprungen sind.
+              </p>
+            </div>
           </div>
+          
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="relative w-full aspect-video lg:aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border border-slate-100"
+          >
+            <Image
+              src="/images/mockups-grid.jpg"
+              alt="Webdesign Leichlingen Mockups"
+              fill
+              className="object-cover object-center"
+            />
+          </motion.div>
         </div>
-
-        {/* Standalone Image Showcase */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mb-20 relative w-full aspect-video md:aspect-[21/9] rounded-[2.5rem] overflow-hidden shadow-2xl border border-slate-100"
-        >
-          <Image
-            src="/images/mockups-grid.jpg"
-            alt="Webdesign Leichlingen Mockups"
-            fill
-            className="object-cover object-center"
-          />
-        </motion.div>
 
         {/* Tiles / Kacheln */}
         <div className="mb-16">
