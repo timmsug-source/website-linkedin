@@ -65,7 +65,7 @@ export function Navbar() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  if (pathname?.startsWith("/lp/") || (pathname?.startsWith("/webdesign/") && pathname !== "/webdesign/leichlingen")) {
+  if (pathname?.startsWith("/lp/") || pathname?.startsWith("/webdesign/")) {
     return null;
   }
 
