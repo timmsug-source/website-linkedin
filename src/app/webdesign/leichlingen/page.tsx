@@ -2,9 +2,10 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { CheckCircle2, MapPin, ChevronRight, Send, Sparkles, ArrowRight } from "lucide-react";
+import { CheckCircle2, MapPin, ChevronRight, Send, Sparkles, ArrowRight, Zap, TrendingUp, Users2, ShieldCheck, Clock, Star } from "lucide-react";
 import { PHONE_URL } from "@/lib/utils";
-import { ProblemSection, SolutionSection, AboutSection, StepsSection, SocialProofSection, CTASection, FAQSection } from "@/components/lp/LeichlingenSections";
+import Image from "next/image";
+import { ProblemSection, SolutionSection, AboutSection, StepsSection, PortfolioSection, CTASection, FAQSection } from "@/components/lp/LeichlingenSections";
 
 const projectTypes = [
     { id: "neu", label: "Neue Website", emoji: "🚀" },
@@ -43,82 +44,86 @@ function HeroForm() {
 
     return (
         <div className="relative">
-            <div className="absolute -inset-4 bg-accent/10 blur-3xl rounded-[3rem] opacity-30" />
-            <div className="relative bg-white/10 backdrop-blur-xl border border-white/20 rounded-[2.5rem] p-7 shadow-2xl">
+            {/* Glow effect behind form */}
+            <div className="absolute -inset-10 bg-accent/20 blur-[100px] rounded-full opacity-30 animate-pulse" />
+            
+            <div className="relative bg-slate-900/40 backdrop-blur-3xl border border-white/10 rounded-[2.5rem] p-8 shadow-[0_20px_80px_rgba(0,0,0,0.5)]">
                 {!submitted && (
-                    <div className="flex gap-1.5 mb-6">
+                    <div className="flex gap-2 mb-8">
                         {[1, 2, 3].map((s) => (
-                            <div key={s} className={`h-1 flex-1 rounded-full transition-all duration-500 ${step >= s ? "bg-accent" : "bg-white/20"}`} />
+                            <div key={s} className={`h-1.5 flex-1 rounded-full transition-all duration-500 ${step >= s ? "bg-accent shadow-[0_0_10px_rgba(59,130,246,0.5)]" : "bg-white/10"}`} />
                         ))}
                     </div>
                 )}
                 <AnimatePresence mode="wait">
                     {!submitted && step === 1 && (
-                        <motion.div key="s1" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} transition={{ duration: 0.25 }}>
-                            <p className="text-accent font-bold text-xs uppercase tracking-widest mb-2">Schritt 1 von 3</p>
-                            <h3 className="text-white font-bold text-lg mb-5">Was planst du?</h3>
-                            <div className="grid grid-cols-2 gap-2 mb-6">
+                        <motion.div key="s1" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} transition={{ duration: 0.3 }}>
+                            <h3 className="text-white font-display font-bold text-2xl mb-6">Was planst du?</h3>
+                            <div className="grid grid-cols-2 gap-3 mb-8">
                                 {projectTypes.map((pt) => (
                                     <button key={pt.id} onClick={() => setForm(f => ({ ...f, projectType: pt.id }))}
-                                        className={`flex flex-col items-center gap-1.5 px-3 py-4 rounded-xl border text-sm font-semibold transition-all ${form.projectType === pt.id ? "bg-accent border-accent text-white shadow-lg shadow-accent/30" : "border-white/20 text-slate-300 hover:border-accent/60 hover:bg-white/5"}`}>
-                                        <span className="text-xl">{pt.emoji}</span>{pt.label}
+                                        className={`flex flex-col items-center gap-2 px-4 py-6 rounded-2xl border-2 transition-all duration-300 ${form.projectType === pt.id ? "bg-accent border-accent text-white shadow-lg shadow-accent/20" : "bg-white/5 border-white/5 text-slate-400 hover:border-white/10 hover:bg-white/10"}`}>
+                                        <span className="text-3xl mb-1">{pt.emoji}</span>
+                                        <span className="text-xs font-bold uppercase tracking-widest">{pt.label}</span>
                                     </button>
                                 ))}
                             </div>
                             <button onClick={() => form.projectType && setStep(2)} disabled={!form.projectType}
-                                className="w-full flex items-center justify-center gap-2 bg-accent hover:bg-accent/90 disabled:opacity-40 disabled:cursor-not-allowed text-white rounded-xl py-3 font-bold text-sm transition-[background-color]">
-                                Weiter <ChevronRight size={16} />
+                                className="w-full flex items-center justify-center gap-3 bg-accent hover:bg-accent/90 disabled:opacity-30 disabled:cursor-not-allowed text-white rounded-2xl py-5 font-black text-lg transition-all hover:scale-[1.02]">
+                                Weiter <ArrowRight size={20} />
                             </button>
                         </motion.div>
                     )}
                     {!submitted && step === 2 && (
-                        <motion.div key="s2" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} transition={{ duration: 0.25 }}>
-                            <p className="text-accent font-bold text-xs uppercase tracking-widest mb-2">Schritt 2 von 3</p>
-                            <h3 className="text-white font-bold text-lg mb-5">Welches Budget planst du ein?</h3>
-                            <div className="space-y-2 mb-6">
+                        <motion.div key="s2" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} transition={{ duration: 0.3 }}>
+                            <h3 className="text-white font-display font-bold text-2xl mb-6">Dein Budgetbereich?</h3>
+                            <div className="space-y-3 mb-8">
                                 {budgets.map((b) => (
                                     <button key={b.id} onClick={() => setForm(f => ({ ...f, budget: b.id }))}
-                                        className={`w-full flex items-center justify-between px-4 py-3 rounded-xl border text-sm font-semibold transition-all ${form.budget === b.id ? "bg-accent border-accent text-white shadow-lg shadow-accent/30" : "border-white/20 text-slate-300 hover:border-accent/60 hover:bg-white/5"}`}>
-                                        {b.label}{form.budget === b.id && <CheckCircle2 size={16} />}
+                                        className={`w-full flex items-center justify-between px-6 py-4 rounded-2xl border-2 transition-all duration-300 ${form.budget === b.id ? "bg-accent border-accent text-white" : "bg-white/5 border-white/5 text-slate-400 hover:bg-white/10"}`}>
+                                        <span className="font-bold">{b.label}</span>
+                                        {form.budget === b.id && <Sparkles size={18} className="text-white" />}
                                     </button>
                                 ))}
                             </div>
-                            <div className="flex gap-2">
-                                <button onClick={() => setStep(1)} className="flex-1 border border-white/20 hover:border-white/40 text-white rounded-xl py-3 font-semibold text-sm transition-colors">Zurück</button>
+                            <div className="flex gap-3">
+                                <button onClick={() => setStep(1)} className="flex-1 bg-white/5 hover:bg-white/10 text-white rounded-2xl py-5 font-bold transition-all">Zurück</button>
                                 <button onClick={() => form.budget && setStep(3)} disabled={!form.budget}
-                                    className="flex-[2] flex items-center justify-center gap-2 bg-accent hover:bg-accent/90 disabled:opacity-40 disabled:cursor-not-allowed text-white rounded-xl py-3 font-bold text-sm transition-[background-color]">
-                                    Weiter <ChevronRight size={16} />
+                                    className="flex-[2] flex items-center justify-center gap-3 bg-accent hover:bg-accent/90 disabled:opacity-30 text-white rounded-2xl py-5 font-black text-lg transition-all hover:scale-[1.02]">
+                                    Weiter <ArrowRight size={20} />
                                 </button>
                             </div>
                         </motion.div>
                     )}
                     {!submitted && step === 3 && (
-                        <motion.div key="s3" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} transition={{ duration: 0.25 }}>
-                            <p className="text-accent font-bold text-xs uppercase tracking-widest mb-2">Schritt 3 von 3</p>
-                            <h3 className="text-white font-bold text-lg mb-5">Wie kann ich dich erreichen?</h3>
-                            <div className="space-y-3 mb-5">
-                                <input type="text" placeholder="Dein Name" value={form.name} onChange={e => setForm(f => ({ ...f, name: e.target.value }))} className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder-slate-400 text-sm focus:outline-none focus:border-accent transition-colors" />
-                                <input type="text" placeholder="E-Mail oder WhatsApp-Nummer" value={form.contact} onChange={e => setForm(f => ({ ...f, contact: e.target.value }))} className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder-slate-400 text-sm focus:outline-none focus:border-accent transition-colors" />
+                        <motion.div key="s3" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} transition={{ duration: 0.3 }}>
+                            <h3 className="text-white font-display font-bold text-2xl mb-6">Fast fertig...</h3>
+                            <div className="space-y-4 mb-8">
+                                <div className="relative">
+                                    <input type="text" placeholder="Dein Name" value={form.name} onChange={e => setForm(f => ({ ...f, name: e.target.value }))} className="w-full bg-white/5 border-2 border-white/10 rounded-2xl px-6 py-5 text-white placeholder-slate-500 focus:outline-none focus:border-accent transition-all" />
+                                </div>
+                                <div className="relative">
+                                    <input type="text" placeholder="E-Mail oder Telefon" value={form.contact} onChange={e => setForm(f => ({ ...f, contact: e.target.value }))} className="w-full bg-white/5 border-2 border-white/10 rounded-2xl px-6 py-5 text-white placeholder-slate-500 focus:outline-none focus:border-accent transition-all" />
+                                </div>
                             </div>
-                            <p className="text-slate-500 text-xs mb-5">Keine Weitergabe an Dritte. Ich melde mich innerhalb von 24 Stunden.</p>
-                            <div className="flex gap-2">
-                                <button onClick={() => setStep(2)} className="flex-1 border border-white/20 hover:border-white/40 text-white rounded-xl py-3 font-semibold text-sm transition-colors">Zurück</button>
+                            <div className="flex gap-3">
+                                <button onClick={() => setStep(2)} className="flex-1 bg-white/5 hover:bg-white/10 text-white rounded-2xl py-5 font-bold transition-all">Zurück</button>
                                 <button onClick={handleSubmit} disabled={!form.name.trim() || !form.contact.trim() || loading}
-                                    className="flex-[2] flex items-center justify-center gap-2 bg-accent hover:bg-accent/90 disabled:opacity-40 disabled:cursor-not-allowed text-white rounded-xl py-3 font-bold text-sm transition-[background-color]">
-                                    {loading ? <span className="animate-pulse">Wird gesendet…</span> : <><Send size={15} /> Anfrage senden</>}
+                                    className="flex-[2] flex items-center justify-center gap-3 bg-accent hover:bg-accent/90 disabled:opacity-30 text-white rounded-2xl py-5 font-black text-lg transition-all hover:scale-[1.02]">
+                                    {loading ? <span className="animate-pulse">Wird gesendet...</span> : <><Send size={20} /> Projekt anfragen</>}
                                 </button>
                             </div>
                         </motion.div>
                     )}
                     {submitted && (
-                        <motion.div key="done" initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.35 }} className="text-center py-6">
-                            <div className="w-16 h-16 rounded-full bg-accent/20 border border-accent/40 flex items-center justify-center mx-auto mb-5">
-                                <Sparkles size={28} className="text-accent" />
+                        <motion.div key="done" initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="text-center py-10">
+                            <div className="w-20 h-20 rounded-full bg-accent/20 border-2 border-accent flex items-center justify-center mx-auto mb-6 shadow-[0_0_30px_rgba(59,130,246,0.3)]">
+                                <Sparkles size={36} className="text-accent" />
                             </div>
-                            <h3 className="text-white font-extrabold text-xl mb-2">Anfrage erhalten!</h3>
-                            <p className="text-slate-400 text-sm leading-relaxed mb-6">Danke, {form.name.split(" ")[0]}! Ich melde mich innerhalb von 24 Stunden.</p>
-                            <a href={PHONE_URL} className="inline-flex items-center gap-2 bg-accent hover:bg-accent/90 text-white rounded-xl px-6 py-3 font-bold text-sm transition-[background-color]">
-                                Direkt anrufen <ArrowRight size={15} />
+                            <h3 className="text-white font-display font-black text-3xl mb-4">Anfrage gesendet!</h3>
+                            <p className="text-slate-400 leading-relaxed mb-8">Vielen Dank, {form.name.split(" ")[0]}. Ich melde mich innerhalb von 24 Stunden bei dir.</p>
+                            <a href={PHONE_URL} className="inline-flex items-center gap-3 bg-white text-slate-900 rounded-2xl px-8 py-4 font-black transition-all hover:bg-slate-100">
+                                <Zap size={18} className="text-accent" /> Direkt anrufen
                             </a>
                         </motion.div>
                     )}
@@ -130,64 +135,156 @@ function HeroForm() {
 
 export default function WebdesignLeichlingen() {
     return (
-        <main className="min-h-screen bg-white overflow-x-hidden">
+        <main className="min-h-screen bg-white overflow-x-hidden selection:bg-accent selection:text-white">
 
-            {/* Top Bar */}
-            <motion.div initial={{ y: -100 }} animate={{ y: 0 }} className="bg-slate-900 py-3 px-6 text-white fixed top-0 w-full z-50 border-b border-white/10" style={{ willChange: "transform" }}>
-                <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
-                    <span className="text-sm font-medium opacity-90 inline-flex items-center gap-2">
-                        <MapPin size={14} className="text-accent" /> Webdesign für Unternehmen in Leichlingen & Umgebung
-                    </span>
-                    <div className="bg-accent/20 border border-accent/40 text-accent font-bold px-4 py-1.5 rounded-full text-sm">Kostenloses Erstgespräch</div>
+            {/* Premium Navigation Header */}
+            <header className="fixed top-0 left-0 w-full z-[100] p-6 pointer-events-none">
+                <div className="max-w-7xl mx-auto flex justify-between items-center bg-slate-950/40 backdrop-blur-2xl border border-white/10 rounded-3xl px-8 py-4 pointer-events-auto shadow-2xl">
+                    <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 bg-accent rounded-xl flex items-center justify-center shadow-lg shadow-accent/20">
+                            <Zap size={22} className="text-white" />
+                        </div>
+                        <span className="text-white font-display font-black text-xl tracking-tight">TIMM<span className="text-accent">SCHURIG.</span></span>
+                    </div>
+                    <div className="hidden md:flex items-center gap-8">
+                        <span className="text-white/60 text-xs font-bold uppercase tracking-widest flex items-center gap-2">
+                            <MapPin size={14} className="text-accent" /> Leichlingen & Region
+                        </span>
+                        <a href={PHONE_URL} className="bg-white text-slate-950 px-6 py-2.5 rounded-xl font-bold text-sm hover:bg-accent hover:text-white transition-all shadow-xl">
+                            Kostenloses Gespräch
+                        </a>
+                    </div>
                 </div>
-            </motion.div>
+            </header>
 
-            {/* Hero */}
-            <section className="min-h-screen flex items-center pt-32 pb-20 px-6 relative overflow-hidden bg-slate-950">
-                <div className="absolute inset-0 z-0 pointer-events-none">
-                    <div className="absolute top-20 left-1/4 w-96 h-96 bg-accent/10 rounded-full blur-[100px]" />
-                    <div className="absolute bottom-10 right-1/4 w-64 h-64 bg-blue-500/10 rounded-full blur-[80px]" />
+            {/* Hero Section */}
+            <section className="relative min-h-[110vh] flex items-center pt-24 lg:pt-0 bg-slate-950 overflow-hidden">
+                {/* Background Graphics */}
+                <div className="absolute inset-0 z-0">
+                    <div className="absolute top-[10%] right-[10%] w-[500px] h-[500px] bg-accent/20 blur-[150px] rounded-full" />
+                    <div className="absolute bottom-[10%] left-[10%] w-[400px] h-[400px] bg-blue-600/10 blur-[120px] rounded-full" />
+                    <div className="absolute inset-0 bg-[url('/images/grid.svg')] opacity-[0.03] bg-center [mask-image:radial-gradient(ellipse_at_center,black,transparent_80%)]" />
                 </div>
-                <div className="max-w-6xl mx-auto relative z-10 w-full">
-                    <div className="grid lg:grid-cols-[1.2fr,0.8fr] gap-12 lg:gap-20 items-center">
-                        <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }}>
-                            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 text-slate-300 text-sm font-bold mb-8 border border-white/10">
-                                <MapPin size={14} className="text-accent" /> Webdesign Leichlingen
-                            </div>
-                            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-extrabold text-white leading-[1.05] mb-6 tracking-tight">
-                                Dein lokaler Anker für <span className="text-accent">digitales Wachstum.</span>
-                            </h1>
-                            <p className="text-lg md:text-xl text-slate-400 leading-relaxed mb-10 max-w-xl font-medium">
-                                Ich entwickle Performance-orientierte Websites, die Besucher in Leichlingen und der Region in zahlende Kunden verwandeln. Mehr als nur eine hübsche Fassade.
-                            </p>
-                            <div className="flex flex-wrap gap-6">
-                                {["Funnel-Strategie", "Lokales SEO", "PageSpeed 100"].map((b) => (
-                                    <div key={b} className="flex items-center gap-2 text-slate-400 text-sm font-semibold">
-                                        <CheckCircle2 size={16} className="text-accent" />{b}
+
+                <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
+                    <div className="grid lg:grid-cols-[1.2fr,0.8fr] gap-16 lg:gap-24 items-center">
+                        <div className="max-w-2xl">
+                            <motion.div 
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-accent text-sm font-bold uppercase tracking-widest mb-10"
+                            >
+                                <Sparkles size={16} /> Webdesign für Gewinner
+                            </motion.div>
+                            
+                            <motion.h1 
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.1 }}
+                                className="text-5xl md:text-6xl lg:text-7xl font-display font-black text-white leading-[1.05] mb-8 tracking-tight"
+                            >
+                                Deine Website als <span className="text-accent relative inline-block">automatisierte<br/>
+                                <span className="relative z-10">Kundenmaschine.</span>
+                                <svg className="absolute -bottom-2 left-0 w-full h-4 text-accent/20 -z-10" viewBox="0 0 100 20" preserveAspectRatio="none"><path d="M0 10 Q 50 20 100 10" stroke="currentColor" strokeWidth="8" fill="transparent" /></svg>
+                                </span>
+                            </motion.h1>
+
+                            <motion.div 
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.2 }}
+                                className="space-y-6 text-slate-400 text-lg md:text-xl leading-relaxed mb-12 font-medium"
+                            >
+                                <p>
+                                    Ich entwickle für dich maßgeschneiderte High-End-Websites, die auf einem durchdachten Funnel-System basieren. Mein Ziel ist es, deine Marke in Leichlingen und dem Rheinisch-Bergischen Kreis unangefochten an die Spitze zu bringen.
+                                </p>
+                            </motion.div>
+
+                            <motion.div 
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.3 }}
+                                className="flex flex-wrap gap-8 items-center"
+                            >
+                                <div className="flex -space-x-3">
+                                    {[1, 2, 3, 4].map(i => (
+                                        <div key={i} className="w-12 h-12 rounded-full border-4 border-slate-950 bg-slate-800 overflow-hidden shadow-xl">
+                                            <Image src={`/images/mockup_fitness_german_${i}_1776344459402.png`} alt="Client" width={48} height={48} className="object-cover h-full" />
+                                        </div>
+                                    ))}
+                                </div>
+                                <div>
+                                    <div className="flex gap-1 mb-1">
+                                        {[1, 2, 3, 4, 5].map(i => <Star key={i} size={16} className="fill-accent text-accent" />)}
                                     </div>
-                                ))}
-                            </div>
-                        </motion.div>
-                        <motion.div initial={{ opacity: 0, scale: 0.9, y: 20 }} animate={{ opacity: 1, scale: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}>
+                                    <p className="text-white font-bold text-sm tracking-tight">Regionale Marktführer vertrauen mir</p>
+                                </div>
+                            </motion.div>
+                        </div>
+
+                        <motion.div 
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ delay: 0.4, type: "spring", stiffness: 100 }}
+                        >
                             <HeroForm />
                         </motion.div>
                     </div>
                 </div>
+
+                {/* Floating graphic element: The "Customer Machine" visualization */}
+                <div className="absolute right-[-10%] bottom-[-10%] w-[600px] h-[600px] opacity-20 pointer-events-none hidden xl:block">
+                    <Image 
+                        src="/automated_customer_machine_visual_1777039488620.png" 
+                        alt="Customer Machine Visualization" 
+                        width={600} 
+                        height={600} 
+                        className="animate-pulse-slow"
+                    />
+                </div>
             </section>
 
+            {/* Core Sections */}
             <ProblemSection />
             <SolutionSection />
             <AboutSection />
             <StepsSection />
-            <SocialProofSection />
+            <PortfolioSection />
             <CTASection />
             <FAQSection />
 
-            {/* Footer */}
-            <footer className="py-10 text-center border-t border-slate-100">
-                <p className="text-slate-400 text-xs font-medium uppercase tracking-widest">
-                    © {new Date().getFullYear()} Timm Schurig · <a href="/impressum" className="hover:text-accent">Impressum</a> · <a href="/datenschutz" className="hover:text-accent">Datenschutz</a>
-                </p>
+            {/* Unified Footer */}
+            <footer className="py-20 bg-slate-950 border-t border-white/5 relative overflow-hidden">
+                <div className="max-w-7xl mx-auto px-6 relative z-10">
+                    <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
+                        <div>
+                            <div className="flex items-center gap-3 mb-6">
+                                <div className="w-10 h-10 bg-accent rounded-xl flex items-center justify-center">
+                                    <Zap size={22} className="text-white" />
+                                </div>
+                                <span className="text-white font-display font-black text-2xl tracking-tight">TIMM<span className="text-accent">SCHURIG.</span></span>
+                            </div>
+                            <p className="text-slate-500 max-w-sm mb-8 leading-relaxed">
+                                High-Performance Webdesign & lokale SEO-Strategien für ambitionierte Unternehmen in Leichlingen und Umgebung.
+                            </p>
+                        </div>
+                        <div className="flex flex-wrap gap-4 justify-start md:justify-end">
+                            <div className="bg-white/5 border border-white/10 rounded-2xl p-6 text-center">
+                                <p className="text-slate-500 text-xs uppercase tracking-widest font-bold mb-2">Erreichbar unter</p>
+                                <a href={PHONE_URL} className="text-white font-black text-xl hover:text-accent transition-colors">0151 40339008</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="pt-10 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-6">
+                        <p className="text-slate-600 text-sm font-medium">
+                            © {new Date().getFullYear()} Timm Schurig. Alle Rechte vorbehalten.
+                        </p>
+                        <div className="flex gap-8">
+                            <a href="/impressum" className="text-slate-600 hover:text-white text-sm font-bold uppercase tracking-widest transition-colors">Impressum</a>
+                            <a href="/datenschutz" className="text-slate-600 hover:text-white text-sm font-bold uppercase tracking-widest transition-colors">Datenschutz</a>
+                        </div>
+                    </div>
+                </div>
             </footer>
         </main>
     );
