@@ -16,7 +16,7 @@ const leichlingenService = {
   title: "Webdesign Leichlingen",
   badge: "Webdesign & Funnel-Marketing Leichlingen",
   floatingBadge: "Live in 1–2 Wochen",
-  heroHeadline: "Professionelles Webdesign in Leichlingen: Deine Website als automatisierte Kundenmaschine",
+  heroHeadline: "Professionelles Webdesign in Leichlingen",
   heroSubline: "Ich entwickle für dich maßgeschneiderte High-End-Websites, die auf einem durchdachten Funnel-System basieren. Mein Ziel ist es, deine Marke in der Region Leichlingen, Witzhelden und dem gesamten Rheinisch-Bergischen Kreis an die Spitze zu bringen.",
   heroChecklist: [
     "Maßgeschneidertes High-End-Design",
@@ -138,40 +138,7 @@ export default function LeichlingenPage() {
       {/* 7. ÜBER MICH (Customized for Leichlingen) */}
       <LeichlingenAbout />
 
-      {/* 8. PORTFOLIO MENTION */}
-      <section className="py-24 px-6 bg-slate-50 border-y border-slate-100">
-        <div className="max-w-5xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-display font-extrabold text-slate-900 mb-6">
-                Beispiel-Seiten: Sichtbare Ergebnisse aus der Praxis
-              </h2>
-              <p className="text-lg text-slate-600 leading-relaxed mb-8">
-                In meinem Portfolio findest du eine Vielzahl an Projekten, die zeigen, was modernes Webdesign in Leichlingen bewirken kann. Von der lokalen Zahnarztpraxis, die ihre Terminbuchungen durch einen Funnel verdoppelt hat, bis hin zum mittelständischen Industriebetrieb, der über die neue SEO-Strategie Fachkräfte aus der Region gewinnt.
-              </p>
-              <p className="text-slate-600 leading-relaxed mb-10">
-                Jede Seite ist ein Unikat, das exakt auf die Bedürfnisse der jeweiligen Branche zugeschnitten ist. Gerne zeige ich dir in einem persönlichen Gespräch Referenzen, die deiner Branche ähneln.
-              </p>
-              <Link href="/ergebnisse" className="inline-flex items-center gap-2 text-accent font-bold hover:gap-3 transition-[gap]">
-                Alle Projekte ansehen <ArrowRight size={18} />
-              </Link>
-            </div>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="space-y-4">
-                <div className="aspect-[4/5] rounded-3xl bg-slate-200 animate-pulse" />
-                <div className="aspect-square rounded-3xl bg-slate-100 animate-pulse" />
-              </div>
-              <div className="space-y-4 pt-8">
-                <div className="aspect-square rounded-3xl bg-slate-100 animate-pulse" />
-                <div className="aspect-[4/5] rounded-3xl bg-slate-200 animate-pulse" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* 9. STÄDTE */}
-      <WebdesignCities />
 
       {/* 10. ALLGEMEINE INFOS & FAQ */}
       <ServiceInfo 
