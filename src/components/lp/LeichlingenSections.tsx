@@ -146,3 +146,111 @@ export function LeichlingenAbout() {
     </section>
   );
 }
+
+export function LeichlingenSolution() {
+  const features = [
+    {
+      title: "Lokale Dominanz durch SEO & GEO-Trends 2026",
+      body: "Wir sorgen dafür, dass die „Unsichtbarkeit“ ein Ende hat. Durch gezielte lokale Suchmaschinenoptimierung wirst du genau dann gefunden, wenn Leichlinger nach deiner Expertise suchen. Wir besetzen die Top-Positionen für Webdesign in Leichlingen und deine spezifischen Leistungen, damit du die erste Wahl in der Region bist.",
+      colSpan: "lg:col-span-1",
+      icon: Target,
+    },
+    {
+      title: "Intuitive Nutzerführung (Der Funnel-Effekt)",
+      body: "Schluss mit dem Informations-Chaos. Wir strukturieren deine Seite so, dass der Besucher sanft von seinem Problem zu deiner individuellen Lösung geleitet wird. Jeder Text und jeder Button hat ein Ziel: Den Nutzer ohne Umwege zur Anfrage zu führen.",
+      colSpan: "lg:col-span-1",
+      icon: ArrowRight,
+    },
+    {
+      title: "Modernes Design mit Vertrauensgarantie",
+      body: "Wir ersetzen veraltete Optik durch ein frisches, zeitgemäßes Design, das deine Professionalität widerspiegelt. Ein ästhetischer Auftritt sorgt innerhalb der ersten Sekunde für das nötige Vertrauen, das die Basis für jede Geschäftsbeziehung bildet.",
+      colSpan: "lg:col-span-2",
+      icon: Palette,
+      image: "/images/mockups-grid.jpg",
+    },
+    {
+      title: "High-Speed Performance",
+      body: "Während andere noch im „digitalen Stau“ auf der L294 stehen, schaltet deine Website in den Express-Modus. Wir optimieren Ladezeiten auf ein Minimum, da im Jahr 2026 jede Millisekunde über den Verbleib eines Nutzers entscheidet. Eine schnelle Seite ist nicht nur nutzerfreundlich, sondern wird auch von Google mit besseren Rankings belohnt.",
+      colSpan: "lg:col-span-1",
+      icon: Rocket,
+    },
+    {
+      title: "Konversionsstarke Strategie",
+      body: "Besucher sind gut, Kunden sind besser. Wir implementieren klare Call-to-Actions und automatisierte Prozesse, die dafür sorgen, dass aus einem bloßen „Vorbeischauen“ eine konkrete Handlung wird. Deine Website arbeitet 24/7 als dein bester Verkäufer.",
+      colSpan: "lg:col-span-1",
+      icon: CheckCircle2,
+    },
+  ];
+
+  return (
+    <section className="py-24 px-6 bg-slate-50" aria-label="Die Lösung für Leichlingen">
+      <div className="max-w-7xl mx-auto">
+        
+        {/* Intro */}
+        <div className="max-w-3xl mb-16">
+          <h2 className="text-4xl md:text-5xl font-display font-extrabold text-slate-900 leading-tight mb-6">
+            Die Lösung: Dein <span className="text-accent">digitaler Maßanzug</span> mit Funnel-Strategie
+          </h2>
+          <div className="space-y-4 text-lg text-slate-600 leading-relaxed">
+            <p>
+              Es reicht heute nicht mehr aus, einfach nur „online“ zu sein. Um im Wettbewerb im Rheinisch-Bergischen Kreis zu bestehen, muss deine Website ein aktiver Mitarbeiter deines Unternehmens werden. Mein Ansatz für Webdesign in Leichlingen löst die oben genannten Probleme nicht nur oberflächlich, sondern schafft ein technisches Fundament, das Besucher emotional bindet und rational überzeugt.
+            </p>
+            <p>
+              Wir verwandeln deine digitale Sackgasse in eine Schnellstraße zum Erfolg. Anstatt den Nutzer mit wahllosen Informationen zu überfordern, setzen wir auf eine psychologisch fundierte Führung. So eliminieren wir die Reibungspunkte, die bisher dafür gesorgt haben, dass potenzielle Kunden kurz vor dem Klick auf „Senden“ doch noch abgesprungen sind.
+            </p>
+          </div>
+        </div>
+
+        {/* Tiles / Kacheln */}
+        <div className="mb-16">
+          <h3 className="text-2xl font-display font-bold text-slate-900 mb-8">
+            Wie wir dein Business in Leichlingen nach vorne bringen:
+          </h3>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            {features.map((feature, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className={`relative bg-white rounded-3xl p-8 shadow-sm border border-slate-100 overflow-hidden flex flex-col ${feature.colSpan}`}
+              >
+                {/* Optional Image for wide tile */}
+                {feature.image && (
+                  <div className="absolute top-0 right-0 w-1/2 h-full opacity-10 pointer-events-none lg:opacity-100 lg:relative lg:w-full lg:h-64 lg:mb-6 lg:rounded-2xl lg:overflow-hidden">
+                    <Image
+                      src={feature.image}
+                      alt="Modernes Design"
+                      fill
+                      className="object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent lg:hidden" />
+                  </div>
+                )}
+                
+                <div className="relative z-10 flex-1">
+                  <div className="w-12 h-12 rounded-2xl bg-accent/10 flex items-center justify-center mb-6">
+                    <feature.icon size={24} className="text-accent" />
+                  </div>
+                  <h4 className="text-xl font-bold text-slate-900 mb-4">{feature.title}</h4>
+                  <p className="text-slate-600 leading-relaxed">
+                    {feature.body}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
+        {/* Outro */}
+        <div className="bg-accent text-white rounded-3xl p-8 md:p-12 text-center max-w-4xl mx-auto shadow-2xl">
+          <p className="text-xl md:text-2xl font-medium leading-relaxed">
+            Mit dieser Kombination aus lokaler Relevanz und technischer Exzellenz machen wir dein Unternehmen zur <strong className="font-extrabold">digitalen Benchmark in Leichlingen</strong>. Wir bauen keine Seite, die nur gut aussieht – wir bauen ein System, das dein Wachstum nachhaltig sichert.
+          </p>
+        </div>
+
+      </div>
+    </section>
+  );
+}
