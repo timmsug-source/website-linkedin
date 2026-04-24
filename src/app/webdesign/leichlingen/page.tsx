@@ -28,21 +28,21 @@ const faqs = [
 function FaqAccordion() {
     const [open, setOpen] = useState<number | null>(null);
     return (
-        <div className="space-y-3 max-w-3xl mx-auto">
+        <div className="divide-y divide-slate-200 max-w-3xl mx-auto">
             {faqs.map((faq, i) => (
-                <div key={i} className="border border-slate-200 rounded-2xl overflow-hidden bg-white">
+                <div key={i}>
                     <button
                         onClick={() => setOpen(open === i ? null : i)}
-                        className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left"
+                        className="w-full flex items-center justify-between gap-4 py-6 text-left group"
                         aria-expanded={open === i}
                     >
-                        <span className="font-bold text-slate-900 text-sm leading-snug">{faq.q}</span>
+                        <span className="font-bold text-slate-900 text-base leading-snug group-hover:text-accent transition-colors">{faq.q}</span>
                         <ChevronDown size={18} className={`shrink-0 text-accent transition-transform duration-300 ${open === i ? "rotate-180" : ""}`} aria-hidden="true" />
                     </button>
                     <AnimatePresence>
                         {open === i && (
                             <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.25 }} className="overflow-hidden">
-                                <p className="text-slate-500 text-sm leading-relaxed px-6 pb-5">{faq.a}</p>
+                                <p className="text-slate-500 text-sm leading-relaxed pb-6">{faq.a}</p>
                             </motion.div>
                         )}
                     </AnimatePresence>
@@ -222,27 +222,28 @@ export default function WebdesignLeichlingen() {
             </section>
 
             {/* Problem */}
-            <section className="py-24 px-6 bg-white">
+            <section className="py-28 px-6 bg-white">
                 <div className="max-w-4xl mx-auto">
-                    <p className="text-red-500 font-bold text-sm uppercase tracking-widest mb-3">Das Problem</p>
-                    <h2 className="text-3xl md:text-4xl font-display font-extrabold text-slate-900 mb-6">
-                        Warum deine Website aktuell vermutlich Geld kostet,<br className="hidden md:block" /> statt welches zu verdienen
+                    <p className="text-red-500 font-bold text-sm uppercase tracking-widest mb-4">Das Problem</p>
+                    <h2 className="text-3xl md:text-5xl font-display font-extrabold text-slate-900 mb-6 leading-tight">
+                        Warum deine Website aktuell<br className="hidden md:block" /> Geld kostet, statt welches zu verdienen
                     </h2>
-                    <p className="text-lg text-slate-500 leading-relaxed mb-12 max-w-2xl">
-                        Viele Unternehmen in der Blütenstadt verlassen sich auf veraltete digitale Visitenkarten. Eine Website, die zwar „nett" aussieht, aber keine klare Nutzerführung hat, ist wie ein Ladenlokal ohne Eingangstür.
+                    <p className="text-lg text-slate-500 leading-relaxed mb-16 max-w-2xl">
+                        Viele Unternehmen in der Blütenstadt verlassen sich auf veraltete digitale Visitenkarten – die zwar „nett" aussehen, aber keine klare Nutzerführung haben.
                     </p>
-                    <div className="grid sm:grid-cols-2 gap-4">
+
+                    <div className="divide-y divide-slate-100">
                         {[
-                            { title: "Unsichtbarkeit", desc: "Du wirst bei Suchen nach 'Dienstleistung + Leichlingen' nicht gefunden." },
-                            { title: "Vertrauensverlust", desc: "Veraltetes Design schreckt potenzielle Kunden ab, bevor sie überhaupt lesen." },
-                            { title: "Ladezeiten", desc: "Deine Seite ist langsamer als der Feierabendverkehr auf der L294." },
-                            { title: "Keine Strategie", desc: "Besucher kommen, verlassen die Seite aber ohne Anruf oder Anfrage." },
+                            { n: "01", title: "Unsichtbarkeit", desc: "Du wirst bei Suchen nach 'Dienstleistung + Leichlingen' nicht gefunden – deine Konkurrenz schon." },
+                            { n: "02", title: "Vertrauensverlust", desc: "Veraltetes Design schreckt potenzielle Kunden ab, bevor sie überhaupt die erste Zeile lesen." },
+                            { n: "03", title: "Ladezeiten", desc: "Deine Seite ist langsamer als der Feierabendverkehr auf der L294. Google bestraft das." },
+                            { n: "04", title: "Keine Strategie", desc: "Besucher kommen, verlassen die Seite aber ohne Anruf oder Anfrage – kein System dahinter." },
                         ].map((item) => (
-                            <div key={item.title} className="flex gap-4 p-6 rounded-2xl border border-red-100 bg-red-50">
-                                <div className="w-2 h-2 rounded-full bg-red-400 mt-2 shrink-0" />
+                            <div key={item.n} className="flex gap-8 py-8 group">
+                                <span className="text-5xl font-black text-red-100 group-hover:text-red-200 transition-colors leading-none mt-1 shrink-0 select-none">{item.n}</span>
                                 <div>
-                                    <p className="font-bold text-slate-900 mb-1">{item.title}</p>
-                                    <p className="text-slate-500 text-sm leading-relaxed">{item.desc}</p>
+                                    <p className="font-extrabold text-slate-900 text-lg mb-1">{item.title}</p>
+                                    <p className="text-slate-500 leading-relaxed">{item.desc}</p>
                                 </div>
                             </div>
                         ))}
@@ -251,28 +252,32 @@ export default function WebdesignLeichlingen() {
             </section>
 
             {/* Lösung */}
-            <section className="py-24 px-6 bg-slate-950">
+            <section className="py-28 px-6 bg-slate-950">
                 <div className="max-w-4xl mx-auto">
-                    <p className="text-accent font-bold text-sm uppercase tracking-widest mb-3">Die Lösung</p>
-                    <h2 className="text-3xl md:text-4xl font-display font-extrabold text-white mb-6">
+                    <p className="text-accent font-bold text-sm uppercase tracking-widest mb-4">Die Lösung</p>
+                    <h2 className="text-3xl md:text-5xl font-display font-extrabold text-white mb-6 leading-tight">
                         Der Funnel-Ansatz –<br className="hidden md:block" /> Webdesign mit System
                     </h2>
-                    <p className="text-lg text-slate-400 leading-relaxed mb-12 max-w-2xl">
+                    <p className="text-lg text-slate-400 leading-relaxed mb-16 max-w-2xl">
                         Webdesign in Leichlingen bedeutet für mich nicht nur Ästhetik, sondern Konversions-Optimierung. Ich baue keine statischen Seiten, sondern automatisierte Verkaufs-Funnel.
                     </p>
-                    <div className="grid sm:grid-cols-2 gap-4">
+
+                    <div className="divide-y divide-white/10">
                         {[
                             { title: "Zielgruppenanalyse", desc: "Wir sprechen genau die Sprache deiner Kunden im Rheinisch-Bergischen Kreis." },
                             { title: "SEO & GEO-Targeting", desc: "Durch lokale Optimierung dominierst du die Suchergebnisse in Leichlingen, Witzhelden, Burscheid und Langenfeld." },
-                            { title: "Mobile First", desc: "Perfekte Darstellung auf allen Endgeräten – Standard im Jahr 2026." },
-                            { title: "Psychologische Nutzerführung", desc: "Wir leiten den Besucher gezielt von der ersten Information bis zum Abschluss." },
-                        ].map((item) => (
-                            <div key={item.title} className="p-6 rounded-2xl border border-white/10 bg-white/5 hover:border-accent/40 transition-colors">
-                                <div className="flex items-center gap-2 mb-3">
-                                    <CheckCircle2 size={16} className="text-accent shrink-0" />
-                                    <p className="font-bold text-white text-sm">{item.title}</p>
+                            { title: "Mobile First", desc: "Perfekte Darstellung auf allen Endgeräten – kein optionaler Bonus, sondern Standard im Jahr 2026." },
+                            { title: "Psychologische Nutzerführung", desc: "Wir leiten den Besucher gezielt von der ersten Information bis zum Abschluss – ohne Umwege." },
+                        ].map((item, i) => (
+                            <div key={item.title} className="flex gap-8 py-8 group items-start">
+                                <CheckCircle2 size={22} className="text-accent shrink-0 mt-0.5" />
+                                <div className="flex-1">
+                                    <div className="flex items-center justify-between gap-4">
+                                        <p className="font-extrabold text-white text-lg">{item.title}</p>
+                                        <span className="text-white/10 font-black text-3xl leading-none select-none group-hover:text-white/20 transition-colors">0{i + 1}</span>
+                                    </div>
+                                    <p className="text-slate-400 leading-relaxed mt-1">{item.desc}</p>
                                 </div>
-                                <p className="text-slate-400 text-sm leading-relaxed">{item.desc}</p>
                             </div>
                         ))}
                     </div>
@@ -280,73 +285,105 @@ export default function WebdesignLeichlingen() {
             </section>
 
             {/* Kurz zu mir */}
-            <section className="py-24 px-6 bg-white">
+            <section className="py-28 px-6 bg-white">
                 <div className="max-w-4xl mx-auto">
-                    <div className="flex flex-col md:flex-row gap-10 items-center">
-                        <div className="relative w-48 h-48 rounded-3xl overflow-hidden shadow-2xl shrink-0">
-                            <Image src="/images/timm-portrait.jpeg" alt="Timm Schurig – Webdesign Leichlingen" fill className="object-cover" sizes="192px" />
+                    <p className="text-accent font-bold text-sm uppercase tracking-widest mb-4">Dein Partner vor Ort</p>
+                    <h2 className="text-3xl md:text-5xl font-display font-extrabold text-slate-900 mb-6 leading-tight">Kurz zu mir</h2>
+                    <p className="text-lg text-slate-500 leading-relaxed mb-16 max-w-2xl">
+                        Ich verbinde technisches Know-how mit lokalem Marktverständnis. Während andere Agenturen anonyme Nummern verwalten, schätze ich den persönlichen Austausch hier in der Region.
+                    </p>
+
+                    <div className="grid md:grid-cols-[280px,1fr] gap-12 items-start">
+                        <div className="relative">
+                            <div className="relative aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl">
+                                <Image
+                                    src="/images/timm-portrait.jpeg"
+                                    alt="Timm Schurig – Webdesign Leichlingen"
+                                    fill
+                                    className="object-cover"
+                                    sizes="280px"
+                                />
+                            </div>
+                            {/* Floating badge */}
+                            <div className="absolute -bottom-4 -right-4 bg-accent text-white rounded-2xl px-4 py-3 shadow-xl">
+                                <p className="font-black text-xl leading-none">5+</p>
+                                <p className="text-xs font-semibold opacity-80 mt-0.5">Jahre Erfahrung</p>
+                            </div>
                         </div>
-                        <div>
-                            <p className="text-accent font-bold text-sm uppercase tracking-widest mb-3">Dein Partner vor Ort</p>
-                            <h2 className="text-3xl md:text-4xl font-display font-extrabold text-slate-900 mb-6">Kurz zu mir</h2>
-                            <p className="text-lg text-slate-500 leading-relaxed mb-4">
-                                Hallo, ich bin dein Experte für <strong className="text-slate-900">Webdesign in Leichlingen</strong>. Ich verbinde technisches Know-how mit lokalem Marktverständnis. Während andere Agenturen nur anonyme Nummern verwalten, schätze ich den persönlichen Austausch hier in der Region.
-                            </p>
-                            <p className="text-lg text-slate-500 leading-relaxed">
-                                Mein Ziel ist es, den Mittelstand in Leichlingen digital an die Spitze zu bringen – mit <strong className="text-slate-900">messbaren Ergebnissen</strong> statt leerer Floskeln.
-                            </p>
+
+                        <div className="pt-2">
+                            <div className="divide-y divide-slate-100">
+                                {[
+                                    { label: "Wer ich bin", text: "Ich bin Timm Schurig – Webdesigner und SEO-Stratege mit Fokus auf den Raum Leichlingen und das Bergische Land." },
+                                    { label: "Was mich antreibt", text: "Mein Ziel ist es, den Mittelstand in Leichlingen digital an die Spitze zu bringen – mit messbaren Ergebnissen statt leerer Floskeln." },
+                                    { label: "Wie ich arbeite", text: "Direkt, transparent und auf Augenhöhe. Keine Zwischenhändler, keine anonymen Agenturen – du hast immer einen konkreten Ansprechpartner." },
+                                ].map((item) => (
+                                    <div key={item.label} className="py-6">
+                                        <p className="text-xs font-bold text-accent uppercase tracking-widest mb-2">{item.label}</p>
+                                        <p className="text-slate-600 leading-relaxed">{item.text}</p>
+                                    </div>
+                                ))}
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
 
             {/* Ablauf */}
-            <section className="py-24 px-6 bg-slate-50">
+            <section className="py-28 px-6 bg-slate-950">
                 <div className="max-w-4xl mx-auto">
-                    <p className="text-accent font-bold text-sm uppercase tracking-widest mb-3 text-center">Der Prozess</p>
-                    <h2 className="text-3xl md:text-4xl font-display font-extrabold text-slate-900 mb-16 text-center">
-                        In 5 Schritten zu deiner neuen Website
+                    <p className="text-accent font-bold text-sm uppercase tracking-widest mb-4">Der Prozess</p>
+                    <h2 className="text-3xl md:text-5xl font-display font-extrabold text-white mb-6 leading-tight">
+                        In 5 Schritten zu deiner<br className="hidden md:block" /> neuen Website
                     </h2>
-                    <div className="relative">
-                        <div className="absolute left-6 top-0 bottom-0 w-px bg-slate-200 hidden sm:block" />
-                        <div className="space-y-8">
-                            {[
-                                { n: "01", t: "Strategie-Call", d: "Wir analysieren dein Business und deine Ziele in Leichlingen – kostenlos und unverbindlich." },
-                                { n: "02", t: "Konzept & Funnel-Plan", d: "Wir legen fest, wie wir Besucher zu Anfragen konvertieren. Keine Templates, sondern Strategie." },
-                                { n: "03", t: "Design & Entwicklung", d: "Ich erstelle ein modernes Design, das deine Marke widerspiegelt und technisch auf höchstem Niveau ist." },
-                                { n: "04", t: "SEO-Turbo", d: "Wir optimieren alle Inhalte für maximale Sichtbarkeit bei Google – lokal und überregional." },
-                                { n: "05", t: "Go-Live & Support", d: "Deine Seite geht online und ich bleibe dein Ansprechpartner für Wartung und Wachstum." },
-                            ].map((step) => (
-                                <div key={step.n} className="flex gap-6 items-start">
-                                    <div className="w-12 h-12 rounded-xl bg-accent text-white font-black text-base flex items-center justify-center shrink-0 shadow-lg shadow-accent/20 relative z-10">
-                                        {step.n}
-                                    </div>
-                                    <div className="bg-white rounded-2xl border border-slate-100 p-5 flex-1 shadow-sm">
-                                        <p className="font-bold text-slate-900 mb-1">{step.t}</p>
-                                        <p className="text-slate-500 text-sm leading-relaxed">{step.d}</p>
+                    <p className="text-lg text-slate-400 leading-relaxed mb-16 max-w-2xl">
+                        Kein Rätselraten, kein Warten im Dunkeln – du weißt immer genau, wo wir stehen.
+                    </p>
+
+                    <div className="space-y-0">
+                        {[
+                            { n: "01", t: "Strategie-Call", d: "Wir analysieren dein Business und deine Ziele in Leichlingen – kostenlos und unverbindlich." },
+                            { n: "02", t: "Konzept & Funnel-Plan", d: "Wir legen fest, wie wir Besucher zu Anfragen konvertieren. Keine Templates, sondern Strategie." },
+                            { n: "03", t: "Design & Entwicklung", d: "Ich erstelle ein modernes Design, das deine Marke widerspiegelt und technisch auf höchstem Niveau ist." },
+                            { n: "04", t: "SEO-Turbo", d: "Wir optimieren alle Inhalte für maximale Sichtbarkeit bei Google – lokal und überregional." },
+                            { n: "05", t: "Go-Live & Support", d: "Deine Seite geht online und ich bleibe dein Ansprechpartner für Wartung und Wachstum." },
+                        ].map((step, i) => (
+                            <div key={step.n} className={`flex gap-6 md:gap-10 items-stretch py-8 ${i < 4 ? "border-b border-white/10" : ""}`}>
+                                {/* Number + line */}
+                                <div className="flex flex-col items-center gap-2 shrink-0">
+                                    <div className="w-10 h-10 rounded-full bg-accent/15 border border-accent/30 flex items-center justify-center">
+                                        <span className="text-accent font-black text-xs">{step.n}</span>
                                     </div>
                                 </div>
-                            ))}
-                        </div>
+                                {/* Content */}
+                                <div className="flex-1 pb-2">
+                                    <p className="font-extrabold text-white text-lg mb-2">{step.t}</p>
+                                    <p className="text-slate-400 leading-relaxed">{step.d}</p>
+                                </div>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </section>
 
             {/* Ergebnisse */}
-            <section className="py-24 px-6 bg-white">
-                <div className="max-w-4xl mx-auto text-center">
-                    <p className="text-accent font-bold text-sm uppercase tracking-widest mb-3">Erfolgsgeschichten</p>
-                    <h2 className="text-3xl md:text-4xl font-display font-extrabold text-slate-900 mb-16">Ergebnisse aus der Region</h2>
-                    <div className="grid sm:grid-cols-3 gap-6">
+            <section className="py-28 px-6 bg-white">
+                <div className="max-w-4xl mx-auto">
+                    <p className="text-accent font-bold text-sm uppercase tracking-widest mb-4">Erfolgsgeschichten</p>
+                    <h2 className="text-3xl md:text-5xl font-display font-extrabold text-slate-900 mb-16 leading-tight">Ergebnisse aus der Region</h2>
+
+                    <div className="divide-y divide-slate-100">
                         {[
-                            { result: "+40%", label: "mehr Anfragen", desc: "Handwerksbetrieb aus der Region über das neue Kontaktformular." },
-                            { result: "Top 1", label: "bei Google", desc: "Kanzlei aus Leichlingen für lokale Fachbegriffe in der Suche." },
-                            { result: "5 Std.", label: "gespart pro Woche", desc: "Einzelhandel durch automatisierte Terminbuchung auf der Website." },
+                            { result: "+40 %", label: "mehr Anfragen", desc: "Handwerksbetrieb aus der Region über das neue Kontaktformular – in den ersten 8 Wochen nach Relaunch." },
+                            { result: "Top 1", label: "bei Google", desc: "Kanzlei aus Leichlingen für lokale Fachbegriffe – organisch, ohne bezahlte Werbung." },
+                            { result: "5 Std.", label: "gespart pro Woche", desc: "Einzelhandel durch automatisierte Terminbuchung – Zeit, die jetzt ins Kerngeschäft fließt." },
                         ].map((s) => (
-                            <div key={s.label} className="p-8 rounded-3xl border border-slate-100 bg-slate-50">
-                                <p className="text-5xl font-display font-black text-accent mb-2">{s.result}</p>
-                                <p className="font-bold text-slate-900 mb-2">{s.label}</p>
-                                <p className="text-slate-500 text-sm leading-relaxed">{s.desc}</p>
+                            <div key={s.label} className="grid md:grid-cols-[180px,1fr] gap-4 md:gap-10 py-10 items-center group">
+                                <div>
+                                    <p className="text-5xl md:text-6xl font-display font-black text-accent leading-none">{s.result}</p>
+                                    <p className="text-slate-400 font-bold text-sm mt-1 uppercase tracking-wide">{s.label}</p>
+                                </div>
+                                <p className="text-slate-600 text-lg leading-relaxed">{s.desc}</p>
                             </div>
                         ))}
                     </div>
@@ -354,13 +391,17 @@ export default function WebdesignLeichlingen() {
             </section>
 
             {/* CTA */}
-            <section className="py-24 px-6 bg-accent">
-                <div className="max-w-3xl mx-auto text-center">
+            <section className="py-28 px-6 bg-accent relative overflow-hidden">
+                <div className="absolute inset-0 pointer-events-none">
+                    <div className="absolute -top-32 -right-32 w-96 h-96 bg-white/10 rounded-full blur-3xl" />
+                    <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-black/10 rounded-full blur-3xl" />
+                </div>
+                <div className="max-w-3xl mx-auto text-center relative z-10">
                     <h2 className="text-3xl md:text-5xl font-display font-extrabold text-white mb-6 leading-tight">
-                        Lass uns dein Projekt in Leichlingen starten!
+                        Lass uns dein Projekt<br className="hidden md:block" /> in Leichlingen starten!
                     </h2>
-                    <p className="text-white/80 text-lg mb-10 leading-relaxed">
-                        Bist du bereit für eine Website, die wirklich für dich arbeitet? Unverbindlich, kompetent und direkt aus der Nachbarschaft.
+                    <p className="text-white/80 text-xl mb-12 leading-relaxed max-w-xl mx-auto">
+                        Unverbindlich, kompetent und direkt aus der Nachbarschaft. Ich freue mich auf dein Projekt.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <a href={PHONE_URL} className="inline-flex items-center justify-center gap-2 bg-white text-accent hover:bg-white/90 rounded-full px-10 h-14 text-base font-bold transition-all shadow-xl">
@@ -370,17 +411,17 @@ export default function WebdesignLeichlingen() {
                             <MessageCircle size={18} /> WhatsApp
                         </a>
                     </div>
-                    <p className="text-white/60 text-sm mt-6 flex items-center justify-center gap-2">
+                    <p className="text-white/60 text-sm mt-8 flex items-center justify-center gap-2">
                         <Clock size={14} /> Antwort in &lt; 2 Stunden
                     </p>
                 </div>
             </section>
 
             {/* FAQ */}
-            <section className="py-24 px-6 bg-slate-50">
+            <section className="py-28 px-6 bg-white">
                 <div className="max-w-4xl mx-auto">
-                    <p className="text-accent font-bold text-sm uppercase tracking-widest mb-3 text-center">FAQ</p>
-                    <h2 className="text-3xl md:text-4xl font-display font-extrabold text-slate-900 mb-12 text-center">
+                    <p className="text-accent font-bold text-sm uppercase tracking-widest mb-4">FAQ</p>
+                    <h2 className="text-3xl md:text-5xl font-display font-extrabold text-slate-900 mb-16 leading-tight">
                         Häufige Fragen
                     </h2>
                     <FaqAccordion />
