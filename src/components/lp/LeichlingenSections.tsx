@@ -47,7 +47,7 @@ const leichlingenSteps = [
 export function LeichlingenFlow() {
   return (
     <section className="py-24 px-6 bg-white" aria-label="Der Ablauf in Leichlingen">
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -63,31 +63,31 @@ export function LeichlingenFlow() {
           </p>
         </motion.div>
 
-        <div className="relative">
-          <div className="absolute left-7 top-0 bottom-0 w-px bg-slate-100 md:left-1/2 md:-translate-x-1/2" />
-          <div className="space-y-12">
-            {leichlingenSteps.map((step, index) => {
-              const Icon = step.icon;
-              const isEven = index % 2 === 0;
-              return (
-                <div key={step.number} className="relative flex items-start gap-6 md:items-center">
-                  <div className={`relative z-10 w-14 h-14 rounded-2xl ${step.color} flex items-center justify-center shrink-0 md:absolute md:left-1/2 md:-translate-x-1/2`}>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+          {leichlingenSteps.map((step, index) => {
+            const Icon = step.icon;
+            return (
+              <motion.div
+                key={step.number}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="group relative bg-white border border-slate-100 rounded-3xl p-6 shadow-sm hover:shadow-2xl hover:-translate-y-2 hover:border-accent/20 transition-all duration-300 flex flex-col"
+              >
+                <div className="flex justify-between items-start mb-6">
+                  <div className={`w-14 h-14 rounded-2xl ${step.color} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
                     <Icon size={24} />
                   </div>
-                  <motion.div
-                    initial={{ opacity: 0, x: isEven ? -30 : 30 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    className={`flex-1 bg-slate-50 border border-slate-100 rounded-3xl p-7 md:w-[44%] md:flex-none ${isEven ? "md:mr-auto md:pr-10" : "md:ml-auto md:pl-10"}`}
-                  >
-                    <span className="text-accent font-bold text-sm uppercase tracking-widest block mb-2">{step.number}</span>
-                    <h3 className="text-xl font-bold text-slate-900 mb-3">{step.title}</h3>
-                    <p className="text-slate-600 leading-relaxed text-sm">{step.body}</p>
-                  </motion.div>
+                  <span className="text-slate-100 font-display font-bold text-5xl group-hover:text-accent/20 transition-colors duration-300 -mt-2 -mr-2">
+                    {step.number}
+                  </span>
                 </div>
-              );
-            })}
-          </div>
+                <h3 className="text-lg font-bold text-slate-900 mb-3 group-hover:text-accent transition-colors duration-300">{step.title}</h3>
+                <p className="text-slate-600 leading-relaxed text-sm flex-1">{step.body}</p>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>
