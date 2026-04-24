@@ -228,21 +228,38 @@ export default function WebdesignLeichlingen() {
                     <h2 className="text-3xl md:text-5xl font-display font-extrabold text-slate-900 mb-6 leading-tight">
                         Warum deine Website aktuell<br className="hidden md:block" /> Geld kostet, statt welches zu verdienen
                     </h2>
-                    <p className="text-lg text-slate-500 leading-relaxed mb-16 max-w-2xl">
-                        Viele Unternehmen in der Blütenstadt verlassen sich auf veraltete digitale Visitenkarten – die zwar „nett" aussehen, aber keine klare Nutzerführung haben.
+
+                    <p className="text-lg text-slate-500 leading-relaxed mb-8 max-w-2xl">
+                        Ich sehe es immer wieder: Ein Unternehmen aus Leichlingen hat jahrelange Erfahrung, zufriedene Stammkunden und echte Qualität – aber die Website davon überzeugt niemanden. Sie ist entweder veraltet, zu langsam, oder schlicht nicht auffindbar. Das kostet bares Geld.
+                    </p>
+
+                    {/* Image */}
+                    <div className="relative w-full aspect-[16/9] rounded-3xl overflow-hidden mb-14 shadow-xl">
+                        <Image
+                            src="/images/leichlingen-problem.jpg"
+                            alt="Veraltete Website als Problem für Unternehmen in Leichlingen"
+                            fill
+                            className="object-cover"
+                            sizes="(max-width: 768px) 100vw, 896px"
+                            priority
+                        />
+                    </div>
+
+                    <p className="text-lg text-slate-500 leading-relaxed mb-12 max-w-2xl">
+                        Das Tragische: Potenzielle Kunden suchen aktiv nach deiner Leistung – und landen bei der Konkurrenz, weil du online schlicht nicht sichtbar bist. Hier sind die vier häufigsten Ursachen:
                     </p>
 
                     <div className="divide-y divide-slate-100">
                         {[
-                            { n: "01", title: "Unsichtbarkeit", desc: "Du wirst bei Suchen nach 'Dienstleistung + Leichlingen' nicht gefunden – deine Konkurrenz schon." },
-                            { n: "02", title: "Vertrauensverlust", desc: "Veraltetes Design schreckt potenzielle Kunden ab, bevor sie überhaupt die erste Zeile lesen." },
-                            { n: "03", title: "Ladezeiten", desc: "Deine Seite ist langsamer als der Feierabendverkehr auf der L294. Google bestraft das." },
-                            { n: "04", title: "Keine Strategie", desc: "Besucher kommen, verlassen die Seite aber ohne Anruf oder Anfrage – kein System dahinter." },
+                            { n: "01", title: "Unsichtbarkeit bei Google", desc: "Du wirst bei Suchen nach 'Dienstleistung + Leichlingen' nicht gefunden – deine Konkurrenz schon. Ohne lokales SEO bist du für die meisten Neukunden schlicht nicht existent." },
+                            { n: "02", title: "Vertrauensverlust beim ersten Eindruck", desc: "Veraltetes Design schreckt potenzielle Kunden ab, bevor sie überhaupt die erste Zeile lesen. Studien zeigen: 55 % der Besucher entscheiden in weniger als einer Sekunde, ob sie bleiben." },
+                            { n: "03", title: "Ladezeiten, die Nerven kosten", desc: "Deine Seite ist langsamer als der Feierabendverkehr auf der L294. Google bestraft das mit schlechteren Rankings – und Besucher mit einem Klick auf den Zurück-Button." },
+                            { n: "04", title: "Kein roter Faden, keine Anfragen", desc: "Besucher kommen, verlassen die Seite aber ohne Anruf oder Formular-Eintrag. Was fehlt, ist eine klare Nutzerführung – ein System, das aus Interesse echte Anfragen macht." },
                         ].map((item) => (
                             <div key={item.n} className="flex gap-8 py-8 group">
                                 <span className="text-5xl font-black text-red-100 group-hover:text-red-200 transition-colors leading-none mt-1 shrink-0 select-none">{item.n}</span>
                                 <div>
-                                    <p className="font-extrabold text-slate-900 text-lg mb-1">{item.title}</p>
+                                    <p className="font-extrabold text-slate-900 text-lg mb-2">{item.title}</p>
                                     <p className="text-slate-500 leading-relaxed">{item.desc}</p>
                                 </div>
                             </div>
@@ -252,31 +269,35 @@ export default function WebdesignLeichlingen() {
             </section>
 
             {/* Lösung */}
-            <section className="py-28 px-6 bg-slate-950">
+            <section className="py-28 px-6 bg-slate-50">
                 <div className="max-w-4xl mx-auto">
                     <p className="text-accent font-bold text-sm uppercase tracking-widest mb-4">Die Lösung</p>
-                    <h2 className="text-3xl md:text-5xl font-display font-extrabold text-white mb-6 leading-tight">
+                    <h2 className="text-3xl md:text-5xl font-display font-extrabold text-slate-900 mb-6 leading-tight">
                         Der Funnel-Ansatz –<br className="hidden md:block" /> Webdesign mit System
                     </h2>
-                    <p className="text-lg text-slate-400 leading-relaxed mb-16 max-w-2xl">
-                        Webdesign in Leichlingen bedeutet für mich nicht nur Ästhetik, sondern Konversions-Optimierung. Ich baue keine statischen Seiten, sondern automatisierte Verkaufs-Funnel.
+
+                    <p className="text-lg text-slate-600 leading-relaxed mb-6 max-w-2xl">
+                        Webdesign in Leichlingen bedeutet für mich weit mehr als eine hübsche Startseite. Ich denke vom Ergebnis her: Was soll der Besucher tun? Anrufen? Eine Anfrage senden? Termin buchen? Erst dann kommt das Design.
+                    </p>
+                    <p className="text-lg text-slate-600 leading-relaxed mb-16 max-w-2xl">
+                        Konkret heißt das: Ich baue keine statischen Seiten, sondern automatisierte Funnel – digitale Systeme, die rund um die Uhr für dich arbeiten, auch wenn du gerade auf der Baustelle bist oder Feierabend hast.
                     </p>
 
-                    <div className="divide-y divide-white/10">
+                    <div className="divide-y divide-slate-200">
                         {[
-                            { title: "Zielgruppenanalyse", desc: "Wir sprechen genau die Sprache deiner Kunden im Rheinisch-Bergischen Kreis." },
-                            { title: "SEO & GEO-Targeting", desc: "Durch lokale Optimierung dominierst du die Suchergebnisse in Leichlingen, Witzhelden, Burscheid und Langenfeld." },
-                            { title: "Mobile First", desc: "Perfekte Darstellung auf allen Endgeräten – kein optionaler Bonus, sondern Standard im Jahr 2026." },
-                            { title: "Psychologische Nutzerführung", desc: "Wir leiten den Besucher gezielt von der ersten Information bis zum Abschluss – ohne Umwege." },
+                            { title: "Zielgruppenanalyse", desc: "Bevor auch nur eine Zeile Code entsteht, verstehen wir gemeinsam, wer deine Kunden in Leichlingen und Umgebung sind – und was sie wirklich bewegt. Wir sprechen ihre Sprache, nicht Marketingsprech." },
+                            { title: "SEO & GEO-Targeting", desc: "Durch gezielte lokale Optimierung dominierst du die Suchergebnisse in Leichlingen, Witzhelden, Burscheid und Langenfeld. Organische Sichtbarkeit ohne bezahlte Werbung." },
+                            { title: "Mobile First", desc: "Über 70 % deiner Besucher kommen vom Smartphone. Perfekte Darstellung auf allen Endgeräten ist kein optionaler Bonus, sondern Grundvoraussetzung im Jahr 2026." },
+                            { title: "Psychologische Nutzerführung", desc: "Wir leiten den Besucher mit bewährten Konversionsmuster gezielt von der ersten Information bis zum Abschluss – ohne Umwege, ohne Ablenkung." },
                         ].map((item, i) => (
                             <div key={item.title} className="flex gap-8 py-8 group items-start">
                                 <CheckCircle2 size={22} className="text-accent shrink-0 mt-0.5" />
                                 <div className="flex-1">
                                     <div className="flex items-center justify-between gap-4">
-                                        <p className="font-extrabold text-white text-lg">{item.title}</p>
-                                        <span className="text-white/10 font-black text-3xl leading-none select-none group-hover:text-white/20 transition-colors">0{i + 1}</span>
+                                        <p className="font-extrabold text-slate-900 text-lg">{item.title}</p>
+                                        <span className="text-slate-200 font-black text-3xl leading-none select-none group-hover:text-slate-300 transition-colors">0{i + 1}</span>
                                     </div>
-                                    <p className="text-slate-400 leading-relaxed mt-1">{item.desc}</p>
+                                    <p className="text-slate-500 leading-relaxed mt-2">{item.desc}</p>
                                 </div>
                             </div>
                         ))}
@@ -290,7 +311,7 @@ export default function WebdesignLeichlingen() {
                     <p className="text-accent font-bold text-sm uppercase tracking-widest mb-4">Dein Partner vor Ort</p>
                     <h2 className="text-3xl md:text-5xl font-display font-extrabold text-slate-900 mb-6 leading-tight">Kurz zu mir</h2>
                     <p className="text-lg text-slate-500 leading-relaxed mb-16 max-w-2xl">
-                        Ich verbinde technisches Know-how mit lokalem Marktverständnis. Während andere Agenturen anonyme Nummern verwalten, schätze ich den persönlichen Austausch hier in der Region.
+                        Ich bin kein anonymes Agentur-Team irgendwo in einer Großstadt. Ich bin Timm Schurig – und ich arbeite direkt mit dir.
                     </p>
 
                     <div className="grid md:grid-cols-[280px,1fr] gap-12 items-start">
@@ -304,7 +325,6 @@ export default function WebdesignLeichlingen() {
                                     sizes="280px"
                                 />
                             </div>
-                            {/* Floating badge */}
                             <div className="absolute -bottom-4 -right-4 bg-accent text-white rounded-2xl px-4 py-3 shadow-xl">
                                 <p className="font-black text-xl leading-none">5+</p>
                                 <p className="text-xs font-semibold opacity-80 mt-0.5">Jahre Erfahrung</p>
@@ -312,14 +332,21 @@ export default function WebdesignLeichlingen() {
                         </div>
 
                         <div className="pt-2">
+                            <p className="text-slate-600 leading-relaxed mb-6 text-lg">
+                                Hallo, ich bin dein Experte für <strong className="text-slate-900">Webdesign in Leichlingen</strong>. Ich verbinde technisches Know-how mit lokalem Marktverständnis – und das macht den Unterschied.
+                            </p>
+                            <p className="text-slate-500 leading-relaxed mb-10">
+                                Während große Agenturen dich nach dem Erstgespräch an einen Junior-Designer weitergeben, bist du bei mir in direktem Kontakt mit der Person, die auch wirklich baut. Kein Stille-Post-Spiel, keine verlorenen Anforderungen, kein Briefing, das im Nirgendwo verschwindet.
+                            </p>
+
                             <div className="divide-y divide-slate-100">
                                 {[
-                                    { label: "Wer ich bin", text: "Ich bin Timm Schurig – Webdesigner und SEO-Stratege mit Fokus auf den Raum Leichlingen und das Bergische Land." },
-                                    { label: "Was mich antreibt", text: "Mein Ziel ist es, den Mittelstand in Leichlingen digital an die Spitze zu bringen – mit messbaren Ergebnissen statt leerer Floskeln." },
-                                    { label: "Wie ich arbeite", text: "Direkt, transparent und auf Augenhöhe. Keine Zwischenhändler, keine anonymen Agenturen – du hast immer einen konkreten Ansprechpartner." },
+                                    { label: "Mein Antrieb", text: "Den Mittelstand in Leichlingen digital an die Spitze bringen – mit messbaren Ergebnissen statt leerer Floskeln." },
+                                    { label: "Meine Arbeitsweise", text: "Direkt, transparent und auf Augenhöhe. Du weißt immer, was als Nächstes passiert." },
+                                    { label: "Mein Versprechen", text: "Wenn ich eine Deadline zusage, halte ich sie. Und wenn sich etwas ändert, sage ich es dir sofort." },
                                 ].map((item) => (
-                                    <div key={item.label} className="py-6">
-                                        <p className="text-xs font-bold text-accent uppercase tracking-widest mb-2">{item.label}</p>
+                                    <div key={item.label} className="py-5">
+                                        <p className="text-xs font-bold text-accent uppercase tracking-widest mb-1.5">{item.label}</p>
                                         <p className="text-slate-600 leading-relaxed">{item.text}</p>
                                     </div>
                                 ))}
@@ -330,35 +357,31 @@ export default function WebdesignLeichlingen() {
             </section>
 
             {/* Ablauf */}
-            <section className="py-28 px-6 bg-slate-950">
+            <section className="py-28 px-6 bg-slate-50">
                 <div className="max-w-4xl mx-auto">
                     <p className="text-accent font-bold text-sm uppercase tracking-widest mb-4">Der Prozess</p>
-                    <h2 className="text-3xl md:text-5xl font-display font-extrabold text-white mb-6 leading-tight">
+                    <h2 className="text-3xl md:text-5xl font-display font-extrabold text-slate-900 mb-6 leading-tight">
                         In 5 Schritten zu deiner<br className="hidden md:block" /> neuen Website
                     </h2>
-                    <p className="text-lg text-slate-400 leading-relaxed mb-16 max-w-2xl">
-                        Kein Rätselraten, kein Warten im Dunkeln – du weißt immer genau, wo wir stehen.
+                    <p className="text-lg text-slate-500 leading-relaxed mb-16 max-w-2xl">
+                        Kein Rätselraten, kein Warten im Dunkeln – du weißt immer genau, wo wir stehen und was als Nächstes kommt. So sieht eine Zusammenarbeit mit mir aus:
                     </p>
 
-                    <div className="space-y-0">
+                    <div className="divide-y divide-slate-200">
                         {[
-                            { n: "01", t: "Strategie-Call", d: "Wir analysieren dein Business und deine Ziele in Leichlingen – kostenlos und unverbindlich." },
-                            { n: "02", t: "Konzept & Funnel-Plan", d: "Wir legen fest, wie wir Besucher zu Anfragen konvertieren. Keine Templates, sondern Strategie." },
-                            { n: "03", t: "Design & Entwicklung", d: "Ich erstelle ein modernes Design, das deine Marke widerspiegelt und technisch auf höchstem Niveau ist." },
-                            { n: "04", t: "SEO-Turbo", d: "Wir optimieren alle Inhalte für maximale Sichtbarkeit bei Google – lokal und überregional." },
-                            { n: "05", t: "Go-Live & Support", d: "Deine Seite geht online und ich bleibe dein Ansprechpartner für Wartung und Wachstum." },
+                            { n: "01", t: "Strategie-Call", d: "Wir analysieren gemeinsam dein Business, deine Zielgruppe und deine Ziele in Leichlingen – kostenlos und unverbindlich. Am Ende des Calls weißt du genau, was deine Website braucht." },
+                            { n: "02", t: "Konzept & Funnel-Plan", d: "Ich entwickle eine Strategie, wie wir Besucher in Anfragen verwandeln. Keine Templates von der Stange, sondern ein maßgeschneiderter Plan für dein Business." },
+                            { n: "03", t: "Design & Entwicklung", d: "Ich erstelle ein modernes, schnelles Design, das deine Marke widerspiegelt. Du siehst den Fortschritt laufend und kannst jederzeit Feedback geben – keine bösen Überraschungen am Ende." },
+                            { n: "04", t: "SEO-Turbo", d: "Wir optimieren alle Inhalte, Metadaten und technische Details für maximale Sichtbarkeit bei Google – lokal in Leichlingen und überregional im Bergischen Land." },
+                            { n: "05", t: "Go-Live & Support", d: "Deine Seite geht online. Ich begleite den Launch, sorge dafür, dass alles reibungslos läuft – und bleibe dein Ansprechpartner für Wartung, Updates und Wachstum." },
                         ].map((step, i) => (
-                            <div key={step.n} className={`flex gap-6 md:gap-10 items-stretch py-8 ${i < 4 ? "border-b border-white/10" : ""}`}>
-                                {/* Number + line */}
-                                <div className="flex flex-col items-center gap-2 shrink-0">
-                                    <div className="w-10 h-10 rounded-full bg-accent/15 border border-accent/30 flex items-center justify-center">
-                                        <span className="text-accent font-black text-xs">{step.n}</span>
-                                    </div>
+                            <div key={step.n} className="flex gap-8 py-8">
+                                <div className="w-10 h-10 rounded-full bg-accent/10 border border-accent/20 flex items-center justify-center shrink-0 mt-0.5">
+                                    <span className="text-accent font-black text-xs">{step.n}</span>
                                 </div>
-                                {/* Content */}
-                                <div className="flex-1 pb-2">
-                                    <p className="font-extrabold text-white text-lg mb-2">{step.t}</p>
-                                    <p className="text-slate-400 leading-relaxed">{step.d}</p>
+                                <div className="flex-1">
+                                    <p className="font-extrabold text-slate-900 text-lg mb-2">{step.t}</p>
+                                    <p className="text-slate-500 leading-relaxed">{step.d}</p>
                                 </div>
                             </div>
                         ))}
@@ -370,20 +393,23 @@ export default function WebdesignLeichlingen() {
             <section className="py-28 px-6 bg-white">
                 <div className="max-w-4xl mx-auto">
                     <p className="text-accent font-bold text-sm uppercase tracking-widest mb-4">Erfolgsgeschichten</p>
-                    <h2 className="text-3xl md:text-5xl font-display font-extrabold text-slate-900 mb-16 leading-tight">Ergebnisse aus der Region</h2>
+                    <h2 className="text-3xl md:text-5xl font-display font-extrabold text-slate-900 mb-6 leading-tight">Ergebnisse aus der Region</h2>
+                    <p className="text-lg text-slate-500 leading-relaxed mb-16 max-w-2xl">
+                        Zahlen sagen mehr als tausend Worte. Hier sind echte Ergebnisse von Unternehmen, die ich aus dem Rheinisch-Bergischen Kreis bei ihrer digitalen Entwicklung begleitet habe:
+                    </p>
 
                     <div className="divide-y divide-slate-100">
                         {[
-                            { result: "+40 %", label: "mehr Anfragen", desc: "Handwerksbetrieb aus der Region über das neue Kontaktformular – in den ersten 8 Wochen nach Relaunch." },
-                            { result: "Top 1", label: "bei Google", desc: "Kanzlei aus Leichlingen für lokale Fachbegriffe – organisch, ohne bezahlte Werbung." },
-                            { result: "5 Std.", label: "gespart pro Woche", desc: "Einzelhandel durch automatisierte Terminbuchung – Zeit, die jetzt ins Kerngeschäft fließt." },
+                            { result: "+40 %", label: "mehr Anfragen", desc: "Ein Handwerksbetrieb aus der Region hatte eine Website – aber kaum Anfragen darüber. Nach dem Relaunch mit klarer Nutzerführung und lokalem SEO stieg die Kontaktrate in den ersten 8 Wochen um 40 Prozent." },
+                            { result: "Top 1", label: "bei Google", desc: "Eine Kanzlei aus Leichlingen wollte für relevante lokale Suchbegriffe sichtbar werden. Heute steht sie organisch auf Platz 1 – ohne bezahlte Werbung, dank technisch sauberem SEO und gezieltem Content." },
+                            { result: "5 Std.", label: "gespart pro Woche", desc: "Ein Einzelhändler verbrachte stundenlang mit Terminabsprachen per Telefon und E-Mail. Nach der Integration einer automatisierten Buchungsfunktion sind fünf Stunden pro Woche wieder für das Kerngeschäft frei." },
                         ].map((s) => (
-                            <div key={s.label} className="grid md:grid-cols-[180px,1fr] gap-4 md:gap-10 py-10 items-center group">
+                            <div key={s.label} className="grid md:grid-cols-[200px,1fr] gap-4 md:gap-12 py-10 items-start">
                                 <div>
                                     <p className="text-5xl md:text-6xl font-display font-black text-accent leading-none">{s.result}</p>
-                                    <p className="text-slate-400 font-bold text-sm mt-1 uppercase tracking-wide">{s.label}</p>
+                                    <p className="text-slate-400 font-bold text-sm mt-2 uppercase tracking-wide">{s.label}</p>
                                 </div>
-                                <p className="text-slate-600 text-lg leading-relaxed">{s.desc}</p>
+                                <p className="text-slate-600 leading-relaxed text-lg">{s.desc}</p>
                             </div>
                         ))}
                     </div>
@@ -418,7 +444,7 @@ export default function WebdesignLeichlingen() {
             </section>
 
             {/* FAQ */}
-            <section className="py-28 px-6 bg-white">
+            <section className="py-28 px-6 bg-slate-50">
                 <div className="max-w-4xl mx-auto">
                     <p className="text-accent font-bold text-sm uppercase tracking-widest mb-4">FAQ</p>
                     <h2 className="text-3xl md:text-5xl font-display font-extrabold text-slate-900 mb-16 leading-tight">
