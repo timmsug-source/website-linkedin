@@ -10,7 +10,7 @@ type Service = (typeof serviceData)[keyof typeof serviceData];
 export function ServiceHero({ service }: { service: Service }) {
   return (
     <section
-      className="relative pt-12 pb-24 px-6 overflow-hidden bg-white"
+      className="relative pt-24 lg:pt-32 pb-24 px-6 overflow-hidden bg-white"
       aria-label={`${service.title} – Hero`}
     >
       {/* Decorative blobs */}

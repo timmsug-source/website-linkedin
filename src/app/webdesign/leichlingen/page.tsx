@@ -25,9 +25,7 @@ const leichlingenService = {
     "Vertrauensaufbau & Conversion",
     "Mobile-First & Blitzschnell"
   ],
-  heroFeatures: [
-    { number: "01", title: "PageSpeed", body: "100% Score" }
-  ],
+
   heroStat: [
     { value: "1–2 Wo.", label: "bis sie live ist" },
     { value: "100 %", label: "PageSpeed Score" },
