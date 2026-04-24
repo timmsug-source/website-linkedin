@@ -108,16 +108,14 @@ export default function LeichlingenPage() {
       {/* 4. ABLAUF (Customized for Leichlingen) */}
       <LeichlingenFlow />
 
-      {/* 5. RISIKEN / REASONS */}
-      <WebdesignReasons />
+
 
       {/* 6. CTA + ÜBER MICH (Customized for Leichlingen) */}
       <section className="py-12 px-6 bg-white">
         <div className="max-w-5xl mx-auto">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-6 bg-slate-900 rounded-2xl px-8 py-6">
             <p className="text-white font-bold text-lg text-center sm:text-left">
-              Bereit für dein digitales Upgrade in Leichlingen?{" "}
-              <span className="text-accent">Lass uns sprechen.</span>
+              Bereit dein Webdesign in Leichlingen zu verbessern?
             </p>
             <a
               href={PHONE_URL}
