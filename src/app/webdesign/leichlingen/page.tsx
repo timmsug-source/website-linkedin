@@ -2,8 +2,9 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { CheckCircle2, MapPin, ChevronRight, Send, Sparkles, ArrowRight, ChevronDown } from "lucide-react";
+import { CheckCircle2, MapPin, ChevronRight, Send, Sparkles, ArrowRight } from "lucide-react";
 import { PHONE_URL } from "@/lib/utils";
+import { ProblemSection, SolutionSection, AboutSection, StepsSection, SocialProofSection, CTASection, FAQSection } from "@/components/lp/LeichlingenSections";
 
 const projectTypes = [
     { id: "neu", label: "Neue Website", emoji: "🚀" },
@@ -129,7 +130,7 @@ function HeroForm() {
 
 export default function WebdesignLeichlingen() {
     return (
-        <main className="min-h-screen bg-slate-950 overflow-x-hidden">
+        <main className="min-h-screen bg-white overflow-x-hidden">
 
             {/* Top Bar */}
             <motion.div initial={{ y: -100 }} animate={{ y: 0 }} className="bg-slate-900 py-3 px-6 text-white fixed top-0 w-full z-50 border-b border-white/10" style={{ willChange: "transform" }}>
@@ -142,7 +143,7 @@ export default function WebdesignLeichlingen() {
             </motion.div>
 
             {/* Hero */}
-            <section className="min-h-screen flex items-center pt-32 pb-20 px-6 relative overflow-hidden">
+            <section className="min-h-screen flex items-center pt-32 pb-20 px-6 relative overflow-hidden bg-slate-950">
                 <div className="absolute inset-0 z-0 pointer-events-none">
                     <div className="absolute top-20 left-1/4 w-96 h-96 bg-accent/10 rounded-full blur-[100px]" />
                     <div className="absolute bottom-10 right-1/4 w-64 h-64 bg-blue-500/10 rounded-full blur-[80px]" />
@@ -153,11 +154,11 @@ export default function WebdesignLeichlingen() {
                             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 text-slate-300 text-sm font-bold mb-8 border border-white/10">
                                 <MapPin size={14} className="text-accent" /> Webdesign Leichlingen
                             </div>
-                            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-extrabold text-white leading-[1.05] mb-8 tracking-tight">
-                                Professionelles <span className="text-accent">Webdesign</span> für Leichlingen.
+                            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-extrabold text-white leading-[1.05] mb-6 tracking-tight">
+                                Dein lokaler Anker für <span className="text-accent">digitales Wachstum.</span>
                             </h1>
-                            <p className="text-xl text-slate-400 leading-relaxed mb-10 max-w-xl font-medium">
-                                Kein anonymes Agenturpaket – sondern ein Funnel-System, das deine Besucher zu Kunden macht. Lokal verwurzelt, digital führend.
+                            <p className="text-lg md:text-xl text-slate-400 leading-relaxed mb-10 max-w-xl font-medium">
+                                Ich entwickle Performance-orientierte Websites, die Besucher in Leichlingen und der Region in zahlende Kunden verwandeln. Mehr als nur eine hübsche Fassade.
                             </p>
                             <div className="flex flex-wrap gap-6">
                                 {["Funnel-Strategie", "Lokales SEO", "PageSpeed 100"].map((b) => (
@@ -174,6 +175,20 @@ export default function WebdesignLeichlingen() {
                 </div>
             </section>
 
+            <ProblemSection />
+            <SolutionSection />
+            <AboutSection />
+            <StepsSection />
+            <SocialProofSection />
+            <CTASection />
+            <FAQSection />
+
+            {/* Footer */}
+            <footer className="py-10 text-center border-t border-slate-100">
+                <p className="text-slate-400 text-xs font-medium uppercase tracking-widest">
+                    © {new Date().getFullYear()} Timm Schurig · <a href="/impressum" className="hover:text-accent">Impressum</a> · <a href="/datenschutz" className="hover:text-accent">Datenschutz</a>
+                </p>
+            </footer>
         </main>
     );
 }
