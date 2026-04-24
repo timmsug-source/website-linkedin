@@ -62,14 +62,14 @@ function HeroForm() {
                             <div className="grid grid-cols-2 gap-3 mb-8">
                                 {projectTypes.map((pt) => (
                                     <button key={pt.id} onClick={() => setForm(f => ({ ...f, projectType: pt.id }))}
-                                        className={`flex flex-col items-center gap-2 px-4 py-6 rounded-2xl border-2 transition-all duration-300 ${form.projectType === pt.id ? "bg-accent border-accent text-white shadow-lg shadow-accent/20" : "bg-white/5 border-white/5 text-slate-400 hover:border-white/10 hover:bg-white/10"}`}>
+                                        className={`flex flex-col items-center gap-2 px-4 py-6 rounded-[2rem] border-2 transition-all duration-300 ${form.projectType === pt.id ? "bg-accent border-accent text-white shadow-lg shadow-accent/20" : "bg-white/5 border-white/5 text-slate-400 hover:border-white/10 hover:bg-white/10"}`}>
                                         <span className="text-3xl mb-1">{pt.emoji}</span>
                                         <span className="text-xs font-bold uppercase tracking-widest">{pt.label}</span>
                                     </button>
                                 ))}
                             </div>
                             <button onClick={() => form.projectType && setStep(2)} disabled={!form.projectType}
-                                className="w-full flex items-center justify-center gap-3 bg-accent hover:bg-accent/90 disabled:opacity-30 disabled:cursor-not-allowed text-white rounded-2xl py-5 font-black text-lg transition-all hover:scale-[1.02]">
+                                className="w-full flex items-center justify-center gap-3 bg-accent hover:bg-accent/90 disabled:opacity-30 disabled:cursor-not-allowed text-white rounded-full py-5 font-black text-lg transition-all hover:scale-[1.02]">
                                 Weiter <ArrowRight size={20} />
                             </button>
                         </motion.div>
@@ -80,16 +80,16 @@ function HeroForm() {
                             <div className="space-y-3 mb-8">
                                 {budgets.map((b) => (
                                     <button key={b.id} onClick={() => setForm(f => ({ ...f, budget: b.id }))}
-                                        className={`w-full flex items-center justify-between px-6 py-4 rounded-2xl border-2 transition-all duration-300 ${form.budget === b.id ? "bg-accent border-accent text-white" : "bg-white/5 border-white/5 text-slate-400 hover:bg-white/10"}`}>
+                                        className={`w-full flex items-center justify-between px-6 py-4 rounded-full border-2 transition-all duration-300 ${form.budget === b.id ? "bg-accent border-accent text-white" : "bg-white/5 border-white/5 text-slate-400 hover:bg-white/10"}`}>
                                         <span className="font-bold">{b.label}</span>
                                         {form.budget === b.id && <Sparkles size={18} className="text-white" />}
                                     </button>
                                 ))}
                             </div>
                             <div className="flex gap-3">
-                                <button onClick={() => setStep(1)} className="flex-1 bg-white/5 hover:bg-white/10 text-white rounded-2xl py-5 font-bold transition-all">Zurück</button>
+                                <button onClick={() => setStep(1)} className="flex-1 bg-white/5 hover:bg-white/10 text-white rounded-full py-5 font-bold transition-all">Zurück</button>
                                 <button onClick={() => form.budget && setStep(3)} disabled={!form.budget}
-                                    className="flex-[2] flex items-center justify-center gap-3 bg-accent hover:bg-accent/90 disabled:opacity-30 text-white rounded-2xl py-5 font-black text-lg transition-all hover:scale-[1.02]">
+                                    className="flex-[2] flex items-center justify-center gap-3 bg-accent hover:bg-accent/90 disabled:opacity-30 text-white rounded-full py-5 font-black text-lg transition-all hover:scale-[1.02]">
                                     Weiter <ArrowRight size={20} />
                                 </button>
                             </div>
@@ -100,16 +100,16 @@ function HeroForm() {
                             <h3 className="text-white font-display font-bold text-2xl mb-6">Fast fertig...</h3>
                             <div className="space-y-4 mb-8">
                                 <div className="relative">
-                                    <input type="text" placeholder="Dein Name" value={form.name} onChange={e => setForm(f => ({ ...f, name: e.target.value }))} className="w-full bg-white/5 border-2 border-white/10 rounded-2xl px-6 py-5 text-white placeholder-slate-500 focus:outline-none focus:border-accent transition-all" />
+                                    <input type="text" placeholder="Dein Name" value={form.name} onChange={e => setForm(f => ({ ...f, name: e.target.value }))} className="w-full bg-white/5 border-2 border-white/10 rounded-full px-8 py-5 text-white placeholder-slate-500 focus:outline-none focus:border-accent transition-all" />
                                 </div>
                                 <div className="relative">
-                                    <input type="text" placeholder="E-Mail oder Telefon" value={form.contact} onChange={e => setForm(f => ({ ...f, contact: e.target.value }))} className="w-full bg-white/5 border-2 border-white/10 rounded-2xl px-6 py-5 text-white placeholder-slate-500 focus:outline-none focus:border-accent transition-all" />
+                                    <input type="text" placeholder="E-Mail oder Telefon" value={form.contact} onChange={e => setForm(f => ({ ...f, contact: e.target.value }))} className="w-full bg-white/5 border-2 border-white/10 rounded-full px-8 py-5 text-white placeholder-slate-500 focus:outline-none focus:border-accent transition-all" />
                                 </div>
                             </div>
                             <div className="flex gap-3">
-                                <button onClick={() => setStep(2)} className="flex-1 bg-white/5 hover:bg-white/10 text-white rounded-2xl py-5 font-bold transition-all">Zurück</button>
+                                <button onClick={() => setStep(2)} className="flex-1 bg-white/5 hover:bg-white/10 text-white rounded-full py-5 font-bold transition-all">Zurück</button>
                                 <button onClick={handleSubmit} disabled={!form.name.trim() || !form.contact.trim() || loading}
-                                    className="flex-[2] flex items-center justify-center gap-3 bg-accent hover:bg-accent/90 disabled:opacity-30 text-white rounded-2xl py-5 font-black text-lg transition-all hover:scale-[1.02]">
+                                    className="flex-[2] flex items-center justify-center gap-3 bg-accent hover:bg-accent/90 disabled:opacity-30 text-white rounded-full py-5 font-black text-lg transition-all hover:scale-[1.02]">
                                     {loading ? <span className="animate-pulse">Wird gesendet...</span> : <><Send size={20} /> Projekt anfragen</>}
                                 </button>
                             </div>
@@ -137,28 +137,8 @@ export default function WebdesignLeichlingen() {
     return (
         <main className="min-h-screen bg-white overflow-x-hidden selection:bg-accent selection:text-white">
 
-            {/* Premium Navigation Header */}
-            <header className="fixed top-0 left-0 w-full z-[100] p-6 pointer-events-none">
-                <div className="max-w-7xl mx-auto flex justify-between items-center bg-slate-950/40 backdrop-blur-2xl border border-white/10 rounded-3xl px-8 py-4 pointer-events-auto shadow-2xl">
-                    <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 bg-accent rounded-xl flex items-center justify-center shadow-lg shadow-accent/20">
-                            <Zap size={22} className="text-white" />
-                        </div>
-                        <span className="text-white font-display font-black text-xl tracking-tight">TIMM<span className="text-accent">SCHURIG.</span></span>
-                    </div>
-                    <div className="hidden md:flex items-center gap-8">
-                        <span className="text-white/60 text-xs font-bold uppercase tracking-widest flex items-center gap-2">
-                            <MapPin size={14} className="text-accent" /> Leichlingen & Region
-                        </span>
-                        <a href={PHONE_URL} className="bg-white text-slate-950 px-6 py-2.5 rounded-xl font-bold text-sm hover:bg-accent hover:text-white transition-all shadow-xl">
-                            Kostenloses Gespräch
-                        </a>
-                    </div>
-                </div>
-            </header>
-
             {/* Hero Section */}
-            <section className="relative min-h-[110vh] flex items-center pt-24 lg:pt-0 bg-slate-950 overflow-hidden">
+            <section className="relative min-h-[110vh] flex items-center pt-32 pb-20 bg-slate-950 overflow-hidden">
                 {/* Background Graphics */}
                 <div className="absolute inset-0 z-0">
                     <div className="absolute top-[10%] right-[10%] w-[500px] h-[500px] bg-accent/20 blur-[150px] rounded-full" />
@@ -240,6 +220,7 @@ export default function WebdesignLeichlingen() {
                         width={600} 
                         height={600} 
                         className="animate-pulse-slow"
+                        priority={true}
                     />
                 </div>
             </section>

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { EyeOff, ShieldOff, Gauge, MousePointerClick, Target, Search, Smartphone, Brain, Phone, Palette, Rocket, Headset, ChevronDown, TrendingUp, Clock, ArrowRight, MapPin, Star, UserCheck, Zap, BarChart3, Layout, Globe, Users2 } from "lucide-react";
+import Link from "next/link";
 import { PHONE_URL } from "@/lib/utils";
 import Image from "next/image";
 
@@ -105,6 +106,12 @@ export function SolutionSection() {
             </div>
           ))}
         </div>
+        <div className="mt-16 text-center">
+          <a href={PHONE_URL} className="inline-flex items-center justify-center bg-accent hover:bg-accent/90 text-white rounded-full px-8 h-14 text-lg font-bold shadow-lg shadow-accent/20 transition-all group">
+            Jetzt Strategiegespräch anfragen
+            <ArrowRight size={20} className="ml-2 group-hover:translate-x-1 transition-transform" />
+          </a>
+        </div>
       </div>
     </section>
   );
@@ -122,7 +129,7 @@ export function AboutSection() {
         <div className="grid lg:grid-cols-[0.8fr,1.2fr] gap-16 items-center">
           <div className="relative">
             <div className="relative rounded-[2.5rem] overflow-hidden aspect-square shadow-2xl border border-white/10">
-              <Image src="/images/timm-portrait.jpeg" alt="Timm Schurig – Dein Partner für Webdesign in Leichlingen" fill className="object-cover grayscale hover:grayscale-0 transition-all duration-700" />
+              <Image src="/images/timm-portrait.jpeg" alt="Timm Schurig – Dein Partner für Webdesign in Leichlingen" fill className="object-cover transition-all duration-700" priority={true} sizes="(max-width: 768px) 100vw, 40vw" />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-60" />
             </div>
             {/* Floating Trust Badge */}
@@ -148,6 +155,16 @@ export function AboutSection() {
               <p>
                 Statt anonymem Agentur-Flair bekommst du bei mir eine persönliche Beratung auf Augenhöhe. Ich verstehe mich nicht nur als dein Designer, sondern als dein strategischer Partner. Gemeinsam gestalten wir die digitale Landschaft in Leichlingen aktiv mit.
               </p>
+            </div>
+            
+            <div className="flex flex-wrap gap-4 mb-12">
+              <a href={PHONE_URL} className="inline-flex items-center justify-center bg-accent hover:bg-accent/90 text-white rounded-full px-8 h-14 text-lg font-bold shadow-lg shadow-accent/20 transition-all group">
+                Lass uns sprechen
+                <ArrowRight size={18} className="ml-2 group-hover:translate-x-1 transition-transform" />
+              </a>
+              <a href="#portfolio" className="inline-flex items-center justify-center rounded-full px-8 h-14 text-lg font-semibold border border-white/20 bg-white/5 text-white hover:bg-white/10 transition-all">
+                Ergebnisse sehen
+              </a>
             </div>
             
             <div className="grid sm:grid-cols-2 gap-6">
@@ -263,6 +280,12 @@ export function PortfolioSection() {
             </div>
           ))}
         </div>
+        <div className="mt-16 text-center">
+          <Link href="/ergebnisse" className="inline-flex items-center justify-center rounded-full px-8 h-14 text-lg font-semibold border border-slate-200 bg-white/80 backdrop-blur-sm text-slate-900 hover:border-accent hover:text-accent transition-all">
+            Alle Projekte ansehen
+            <ArrowRight size={18} className="ml-2" />
+          </Link>
+        </div>
       </div>
     </section>
   );
@@ -280,8 +303,8 @@ export function CTASection() {
           Lass uns gemeinsam dafür sorgen, dass dein Webdesign in Leichlingen zum echten Wettbewerbsvorteil wird.
         </p>
         <div className="flex flex-col items-center gap-6">
-          <a href={PHONE_URL} className="inline-flex items-center justify-center bg-accent hover:bg-accent/90 text-white rounded-full px-12 h-20 text-xl md:text-2xl font-black w-full max-w-lg shadow-[0_20px_50px_rgba(59,130,246,0.3)] hover:scale-[1.02] transition-all group">
-            Jetzt Strategiegespräch buchen <ArrowRight className="ml-3 group-hover:translate-x-2 transition-transform" size={24} />
+          <a href={PHONE_URL} className="inline-flex items-center justify-center bg-accent hover:bg-accent/90 text-white rounded-full px-12 h-16 md:h-20 text-xl md:text-2xl font-black w-full max-w-lg shadow-[0_20px_50px_rgba(59,130,246,0.3)] hover:scale-[1.02] transition-all group">
+            Jetzt Projekt anfragen <ArrowRight className="ml-3 group-hover:translate-x-2 transition-transform" size={24} />
           </a>
           <p className="text-slate-400 font-bold flex items-center gap-2">
             <Clock size={18} className="text-accent" /> Kostenlos & unverbindlich
