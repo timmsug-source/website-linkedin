@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 import { ArrowRight, CheckCircle2, MapPin, Clock, MessageCircle, ChevronRight, Send, Sparkles, ChevronDown, AlertTriangle, Lightbulb, User, BarChart3 } from "lucide-react";
 import { PHONE_URL, WHATSAPP_URL } from "@/lib/utils";
 
@@ -364,12 +365,25 @@ export default function WebdesignLeichlingen() {
                             </h2>
                             <div className="w-12 h-1 bg-accent rounded-full mb-6" />
                             <div className="bg-slate-50 border border-slate-100 rounded-2xl p-6 md:p-8">
-                                <p className="text-slate-600 leading-relaxed text-base">
-                                    Hallo, ich bin dein Experte für <strong className="text-slate-900">Webdesign in Leichlingen</strong>. Ich verbinde technisches Know-how mit lokalem Marktverständnis. Während andere Agenturen nur anonyme Nummern verwalten, schätze ich den persönlichen Austausch hier in der Region.
-                                </p>
-                                <p className="text-slate-600 leading-relaxed text-base mt-4">
-                                    Mein Ziel ist es, den Mittelstand in Leichlingen digital an die Spitze zu bringen – mit <strong className="text-slate-900">messbaren Ergebnissen</strong> statt leerer Floskeln.
-                                </p>
+                                <div className="flex flex-col sm:flex-row gap-6 items-start">
+                                    <div className="relative w-24 h-24 rounded-2xl overflow-hidden shrink-0 shadow-md">
+                                        <Image
+                                            src="/images/timm-portrait.jpeg"
+                                            alt="Timm Schurig – Webdesign Leichlingen"
+                                            fill
+                                            className="object-cover"
+                                            sizes="96px"
+                                        />
+                                    </div>
+                                    <div>
+                                        <p className="text-slate-600 leading-relaxed text-base">
+                                            Hallo, ich bin dein Experte für <strong className="text-slate-900">Webdesign in Leichlingen</strong>. Ich verbinde technisches Know-how mit lokalem Marktverständnis. Während andere Agenturen nur anonyme Nummern verwalten, schätze ich den persönlichen Austausch hier in der Region.
+                                        </p>
+                                        <p className="text-slate-600 leading-relaxed text-base mt-4">
+                                            Mein Ziel ist es, den Mittelstand in Leichlingen digital an die Spitze zu bringen – mit <strong className="text-slate-900">messbaren Ergebnissen</strong> statt leerer Floskeln.
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
                         </section>
 
