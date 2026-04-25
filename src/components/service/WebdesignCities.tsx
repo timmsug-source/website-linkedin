@@ -6,19 +6,19 @@ const cities = [
   {
     name: "Langenfeld",
     href: "/webdesign/langenfeld",
-    image: "/images/cities/langenfeld.jpg",
+    image: "/images/cities/langenfeld.png",
     teaser: "Webdesign für Unternehmen in Langenfeld, Monheim und Umgebung – individuell, schnell und bei Google gefunden.",
   },
   {
     name: "Haan",
     href: "/webdesign/haan",
-    image: "/images/cities/haan.jpg",
+    image: "/images/cities/haan.png",
     teaser: "Professionelle Websites für Betriebe in Haan, Solingen und Erkrath – modern gestaltet und technisch perfekt.",
   },
   {
     name: "Leichlingen",
     href: "/webdesign/leichlingen",
-    image: "/images/cities/leichlingen.jpg",
+    image: "/images/cities/leichlingen.png",
     teaser: "Individuelle Webseiten für Unternehmen in Leichlingen, Leverkusen und Burscheid – die wirklich Kunden bringen.",
   },
 ];
