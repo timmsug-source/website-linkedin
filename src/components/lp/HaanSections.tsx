@@ -102,3 +102,73 @@ export function HaanProblem() {
     </section>
   );
 }
+
+import { CheckCircle2, MapPin, ShieldCheck, Zap, Quote } from "lucide-react";
+
+export function HaanSolution() {
+  const solutionPoints = [
+    {
+      icon: CheckCircle2,
+      title: "Strategisches Webdesign für Haan",
+      text: "Wir bauen eine Seite, die nicht nur schick aussieht, sondern deine Besucher gezielt zur Kontaktaufnahme führt."
+    },
+    {
+      icon: MapPin,
+      title: "Lokale Dominanz durch SEO",
+      text: "Durch die gezielte Optimierung auf Suchbegriffe wie „Webdesign in Haan“ und deine spezifischen Leistungen wirst du in der Region zur ersten Anlaufstelle."
+    },
+    {
+      icon: ShieldCheck,
+      title: "Vertrauensvorsprung durch Professionalität",
+      text: "Ein moderner, schneller und seriöser Auftritt signalisiert sofort: Hier arbeitet ein Profi. Das schafft Vertrauen, noch bevor der erste Satz gewechselt wurde."
+    },
+    {
+      icon: Zap,
+      title: "Technik, die begeistert",
+      text: "Maximale Ladegeschwindigkeit und perfekte Darstellung auf allen Endgeräten – vom iPhone bis zum Desktop-Monitor."
+    }
+  ];
+
+  return (
+    <section className="py-24 px-6 bg-white relative overflow-hidden">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 text-accent text-sm font-bold mb-6">
+            <CheckCircle2 size={16} /> Die Lösung: Dein Business in Haan – Endlich unübersehbar
+          </div>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-extrabold text-slate-900 mb-6 leading-tight">
+            Vom digitalen Blindspot zum lokalen Marktführer.
+          </h2>
+          <p className="text-lg text-slate-600 leading-relaxed">
+            Schluss mit dem Versteckspiel. Wir sorgen dafür, dass deine Website nicht nur existiert, sondern aktiv für dich arbeitet. Mein Webdesign-Ansatz für Unternehmen in Haan verbindet moderne Ästhetik mit einer glasklaren Strategie, damit du genau dort auftauchst, wo deine Kunden suchen.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-8 mb-20">
+          {solutionPoints.map((point, i) => (
+            <div key={i} className="p-8 rounded-[2rem] bg-slate-50 border border-slate-100 hover:shadow-xl hover:border-accent/30 transition-all group">
+              <div className="w-14 h-14 rounded-2xl bg-white shadow-sm border border-slate-200 flex items-center justify-center mb-6 text-slate-400 group-hover:text-accent group-hover:border-accent/20 transition-colors">
+                <point.icon size={24} />
+              </div>
+              <h3 className="text-xl font-bold text-slate-900 mb-3">{point.title}</h3>
+              <p className="text-slate-600 leading-relaxed">{point.text}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* Quote Section */}
+        <div className="max-w-4xl mx-auto bg-slate-900 rounded-[3rem] p-10 md:p-16 text-center relative overflow-hidden shadow-2xl">
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-md bg-accent/20 blur-[100px] pointer-events-none rounded-full" />
+          
+          <Quote size={48} className="text-accent/40 mx-auto mb-6 relative z-10" />
+          <h3 className="text-2xl md:text-3xl lg:text-4xl font-display font-bold text-white mb-8 relative z-10 leading-tight">
+            „Design ist erst dann gut, wenn es deine Kasse klingeln lässt.“
+          </h3>
+          <p className="text-lg text-slate-400 font-medium relative z-10 max-w-2xl mx-auto">
+            Mein Ziel ist es, dass deine Website in Haan und Umgebung zum stärksten Vertriebskanal deines Unternehmens wird.
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}
