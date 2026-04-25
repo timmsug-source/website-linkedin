@@ -276,14 +276,12 @@ export function HaanProcess() {
             </div>
           ))}
         </div>
-        </div>
       </div>
     </section>
   );
 }
 
-import { MapPin, Users, Compass, Sliders } from "lucide-react";
-import Image from "next/image";
+import { Users, Compass, Sliders } from "lucide-react";
 
 export function HaanRegional() {
   const benefits = [
