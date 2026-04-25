@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/seo";
 import { SITE_URL } from "@/lib/utils";
 import { ServiceHero } from "@/components/service/ServiceHero";
+import { HaanProblem } from "@/components/lp/HaanSections";
 
 const haanService = {
   id: "webdesign-haan",
@@ -49,6 +50,7 @@ export default function HaanPage() {
   return (
     <>
       <ServiceHero service={haanService as any} />
+      <HaanProblem />
     </>
   );
 }
