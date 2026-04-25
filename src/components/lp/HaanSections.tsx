@@ -256,20 +256,22 @@ export function HaanProcess() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-8 relative">
-          {/* Decorative connecting line (desktop only) */}
-          <div className="hidden xl:block absolute top-12 left-[10%] right-[10%] h-0.5 bg-gradient-to-r from-transparent via-slate-200 to-transparent z-0" />
+        <div className="max-w-4xl mx-auto space-y-6 relative">
+          {/* Vertical connecting line (desktop only) */}
+          <div className="hidden md:block absolute top-12 bottom-12 left-14 w-0.5 bg-gradient-to-b from-transparent via-slate-200 to-transparent z-0" />
 
           {processSteps.map((step, i) => (
             <div key={i} className="relative z-10 group">
-              <div className="bg-white rounded-3xl p-8 border border-slate-100 shadow-sm hover:shadow-xl hover:border-slate-300 transition-all duration-300 h-full flex flex-col">
-                <div className="w-20 h-20 rounded-2xl bg-slate-50 border border-slate-100 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 group-hover:bg-accent/5 group-hover:border-accent/20 group-hover:text-accent text-slate-400 mx-auto xl:mx-0">
+              <div className="bg-white rounded-3xl p-6 md:p-8 border border-slate-100 shadow-sm hover:shadow-xl hover:border-slate-300 transition-all duration-300 flex flex-col md:flex-row gap-6 md:gap-8 items-start md:items-center">
+                <div className="w-20 h-20 shrink-0 rounded-2xl bg-slate-50 border border-slate-100 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 group-hover:bg-accent/5 group-hover:border-accent/20 group-hover:text-accent text-slate-400">
                   <step.icon size={32} />
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-4 text-center xl:text-left">{step.title}</h3>
-                <p className="text-slate-600 leading-relaxed text-center xl:text-left flex-grow">
-                  {step.text}
-                </p>
+                <div>
+                  <h3 className="text-xl font-bold text-slate-900 mb-3">{step.title}</h3>
+                  <p className="text-slate-600 leading-relaxed">
+                    {step.text}
+                  </p>
+                </div>
               </div>
             </div>
           ))}
