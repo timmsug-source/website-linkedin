@@ -214,3 +214,67 @@ export function HaanSolution() {
     </section>
   );
 }
+
+import { MessageSquare, PenTool, Code2, Rocket } from "lucide-react";
+
+export function HaanProcess() {
+  const processSteps = [
+    {
+      icon: MessageSquare,
+      title: "1. Strategie-Gespräch & Analyse",
+      text: "Bevor ich das erste Design entwerfe, will ich dein Business verstehen. Wer ist deine Zielgruppe in Haan und Umgebung? Wer sind deine Wettbewerber? Wir definieren die Ziele deiner Website, damit sie später nicht nur gut aussieht, sondern echte Anfragen generiert."
+    },
+    {
+      icon: PenTool,
+      title: "2. Konzept & Design-Entwurf",
+      text: "Auf Basis unserer Strategie erstelle ich ein modernes Design-Konzept. Hierbei achte ich auf eine klare Benutzerführung (UX) und eine Optik, die deine Marke perfekt widerspiegelt. Du bekommst einen ersten Entwurf und wir schleifen so lange am Design, bis du zu 100 % überzeugt bist."
+    },
+    {
+      icon: Code2,
+      title: "3. Entwicklung & Lokale Optimierung",
+      text: "Jetzt wird es technisch. Ich erwecke das Design zum Leben – mit schnellen Ladezeiten, mobil-optimiert und DSGVO-konform. Parallel implementiere ich die SEO-Grundlagen für dein Haupt-Keyword „Webdesign in Haan“, damit du lokal auch wirklich gefunden wirst."
+    },
+    {
+      icon: Rocket,
+      title: "4. Launch & Betreuung",
+      text: "Der große Moment: Deine Website geht live! Aber ich lasse dich danach nicht im Regen stehen. Ich schule dich kurz im Umgang mit deiner neuen Seite und sorge auf Wunsch dafür, dass technisch alles aktuell bleibt, während du dich um dein Kerngeschäft kümmerst."
+    }
+  ];
+
+  return (
+    <section className="py-24 px-6 bg-white relative overflow-hidden border-t border-slate-100">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center max-w-3xl mx-auto mb-20">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100 text-slate-700 text-sm font-bold mb-6">
+            <Rocket size={16} /> Transparenter Ablauf
+          </div>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-extrabold text-slate-900 mb-6 leading-tight">
+            In 4 Schritten zu deinem digitalen Erfolg in Haan
+          </h2>
+          <p className="text-lg text-slate-600 leading-relaxed">
+            Ein Projekt ohne Plan führt selten zum Ziel. Deshalb arbeiten wir nach einem bewährten Prozess, bei dem du genau weißt, wo wir gerade stehen.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-8 relative">
+          {/* Decorative connecting line (desktop only) */}
+          <div className="hidden xl:block absolute top-12 left-[10%] right-[10%] h-0.5 bg-gradient-to-r from-transparent via-slate-200 to-transparent z-0" />
+
+          {processSteps.map((step, i) => (
+            <div key={i} className="relative z-10 group">
+              <div className="bg-white rounded-3xl p-8 border border-slate-100 shadow-sm hover:shadow-xl hover:border-slate-300 transition-all duration-300 h-full flex flex-col">
+                <div className="w-20 h-20 rounded-2xl bg-slate-50 border border-slate-100 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 group-hover:bg-accent/5 group-hover:border-accent/20 group-hover:text-accent text-slate-400 mx-auto xl:mx-0">
+                  <step.icon size={32} />
+                </div>
+                <h3 className="text-xl font-bold text-slate-900 mb-4 text-center xl:text-left">{step.title}</h3>
+                <p className="text-slate-600 leading-relaxed text-center xl:text-left flex-grow">
+                  {step.text}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
