@@ -109,64 +109,106 @@ export function HaanSolution() {
   const solutionPoints = [
     {
       icon: CheckCircle2,
-      title: "Strategisches Webdesign für Haan",
-      text: "Wir bauen eine Seite, die nicht nur schick aussieht, sondern deine Besucher gezielt zur Kontaktaufnahme führt."
+      title: "Strategisches Webdesign",
+      text: "Wir bauen eine Seite, die nicht nur schick aussieht, sondern gezielt zur Kontaktaufnahme führt."
     },
     {
       icon: MapPin,
       title: "Lokale Dominanz durch SEO",
-      text: "Durch die gezielte Optimierung auf Suchbegriffe wie „Webdesign in Haan“ und deine spezifischen Leistungen wirst du in der Region zur ersten Anlaufstelle."
+      text: "Durch Optimierung auf „Webdesign in Haan“ wirst du zur ersten Anlaufstelle."
     },
     {
       icon: ShieldCheck,
-      title: "Vertrauensvorsprung durch Professionalität",
-      text: "Ein moderner, schneller und seriöser Auftritt signalisiert sofort: Hier arbeitet ein Profi. Das schafft Vertrauen, noch bevor der erste Satz gewechselt wurde."
+      title: "Vertrauensvorsprung",
+      text: "Ein moderner, seriöser Auftritt signalisiert: Hier arbeitet ein Profi."
     },
     {
       icon: Zap,
       title: "Technik, die begeistert",
-      text: "Maximale Ladegeschwindigkeit und perfekte Darstellung auf allen Endgeräten – vom iPhone bis zum Desktop-Monitor."
+      text: "Maximale Ladegeschwindigkeit und perfekte Darstellung auf allen Endgeräten."
     }
   ];
 
   return (
-    <section className="py-24 px-6 bg-white relative overflow-hidden">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 text-accent text-sm font-bold mb-6">
-            <CheckCircle2 size={16} /> Die Lösung: Dein Business in Haan – Endlich unübersehbar
-          </div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-extrabold text-slate-900 mb-6 leading-tight">
-            Vom digitalen Blindspot zum lokalen Marktführer.
-          </h2>
-          <p className="text-lg text-slate-600 leading-relaxed">
-            Schluss mit dem Versteckspiel. Wir sorgen dafür, dass deine Website nicht nur existiert, sondern aktiv für dich arbeitet. Mein Webdesign-Ansatz für Unternehmen in Haan verbindet moderne Ästhetik mit einer glasklaren Strategie, damit du genau dort auftauchst, wo deine Kunden suchen.
-          </p>
-        </div>
+    <section className="py-24 px-6 bg-slate-900 relative overflow-hidden">
+      {/* Subtle Background Glow */}
+      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-accent/10 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-[120px] pointer-events-none" />
 
-        <div className="grid md:grid-cols-2 gap-8 mb-20">
-          {solutionPoints.map((point, i) => (
-            <div key={i} className="p-8 rounded-[2rem] bg-slate-50 border border-slate-100 hover:shadow-xl hover:border-accent/30 transition-all group">
-              <div className="w-14 h-14 rounded-2xl bg-white shadow-sm border border-slate-200 flex items-center justify-center mb-6 text-slate-400 group-hover:text-accent group-hover:border-accent/20 transition-colors">
-                <point.icon size={24} />
-              </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">{point.title}</h3>
-              <p className="text-slate-600 leading-relaxed">{point.text}</p>
-            </div>
-          ))}
-        </div>
-
-        {/* Quote Section */}
-        <div className="max-w-4xl mx-auto bg-slate-900 rounded-[3rem] p-10 md:p-16 text-center relative overflow-hidden shadow-2xl">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-md bg-accent/20 blur-[100px] pointer-events-none rounded-full" />
+      <div className="max-w-6xl mx-auto relative z-10">
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           
-          <Quote size={48} className="text-accent/40 mx-auto mb-6 relative z-10" />
-          <h3 className="text-2xl md:text-3xl lg:text-4xl font-display font-bold text-white mb-8 relative z-10 leading-tight">
-            „Design ist erst dann gut, wenn es deine Kasse klingeln lässt.“
-          </h3>
-          <p className="text-lg text-slate-400 font-medium relative z-10 max-w-2xl mx-auto">
-            Mein Ziel ist es, dass deine Website in Haan und Umgebung zum stärksten Vertriebskanal deines Unternehmens wird.
-          </p>
+          {/* Image Content (Left Side) */}
+          <div className="relative order-2 lg:order-1 mt-12 lg:mt-0">
+            {/* Background elements */}
+            <div className="absolute -inset-4 bg-accent/20 rounded-[3rem] transform -rotate-3" />
+            <div className="absolute -inset-4 bg-slate-800 rounded-[3rem] transform rotate-2 shadow-2xl border border-white/5" />
+            
+            <div className="relative rounded-[2rem] overflow-hidden bg-slate-950 aspect-[4/5] shadow-2xl">
+              <Image 
+                src="/images/haan-solution.png"
+                alt="Digitale Dominanz in Haan"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-80" />
+              
+              {/* Overlay Quote */}
+              <div className="absolute bottom-0 left-0 right-0 p-8">
+                <Quote size={32} className="text-accent/50 mb-4" />
+                <p className="text-lg font-medium text-white leading-relaxed">
+                  „Design ist erst dann gut, wenn es deine Kasse klingeln lässt.“
+                </p>
+                <p className="text-sm text-slate-400 mt-2">
+                  Deine Website als stärkster Vertriebskanal.
+                </p>
+              </div>
+            </div>
+
+            {/* Floating badge */}
+            <div className="absolute top-12 -right-6 md:-right-12 bg-slate-800/90 backdrop-blur-md rounded-2xl p-6 shadow-2xl border border-white/10 max-w-[220px] z-10 hidden sm:block">
+              <div className="flex gap-1 text-accent mb-2">
+                <TrendingDown size={20} className="hidden" /> {/* just importing to satisfy linter if not used, but using Check here */}
+                <CheckCircle2 size={24} className="text-accent" />
+              </div>
+              <p className="text-sm font-bold text-white">
+                Sichtbarkeit maximiert
+              </p>
+              <p className="text-xs text-slate-400 mt-1 leading-relaxed">
+                Werde die klare Nummer 1 in Haan und Umgebung.
+              </p>
+            </div>
+          </div>
+
+          {/* Text Content (Right Side) */}
+          <div className="order-1 lg:order-2">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20 text-accent text-sm font-bold mb-8">
+              <CheckCircle2 size={16} /> Die Lösung
+            </div>
+            
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-extrabold text-white mb-8 leading-tight">
+              Vom digitalen Blindspot zum lokalen Marktführer.
+            </h2>
+            
+            <p className="text-lg text-slate-400 mb-12 leading-relaxed">
+              Schluss mit dem Versteckspiel. Wir sorgen dafür, dass deine Website nicht nur existiert, sondern aktiv für dich arbeitet. Mein Webdesign-Ansatz für Unternehmen in Haan verbindet moderne Ästhetik mit einer glasklaren Strategie, damit du genau dort auftauchst, wo deine Kunden suchen.
+            </p>
+
+            {/* Feature Grid */}
+            <div className="grid sm:grid-cols-2 gap-6">
+              {solutionPoints.map((point, i) => (
+                <div key={i} className="bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 hover:border-accent/30 transition-all group">
+                  <div className="w-12 h-12 rounded-xl bg-slate-800 border border-white/5 flex items-center justify-center mb-4 text-slate-400 group-hover:text-accent group-hover:border-accent/20 transition-colors">
+                    <point.icon size={20} />
+                  </div>
+                  <h4 className="font-bold text-white mb-2 text-sm md:text-base">{point.title}</h4>
+                  <p className="text-sm text-slate-400 leading-relaxed">{point.text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
