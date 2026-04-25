@@ -21,7 +21,7 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
   const pathname = usePathname();
 
-  if (pathname?.startsWith("/lp/") || pathname?.startsWith("/webdesign/")) {
+  if (pathname?.startsWith("/lp/")) {
     return null;
   }
 
