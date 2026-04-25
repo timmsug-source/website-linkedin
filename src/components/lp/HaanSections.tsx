@@ -276,6 +276,94 @@ export function HaanProcess() {
             </div>
           ))}
         </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+import { MapPin, Users, Compass, Sliders } from "lucide-react";
+import Image from "next/image";
+
+export function HaanRegional() {
+  const benefits = [
+    {
+      title: "Regionaler Fokus",
+      text: "Ich kenne das wirtschaftliche Umfeld in Haan und Umgebung genau. Dieses Wissen fließt direkt in deine SEO-Strategie ein, damit du in den lokalen Suchergebnissen ganz oben stehst.",
+      icon: MapPin
+    },
+    {
+      title: "Flexibilität & Nähe",
+      text: "Auch wenn mein Hauptsitz nicht direkt in Haan ist, bin ich für meine Kunden in der Region immer schnell erreichbar – ob per Video-Call oder für ein persönliches Treffen vor Ort.",
+      icon: Users
+    },
+    {
+      title: "Blick über den Tellerrand",
+      text: "Durch meine Arbeit mit verschiedenen Unternehmen in der Region weiß ich, wie wir dein Business von den Mitbewerbern in Haan, Solingen und Hilden abheben.",
+      icon: Compass
+    },
+    {
+      title: "Keine Agentur-Massenabfertigung",
+      text: "Du bekommst eine individuelle Lösung, die exakt auf die Bedürfnisse der Haaner Zielgruppe zugeschnitten ist – professionell, modern und verkaufsstark.",
+      icon: Sliders
+    }
+  ];
+
+  return (
+    <section className="py-24 px-6 bg-slate-50 relative overflow-hidden">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+          
+          <div className="relative">
+            <div className="absolute inset-0 bg-accent/10 blur-[100px] rounded-full" />
+            <div className="relative rounded-[2rem] overflow-hidden border border-slate-200/50 shadow-2xl">
+              <div className="aspect-[4/5] md:aspect-square relative">
+                <Image
+                  src="/images/haan-regional.png"
+                  alt="Digitale Vernetzung in Haan und dem Bergischen Land"
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12">
+                  <p className="text-accent font-bold mb-3 tracking-wider text-sm md:text-base uppercase">Local SEO & Modernes Design</p>
+                  <p className="text-white text-lg md:text-xl font-medium leading-relaxed">
+                    „Ich sorge dafür, dass Kunden in Haan dich nicht nur finden, sondern auch von deiner Professionalität überzeugt werden. Lass uns gemeinsam dafür sorgen, dass dein Unternehmen in der Region die Aufmerksamkeit bekommt, die es verdient.“
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 text-slate-700 text-sm font-bold mb-6 shadow-sm">
+              <MapPin size={16} className="text-accent" /> Haan & Bergisches Land
+            </div>
+            
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-extrabold text-slate-900 mb-6 leading-tight">
+              Digitale Exzellenz für Haan – <span className="text-accent">mit dem Blick für das Regionale.</span>
+            </h2>
+            
+            <p className="text-lg text-slate-600 leading-relaxed mb-10">
+              Du suchst keinen anonymen Dienstleister vom anderen Ende Deutschlands, sondern jemanden, der den Markt im Kreis Mettmann und im Bergischen Land versteht? Ich unterstütze Unternehmen in der Gartenstadt Haan, ihre digitale Sichtbarkeit massiv zu steigern.
+            </p>
+
+            <div className="space-y-8">
+              {benefits.map((benefit, i) => (
+                <div key={i} className="flex gap-5 group">
+                  <div className="w-12 h-12 shrink-0 rounded-xl bg-white border border-slate-200 shadow-sm flex items-center justify-center text-slate-400 group-hover:text-accent group-hover:border-accent/30 group-hover:bg-accent/5 transition-all duration-300">
+                    <benefit.icon size={24} />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-slate-900 mb-2 text-lg">{benefit.title}</h3>
+                    <p className="text-slate-600 leading-relaxed">{benefit.text}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+        </div>
       </div>
     </section>
   );

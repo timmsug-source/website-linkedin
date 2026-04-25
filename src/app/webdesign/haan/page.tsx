@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/seo";
 import { SITE_URL } from "@/lib/utils";
 import { ServiceHero } from "@/components/service/ServiceHero";
-import { HaanProblem, HaanSolution, HaanProcess } from "@/components/lp/HaanSections";
+import { HaanProblem, HaanSolution, HaanProcess, HaanRegional } from "@/components/lp/HaanSections";
 
 const haanService = {
   id: "webdesign-haan",
@@ -53,6 +53,7 @@ export default function HaanPage() {
       <HaanProblem />
       <HaanSolution />
       <HaanProcess />
+      <HaanRegional />
     </>
   );
 }
