@@ -109,7 +109,7 @@ export function HaanSolution() {
   const solutionPoints = [
     {
       icon: CheckCircle2,
-      title: "Strategisches Webdesign",
+      title: "Strategisches Webdesign für Haan",
       text: "Wir bauen eine Seite, die nicht nur schick aussieht, sondern gezielt zur Kontaktaufnahme führt."
     },
     {
