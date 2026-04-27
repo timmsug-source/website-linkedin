@@ -230,24 +230,9 @@ export function MaklerSolution() {
   return (
     <section className="py-24 bg-white overflow-hidden" aria-labelledby="solution-heading">
       <div className="max-w-7xl mx-auto px-6">
-        {/* Top Part: Text and Illustration side by side */}
+        {/* Top Part: Illustration and Text side by side (Swapped) */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-20">
-          <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-green-100 text-green-700 text-sm font-bold mb-6">
-              <Star size={14} fill="currentColor" />
-              Die Lösung: Strategisches SEO
-            </div>
-            
-            <h2 id="solution-heading" className="text-4xl md:text-5xl font-display font-bold text-slate-900 leading-tight mb-6">
-              SEO-Strategie für Immobilienmakler: Deine Abkürzung zu Alleinaufträgen.
-            </h2>
-            
-            <p className="text-lg text-slate-600">
-              Wir verwandeln deine Website von einer passiven Visitenkarte in eine aktive Lead-Maschine. Mit unserer spezialisierten SEO-Optimierung sorgen wir dafür, dass Eigentümer dich genau dann finden, wenn sie ihre Verkaufsentscheidung treffen.
-            </p>
-          </div>
-
-          <div className="relative h-[300px] md:h-[400px] flex items-center justify-center">
+          <div className="relative h-[300px] md:h-[400px] flex items-center justify-center order-2 lg:order-1">
             {/* Decorative background blobs */}
             <div className="absolute inset-0 bg-gradient-to-tr from-green-100/50 to-blue-50/50 rounded-full blur-3xl opacity-70 animate-pulse" />
             
@@ -260,6 +245,21 @@ export function MaklerSolution() {
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
+          </div>
+
+          <div className="order-1 lg:order-2">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-green-100 text-green-700 text-sm font-bold mb-6">
+              <Star size={14} fill="currentColor" />
+              Die Lösung: Strategisches SEO
+            </div>
+            
+            <h2 id="solution-heading" className="text-4xl md:text-5xl font-display font-bold text-slate-900 leading-tight mb-6">
+              SEO-Strategie für Immobilienmakler: Deine Abkürzung zu Alleinaufträgen.
+            </h2>
+            
+            <p className="text-lg text-slate-600">
+              Wir verwandeln deine Website von einer passiven Visitenkarte in eine aktive Lead-Maschine. Mit unserer spezialisierten SEO-Optimierung sorgen wir dafür, dass Eigentümer dich genau dann finden, wenn sie ihre Verkaufsentscheidung treffen.
+            </p>
           </div>
         </div>
 
