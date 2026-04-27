@@ -292,3 +292,99 @@ export function MaklerSolution() {
     </section>
   );
 }
+
+export function MaklerProcess() {
+  const steps = [
+    {
+      title: "1. Standort-Analyse & Keyword-Check",
+      desc: "Wir identifizieren die 'Goldgruben-Keywords' (z.B. „Haus bewerten [Stadt]“), damit wir von Anfang an die richtige Zielgruppe ansprechen."
+    },
+    {
+      title: "2. On-Page Optimierung & Content-Strategie",
+      desc: "Wir optimieren die Technik und erstellen Experten-Content, der dich als Autorität in deiner Region positioniert."
+    },
+    {
+      title: "3. Lokale Dominanz & Backlink-Aufbau",
+      desc: "Wir stärken dein Google Business Profil und sorgen für hochwertige Verweise aus der Immobilienbranche und deiner Region."
+    },
+    {
+      title: "4. Monitoring & kontinuierliche Skalierung",
+      desc: "In monatlichen Reports zeigen wir dir die Fortschritte und passen die Strategie laufend an, um deinen Vorsprung auszubauen."
+    }
+  ];
+
+  return (
+    <section className="py-24 bg-slate-50" aria-labelledby="process-heading">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-3xl mb-16">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-200 text-slate-700 text-sm font-bold mb-6">
+            Der Ablauf: In 4 Schritten zur Nummer 1
+          </div>
+          
+          <h2 id="process-heading" className="text-4xl md:text-5xl font-display font-bold text-slate-900 leading-tight mb-6">
+            Dein Weg zu mehr Alleinaufträgen – strukturiert, transparent und effizient.
+          </h2>
+          
+          <p className="text-lg text-slate-600">
+            Ein erfolgreiches SEO für Immobilienmakler ist kein Sprint, sondern ein strategischer Prozess. Wir lassen nichts dem Zufall überlassen und sorgen dafür, dass deine Website Schritt für Schritt zum wertvollsten Mitarbeiter in deinem Team wird.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
+          {steps.map((step, idx) => (
+            <div key={idx} className="relative group">
+              {/* Connector line (desktop) */}
+              {idx < steps.length - 1 && (
+                <div className="hidden lg:block absolute top-10 left-[60%] w-[80%] h-[2px] bg-slate-200 z-0">
+                  <div className="w-0 h-full bg-accent group-hover:w-full transition-all duration-700 delay-100"></div>
+                </div>
+              )}
+              
+              <div className="relative z-10 p-8 rounded-[2rem] bg-white border border-slate-100 shadow-sm hover:shadow-xl hover:border-accent/30 transition-all duration-500 h-full">
+                <div className="w-12 h-12 rounded-xl bg-slate-900 text-white flex items-center justify-center font-bold text-xl mb-6 shadow-lg shadow-slate-200 group-hover:bg-accent group-hover:scale-110 transition-all duration-300">
+                  {idx + 1}
+                </div>
+                <h3 className="text-xl font-bold text-slate-900 mb-4 leading-tight">{step.title}</h3>
+                <p className="text-slate-600 text-sm leading-relaxed">{step.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="p-10 rounded-[3rem] bg-slate-900 text-white relative overflow-hidden">
+          {/* Decorative elements */}
+          <div className="absolute top-0 right-0 w-64 h-64 bg-accent/20 rounded-full blur-[80px] -mr-32 -mt-32"></div>
+          <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-500/10 rounded-full blur-[80px] -ml-32 -mb-32"></div>
+          
+          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <div className="inline-flex items-center gap-2 text-accent font-bold mb-4 uppercase tracking-wider text-sm">
+                <div className="w-8 h-[2px] bg-accent"></div>
+                Zusatz-Element für das Vertrauen
+              </div>
+              <h3 className="text-3xl font-bold mb-6">Keine graue Theorie, sondern echte Ergebnisse.</h3>
+              <p className="text-slate-300 text-lg leading-relaxed">
+                Mein Ansatz beim SEO für Immobilienmakler ist direkt auf messbare Anfragen von Eigentümern ausgelegt. Wir bauen keine Klicks auf – wir bauen deine digitale Marktposition auf.
+              </p>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-6 lg:justify-end">
+              <a
+                href={WHATSAPP_URL}
+                className="inline-flex items-center justify-center bg-white text-slate-900 hover:bg-slate-100 rounded-full px-8 h-14 font-bold transition-all shadow-lg"
+              >
+                <MessageCircle size={20} className="mr-2" />
+                WhatsApp Chat
+              </a>
+              <a
+                href={PHONE_URL}
+                className="inline-flex items-center justify-center bg-accent hover:bg-accent/90 text-white rounded-full px-8 h-14 font-bold transition-all shadow-lg shadow-accent/20"
+              >
+                Kostenlose Analyse
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { MaklerHero, MaklerProblem, MaklerSolution } from "@/components/lp/ImmobilienmaklerSections";
+import { MaklerHero, MaklerProblem, MaklerSolution, MaklerProcess } from "@/components/lp/ImmobilienmaklerSections";
 
 export const metadata: Metadata = {
   title: "SEO für Immobilienmakler | Deine Sichtbarkeit",
-  description: "Spezialisierte SEO-Leistungen für Immobilienmakler. Gewinne mehr Eigentümer und Käufer durch lokale Suchmaschinenoptimierung.",
+  description: "Spezialisierte SEO-Leistungen für Immobilienmakler. Gewinne mehr Alleinaufträgen durch lokale Suchmaschinenoptimierung.",
 };
 
 export default function SEOImmobilienmaklerPage() {
@@ -12,6 +12,7 @@ export default function SEOImmobilienmaklerPage() {
       <MaklerHero />
       <MaklerProblem />
       <MaklerSolution />
+      <MaklerProcess />
     </>
   );
 }
