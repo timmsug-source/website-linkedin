@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { MaklerHero } from "@/components/lp/ImmobilienmaklerSections";
 
 export const metadata: Metadata = {
   title: "SEO für Immobilienmakler | Deine Sichtbarkeit",
@@ -7,15 +8,17 @@ export const metadata: Metadata = {
 
 export default function SEOImmobilienmaklerPage() {
   return (
-    <div className="pt-32 pb-24 min-h-[70vh]">
-      <div className="max-w-7xl mx-auto px-6">
-        <h1 className="text-4xl md:text-5xl font-display font-bold text-slate-900 mb-6">
-          SEO für Immobilienmakler
-        </h1>
-        <p className="text-lg text-slate-600">
-          Inhalt folgt in Kürze...
-        </p>
+    <>
+      <MaklerHero />
+      
+      {/* Weiterer Inhalt folgt... */}
+      <div className="pt-24 pb-24 min-h-[50vh]">
+        <div className="max-w-7xl mx-auto px-6">
+          <p className="text-lg text-slate-600">
+            Inhalt folgt in Kürze...
+          </p>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
