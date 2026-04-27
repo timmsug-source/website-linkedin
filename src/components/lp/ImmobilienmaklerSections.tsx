@@ -230,25 +230,9 @@ export function MaklerSolution() {
   return (
     <section className="py-24 bg-white overflow-hidden" aria-labelledby="solution-heading">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-          {/* Left: Illustration */}
-          <div className="relative order-2 lg:order-1 lg:h-[700px] flex items-center justify-center">
-            {/* Decorative background blobs */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-green-100/50 to-blue-50/50 rounded-full blur-3xl opacity-70 animate-pulse" />
-            
-            <div className="relative w-full max-w-md aspect-square lg:aspect-auto lg:h-full lg:max-h-[600px] hover:scale-105 transition-transform duration-700 ease-out">
-              <Image
-                src="/images/makler_solution.png"
-                alt="Illustration von SEO-Erfolg für Immobilienmakler"
-                fill
-                className="object-contain drop-shadow-2xl"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
-            </div>
-          </div>
-
-          {/* Right: Text & Solutions */}
-          <div className="order-1 lg:order-2">
+        {/* Top Part: Text and Illustration side by side */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-20">
+          <div>
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-green-100 text-green-700 text-sm font-bold mb-6">
               <Star size={14} fill="currentColor" />
               Die Lösung: Strategisches SEO
@@ -258,32 +242,51 @@ export function MaklerSolution() {
               SEO-Strategie für Immobilienmakler: Deine Abkürzung zu Alleinaufträgen.
             </h2>
             
-            <p className="text-lg text-slate-600 mb-12">
+            <p className="text-lg text-slate-600">
               Wir verwandeln deine Website von einer passiven Visitenkarte in eine aktive Lead-Maschine. Mit unserer spezialisierten SEO-Optimierung sorgen wir dafür, dass Eigentümer dich genau dann finden, wenn sie ihre Verkaufsentscheidung treffen.
             </p>
+          </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-              {solutions.map((solution, idx) => (
-                <div key={idx} className="p-6 rounded-3xl bg-slate-50 border border-slate-100 hover:border-accent hover:shadow-xl transition-all duration-300">
-                  <div className="w-12 h-12 rounded-2xl bg-white text-accent flex items-center justify-center mb-4 shadow-sm">
-                    {solution.icon}
-                  </div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-2">{solution.title}</h3>
-                  <p className="text-slate-600 text-sm leading-relaxed">{solution.desc}</p>
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-12 flex items-center gap-6">
-              <a
-                href={PHONE_URL}
-                className="inline-flex items-center justify-center bg-accent hover:bg-accent/90 text-white rounded-full px-8 h-14 text-lg font-bold shadow-lg shadow-accent/20 transition-all"
-              >
-                Jetzt Strategie planen
-                <ArrowRight className="ml-2" size={20} />
-              </a>
+          <div className="relative h-[300px] md:h-[400px] flex items-center justify-center">
+            {/* Decorative background blobs */}
+            <div className="absolute inset-0 bg-gradient-to-tr from-green-100/50 to-blue-50/50 rounded-full blur-3xl opacity-70 animate-pulse" />
+            
+            <div className="relative w-full h-full hover:scale-105 transition-transform duration-700 ease-out">
+              <Image
+                src="/images/makler_solution.png"
+                alt="Illustration von SEO-Erfolg für Immobilienmakler"
+                fill
+                className="object-contain drop-shadow-2xl"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
             </div>
           </div>
+        </div>
+
+        {/* Bottom Part: 2x2 Grid of solutions */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-12 mb-20">
+          {solutions.map((solution, idx) => (
+            <div key={idx} className="flex gap-5 group">
+              <div className="w-14 h-14 rounded-2xl bg-slate-50 text-accent flex items-center justify-center shrink-0 group-hover:scale-110 group-hover:bg-green-50 transition-all duration-300 shadow-sm border border-slate-100">
+                {solution.icon}
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-slate-900 mb-2">{solution.title}</h3>
+                <p className="text-slate-600 leading-relaxed">{solution.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="flex flex-col items-center justify-center text-center">
+          <a
+            href={PHONE_URL}
+            className="inline-flex items-center justify-center bg-accent hover:bg-accent/90 text-white rounded-full px-10 h-16 text-xl font-bold shadow-xl shadow-accent/20 transition-all hover:-translate-y-1"
+          >
+            Jetzt Strategie-Call vereinbaren
+            <ArrowRight className="ml-2" size={24} />
+          </a>
+          <p className="mt-4 text-sm text-slate-500 font-medium">Kostenlos & unverbindlich</p>
         </div>
       </div>
     </section>
