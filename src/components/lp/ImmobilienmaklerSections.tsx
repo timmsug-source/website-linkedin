@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, MessageCircle, Star, SearchX, Euro, Users, AlertTriangle, TrendingDown } from "lucide-react";
+import { ArrowRight, MessageCircle, Star, SearchX, Euro, Users, AlertTriangle, TrendingDown, Globe, ShieldCheck, BarChart3, Unlock } from "lucide-react";
 import { PHONE_URL, WHATSAPP_URL } from "@/lib/utils";
 
 export function MaklerHero() {
@@ -195,6 +195,93 @@ export function MaklerProblem() {
                 className="object-contain drop-shadow-2xl"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function MaklerSolution() {
+  const solutions = [
+    {
+      title: "Lokale Dominanz",
+      desc: "Wir bringen dich auf Platz 1 für die wichtigsten Suchbegriffe in deiner Stadt. Wenn Eigentümer suchen, finden sie dich.",
+      icon: <Globe className="w-6 h-6" />
+    },
+    {
+      title: "Eigentümer-Psychologie",
+      desc: "Wir optimieren deine Inhalte so, dass sie echtes Vertrauen bei Verkäufern aufbauen und sie zur Kontaktaufnahme bewegen.",
+      icon: <ShieldCheck className="w-6 h-6" />
+    },
+    {
+      title: "Unabhängigkeit",
+      desc: "Reduziere deine Marketingkosten und befreie dich vom Diktat der großen Portale durch eine eigene, starke Präsenz.",
+      icon: <Unlock className="w-6 h-6" />
+    },
+    {
+      title: "Messbare Ergebnisse",
+      desc: "Transparente Reportings zeigen dir genau, wie viele neue Leads wir generieren und wie dein Business wächst.",
+      icon: <BarChart3 className="w-6 h-6" />
+    }
+  ];
+
+  return (
+    <section className="py-24 bg-white overflow-hidden" aria-labelledby="solution-heading">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+          {/* Left: Illustration */}
+          <div className="relative order-2 lg:order-1 lg:h-[700px] flex items-center justify-center">
+            {/* Decorative background blobs */}
+            <div className="absolute inset-0 bg-gradient-to-tr from-green-100/50 to-blue-50/50 rounded-full blur-3xl opacity-70 animate-pulse" />
+            
+            <div className="relative w-full max-w-md aspect-square lg:aspect-auto lg:h-full lg:max-h-[600px] hover:scale-105 transition-transform duration-700 ease-out">
+              <Image
+                src="/images/makler_solution.png"
+                alt="Illustration von SEO-Erfolg für Immobilienmakler"
+                fill
+                className="object-contain drop-shadow-2xl"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+            </div>
+          </div>
+
+          {/* Right: Text & Solutions */}
+          <div className="order-1 lg:order-2">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-green-100 text-green-700 text-sm font-bold mb-6">
+              <Star size={14} fill="currentColor" />
+              Die Lösung: Strategisches SEO
+            </div>
+            
+            <h2 id="solution-heading" className="text-4xl md:text-5xl font-display font-bold text-slate-900 leading-tight mb-6">
+              SEO-Strategie für Immobilienmakler: Deine Abkürzung zu Alleinaufträgen.
+            </h2>
+            
+            <p className="text-lg text-slate-600 mb-12">
+              Wir verwandeln deine Website von einer passiven Visitenkarte in eine aktive Lead-Maschine. Mit unserer spezialisierten SEO-Optimierung sorgen wir dafür, dass Eigentümer dich genau dann finden, wenn sie ihre Verkaufsentscheidung treffen.
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+              {solutions.map((solution, idx) => (
+                <div key={idx} className="p-6 rounded-3xl bg-slate-50 border border-slate-100 hover:border-accent hover:shadow-xl transition-all duration-300">
+                  <div className="w-12 h-12 rounded-2xl bg-white text-accent flex items-center justify-center mb-4 shadow-sm">
+                    {solution.icon}
+                  </div>
+                  <h3 className="text-xl font-bold text-slate-900 mb-2">{solution.title}</h3>
+                  <p className="text-slate-600 text-sm leading-relaxed">{solution.desc}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-12 flex items-center gap-6">
+              <a
+                href={PHONE_URL}
+                className="inline-flex items-center justify-center bg-accent hover:bg-accent/90 text-white rounded-full px-8 h-14 text-lg font-bold shadow-lg shadow-accent/20 transition-all"
+              >
+                Jetzt Strategie planen
+                <ArrowRight className="ml-2" size={20} />
+              </a>
             </div>
           </div>
         </div>

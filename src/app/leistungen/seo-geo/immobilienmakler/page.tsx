@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { MaklerHero, MaklerProblem } from "@/components/lp/ImmobilienmaklerSections";
+import { MaklerHero, MaklerProblem, MaklerSolution } from "@/components/lp/ImmobilienmaklerSections";
 
 export const metadata: Metadata = {
   title: "SEO für Immobilienmakler | Deine Sichtbarkeit",
@@ -11,6 +11,7 @@ export default function SEOImmobilienmaklerPage() {
     <>
       <MaklerHero />
       <MaklerProblem />
+      <MaklerSolution />
     </>
   );
 }
