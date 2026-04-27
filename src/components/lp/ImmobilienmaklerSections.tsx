@@ -121,22 +121,22 @@ export function MaklerProblem() {
   const problems = [
     {
       title: 'Der "Portal-Fluch"',
-      desc: "Du zahlst monatlich horrende Gebühren an ImmoScout24 & Co., um überhaupt wahrgenommen zu werden. Die Kontakte, die du dort generierst, gehören dir nicht exklusiv und vergleichen dich sofort mit der gesamten Konkurrenz.",
+      desc: "Du zahlst monatlich horrende Gebühren an ImmoScout24 & Co., um überhaupt wahrgenommen zu werden. Die Kontakte gehören dir nicht exklusiv.",
       icon: <TrendingDown className="w-6 h-6" />
     },
     {
       title: "Unsichtbarkeit bei Google",
-      desc: "Wenn ein Eigentümer in deiner Region nach „Haus verkaufen [Deine Stadt]“ sucht, tauchen deine Mitbewerber auf den ersten Plätzen auf. Du bleibst unsichtbar und verlierst wertvolle Mandate, noch bevor das erste Telefonat geführt wurde.",
+      desc: "Wenn ein Eigentümer nach „Haus verkaufen [Stadt]“ sucht, tauchen deine Mitbewerber auf. Du bleibst unsichtbar und verlierst Mandate.",
       icon: <SearchX className="w-6 h-6" />
     },
     {
       title: "Teure Lead-Zukäufe",
-      desc: "Du kaufst Leads für viel Geld bei Drittanbietern ein, nur um festzustellen, dass diese Daten gleichzeitig an drei andere Makler verkauft wurden. Ein frustrierender Preiskampf beginnt.",
+      desc: "Du kaufst Leads bei Drittanbietern ein, nur um festzustellen, dass diese gleichzeitig an drei andere Makler verkauft wurden.",
       icon: <Euro className="w-6 h-6" />
     },
     {
       title: "Kein Experten-Status",
-      desc: "Wer bei Google nicht oben steht, existiert für viele Eigentümer schlichtweg nicht. Ohne professionelles SEO für Immobilienmakler verschenkst du den Vertrauensvorschuss, den die Top-Platzierungen automatisch mit sich bringen.",
+      desc: "Wer bei Google nicht oben steht, existiert für viele Eigentümer schlichtweg nicht. Du verschenkst wertvollen Vertrauensvorschuss.",
       icon: <Users className="w-6 h-6" />
     }
   ];
@@ -144,8 +144,8 @@ export function MaklerProblem() {
   return (
     <section className="py-24 bg-slate-50 overflow-hidden" aria-labelledby="problem-heading">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-          {/* Left: Text & Problems */}
+        {/* Top Part: Text and Illustration side by side */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-20">
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-red-100 text-red-700 text-sm font-bold mb-6">
               <AlertTriangle size={14} />
@@ -156,38 +156,16 @@ export function MaklerProblem() {
               Deine Website sieht gut aus – aber generiert sie auch Alleinaufträge?
             </h2>
             
-            <p className="text-lg text-slate-600 mb-12">
-              Die meisten Makler-Websites sind leider nur digitale Visitenkarten. Sie existieren zwar, werden aber von potenziellen Verkäufern niemals gefunden. Ohne eine gezielte Strategie für SEO für Immobilienmakler entstehen typische Probleme, die dein Wachstum bremsen:
+            <p className="text-lg text-slate-600">
+              Die meisten Makler-Websites sind leider nur digitale Visitenkarten. Sie existieren zwar, werden aber von potenziellen Verkäufern niemals gefunden. Ohne eine gezielte Strategie für SEO entstehen Probleme, die dein Wachstum bremsen:
             </p>
-
-            <div className="space-y-8">
-              {problems.map((problem, idx) => (
-                <div key={idx} className="flex gap-4 group">
-                  <div className="w-12 h-12 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center shrink-0 group-hover:scale-110 group-hover:bg-red-100 transition-all duration-300 shadow-sm border border-red-100">
-                    {problem.icon}
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-slate-900 mb-2">{problem.title}</h3>
-                    <p className="text-slate-600 leading-relaxed">{problem.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-12 p-6 bg-white rounded-2xl border border-slate-200 shadow-sm relative overflow-hidden">
-              <div className="absolute top-0 left-0 w-1 h-full bg-accent"></div>
-              <p className="text-lg font-medium text-slate-800 italic">
-                „Solange du nur darauf wartest, dass Eigentümer dich zufällig finden, steuerst du dein Business im Blindflug. Wer heute die digitale Suche dominiert, sichert sich die Objekte von morgen.“
-              </p>
-            </div>
           </div>
 
-          {/* Right: Illustration */}
-          <div className="relative lg:h-[700px] flex items-center justify-center">
+          <div className="relative h-[300px] md:h-[400px] flex items-center justify-center">
             {/* Decorative background blobs */}
             <div className="absolute inset-0 bg-gradient-to-tr from-red-100/50 to-orange-50/50 rounded-full blur-3xl opacity-70 animate-pulse" />
             
-            <div className="relative w-full max-w-md aspect-square lg:aspect-auto lg:h-full lg:max-h-[600px] hover:scale-105 transition-transform duration-700 ease-out">
+            <div className="relative w-full h-full hover:scale-105 transition-transform duration-700 ease-out">
               <Image
                 src="/images/makler_problem.png"
                 alt="Illustration von Problemen bei der Makler-Sichtbarkeit"
@@ -197,6 +175,28 @@ export function MaklerProblem() {
               />
             </div>
           </div>
+        </div>
+
+        {/* Bottom Part: 2x2 Grid of problems */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-12">
+          {problems.map((problem, idx) => (
+            <div key={idx} className="flex gap-5 group">
+              <div className="w-14 h-14 rounded-2xl bg-white text-red-600 flex items-center justify-center shrink-0 group-hover:scale-110 group-hover:bg-red-50 transition-all duration-300 shadow-sm border border-slate-100">
+                {problem.icon}
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-slate-900 mb-2">{problem.title}</h3>
+                <p className="text-slate-600 leading-relaxed">{problem.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-20 p-8 bg-white rounded-[2.5rem] border border-slate-200 shadow-sm relative overflow-hidden text-center max-w-4xl mx-auto">
+          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-red-500 via-accent to-red-500"></div>
+          <p className="text-xl font-medium text-slate-800 italic leading-relaxed">
+            „Solange du nur darauf wartest, dass Eigentümer dich zufällig finden, steuerst du dein Business im Blindflug. Wer heute die digitale Suche dominiert, sichert sich die Objekte von morgen.“
+          </p>
         </div>
       </div>
     </section>
