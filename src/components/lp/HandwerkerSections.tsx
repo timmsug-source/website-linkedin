@@ -478,35 +478,28 @@ export function HandwerkerFAQ() {
   ];
 
   return (
-    <section className="py-32 bg-white" aria-labelledby="faq-heading">
+    <section className="py-24 bg-white" aria-labelledby="faq-heading">
       <div className="max-w-4xl mx-auto px-6">
-        <div className="text-center mb-20">
-          <h2 id="faq-heading" className="text-4xl md:text-5xl font-display font-black text-slate-900 mb-8 leading-tight">
+        <div className="text-center mb-16">
+          <h2 id="faq-heading" className="text-4xl md:text-5xl font-display font-bold text-slate-900 mb-6">
             FAQ – Alles, was du über <span className="text-accent">SEO für Handwerker</span> wissen musst
           </h2>
-          <p className="text-xl text-slate-500 font-light max-w-2xl mx-auto">
-            Häufig gestellte Fragen und klare Antworten für deinen nachhaltigen Erfolg als Fachbetrieb.
+          <p className="text-lg text-slate-600">
+            Häufig gestellte Fragen und klare Antworten für deinen Erfolg.
           </p>
         </div>
 
-        <div className="grid gap-4">
+        <div className="space-y-4">
           {faqs.map((faq, idx) => (
-            <details 
-              key={idx} 
-              className="group rounded-3xl border border-slate-100 bg-slate-50/50 transition-all duration-500 open:bg-white open:shadow-2xl open:border-accent/10"
-            >
-              <summary className="flex items-center justify-between p-8 cursor-pointer list-none select-none">
-                <h3 className="text-xl font-bold text-slate-900 pr-8 group-open:text-accent transition-colors duration-300">
-                  {faq.q}
-                </h3>
-                <div className="w-10 h-10 rounded-2xl bg-white border border-slate-200 flex items-center justify-center text-slate-400 group-open:bg-accent group-open:text-white group-open:border-accent group-open:rotate-180 transition-all duration-500 shadow-sm">
-                  <ChevronDown size={20} />
+            <details key={idx} className="group rounded-2xl border border-slate-100 bg-slate-50 transition-all duration-300 open:bg-white open:shadow-xl open:border-accent/20">
+              <summary className="flex items-center justify-between p-6 cursor-pointer list-none">
+                <h3 className="text-lg font-bold text-slate-900 pr-8">{faq.q}</h3>
+                <div className="w-8 h-8 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-400 group-open:bg-accent group-open:text-white group-open:border-accent transition-all duration-300">
+                  <ChevronDown className="group-open:rotate-180 transition-transform duration-300" size={18} />
                 </div>
               </summary>
-              <div className="px-8 pb-8 text-slate-600 leading-relaxed font-light text-lg">
-                <div className="pt-4 border-t border-slate-100">
-                  {faq.a}
-                </div>
+              <div className="px-6 pb-6 text-slate-600 leading-relaxed">
+                <p>{faq.a}</p>
               </div>
             </details>
           ))}
