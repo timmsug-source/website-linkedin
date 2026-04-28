@@ -127,68 +127,97 @@ export function HandwerkerHero() {
 export function HandwerkerProblem() {
   const problems = [
     {
-      title: 'Die "Portal-Falle"',
-      desc: 'Du zahlst monatlich hohe Gebühren an MyHammer & Co., um überhaupt wahrgenommen zu werden. Die Kontakte gehören dir nicht exklusiv.',
-      icon: SearchX
-    },
-    {
-      title: 'Unsichtbarkeit bei Google',
-      desc: 'Wenn ein Kunde nach „Elektriker [Stadt]“ sucht, tauchen deine Mitbewerber auf. Du bleibst unsichtbar und verlierst lukrative Mandate.',
+      title: "Die Konkurrenz zieht vorbei",
+      desc: "Während du exzellente Arbeit leistest, sichern sich digital präsentere Betriebe die lukrativen Aufträge, nur weil sie oben stehen. Wer nicht auf Seite 1 erscheint, existiert für Neukunden schlichtweg nicht.",
       icon: TrendingDown
     },
     {
-      title: 'Schlechte Lead-Qualität',
-      desc: 'Du kaufst Leads für viel Geld, nur um festzustellen, dass diese bereits mit fünf anderen Betrieben sprechen oder gar nicht passen.',
+      title: "Abhängigkeit von Portalen",
+      desc: "Du zahlst hohe Gebühren an Portale wie MyHammer oder Check24? Diese Leads sind oft hart umkämpft und führen häufig zu einem ruinösen Preiskampf, statt zu fairen Margen.",
+      icon: SearchX
+    },
+    {
+      title: "Falsche Anfragen fressen Zeit",
+      desc: "Dein Telefon steht zwar nicht still, aber oft sind es Kunden für Kleinstaufträge oder reine Preisauskünfte. Ohne SEO-Filter ziehst du nicht die Wunschprojekte an, die dein Team voranbringen.",
       icon: Users
     },
     {
-      title: 'Preiskampf statt Qualität',
-      desc: 'Ohne starke Online-Präsenz wirst du nur über den Preis verglichen. SEO macht dich zur Autorität, die für Qualität gebucht wird.',
-      icon: Euro
+      title: "Veralteter Online-Auftritt",
+      desc: "Eine langsame oder veraltete Website schreckt besonders junge Hausbesitzer ab. Sie assoziieren eine schwache Website sofort mit mangelnder Professionalität und Unzuverlässigkeit.",
+      icon: Globe
     }
   ];
 
   return (
-    <section className="py-24 bg-white relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-          <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-red-50 text-red-600 font-bold text-xs uppercase tracking-wider mb-6">
-              <AlertTriangle size={14} />
-              Die aktuelle Marktsituation
+    <section className="py-32 bg-slate-900 relative overflow-hidden">
+      {/* Abstract Grid Background */}
+      <div className="absolute inset-0 opacity-[0.03] pointer-events-none" 
+           style={{ backgroundImage: `radial-gradient(#fff 1px, transparent 1px)`, backgroundSize: '40px 40px' }} />
+      
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-500/10 border border-red-500/20 text-red-500 font-bold text-sm mb-8">
+              <AlertTriangle size={16} />
+              Unsichtbarkeit kostet Geld
             </div>
             
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-slate-900 leading-tight mb-8">
-              Dein Betrieb leistet Top-Arbeit – aber <span className="text-red-600">findet man dich auch?</span>
+            <h2 className="text-4xl md:text-6xl font-display font-extrabold text-white leading-[1.1] mb-8">
+              Du bist Profi auf der Baustelle – aber ein <span className="text-red-500 italic">digitaler Geist</span> bei Google?
             </h2>
             
-            <p className="text-lg text-slate-600 mb-10 leading-relaxed">
-              Die meisten Handwerks-Websites sind leider nur digitale Visitenkarten. Sie existieren zwar, werden aber von potenziellen Kunden niemals gefunden. Ohne eine gezielte Strategie für SEO für Handwerker entstehen typische Probleme:
+            <p className="text-xl text-slate-400 leading-relaxed font-light">
+              Viele Handwerksbetriebe in der Region verlassen sich seit Jahren auf Mundpropaganda. Das funktioniert, solange die Stammkundschaft reicht. Doch wer heute nach einem Elektriker, Dachdecker oder Installateur sucht, schaut zuerst aufs Smartphone. Ohne eine gezielte Strategie für SEO für Handwerker entstehen Hürden, die deinen Betrieb Zeit und Geld kosten.
             </p>
+          </motion.div>
 
-            <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl border border-slate-100 aspect-video lg:aspect-square group">
-              <Image 
-                src="/images/haan-problem.png" 
-                alt="Digitales Problem für Handwerker"
-                fill
-                className="object-cover group-hover:scale-105 transition-transform duration-700"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent" />
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:mt-20">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {problems.map((p, idx) => (
-              <div key={idx} className="p-8 rounded-[2rem] bg-slate-50 border border-slate-100 hover:border-red-100 hover:bg-white hover:shadow-xl transition-all duration-300 group">
-                <div className="w-12 h-12 rounded-xl bg-white shadow-sm flex items-center justify-center mb-6 text-slate-400 group-hover:text-red-500 group-hover:scale-110 transition-all duration-300">
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                className="group p-8 rounded-[2rem] bg-white/5 border border-white/10 hover:bg-white/10 hover:border-red-500/30 transition-all duration-500"
+              >
+                <div className="w-12 h-12 rounded-xl bg-red-500/10 flex items-center justify-center mb-6 text-red-500 group-hover:scale-110 transition-transform duration-500 shadow-[0_0_20px_rgba(239,68,68,0.2)]">
                   <p.icon size={24} />
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-3">{p.title}</h3>
-                <p className="text-slate-500 text-sm leading-relaxed">{p.desc}</p>
-              </div>
+                <h3 className="text-xl font-bold text-white mb-3">{p.title}</h3>
+                <p className="text-slate-400 text-sm leading-relaxed font-light">{p.desc}</p>
+              </motion.div>
             ))}
           </div>
         </div>
+
+        {/* The Reality Box */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="relative group"
+        >
+          <div className="absolute inset-0 bg-gradient-to-r from-red-600 to-red-800 rounded-[3rem] blur-xl opacity-20 group-hover:opacity-30 transition-opacity duration-500" />
+          <div className="relative bg-slate-800/50 backdrop-blur-md border border-white/10 rounded-[3rem] p-10 md:p-16">
+            <div className="flex flex-col md:flex-row items-center gap-12">
+              <div className="w-24 h-24 shrink-0 rounded-full bg-red-600 flex items-center justify-center shadow-[0_0_30px_rgba(220,38,38,0.4)]">
+                <Hammer size={40} className="text-white" />
+              </div>
+              <div>
+                <h4 className="text-red-500 font-bold uppercase tracking-[0.2em] mb-4 text-sm">Die Realität im Handwerk</h4>
+                <p className="text-2xl md:text-3xl text-white font-display font-light leading-relaxed">
+                  "Eine Website ohne <span className="font-bold text-white">SEO für Handwerker</span> ist wie eine Werkstatt ohne Firmenschild im tiefsten Wald. Du weißt, dass du gute Arbeit machst – aber deine potenziellen Kunden finden den Weg zu dir einfach nicht."
+                </p>
+              </div>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
