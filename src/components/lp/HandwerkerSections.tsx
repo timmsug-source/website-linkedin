@@ -427,8 +427,6 @@ export function HandwerkerProcess() {
                 <MessageCircle size={20} className="mr-2" />
                 WhatsApp Chat
               </a>
-              <a
-                href={CONTACT_URL}
                 className="inline-flex items-center justify-center bg-accent hover:bg-accent/90 text-white rounded-full px-8 h-14 font-bold transition-all shadow-lg shadow-accent/20"
               >
                 Kostenlose Analyse
@@ -444,46 +442,69 @@ export function HandwerkerProcess() {
 export function HandwerkerFAQ() {
   const faqs = [
     {
-      q: "Was bringt SEO für Handwerker im Vergleich zu Portalen wie MyHammer?",
-      a: "Während Portale dich in eine Preis-Vergleichbarkeit zwingen, sorgt SEO für Exklusivität. Kunden finden dich direkt über Google. Das stärkt dein Experten-Image und liefert dir Anfragen, die nicht gleichzeitig an fünf andere Betriebe gehen."
+      q: "Was genau ist SEO für Handwerker und brauche ich das wirklich?",
+      a: "SEO für Handwerker sorgt dafür, dass dein Betrieb bei Google ganz oben erscheint, wenn potenzielle Kunden in deiner Region nach deinen Leistungen suchen (z. B. „Fliesenleger in der Nähe“). Wenn du dich nicht nur auf Mundpropaganda verlassen willst oder merkst, dass die Konkurrenz dir die lukrativen Aufträge wegschnappt, ist eine gezielte Optimierung der einzige Weg zu digitaler Unabhängigkeit."
     },
     {
-      q: "Wie lange dauert es, bis ich bei Google oben stehe?",
-      a: "SEO ist ein Marathon. Erste Veränderungen sind oft nach 3 bis 4 Monaten sichtbar. Eine dominante Position in deiner Region dauert meist 6 bis 12 Monate. Dafür bleibt diese Position extrem stabil."
+      q: "Wie schnell sehe ich erste Ergebnisse durch SEO?",
+      a: "Handwerk braucht Zeit – SEO auch. In der Regel dauert es 3 bis 6 Monate, bis nachhaltige Verbesserungen in den Suchergebnissen sichtbar werden. Der Vorteil: Einmal oben platziert, wirkt die Optimierung wie eine permanente digitale Werbetafel, die Tag und Nacht für dich arbeitet, ohne dass du pro Klick bezahlen musst."
     },
     {
-      q: "Muss ich meine komplette Website neu bauen?",
-      a: "Nicht zwingend. Wenn dein aktuelles System technisch sauber ist, optimieren wir den Bestand. Falls nicht, ist ein Relaunch oft der schnellere Weg zum Ziel."
+      q: "Sind Portale wie MyHammer oder Check24 nicht einfacher?",
+      a: "Einfacher vielleicht, aber auf Dauer teurer und anstrengender. Dort konkurrierst du oft nur über den Preis. Mit einer eigenen Strategie für SEO für Handwerker baust du deine eigene Marke auf. Kunden fragen direkt bei dir an, weil sie dich als Experten wahrnehmen – das führt zu besseren Margen und weniger Preisdiskussionen."
     },
     {
-      q: "Lohnt sich SEO auch für spezialisierte Betriebe?",
-      a: "Gerade dort! Je spezialisierter du bist, desto wertvoller ist es, für genau diese Begriffe (z.B. „Photovoltaik-Reinigung [Stadt]“) gefunden zu werden."
+      q: "Wie viel Zeit muss ich als Chef investieren?",
+      a: "Fast gar keine. Ich weiß, dass du auf der Baustelle oder bei Kunden gebraucht wirst. Nach einem kurzen Strategiegespräch übernehme ich das Ruder. Du kümmerst dich um dein Handwerk, ich sorge dafür, dass die Anfragen im Postfach landen."
+    },
+    {
+      q: "Hilft mir SEO auch dabei, neue Mitarbeiter zu finden?",
+      a: "Absolut! Fachkräfte suchen heute genau wie Kunden bei Google nach attraktiven Arbeitgebern in ihrer Nähe. Wenn dein Betrieb online professionell und modern auftritt, steigt deine Attraktivität als Arbeitgeber massiv. SEO ist also gleichzeitig auch Recruiting-Unterstützung."
+    },
+    {
+      q: "Was ist der Unterschied zwischen Google Ads und SEO?",
+      a: "Google Ads sind bezahlte Anzeigen: Du zahlst für jeden Klick. Hörst du auf zu zahlen, bist du sofort wieder unsichtbar. SEO für Handwerker ist eine langfristige Investition in deine eigene Website. Du baust eine organische Sichtbarkeit auf, die bleibt und dir dauerhaft kostenlose Anfragen liefert."
+    },
+    {
+      q: "Wie wichtig ist mein Google Maps Eintrag für den Erfolg?",
+      a: "Enorm wichtig! Besonders im Handwerk schauen Kunden zuerst auf die Karte. Ein optimiertes Google-Unternehmensprofil ist ein Kernbestandteil meiner Arbeit. Wir sorgen dafür, dass du im „Local Pack“ (den obersten drei Einträgen auf der Karte) landest, wo die meisten Klicks passieren."
+    },
+    {
+      q: "Lohnt sich SEO auch für kleine Spezialbetriebe?",
+      a: "Gerade für Spezialisten ist es ein Goldesel. Wenn du etwas anbietest, das nicht jeder kann (z. B. ökologische Dämmung oder spezielle Altbausanierung), suchen Kunden oft gezielt danach. Mit SEO für Handwerker positionieren wir dich als den Experten für genau diese Nische in deiner Region."
     }
   ];
 
   return (
-    <section className="py-24 bg-white" aria-labelledby="faq-heading">
+    <section className="py-32 bg-white" aria-labelledby="faq-heading">
       <div className="max-w-4xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 id="faq-heading" className="text-4xl md:text-5xl font-display font-bold text-slate-900 mb-6">
-            FAQ – Alles über <span className="text-accent">SEO für Handwerker</span>
+        <div className="text-center mb-20">
+          <h2 id="faq-heading" className="text-4xl md:text-5xl font-display font-black text-slate-900 mb-8 leading-tight">
+            FAQ – Alles, was du über <span className="text-accent">SEO für Handwerker</span> wissen musst
           </h2>
-          <p className="text-lg text-slate-600">
-            Häufig gestellte Fragen und klare Antworten für deinen Erfolg.
+          <p className="text-xl text-slate-500 font-light max-w-2xl mx-auto">
+            Häufig gestellte Fragen und klare Antworten für deinen nachhaltigen Erfolg als Fachbetrieb.
           </p>
         </div>
 
-        <div className="space-y-4">
+        <div className="grid gap-4">
           {faqs.map((faq, idx) => (
-            <details key={idx} className="group rounded-2xl border border-slate-100 bg-slate-50 transition-all duration-300 open:bg-white open:shadow-xl open:border-accent/20">
-              <summary className="flex items-center justify-between p-6 cursor-pointer list-none">
-                <h3 className="text-lg font-bold text-slate-900 pr-8">{faq.q}</h3>
-                <div className="w-8 h-8 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-400 group-open:bg-accent group-open:text-white group-open:border-accent transition-all duration-300">
-                  <ChevronDown className="group-open:rotate-180 transition-transform duration-300" size={18} />
+            <details 
+              key={idx} 
+              className="group rounded-3xl border border-slate-100 bg-slate-50/50 transition-all duration-500 open:bg-white open:shadow-2xl open:border-accent/10"
+            >
+              <summary className="flex items-center justify-between p-8 cursor-pointer list-none select-none">
+                <h3 className="text-xl font-bold text-slate-900 pr-8 group-open:text-accent transition-colors duration-300">
+                  {faq.q}
+                </h3>
+                <div className="w-10 h-10 rounded-2xl bg-white border border-slate-200 flex items-center justify-center text-slate-400 group-open:bg-accent group-open:text-white group-open:border-accent group-open:rotate-180 transition-all duration-500 shadow-sm">
+                  <ChevronDown size={20} />
                 </div>
               </summary>
-              <div className="px-6 pb-6 text-slate-600 leading-relaxed">
-                <p>{faq.a}</p>
+              <div className="px-8 pb-8 text-slate-600 leading-relaxed font-light text-lg">
+                <div className="pt-4 border-t border-slate-100">
+                  {faq.a}
+                </div>
               </div>
             </details>
           ))}
