@@ -35,7 +35,7 @@ export function HandwerkerHero() {
             </div>
 
             <h1 className="text-5xl md:text-7xl font-display font-extrabold text-white leading-[1.1] tracking-tight mb-8">
-              Mehr <span className="text-accent italic">Aufträge</span> für dein Handwerk.
+              SEO für Handwerker: Mehr <span className="text-accent italic">Aufträge</span> und Mitarbeiter.
             </h1>
 
             <p className="text-xl text-slate-200 leading-relaxed mb-12 max-w-xl font-light">
