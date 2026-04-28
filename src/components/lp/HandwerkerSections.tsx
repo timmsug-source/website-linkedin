@@ -427,6 +427,8 @@ export function HandwerkerProcess() {
                 <MessageCircle size={20} className="mr-2" />
                 WhatsApp Chat
               </a>
+              <a
+                href={CONTACT_URL}
                 className="inline-flex items-center justify-center bg-accent hover:bg-accent/90 text-white rounded-full px-8 h-14 font-bold transition-all shadow-lg shadow-accent/20"
               >
                 Kostenlose Analyse
