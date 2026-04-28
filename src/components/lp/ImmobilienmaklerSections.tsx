@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, MessageCircle, Star, SearchX, Euro, Users, AlertTriangle, TrendingDown, Globe, ShieldCheck, BarChart3, Unlock } from "lucide-react";
+import { ArrowRight, MessageCircle, Star, SearchX, Euro, Users, AlertTriangle, TrendingDown, Globe, ShieldCheck, BarChart3, Unlock, ChevronDown } from "lucide-react";
 import { PHONE_URL, WHATSAPP_URL, CONTACT_URL } from "@/lib/utils";
 
 export function MaklerHero() {
@@ -381,6 +381,74 @@ export function MaklerProcess() {
               </a>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function MaklerFAQ() {
+  const faqs = [
+    {
+      q: "Was genau bringt SEO für Immobilienmakler im Vergleich zu Portalen?",
+      a: "Während Portale wie ImmoScout24 dich in eine direkte Vergleichbarkeit mit hunderten Mitbewerbern zwingen, sorgt SEO für Immobilienmakler für Exklusivität. Eigentümer finden dich direkt über Google, bevor sie ein Portal besuchen. Das stärkt dein Experten-Image und liefert dir Anfragen, die nicht gleichzeitig an fünf andere Makler gehen."
+    },
+    {
+      q: "Wie lange dauert es, bis ich auf Seite 1 bei Google stehe?",
+      a: "SEO ist ein Marathon, kein Sprint. Erste Veränderungen in den Rankings sind oft nach 3 bis 4 Monaten sichtbar. Eine dominante Position für umkämpfte Begriffe in deiner Region dauert meist 6 bis 12 Monate. Der Vorteil: Einmal erreicht, ist diese Position extrem stabil und liefert dir nachhaltig Leads, ohne dass du pro Klick bezahlen musst."
+    },
+    {
+      q: "Muss ich für SEO meine komplette Website neu bauen?",
+      a: "Nicht zwingend, aber oft ist es sinnvoll. Eine gute Strategie für SEO für Immobilienmakler benötigt eine saubere technische Basis (schnelle Ladezeiten, mobile Optimierung). Wenn dein aktuelles System das hergibt, optimieren wir den Bestand. Falls nicht, ist ein Relaunch oft der schnellere und kosteneffizientere Weg zum Ziel."
+    },
+    {
+      q: "Welche Keywords sind für Makler am wichtigsten?",
+      a: "Es geht nicht nur um 'Immobilienmakler + Stadt'. Viel wertvoller für die Akquise sind Keywords wie „Haus verkaufen [Stadt]“, „Immobilie bewerten“ oder „Wohnung geerbt was tun“. Wir zielen genau auf die Begriffe ab, die Eigentümer in ihrer Entscheidungsphase eingeben, um dir echte Alleinaufträge zu sichern."
+    },
+    {
+      q: "Wie wichtig ist Google My Business für die lokale Suche?",
+      a: "Extrem wichtig! Für die lokale Sichtbarkeit ist ein optimiertes Google-Unternehmensprofil unverzichtbar. Es sorgt dafür, dass du in der 'Map-Pack' (der Karte bei Google) ganz oben erscheinst. Das ist oft der erste Klick, den ein lokaler Eigentümer tätigt."
+    },
+    {
+      q: "Kann ich SEO für Immobilienmakler auch selbst machen?",
+      a: "Theoretisch ja, praktisch fehlt den meisten Maklern die Zeit für die tiefgreifende Technik und den regelmäßigen Content-Aufbau. SEO ist heute sehr komplex: Ein falsches Plugin oder schlechte Backlinks können dein Ranking sogar schädigen. Eine professionelle Begleitung spart dir langfristig Zeit und teure Fehlversuche."
+    },
+    {
+      q: "Lohnt sich SEO auch in kleineren Städten oder ländlichen Regionen?",
+      a: "Gerade dort! In kleineren Regionen ist der Wettbewerb im Bereich SEO für Immobilienmakler oft noch gering. Hier kannst du mit vergleichsweise wenig Aufwand zur unangefochtenen Nummer 1 werden und den Markt digital komplett dominieren, während die Konkurrenz noch auf Zeitungsanzeigen setzt."
+    },
+    {
+      q: "Woran messe ich den Erfolg meiner SEO-Maßnahmen?",
+      a: "Rankings sind schön, aber wir messen Erfolg an harten Fakten: Steigt der organische Traffic auf deiner Seite? Und vor allem: Wie viele qualifizierte Anfragen (Leads) über das Bewertungs- oder Kontaktformular kommen rein? Du erhältst monatliche Reports, die dir genau zeigen, wie sich deine Investition auszahlt."
+    }
+  ];
+
+  return (
+    <section className="py-24 bg-white" aria-labelledby="faq-heading">
+      <div className="max-w-4xl mx-auto px-6">
+        <div className="text-center mb-16">
+          <h2 id="faq-heading" className="text-4xl md:text-5xl font-display font-bold text-slate-900 mb-6">
+            FAQ – Alles, was du über <span className="text-accent">SEO für Immobilienmakler</span> wissen musst
+          </h2>
+          <p className="text-lg text-slate-600">
+            Häufig gestellte Fragen und klare Antworten für deinen digitalen Erfolg.
+          </p>
+        </div>
+
+        <div className="space-y-4">
+          {faqs.map((faq, idx) => (
+            <details key={idx} className="group rounded-2xl border border-slate-100 bg-slate-50 transition-all duration-300 open:bg-white open:shadow-xl open:border-accent/20">
+              <summary className="flex items-center justify-between p-6 cursor-pointer list-none">
+                <h3 className="text-lg font-bold text-slate-900 pr-8">{faq.q}</h3>
+                <div className="w-8 h-8 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-400 group-open:bg-accent group-open:text-white group-open:border-accent transition-all duration-300">
+                  <ChevronDown className="group-open:rotate-180 transition-transform duration-300" size={18} />
+                </div>
+              </summary>
+              <div className="px-6 pb-6 text-slate-600 leading-relaxed">
+                <p>{faq.a}</p>
+              </div>
+            </details>
+          ))}
         </div>
       </div>
     </section>
