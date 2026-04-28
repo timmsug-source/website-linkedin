@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight, MessageCircle } from "lucide-react";
-import { WHATSAPP_URL, PHONE_URL } from "@/lib/utils";
+import { WHATSAPP_URL, PHONE_URL, CONTACT_URL } from "@/lib/utils";
 
 export function CTA() {
   return (
@@ -37,7 +37,7 @@ export function CTA() {
 
             <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-6">
               <a
-                href={PHONE_URL}
+                href={CONTACT_URL}
                 target="_blank"
                 rel="noreferrer noopener"
                 className="inline-flex items-center justify-center bg-accent hover:bg-accent/90 text-white rounded-full px-10 h-16 text-xl font-bold w-full sm:w-auto shadow-lg shadow-accent/20 transition-all"

@@ -4,7 +4,7 @@ import Image from "next/image";
 import { ArrowRight, Calendar, Tag } from "lucide-react";
 
 import { buildMetadata } from "@/lib/seo";
-import { SITE_URL, PHONE_URL } from "@/lib/utils";
+import { SITE_URL, CONTACT_URL } from "@/lib/utils";
 import { getAllPosts } from "@/lib/blog";
 
 // ISR: Seite alle 60 Sekunden neu generieren → neue Posts erscheinen ohne Redeploy
@@ -148,7 +148,7 @@ export default async function BlogPage({
                     Lass uns in 30 Minuten deine individuelle Strategie besprechen.
                   </p>
                   <a
-                    href={PHONE_URL}
+                    href={CONTACT_URL}
                     className="block w-full bg-accent hover:bg-accent/90 text-white text-center rounded-xl px-4 py-3 text-sm font-bold transition-all"
                   >
                     Termin buchen

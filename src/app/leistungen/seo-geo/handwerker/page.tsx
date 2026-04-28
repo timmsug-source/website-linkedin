@@ -1,21 +1,18 @@
 import type { Metadata } from "next";
+import { HandwerkerHero, HandwerkerProblem, HandwerkerSolution, HandwerkerCTA } from "@/components/lp/HandwerkerSections";
 
 export const metadata: Metadata = {
-  title: "SEO für Handwerker | Deine Sichtbarkeit",
-  description: "Lokale SEO-Strategien speziell für Handwerker. Gewinne mehr regionale Aufträge durch eine erstklassige Google-Sichtbarkeit.",
+  title: "SEO für Handwerker | Mehr Aufträge & lokale Sichtbarkeit",
+  description: "Ihre SEO Agentur für Handwerksbetriebe. Wir sorgen dafür, dass Kunden Sie finden, wenn sie einen Profi in der Nähe suchen. Mehr Aufträge durch lokales SEO.",
 };
 
-export default function SEOHandwerkerPage() {
+export default function HandwerkerSEOPage() {
   return (
-    <div className="pt-32 pb-24 min-h-[70vh]">
-      <div className="max-w-7xl mx-auto px-6">
-        <h1 className="text-4xl md:text-5xl font-display font-bold text-slate-900 mb-6">
-          SEO für Handwerker
-        </h1>
-        <p className="text-lg text-slate-600">
-          Inhalt folgt in Kürze...
-        </p>
-      </div>
-    </div>
+    <main className="min-h-screen">
+      <HandwerkerHero />
+      <HandwerkerProblem />
+      <HandwerkerSolution />
+      <HandwerkerCTA />
+    </main>
   );
 }

@@ -12,3 +12,4 @@ export const SITE_URL = "https://timmschurig.com";
 export const LINKEDIN_URL = "https://www.linkedin.com/in/timm-schurig/";
 export const PHONE = "0151 4033 9008";
 export const PHONE_URL = "tel:+4915140339008";
+export const CONTACT_URL = "/kontakt";

@@ -9,7 +9,7 @@ import {
   Eye,
   AlertCircle,
 } from "lucide-react";
-import { WHATSAPP_URL, PHONE_URL } from "@/lib/utils";
+import { WHATSAPP_URL, CONTACT_URL } from "@/lib/utils";
 import { HeroForm } from "./HeroForm";
 
 // ─── Data ────────────────────────────────────────────────────────────────────
@@ -314,7 +314,7 @@ export default function LinkedInLP() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href={PHONE_URL}
+              href={CONTACT_URL}
               className="inline-flex items-center justify-center gap-3 bg-accent hover:bg-accent/90 text-white rounded-full px-8 py-4 font-bold text-base transition-[background-color] shadow-lg shadow-accent/20"
             >
               Kostenloses Erstgespräch buchen <ArrowRight size={18} />

@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, Globe, Cpu, Search, Target, Zap } from "lucide-react";
-import { PHONE_URL, PHONE } from "@/lib/utils";
+import { PHONE_URL, PHONE, CONTACT_URL } from "@/lib/utils";
 
 const differentiators = [
   {
@@ -61,7 +61,7 @@ export function AboutPreview() {
                 Mehr über mich <ArrowRight size={18} />
               </Link>
               <a
-                href={PHONE_URL}
+                href={CONTACT_URL}
                 className="inline-flex items-center gap-2 border border-slate-200 rounded-full px-6 py-3 font-semibold text-slate-700 hover:border-accent hover:text-accent transition-all"
                 aria-label="Timm Schurig anrufen"
               >

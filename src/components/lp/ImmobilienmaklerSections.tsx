@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, MessageCircle, Star, SearchX, Euro, Users, AlertTriangle, TrendingDown, Globe, ShieldCheck, BarChart3, Unlock } from "lucide-react";
-import { PHONE_URL, WHATSAPP_URL } from "@/lib/utils";
+import { PHONE_URL, WHATSAPP_URL, CONTACT_URL } from "@/lib/utils";
 
 export function MaklerHero() {
   const checklist = [
@@ -52,9 +52,7 @@ export function MaklerHero() {
 
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href={PHONE_URL}
-                target="_blank"
-                rel="noreferrer noopener"
+                href={CONTACT_URL}
                 className="inline-flex items-center justify-center bg-accent hover:bg-accent/90 text-white rounded-full px-8 h-14 text-lg font-bold shadow-lg shadow-accent/20 transition-[box-shadow,background-color]"
               >
                 Kostenloses Erstgespräch
@@ -280,7 +278,7 @@ export function MaklerSolution() {
 
         <div className="flex flex-col items-center justify-center text-center">
           <a
-            href={PHONE_URL}
+            href={CONTACT_URL}
             className="inline-flex items-center justify-center bg-accent hover:bg-accent/90 text-white rounded-full px-10 h-16 text-xl font-bold shadow-xl shadow-accent/20 transition-all hover:-translate-y-1"
           >
             Jetzt Strategie-Call vereinbaren
@@ -376,7 +374,7 @@ export function MaklerProcess() {
                 WhatsApp Chat
               </a>
               <a
-                href={PHONE_URL}
+                href={CONTACT_URL}
                 className="inline-flex items-center justify-center bg-accent hover:bg-accent/90 text-white rounded-full px-8 h-14 font-bold transition-all shadow-lg shadow-accent/20"
               >
                 Kostenlose Analyse

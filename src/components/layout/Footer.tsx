@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { MessageCircle, Phone, Mail, MapPin } from "lucide-react";
-import { WHATSAPP_URL, EMAIL, PHONE_URL, PHONE } from "@/lib/utils";
+import { WHATSAPP_URL, EMAIL, PHONE_URL, PHONE, CONTACT_URL } from "@/lib/utils";
 
 const serviceLinks = [
   { name: "Webdesign", href: "/leistungen/webdesign" },
@@ -44,7 +44,7 @@ export function Footer() {
           </p>
           <div className="flex gap-4 mt-6">
             <a
-              href={PHONE_URL}
+              href={CONTACT_URL}
               className="p-2 bg-white rounded-full shadow-sm hover:text-accent transition-colors"
               aria-label="Timm Schurig anrufen"
             >

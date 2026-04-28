@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { ArrowRight, Clock } from "lucide-react";
 import { buildMetadata } from "@/lib/seo";
-import { SITE_URL, PHONE_URL } from "@/lib/utils";
+import { SITE_URL, PHONE_URL, CONTACT_URL } from "@/lib/utils";
 import { ServiceHero } from "@/components/service/ServiceHero";
 import { HaanProblem, HaanSolution, HaanProcess, HaanRegional } from "@/components/lp/HaanSections";
 
@@ -67,7 +67,7 @@ export default function HaanPage() {
           </p>
           <div className="flex flex-col items-center gap-6">
             <a 
-              href={PHONE_URL}
+              href={CONTACT_URL}
               className="inline-flex items-center justify-center bg-accent hover:bg-accent/90 text-white rounded-full px-10 py-5 text-xl font-bold shadow-xl shadow-accent/20 transition-all group"
             >
               Jetzt unverbindliches Strategiegespräch buchen

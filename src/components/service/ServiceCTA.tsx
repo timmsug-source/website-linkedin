@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight, MessageCircle } from "lucide-react";
-import { PHONE_URL, WHATSAPP_URL, cn } from "@/lib/utils";
+import { PHONE_URL, WHATSAPP_URL, CONTACT_URL, cn } from "@/lib/utils";
 import type { serviceData } from "@/lib/serviceData";
 
 type Service = (typeof serviceData)[keyof typeof serviceData];
@@ -44,7 +44,7 @@ export function ServiceCTA({ service }: { service: Service }) {
               <div className="flex flex-col items-start lg:items-center gap-6">
                 <div className="flex flex-col sm:flex-row lg:flex-col xl:flex-row items-center gap-6 w-full">
                   <a
-                    href={PHONE_URL}
+                    href={CONTACT_URL}
                     target="_blank"
                     rel="noreferrer noopener"
                     className="inline-flex items-center justify-center bg-accent hover:bg-accent/90 text-white rounded-full px-10 h-16 text-xl font-bold w-full sm:w-auto shadow-lg shadow-accent/20 transition-[background-color,box-shadow]"

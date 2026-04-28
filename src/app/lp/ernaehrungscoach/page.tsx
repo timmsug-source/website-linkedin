@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { ArrowRight, CheckCircle2, MessageCircle } from "lucide-react";
-import { WHATSAPP_URL, PHONE_URL } from "@/lib/utils";
+import { WHATSAPP_URL, CONTACT_URL } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Marketing für Ernährungscoaches – Kostenloses Erstgespräch",
@@ -63,7 +63,7 @@ export default function ErnaehrungscoachLPPage() {
 
           <div className="flex flex-col gap-4 items-center">
             <a
-              href={PHONE_URL}
+              href={CONTACT_URL}
               target="_blank"
               rel="noreferrer noopener"
               className="inline-flex items-center justify-center bg-accent hover:bg-accent/90 text-white rounded-full px-10 h-16 text-xl font-bold w-full max-w-sm shadow-lg shadow-accent/20 transition-all"

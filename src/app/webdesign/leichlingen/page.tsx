@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Clock } from "lucide-react";
 import { buildMetadata } from "@/lib/seo";
-import { SITE_URL, PHONE_URL } from "@/lib/utils";
+import { SITE_URL, PHONE_URL, CONTACT_URL } from "@/lib/utils";
 import { ServiceHero } from "@/components/service/ServiceHero";
 import { ServiceProblem } from "@/components/service/ServiceProblem";
 import { ServiceSolution } from "@/components/service/ServiceSolution";
@@ -118,7 +118,7 @@ export default function LeichlingenPage() {
               Bereit dein Webdesign in Leichlingen zu verbessern?
             </p>
             <a
-              href={PHONE_URL}
+              href={CONTACT_URL}
               target="_blank"
               rel="noreferrer noopener"
               className="inline-flex items-center gap-2 bg-accent hover:bg-accent/90 text-white rounded-full px-7 py-3 font-bold text-sm whitespace-nowrap transition-[background-color] shadow-lg shadow-accent/20 shrink-0"
@@ -153,7 +153,7 @@ export default function LeichlingenPage() {
           </p>
           <div className="flex flex-col items-center gap-6">
             <a 
-              href={PHONE_URL}
+              href={CONTACT_URL}
               className="inline-flex items-center justify-center bg-accent hover:bg-accent/90 text-white rounded-full px-10 py-5 text-xl font-bold shadow-xl shadow-accent/20 transition-all group"
             >
               Jetzt unverbindliches Strategiegespräch buchen

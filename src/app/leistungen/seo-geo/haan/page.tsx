@@ -1,21 +1,20 @@
 import type { Metadata } from "next";
+import { SEOHaanHero, SEOHaanProblem, SEOHaanSolution, SEOHaanProcess, SEOHaanRegional, SEOHaanCTA } from "@/components/lp/SEOHaanSections";
 
 export const metadata: Metadata = {
-  title: "SEO Agentur in Haan | Lokale Sichtbarkeit",
-  description: "Deine SEO Agentur in Haan. Steigere deine lokale Sichtbarkeit und gewinne mehr Kunden in der Region Mettmann & Bergisches Land.",
+  title: "SEO Agentur in Haan | Sichtbar werden & Kunden gewinnen",
+  description: "Deine SEO Agentur in Haan. Wir bringen dein Unternehmen auf Platz 1 bei Google. Lokale SEO-Strategien für messbar mehr Anfragen im Kreis Mettmann.",
 };
 
 export default function SEOHaanPage() {
   return (
-    <div className="pt-32 pb-24 min-h-[70vh]">
-      <div className="max-w-7xl mx-auto px-6">
-        <h1 className="text-4xl md:text-5xl font-display font-bold text-slate-900 mb-6">
-          SEO Agentur in Haan
-        </h1>
-        <p className="text-lg text-slate-600">
-          Inhalt folgt in Kürze...
-        </p>
-      </div>
-    </div>
+    <main className="min-h-screen">
+      <SEOHaanHero />
+      <SEOHaanProblem />
+      <SEOHaanSolution />
+      <SEOHaanProcess />
+      <SEOHaanRegional />
+      <SEOHaanCTA />
+    </main>
   );
 }

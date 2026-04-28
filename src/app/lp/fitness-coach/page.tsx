@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight, AlertCircle, CheckCircle2, MonitorSmartphone, Rocket, Clock, MessageCircle, Star, ShieldCheck } from "lucide-react";
-import { PHONE_URL, WHATSAPP_URL } from "@/lib/utils";
+import { PHONE_URL, WHATSAPP_URL, CONTACT_URL } from "@/lib/utils";
 import Image from "next/image";
 
 const portfolioItems = [
@@ -143,7 +143,7 @@ export default function LinkedInFunnelPage() {
 
                 <div className="flex flex-col gap-4">
                   <a
-                    href={PHONE_URL}
+                    href={CONTACT_URL}
                     target="_blank"
                     rel="noreferrer noopener"
                     className="flex items-center justify-center gap-3 bg-accent hover:bg-accent/90 text-white rounded-full h-16 text-lg font-bold transition-all shadow-xl shadow-accent/40 group-hover:scale-[1.02] active:scale-[0.98]"
