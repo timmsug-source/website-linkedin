@@ -1,101 +1,78 @@
 "use client";
 
+import Link from "next/link";
 import Image from "next/image";
+import { ArrowRight, MessageCircle, Star, SearchX, Euro, Users, AlertTriangle, TrendingDown, Globe, ShieldCheck, BarChart3, Unlock, ChevronDown, Hammer, Zap, MapPin } from "lucide-react";
+import { PHONE_URL, WHATSAPP_URL, CONTACT_URL } from "@/lib/utils";
 import { motion } from "framer-motion";
-import { 
-  SearchX, 
-  EyeOff, 
-  TrendingDown, 
-  AlertCircle, 
-  CheckCircle2, 
-  MapPin, 
-  ShieldCheck, 
-  Zap, 
-  MessageSquare,
-  BarChart3,
-  Search,
-  ArrowRight,
-  MessageCircle,
-  Star,
-  Hammer,
-  Wrench,
-  HardHat,
-  PhoneCall
-} from "lucide-react";
-import { WHATSAPP_URL, CONTACT_URL } from "@/lib/utils";
 
 export function HandwerkerHero() {
   return (
-    <section className="relative pt-32 lg:pt-40 pb-24 px-6 overflow-hidden bg-slate-900" aria-label="SEO für Handwerker – Hero">
-      <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-accent/20 rounded-full blur-[120px] pointer-events-none opacity-50" />
-      <div className="absolute bottom-0 right-1/4 w-[600px] h-[600px] bg-blue-500/10 rounded-full blur-[120px] pointer-events-none opacity-50" />
+    <section className="relative min-h-[90vh] flex items-center pt-20 overflow-hidden">
+      {/* Background Image with Overlay */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/images/hero_handwerker_bg.png"
+          alt="Handwerker bei der Arbeit"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-slate-900/70 backdrop-blur-[2px]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-900/40 via-transparent to-slate-900" />
+      </div>
 
-      <div className="max-w-7xl mx-auto relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div className="max-w-7xl mx-auto px-6 relative z-10 py-20">
+        <div className="max-w-3xl">
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20 text-accent text-sm font-bold mb-6">
-              <HardHat size={14} fill="currentColor" />
-              SEO für Handwerksbetriebe
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/20 border border-accent/30 text-accent font-bold text-sm mb-8 backdrop-blur-md">
+              <Star size={16} fill="currentColor" />
+              SEO für Handwerker & Betriebe
             </div>
 
-            <h1 className="text-5xl md:text-6xl font-display font-extrabold text-white leading-[1.05] tracking-tight mb-6">
-              Mehr Aufträge für <span className="text-accent">dein Handwerk.</span>
+            <h1 className="text-5xl md:text-7xl font-display font-extrabold text-white leading-[1.1] tracking-tight mb-8">
+              Mehr <span className="text-accent italic">Aufträge</span> für dein Handwerk – lokal & planbar.
             </h1>
 
-            <p className="text-xl text-slate-300 leading-relaxed max-w-xl mb-10">
-              Schluss mit der Suche nach Aufträgen. Wir sorgen dafür, dass Kunden dich finden, wenn sie einen Profi in ihrer Nähe suchen. Lokal, digital, erfolgreich.
+            <p className="text-xl md:text-2xl text-slate-200 leading-relaxed mb-12 max-w-2xl font-light">
+              Schluss mit der Abhängigkeit von teuren Lead-Portalen. Wir sorgen dafür, dass Kunden dich direkt finden, wenn sie einen Profi in ihrer Nähe suchen.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a
+            <div className="flex flex-col sm:flex-row gap-6">
+              <Link
                 href={CONTACT_URL}
-                className="inline-flex items-center justify-center bg-accent hover:bg-accent/90 text-white rounded-full px-8 h-14 text-lg font-bold shadow-lg shadow-accent/20 transition-all hover:-translate-y-1"
+                className="inline-flex items-center justify-center bg-accent hover:bg-accent/90 text-white rounded-full px-10 h-16 text-lg font-bold shadow-2xl shadow-accent/40 transition-all hover:-translate-y-1 active:scale-95"
               >
-                Jetzt mehr Anfragen sichern
+                Kostenlose Analyse anfordern
                 <ArrowRight className="ml-2" size={20} />
-              </a>
+              </Link>
               <a
                 href={WHATSAPP_URL}
                 target="_blank"
                 rel="noreferrer noopener"
-                className="inline-flex items-center justify-center gap-2 rounded-full px-8 h-14 text-lg font-semibold border border-white/10 bg-white/5 backdrop-blur-md text-white hover:bg-white/10 transition-all"
+                className="inline-flex items-center justify-center gap-2 rounded-full px-10 h-16 text-lg font-bold border border-white/20 bg-white/5 backdrop-blur-md text-white hover:bg-white/10 transition-all hover:-translate-y-1 active:scale-95"
               >
-                <MessageCircle size={20} />
-                WhatsApp
+                <MessageCircle size={22} className="text-accent" />
+                WhatsApp Chat
               </a>
             </div>
-          </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative"
-          >
-            <div className="relative rounded-[3rem] overflow-hidden shadow-2xl border border-white/10 bg-slate-800 aspect-square">
-                <Image
-                  src="/images/seo_handwerker_hero_new_1777364515686.png"
-                  alt="SEO Erfolg für Handwerker Visualisierung"
-                  fill
-                  className="object-cover"
-                  priority
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-60" />
-            </div>
-
-            <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl p-6 shadow-2xl border border-slate-100 z-10 hidden sm:block">
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center text-accent">
-                  <PhoneCall size={24} />
-                </div>
-                <div>
-                  <p className="text-xl font-bold text-slate-900">+350%</p>
-                  <p className="text-xs text-slate-500 font-medium uppercase tracking-wider">Mehr Kundenanfragen</p>
-                </div>
+            <div className="mt-12 flex flex-wrap items-center gap-8 opacity-70 grayscale transition-all hover:grayscale-0">
+              <div className="flex items-center gap-2 text-white font-medium">
+                <ShieldCheck className="text-accent" />
+                Planbare Neukunden
+              </div>
+              <div className="flex items-center gap-2 text-white font-medium">
+                <BarChart3 className="text-accent" />
+                Messbarer Erfolg
+              </div>
+              <div className="flex items-center gap-2 text-white font-medium">
+                <Unlock className="text-accent" />
+                Keine Knebelverträge
               </div>
             </div>
           </motion.div>
@@ -106,41 +83,69 @@ export function HandwerkerHero() {
 }
 
 export function HandwerkerProblem() {
-  const points = [
+  const problems = [
     {
-      icon: SearchX,
-      title: "Keine Sichtbarkeit",
-      text: "Kunden finden dich nicht bei Google, wenn sie nach einem Handwerker in ihrer Stadt suchen."
+      title: 'Die "Portal-Falle"',
+      desc: 'Du zahlst monatlich hohe Gebühren an MyHammer & Co., um überhaupt wahrgenommen zu werden. Die Kontakte gehören dir nicht exklusiv.',
+      icon: SearchX
     },
     {
-      icon: TrendingDown,
-      title: "Teure Lead-Portale",
-      text: "Du zahlst hohe Gebühren an Portale für Leads, die oft unqualifiziert oder bereits vergeben sind."
+      title: 'Unsichtbarkeit bei Google',
+      desc: 'Wenn ein Kunde nach „Elektriker [Stadt]“ sucht, tauchen deine Mitbewerber auf. Du bleibst unsichtbar und verlierst lukrative Mandate.',
+      icon: TrendingDown
     },
     {
-      icon: EyeOff,
-      title: "Konkurrenz zieht vorbei",
-      text: "Andere Betriebe schnappen dir die lukrativen Aufträge weg, weil sie online präsenter sind."
+      title: 'Schlechte Lead-Qualität',
+      desc: 'Du kaufst Leads für viel Geld, nur um festzustellen, dass diese bereits mit fünf anderen Betrieben sprechen oder gar nicht passen.',
+      icon: Users
+    },
+    {
+      title: 'Preiskampf statt Qualität',
+      desc: 'Ohne starke Online-Präsenz wirst du nur über den Preis verglichen. SEO macht dich zur Autorität, die für Qualität gebucht wird.',
+      icon: Euro
     }
   ];
 
   return (
-    <section className="py-24 px-6 bg-slate-50">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center max-w-3xl mx-auto mb-20">
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-slate-900 mb-6">Das Problem vieler <span className="text-red-600">Handwerksbetriebe.</span></h2>
-          <p className="text-lg text-slate-600">Harte Arbeit, exzellente Ergebnisse – aber kaum jemand erfährt davon. Wir machen dein Handwerk online sichtbar.</p>
-        </div>
-        <div className="grid md:grid-cols-3 gap-8">
-          {points.map((p, i) => (
-            <div key={i} className="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl transition-all group">
-              <div className="w-14 h-14 rounded-2xl bg-slate-50 flex items-center justify-center mb-6 text-slate-400 group-hover:text-red-500 group-hover:bg-red-50 transition-all">
-                <p.icon size={28} />
-              </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-4">{p.title}</h3>
-              <p className="text-slate-600 leading-relaxed">{p.text}</p>
+    <section className="py-24 bg-white relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+          <div>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-red-50 text-red-600 font-bold text-xs uppercase tracking-wider mb-6">
+              <AlertTriangle size={14} />
+              Die aktuelle Marktsituation
             </div>
-          ))}
+            
+            <h2 className="text-4xl md:text-5xl font-display font-bold text-slate-900 leading-tight mb-8">
+              Dein Betrieb leistet Top-Arbeit – aber <span className="text-red-600">findet man dich auch?</span>
+            </h2>
+            
+            <p className="text-lg text-slate-600 mb-10 leading-relaxed">
+              Die meisten Handwerks-Websites sind leider nur digitale Visitenkarten. Sie existieren zwar, werden aber von potenziellen Kunden niemals gefunden. Ohne eine gezielte Strategie für SEO für Handwerker entstehen typische Probleme:
+            </p>
+
+            <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl border border-slate-100 aspect-video lg:aspect-square group">
+              <Image 
+                src="/images/haan-problem.png" 
+                alt="Digitales Problem für Handwerker"
+                fill
+                className="object-cover group-hover:scale-105 transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent" />
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:mt-20">
+            {problems.map((p, idx) => (
+              <div key={idx} className="p-8 rounded-[2rem] bg-slate-50 border border-slate-100 hover:border-red-100 hover:bg-white hover:shadow-xl transition-all duration-300 group">
+                <div className="w-12 h-12 rounded-xl bg-white shadow-sm flex items-center justify-center mb-6 text-slate-400 group-hover:text-red-500 group-hover:scale-110 transition-all duration-300">
+                  <p.icon size={24} />
+                </div>
+                <h3 className="text-xl font-bold text-slate-900 mb-3">{p.title}</h3>
+                <p className="text-slate-500 text-sm leading-relaxed">{p.desc}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
@@ -148,37 +153,85 @@ export function HandwerkerProblem() {
 }
 
 export function HandwerkerSolution() {
-  const items = [
-    { icon: MapPin, title: "Regionales SEO", text: "Wir platzieren dich ganz oben für deine Stadt und Region." },
-    { icon: Star, title: "Reputations-Management", text: "Deine guten Bewertungen werden für jeden sichtbar." },
-    { icon: Zap, title: "Schnelle Ergebnisse", text: "Gezielte Maßnahmen für spürbar mehr Anfragen." },
-    { icon: ShieldCheck, title: "Exklusivität", text: "Deine Website gehört dir. Keine Abhängigkeit von Portalen." }
+  const benefits = [
+    {
+      title: "Regionale Marktführerschaft",
+      desc: "Wir sorgen dafür, dass du für die wichtigsten Suchbegriffe in deiner Region auf Platz 1 stehst."
+    },
+    {
+      title: "Exklusive Anfragen",
+      desc: "Kunden finden dich direkt. Keine geteilten Leads, kein Preis-Dumping auf Vergleichsportalen."
+    },
+    {
+      title: "Nachhaltiger Erfolg",
+      desc: "SEO ist eine Investition, die über Jahre hinweg neue Kunden liefert, ohne dass du pro Klick zahlst."
+    },
+    {
+      title: "Mehr Zeit fürs Kerngeschäft",
+      desc: "Während wir dich digital positionieren, kannst du dich voll auf deine Projekte konzentrieren."
+    }
   ];
 
   return (
-    <section className="py-24 px-6 bg-white">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          <div className="relative order-2 lg:order-1 rounded-[2.5rem] overflow-hidden shadow-2xl border border-slate-100 aspect-square">
-             <Image 
-                src="/images/haan_solution_growth_1777134777822.png" 
-                alt="SEO Lösung für Handwerker"
+    <section className="py-24 bg-slate-50 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="grid lg:grid-cols-2 gap-20 items-center">
+          <div className="relative group">
+            <div className="relative rounded-[3rem] overflow-hidden shadow-2xl border-4 border-white aspect-square">
+              <Image 
+                src="/images/haan-solution.png" 
+                alt="SEO Erfolg für Handwerksbetriebe"
                 fill
-                className="object-cover"
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
               />
+              <div className="absolute inset-0 bg-gradient-to-tr from-accent/20 to-transparent mix-blend-overlay" />
+            </div>
+            
+            {/* Floating stats card */}
+            <div className="absolute -bottom-8 -right-8 bg-white p-8 rounded-3xl shadow-2xl border border-slate-100 hidden md:block">
+              <div className="flex items-center gap-4 mb-4">
+                <div className="w-10 h-10 rounded-full bg-green-100 text-green-600 flex items-center justify-center">
+                  <Zap size={20} fill="currentColor" />
+                </div>
+                <span className="font-bold text-slate-900 text-xl">+240%</span>
+              </div>
+              <p className="text-slate-500 text-sm font-medium">Durchschnittlicher Zuwachs an<br />direkten Kundenanfragen</p>
+            </div>
           </div>
-          <div className="order-1 lg:order-2">
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-slate-900 mb-8 leading-tight">Deine digitale <span className="text-accent">Auftrags-Maschine.</span></h2>
-            <div className="grid sm:grid-cols-2 gap-6">
-              {items.map((item, i) => (
-                <div key={i} className="p-6 rounded-2xl bg-slate-50 border border-slate-100 hover:border-accent/30 transition-all group">
-                  <div className="w-12 h-12 rounded-xl bg-white shadow-sm flex items-center justify-center mb-4 text-slate-400 group-hover:text-accent group-hover:bg-accent/5 transition-all">
-                    <item.icon size={20} />
+
+          <div>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-accent/10 text-accent font-bold text-xs uppercase tracking-wider mb-6">
+              Die Lösung
+            </div>
+            
+            <h2 className="text-4xl md:text-5xl font-display font-bold text-slate-900 leading-tight mb-8">
+              Vom unsichtbaren Betrieb zur <span className="text-accent">Nummer 1 in deiner Region.</span>
+            </h2>
+            
+            <p className="text-lg text-slate-600 mb-12 leading-relaxed">
+              Mein SEO-System für Handwerker ist darauf ausgelegt, dir die Kontrolle über deine Auftragsbücher zurückzugeben. Wir bauen eine digitale Präsenz auf, die für dich arbeitet – rund um die Uhr.
+            </p>
+
+            <div className="grid sm:grid-cols-2 gap-8">
+              {benefits.map((b, idx) => (
+                <div key={idx} className="relative pl-10">
+                  <div className="absolute left-0 top-1 w-6 h-6 rounded-full bg-accent/10 flex items-center justify-center text-accent">
+                    <Globe size={14} />
                   </div>
-                  <h4 className="font-bold text-slate-900 mb-2">{item.title}</h4>
-                  <p className="text-sm text-slate-500 leading-relaxed">{item.text}</p>
+                  <h4 className="font-bold text-slate-900 mb-2">{b.title}</h4>
+                  <p className="text-sm text-slate-500 leading-relaxed">{b.desc}</p>
                 </div>
               ))}
+            </div>
+
+            <div className="mt-12">
+              <Link
+                href={CONTACT_URL}
+                className="inline-flex items-center gap-2 text-slate-900 font-bold hover:text-accent transition-colors group"
+              >
+                Mehr über das System erfahren
+                <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+              </Link>
             </div>
           </div>
         </div>
@@ -187,19 +240,146 @@ export function HandwerkerSolution() {
   );
 }
 
-export function HandwerkerCTA() {
+export function HandwerkerProcess() {
+  const steps = [
+    {
+      title: "1. Markt- & Keyword-Check",
+      desc: "Wir analysieren, wonach Kunden in deiner Region wirklich suchen (z.B. „Badsanierung [Stadt]“)."
+    },
+    {
+      title: "2. Lokale Optimierung",
+      desc: "Deine Website und dein Google Business Profil werden technisch und inhaltlich auf Hochglanz gebracht."
+    },
+    {
+      title: "3. Autorität & Vertrauen",
+      desc: "Wir sorgen für Experten-Content und Bewertungen, die dich als Profi in deiner Region positionieren."
+    },
+    {
+      title: "4. Monitoring & Wachstum",
+      desc: "In monatlichen Reports zeigen wir dir den Erfolg und passen die Strategie laufend an."
+    }
+  ];
+
   return (
-    <section className="py-24 px-6 bg-slate-50 border-t border-slate-200">
-      <div className="max-w-4xl mx-auto text-center">
-        <h2 className="text-4xl md:text-5xl font-display font-extrabold text-slate-900 mb-6">Mehr Aufträge durch besseres Ranking?</h2>
-        <p className="text-lg text-slate-600 mb-10 max-w-2xl mx-auto">Sicher dir jetzt dein kostenloses Beratungsgespräch und lass uns dein Handwerk nach vorne bringen.</p>
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-          <a href={CONTACT_URL} className="bg-accent text-white px-10 h-16 rounded-full flex items-center justify-center text-xl font-bold hover:scale-105 transition-transform shadow-xl shadow-accent/20 w-full sm:w-auto">
-            Kostenlos beraten lassen
-          </a>
-          <a href={WHATSAPP_URL} className="bg-white text-slate-900 border border-slate-200 px-10 h-16 rounded-full flex items-center justify-center text-xl font-bold hover:bg-slate-50 transition-all w-full sm:w-auto">
-            WhatsApp Chat
-          </a>
+    <section className="py-24 bg-slate-50" aria-labelledby="process-heading">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-3xl mb-16">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-200 text-slate-700 text-sm font-bold mb-6">
+            Der Ablauf: In 4 Schritten zum Erfolg
+          </div>
+          
+          <h2 id="process-heading" className="text-4xl md:text-5xl font-display font-bold text-slate-900 leading-tight mb-6">
+            Dein Weg zu mehr Aufträgen – strukturiert & transparent.
+          </h2>
+          
+          <p className="text-lg text-slate-600">
+            Ein erfolgreiches SEO für Handwerker ist ein strategischer Prozess. Wir lassen nichts dem Zufall überlassen und sorgen für nachhaltige Ergebnisse.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
+          {steps.map((step, idx) => (
+            <div key={idx} className="relative group">
+              {idx < steps.length - 1 && (
+                <div className="hidden lg:block absolute top-10 left-[60%] w-[80%] h-[2px] bg-slate-200 z-0">
+                  <div className="w-0 h-full bg-accent group-hover:w-full transition-all duration-700 delay-100"></div>
+                </div>
+              )}
+              
+              <div className="relative z-10 p-8 rounded-[2rem] bg-white border border-slate-100 shadow-sm hover:shadow-xl hover:border-accent/30 transition-all duration-500 h-full">
+                <div className="w-12 h-12 rounded-xl bg-slate-900 text-white flex items-center justify-center font-bold text-xl mb-6 shadow-lg shadow-slate-200 group-hover:bg-accent group-hover:scale-110 transition-all duration-300">
+                  {idx + 1}
+                </div>
+                <h3 className="text-xl font-bold text-slate-900 mb-4 leading-tight">{step.title}</h3>
+                <p className="text-slate-600 text-sm leading-relaxed">{step.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="p-10 rounded-[3rem] bg-slate-900 text-white relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-accent/20 rounded-full blur-[80px] -mr-32 -mt-32"></div>
+          <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-500/10 rounded-full blur-[80px] -ml-32 -mb-32"></div>
+          
+          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <div className="inline-flex items-center gap-2 text-accent font-bold mb-4 uppercase tracking-wider text-sm">
+                <div className="w-8 h-[2px] bg-accent"></div>
+                Nachhaltiges Wachstum
+              </div>
+              <h3 className="text-3xl font-bold mb-6">Keine Theorie, sondern echte Aufträge.</h3>
+              <p className="text-slate-300 text-lg leading-relaxed">
+                Mein Ansatz beim SEO für Handwerker ist direkt auf messbare Anfragen von Kunden ausgelegt. Wir bauen keine Klicks auf – wir bauen deine Marktposition auf.
+              </p>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-6 lg:justify-end">
+              <a
+                href={WHATSAPP_URL}
+                className="inline-flex items-center justify-center bg-white text-slate-900 hover:bg-slate-100 rounded-full px-8 h-14 font-bold transition-all shadow-lg"
+              >
+                <MessageCircle size={20} className="mr-2" />
+                WhatsApp Chat
+              </a>
+              <a
+                href={CONTACT_URL}
+                className="inline-flex items-center justify-center bg-accent hover:bg-accent/90 text-white rounded-full px-8 h-14 font-bold transition-all shadow-lg shadow-accent/20"
+              >
+                Kostenlose Analyse
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function HandwerkerFAQ() {
+  const faqs = [
+    {
+      q: "Was bringt SEO für Handwerker im Vergleich zu Portalen wie MyHammer?",
+      a: "Während Portale dich in eine Preis-Vergleichbarkeit zwingen, sorgt SEO für Exklusivität. Kunden finden dich direkt über Google. Das stärkt dein Experten-Image und liefert dir Anfragen, die nicht gleichzeitig an fünf andere Betriebe gehen."
+    },
+    {
+      q: "Wie lange dauert es, bis ich bei Google oben stehe?",
+      a: "SEO ist ein Marathon. Erste Veränderungen sind oft nach 3 bis 4 Monaten sichtbar. Eine dominante Position in deiner Region dauert meist 6 bis 12 Monate. Dafür bleibt diese Position extrem stabil."
+    },
+    {
+      q: "Muss ich meine komplette Website neu bauen?",
+      a: "Nicht zwingend. Wenn dein aktuelles System technisch sauber ist, optimieren wir den Bestand. Falls nicht, ist ein Relaunch oft der schnellere Weg zum Ziel."
+    },
+    {
+      q: "Lohnt sich SEO auch für spezialisierte Betriebe?",
+      a: "Gerade dort! Je spezialisierter du bist, desto wertvoller ist es, für genau diese Begriffe (z.B. „Photovoltaik-Reinigung [Stadt]“) gefunden zu werden."
+    }
+  ];
+
+  return (
+    <section className="py-24 bg-white" aria-labelledby="faq-heading">
+      <div className="max-w-4xl mx-auto px-6">
+        <div className="text-center mb-16">
+          <h2 id="faq-heading" className="text-4xl md:text-5xl font-display font-bold text-slate-900 mb-6">
+            FAQ – Alles über <span className="text-accent">SEO für Handwerker</span>
+          </h2>
+          <p className="text-lg text-slate-600">
+            Häufig gestellte Fragen und klare Antworten für deinen Erfolg.
+          </p>
+        </div>
+
+        <div className="space-y-4">
+          {faqs.map((faq, idx) => (
+            <details key={idx} className="group rounded-2xl border border-slate-100 bg-slate-50 transition-all duration-300 open:bg-white open:shadow-xl open:border-accent/20">
+              <summary className="flex items-center justify-between p-6 cursor-pointer list-none">
+                <h3 className="text-lg font-bold text-slate-900 pr-8">{faq.q}</h3>
+                <div className="w-8 h-8 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-400 group-open:bg-accent group-open:text-white group-open:border-accent transition-all duration-300">
+                  <ChevronDown className="group-open:rotate-180 transition-transform duration-300" size={18} />
+                </div>
+              </summary>
+              <div className="px-6 pb-6 text-slate-600 leading-relaxed">
+                <p>{faq.a}</p>
+              </div>
+            </details>
+          ))}
         </div>
       </div>
     </section>

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { HandwerkerHero, HandwerkerProblem, HandwerkerSolution, HandwerkerCTA } from "@/components/lp/HandwerkerSections";
+import { HandwerkerHero, HandwerkerProblem, HandwerkerSolution, HandwerkerProcess, HandwerkerFAQ } from "@/components/lp/HandwerkerSections";
 
 export const metadata: Metadata = {
   title: "SEO für Handwerker | Mehr Aufträge & lokale Sichtbarkeit",
@@ -12,7 +12,8 @@ export default function HandwerkerSEOPage() {
       <HandwerkerHero />
       <HandwerkerProblem />
       <HandwerkerSolution />
-      <HandwerkerCTA />
+      <HandwerkerProcess />
+      <HandwerkerFAQ />
     </main>
   );
 }
