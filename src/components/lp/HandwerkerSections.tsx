@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, MessageCircle, Star, SearchX, Euro, Users, AlertTriangle, TrendingDown, Globe, ShieldCheck, BarChart3, Unlock, ChevronDown, Hammer, Zap, MapPin } from "lucide-react";
+import { ArrowRight, MessageCircle, Star, SearchX, Euro, Users, AlertTriangle, TrendingDown, Globe, ShieldCheck, BarChart3, Unlock, ChevronDown, Hammer, Zap, MapPin, TrendingUp } from "lucide-react";
 import { PHONE_URL, WHATSAPP_URL, CONTACT_URL } from "@/lib/utils";
 import { motion } from "framer-motion";
 
@@ -22,11 +22,11 @@ export function HandwerkerHero() {
         <div className="absolute inset-0 bg-gradient-to-b from-slate-900/40 via-transparent to-slate-900" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10 py-20">
-        <div className="max-w-3xl">
+      <div className="max-w-7xl mx-auto px-6 relative z-10 py-20 w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/20 border border-accent/30 text-accent font-bold text-sm mb-8 backdrop-blur-md">
@@ -35,11 +35,11 @@ export function HandwerkerHero() {
             </div>
 
             <h1 className="text-5xl md:text-7xl font-display font-extrabold text-white leading-[1.1] tracking-tight mb-8">
-              Mehr <span className="text-accent italic">Aufträge</span> für dein Handwerk – lokal & planbar.
+              Mehr <span className="text-accent italic">Aufträge</span> für dein Handwerk.
             </h1>
 
-            <p className="text-xl md:text-2xl text-slate-200 leading-relaxed mb-12 max-w-2xl font-light">
-              Schluss mit der Abhängigkeit von teuren Lead-Portalen. Wir sorgen dafür, dass Kunden dich direkt finden, wenn sie einen Profi in ihrer Nähe suchen.
+            <p className="text-xl text-slate-200 leading-relaxed mb-12 max-w-xl font-light">
+              Schluss mit der Abhängigkeit von teuren Lead-Portalen. Wir sorgen dafür, dass Kunden dich direkt finden, wenn sie einen Profi suchen.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6">
@@ -47,7 +47,7 @@ export function HandwerkerHero() {
                 href={CONTACT_URL}
                 className="inline-flex items-center justify-center bg-accent hover:bg-accent/90 text-white rounded-full px-10 h-16 text-lg font-bold shadow-2xl shadow-accent/40 transition-all hover:-translate-y-1 active:scale-95"
               >
-                Kostenlose Analyse anfordern
+                Kostenlose Analyse
                 <ArrowRight className="ml-2" size={20} />
               </Link>
               <a
@@ -57,22 +57,37 @@ export function HandwerkerHero() {
                 className="inline-flex items-center justify-center gap-2 rounded-full px-10 h-16 text-lg font-bold border border-white/20 bg-white/5 backdrop-blur-md text-white hover:bg-white/10 transition-all hover:-translate-y-1 active:scale-95"
               >
                 <MessageCircle size={22} className="text-accent" />
-                WhatsApp Chat
+                WhatsApp
               </a>
             </div>
+          </motion.div>
 
-            <div className="mt-12 flex flex-wrap items-center gap-8 opacity-70 grayscale transition-all hover:grayscale-0">
-              <div className="flex items-center gap-2 text-white font-medium">
-                <ShieldCheck className="text-accent" />
-                Planbare Neukunden
-              </div>
-              <div className="flex items-center gap-2 text-white font-medium">
-                <BarChart3 className="text-accent" />
-                Messbarer Erfolg
-              </div>
-              <div className="flex items-center gap-2 text-white font-medium">
-                <Unlock className="text-accent" />
-                Keine Knebelverträge
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="relative hidden lg:block"
+          >
+            <div className="relative rounded-[3rem] overflow-hidden shadow-2xl border border-white/10 bg-slate-800 aspect-square">
+                <Image
+                  src="/images/handwerker_success.png"
+                  alt="SEO Erfolg für Handwerker Visualisierung"
+                  fill
+                  className="object-cover"
+                  priority
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-60" />
+            </div>
+
+            <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl p-6 shadow-2xl border border-slate-100 z-10">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center text-accent">
+                  <TrendingUp size={24} />
+                </div>
+                <div>
+                  <p className="text-xl font-bold text-slate-900">+280%</p>
+                  <p className="text-xs text-slate-500 font-medium uppercase tracking-wider">Was du erreichst</p>
+                </div>
               </div>
             </div>
           </motion.div>
