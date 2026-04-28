@@ -68,25 +68,52 @@ export function HandwerkerHero() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="relative hidden lg:block"
           >
-            <div className="relative rounded-[3rem] overflow-hidden shadow-2xl border border-white/10 bg-slate-800 aspect-square">
-                <Image
-                  src="/images/handwerker_success.png"
-                  alt="SEO Erfolg für Handwerker Visualisierung"
-                  fill
-                  className="object-cover"
-                  priority
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-60" />
-            </div>
+            {/* Glassmorphism Benefits Card */}
+            <div className="relative">
+              {/* Badge */}
+              <div className="absolute -top-4 -right-4 z-20 bg-white rounded-full px-6 py-2 shadow-xl border border-slate-100 flex items-center gap-2">
+                <div className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+                <span className="text-sm font-bold text-slate-900 whitespace-nowrap">Mehr qualifizierte Anfragen</span>
+              </div>
 
-            <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl p-6 shadow-2xl border border-slate-100 z-10">
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center text-accent">
-                  <TrendingUp size={24} />
-                </div>
-                <div>
-                  <p className="text-xl font-bold text-slate-900">+280%</p>
-                  <p className="text-xs text-slate-500 font-medium uppercase tracking-wider">Was du erreichst</p>
+              <div className="bg-white/80 backdrop-blur-xl rounded-[2.5rem] p-10 shadow-2xl border border-white/40 max-w-md ml-auto">
+                <p className="text-accent font-bold text-sm tracking-[0.2em] mb-8">WAS DU ERREICHST</p>
+                
+                <div className="space-y-8">
+                  {[
+                    {
+                      title: "Top-Platzierungen",
+                      desc: "Werde direkt in deiner Region gefunden, wenn Kunden nach deinen Leistungen suchen."
+                    },
+                    {
+                      title: "Mehr Direktaufträge",
+                      desc: "Gewinne lukrative Anfragen direkt über deine Website – ohne teure Portale."
+                    },
+                    {
+                      title: "Regionale Dominanz",
+                      desc: "Werde zur Nummer 1 in deiner Stadt und sichere dir die besten Projekte."
+                    },
+                    {
+                      title: "Höhere Planbarkeit",
+                      desc: "Baue dir einen konstanten Strom an Neukunden auf, der deinen Betrieb wachsen lässt."
+                    }
+                  ].map((item, idx) => (
+                    <div key={idx} className="flex gap-4">
+                      <div className="w-6 h-6 rounded-full bg-accent/10 flex items-center justify-center shrink-0 mt-1">
+                        <motion.div
+                          initial={{ scale: 0 }}
+                          animate={{ scale: 1 }}
+                          transition={{ delay: 0.5 + (idx * 0.1) }}
+                        >
+                          <ShieldCheck size={14} className="text-accent" />
+                        </motion.div>
+                      </div>
+                      <div>
+                        <p className="font-bold text-slate-900 mb-1">{item.title}:</p>
+                        <p className="text-sm text-slate-600 leading-relaxed">{item.desc}</p>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
