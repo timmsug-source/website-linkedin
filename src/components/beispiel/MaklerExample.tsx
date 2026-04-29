@@ -201,7 +201,7 @@ export function MaklerExampleAbout() {
           <div className="relative">
             <div className="relative z-10 rounded-[3rem] overflow-hidden shadow-2xl border-8 border-white">
               <Image
-                src="/Users/timmschurig/.gemini/antigravity/brain/f48add7c-695d-443c-b1e7-cc8b17c5578a/makler_team_portrait_1777452932712.png"
+                src="/images/makler_team_portrait.png"
                 alt="Das Team von Beispiel Immo"
                 width={800}
                 height={1000}
