@@ -53,7 +53,7 @@ export function MaklerExampleHeader() {
 
 export function MaklerExampleHero() {
   return (
-    <section className="relative min-h-[95vh] pt-48 pb-24 flex items-center">
+    <section className="relative min-h-screen pt-40 pb-20 flex flex-col justify-between">
       {/* Background Image Container */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -63,16 +63,15 @@ export function MaklerExampleHero() {
           className="object-cover"
           priority
         />
-        {/* Adjusted gradient for better contrast but preserving image visibility */}
         <div className="absolute inset-0 bg-white/20" />
-        <div className="absolute inset-0 bg-gradient-to-r from-white/70 via-white/30 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-white/80 via-white/40 to-transparent" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+      <div className="max-w-7xl mx-auto px-6 relative z-10 w-full mt-auto mb-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center py-20">
           {/* Left: Content */}
           <div className="max-w-2xl">
-            <p className="text-orange-600 font-black text-sm tracking-[0.3em] mb-6 inline-block bg-white/50 backdrop-blur-sm px-4 py-1 rounded-full border border-white/60">
+            <p className="text-orange-600 font-black text-sm tracking-[0.3em] mb-6 inline-block bg-white/60 backdrop-blur-sm px-4 py-1 rounded-full border border-white/80">
               PERSÖNLICH. REGIONAL. KOMPETENT.
             </p>
             <h1 className="text-5xl lg:text-7xl font-display font-black text-slate-900 leading-[1.05] mb-8">
@@ -84,23 +83,23 @@ export function MaklerExampleHero() {
             </p>
 
             {/* Search Box */}
-            <div className="bg-white/70 backdrop-blur-2xl p-3 rounded-[2.5rem] shadow-2xl border border-white/80 max-w-xl">
+            <div className="bg-white/80 backdrop-blur-2xl p-3 rounded-[2.5rem] shadow-2xl border border-white max-w-xl">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
-                <div className="p-4 bg-white/40 rounded-2xl border border-white/50 flex flex-col justify-center">
+                <div className="p-4 bg-white/50 rounded-2xl border border-white/60 flex flex-col justify-center">
                   <span className="text-[10px] uppercase font-black text-slate-500 mb-1">Standort</span>
                   <div className="flex items-center justify-between">
                     <span className="text-sm font-bold text-slate-900">Stadt, Region...</span>
                     <ChevronDown size={14} className="text-slate-400" />
                   </div>
                 </div>
-                <div className="p-4 bg-white/40 rounded-2xl border border-white/50 flex flex-col justify-center">
+                <div className="p-4 bg-white/50 rounded-2xl border border-white/60 flex flex-col justify-center">
                   <span className="text-[10px] uppercase font-black text-slate-500 mb-1">Typ</span>
                   <div className="flex items-center justify-between">
                     <span className="text-sm font-bold text-slate-900">Kaufen</span>
                     <ChevronDown size={14} className="text-slate-400" />
                   </div>
                 </div>
-                <div className="p-4 bg-white/40 rounded-2xl border border-white/50 flex flex-col justify-center">
+                <div className="p-4 bg-white/50 rounded-2xl border border-white/60 flex flex-col justify-center">
                   <span className="text-[10px] uppercase font-black text-slate-500 mb-1">Preis</span>
                   <div className="flex items-center justify-between">
                     <span className="text-sm font-bold text-slate-900">Preis bis</span>
@@ -117,7 +116,7 @@ export function MaklerExampleHero() {
 
           {/* Right: Floating Elements */}
           <div className="hidden lg:flex justify-end">
-            <div className="bg-white/80 backdrop-blur-xl p-10 rounded-[3rem] shadow-2xl border border-white max-w-xs relative animate-bounce-slow">
+            <div className="bg-white/90 backdrop-blur-xl p-10 rounded-[3rem] shadow-2xl border border-white max-w-xs relative animate-bounce-slow">
               <div className="w-16 h-16 bg-orange-100 text-orange-600 rounded-3xl flex items-center justify-center mb-8 shadow-sm">
                 <Star size={32} fill="currentColor" />
               </div>
@@ -135,60 +134,57 @@ export function MaklerExampleHero() {
           </div>
         </div>
       </div>
-    </section>
-  );
-}
 
-export function MaklerExampleStats() {
-  return (
-    <div className="relative z-20 -mt-16 mb-[-64px]">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="bg-white rounded-[3rem] shadow-2xl border border-slate-100 p-8 grid grid-cols-2 lg:grid-cols-4 gap-8">
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-12 bg-slate-50 text-slate-900 rounded-2xl flex items-center justify-center">
-              <Users size={24} />
+      {/* Stats Bar - Integrated at the bottom of the hero section */}
+      <div className="relative z-10 w-full mb-12">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="bg-white/90 backdrop-blur-xl rounded-[3rem] shadow-2xl border border-white/50 p-8 grid grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 bg-slate-100 text-slate-900 rounded-2xl flex items-center justify-center">
+                <Users size={24} />
+              </div>
+              <div>
+                <div className="text-2xl font-black text-slate-900 leading-none">150+</div>
+                <div className="text-xs font-bold text-slate-500 uppercase tracking-tighter">Zufriedene Kunden</div>
+              </div>
             </div>
-            <div>
-              <div className="text-2xl font-black text-slate-900 leading-none">150+</div>
-              <div className="text-xs font-bold text-slate-500 uppercase tracking-tighter">Zufriedene Kunden</div>
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 bg-slate-100 text-slate-900 rounded-2xl flex items-center justify-center">
+                <Home size={24} />
+              </div>
+              <div>
+                <div className="text-2xl font-black text-slate-900 leading-none">250+</div>
+                <div className="text-xs font-bold text-slate-500 uppercase tracking-tighter">Erfolgreich vermittelt</div>
+              </div>
             </div>
-          </div>
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-12 bg-slate-50 text-slate-900 rounded-2xl flex items-center justify-center">
-              <Home size={24} />
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 bg-slate-100 text-slate-900 rounded-2xl flex items-center justify-center">
+                <BarChart3 size={24} />
+              </div>
+              <div>
+                <div className="text-2xl font-black text-slate-900 leading-none">15+</div>
+                <div className="text-xs font-bold text-slate-500 uppercase tracking-tighter">Jahre Erfahrung</div>
+              </div>
             </div>
-            <div>
-              <div className="text-2xl font-black text-slate-900 leading-none">250+</div>
-              <div className="text-xs font-bold text-slate-500 uppercase tracking-tighter">Erfolgreich vermittelt</div>
-            </div>
-          </div>
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-12 bg-slate-50 text-slate-900 rounded-2xl flex items-center justify-center">
-              <BarChart3 size={24} />
-            </div>
-            <div>
-              <div className="text-2xl font-black text-slate-900 leading-none">15+</div>
-              <div className="text-xs font-bold text-slate-500 uppercase tracking-tighter">Jahre Erfahrung</div>
-            </div>
-          </div>
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-12 bg-slate-50 text-slate-900 rounded-2xl flex items-center justify-center">
-              <ShieldCheck size={24} />
-            </div>
-            <div>
-              <div className="text-2xl font-black text-slate-900 leading-none">100%</div>
-              <div className="text-xs font-bold text-slate-500 uppercase tracking-tighter">Engagement für Sie</div>
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 bg-slate-100 text-slate-900 rounded-2xl flex items-center justify-center">
+                <ShieldCheck size={24} />
+              </div>
+              <div>
+                <div className="text-2xl font-black text-slate-900 leading-none">100%</div>
+                <div className="text-xs font-bold text-slate-500 uppercase tracking-tighter">Engagement für Sie</div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 
 export function MaklerExampleSellBanner() {
   return (
-    <section className="bg-slate-900 pt-32 pb-32 overflow-hidden relative">
+    <section className="bg-slate-900 pt-24 pb-32 overflow-hidden relative">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
           <div className="lg:col-span-5">
