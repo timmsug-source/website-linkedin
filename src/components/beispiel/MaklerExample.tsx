@@ -1,7 +1,8 @@
 "use client";
 
+import { useRef } from "react";
 import Image from "next/image";
-import { Search, ChevronDown, Star, Home, Users, Euro, BarChart3, ShieldCheck, Check, Info } from "lucide-react";
+import { Search, ChevronDown, Star, Home, Users, Euro, BarChart3, ShieldCheck, Check, Info, ChevronLeft, ChevronRight } from "lucide-react";
 
 export function MaklerExampleHeader() {
   const menuItems = [
@@ -269,6 +270,8 @@ export function MaklerExampleAbout() {
 }
 
 export function MaklerExampleProperties() {
+  const scrollRef = useRef<HTMLDivElement>(null);
+
   const properties = [
     {
       title: "Moderne Design-Villa mit Pool",
@@ -296,24 +299,89 @@ export function MaklerExampleProperties() {
       rooms: "5 Zimmer",
       image: "/images/property_house.png",
       tag: "Familienhit"
+    },
+    {
+      title: "Modernes Industrie-Loft",
+      location: "Düsseldorf, Medienhafen",
+      price: "550.000 €",
+      sqm: "95 m²",
+      rooms: "2 Zimmer",
+      image: "/images/property_loft.png",
+      tag: "Urban Living"
+    },
+    {
+      title: "Kernsanierter Gutshof",
+      location: "Leichlingen, Umland",
+      price: "720.000 €",
+      sqm: "210 m²",
+      rooms: "7 Zimmer",
+      image: "/images/property_farmhouse.png",
+      tag: "Landlust"
+    },
+    {
+      title: "Helle Büroetage",
+      location: "Langenfeld, Business-Park",
+      price: "1.500.000 €",
+      sqm: "400 m²",
+      rooms: "12 Zimmer",
+      image: "/images/property_office.png",
+      tag: "Investment"
     }
   ];
 
+  const scroll = (direction: 'left' | 'right') => {
+    if (scrollRef.current) {
+      const { scrollLeft, clientWidth } = scrollRef.current;
+      const scrollTo = direction === 'left' 
+        ? scrollLeft - clientWidth * 0.8 
+        : scrollLeft + clientWidth * 0.8;
+      
+      scrollRef.current.scrollTo({ left: scrollTo, behavior: 'smooth' });
+    }
+  };
+
   return (
-    <section className="py-24 bg-slate-50">
+    <section className="py-24 bg-slate-50 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <p className="text-orange-600 font-black text-sm tracking-[0.3em] mb-4 uppercase">
-            Aktuelle Angebote
-          </p>
-          <h2 className="text-4xl lg:text-5xl font-display font-black text-slate-900">
-            Exklusive <span className="text-orange-600">Immobilien</span>
-          </h2>
+        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+          <div className="text-left">
+            <p className="text-orange-600 font-black text-sm tracking-[0.3em] mb-4 uppercase">
+              Aktuelle Angebote
+            </p>
+            <h2 className="text-4xl lg:text-5xl font-display font-black text-slate-900 leading-tight">
+              Exklusive <span className="text-orange-600">Immobilien</span><br />
+              in Ihrer Region
+            </h2>
+          </div>
+          
+          {/* Navigation Buttons */}
+          <div className="flex gap-4">
+            <button 
+              onClick={() => scroll('left')}
+              className="w-14 h-14 rounded-full border-2 border-slate-200 flex items-center justify-center text-slate-400 hover:bg-white hover:border-orange-600 hover:text-orange-600 transition-all active:scale-90"
+            >
+              <ChevronLeft size={24} />
+            </button>
+            <button 
+              onClick={() => scroll('right')}
+              className="w-14 h-14 rounded-full border-2 border-slate-200 flex items-center justify-center text-slate-400 hover:bg-white hover:border-orange-600 hover:text-orange-600 transition-all active:scale-90"
+            >
+              <ChevronRight size={24} />
+            </button>
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        {/* Property Slider */}
+        <div 
+          ref={scrollRef}
+          className="flex overflow-x-auto snap-x snap-mandatory gap-8 no-scrollbar pb-12 -mx-6 px-6"
+          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        >
           {properties.map((prop, index) => (
-            <div key={index} className="group bg-white rounded-[2.5rem] overflow-hidden shadow-xl hover:shadow-2xl transition-all border border-slate-100 flex flex-col h-full">
+            <div 
+              key={index} 
+              className="flex-shrink-0 w-[85vw] md:w-[45vw] lg:w-[30vw] snap-start group bg-white rounded-[2.5rem] overflow-hidden shadow-xl hover:shadow-2xl transition-all border border-slate-100 flex flex-col"
+            >
               {/* Image Container */}
               <div className="relative h-72 overflow-hidden">
                 <Image
@@ -340,22 +408,22 @@ export function MaklerExampleProperties() {
                 <p className="text-orange-600 font-black text-[10px] uppercase tracking-widest mb-2">
                   {prop.location}
                 </p>
-                <h3 className="text-xl font-black text-slate-900 mb-6 group-hover:text-orange-600 transition-colors">
+                <h3 className="text-xl font-black text-slate-900 mb-6 group-hover:text-orange-600 transition-colors line-clamp-1">
                   {prop.title}
                 </h3>
 
                 <div className="grid grid-cols-3 gap-4 border-t border-slate-100 pt-6 mt-auto">
                   <div className="text-center">
                     <span className="block text-slate-400 text-[10px] font-bold uppercase mb-1">Fläche</span>
-                    <span className="font-black text-slate-900 text-sm">{prop.sqm}</span>
+                    <span className="font-black text-slate-900 text-sm whitespace-nowrap">{prop.sqm}</span>
                   </div>
-                  <div className="text-center border-x border-slate-100">
+                  <div className="text-center border-x border-slate-100 px-2">
                     <span className="block text-slate-400 text-[10px] font-bold uppercase mb-1">Zimmer</span>
-                    <span className="font-black text-slate-900 text-sm">{prop.rooms}</span>
+                    <span className="font-black text-slate-900 text-sm whitespace-nowrap">{prop.rooms}</span>
                   </div>
                   <div className="text-center">
                     <span className="block text-slate-400 text-[10px] font-bold uppercase mb-1">Kaufpreis</span>
-                    <span className="font-black text-orange-600 text-sm">{prop.price}</span>
+                    <span className="font-black text-orange-600 text-sm whitespace-nowrap">{prop.price}</span>
                   </div>
                 </div>
               </div>
@@ -363,12 +431,17 @@ export function MaklerExampleProperties() {
           ))}
         </div>
 
-        <div className="text-center mt-16">
+        <div className="text-center mt-8">
           <button className="bg-slate-900 text-white px-10 py-5 rounded-full font-black text-xs uppercase tracking-widest hover:bg-orange-600 transition-all shadow-xl active:scale-95">
             Alle Immobilien ansehen
           </button>
         </div>
       </div>
+      <style jsx>{`
+        .no-scrollbar::-webkit-scrollbar {
+          display: none;
+        }
+      `}</style>
     </section>
   );
 }
