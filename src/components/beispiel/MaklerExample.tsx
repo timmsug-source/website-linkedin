@@ -1,7 +1,36 @@
 "use client";
 
 import Image from "next/image";
-import { Search, ChevronDown, Star, Home, Users, Euro, BarChart3, ShieldCheck, Check } from "lucide-react";
+import { Search, ChevronDown, Star, Home, Users, Euro, BarChart3, ShieldCheck, Check, Info } from "lucide-react";
+
+export function MaklerExampleShowcaseBanner() {
+  return (
+    <div className="bg-slate-900 py-2 border-b border-white/10 relative z-[100]">
+      <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-2">
+        <div className="flex items-center gap-3">
+          <div className="w-6 h-6 rounded-lg bg-orange-600 flex items-center justify-center text-white">
+            <Info size={14} />
+          </div>
+          <p className="text-[11px] font-bold text-slate-200">
+            <span className="text-orange-500">Showcase:</span> Branchen-Lösung für Immobilienmakler & Portfolio-Referenz.
+          </p>
+        </div>
+        <div className="flex items-center gap-6">
+          <div className="hidden lg:flex items-center gap-2">
+            <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+            <span className="text-[9px] uppercase font-black tracking-widest text-slate-400">Vorschau Modus</span>
+          </div>
+          <a 
+            href="/kontakt" 
+            className="text-[10px] font-black uppercase tracking-widest text-white hover:text-orange-500 transition-colors bg-white/5 px-4 py-1 rounded-full border border-white/10"
+          >
+            Projekt anfragen
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export function MaklerExampleHeader() {
   const menuItems = [
@@ -22,8 +51,8 @@ export function MaklerExampleHeader() {
             <Home size={24} />
           </div>
           <div className="flex flex-col">
-            <span className="text-xl font-black text-slate-900 leading-none">Dr. HeRo</span>
-            <span className="text-[10px] text-slate-600 font-bold uppercase tracking-tighter">Dein Experte für Finanzen & Immobilien</span>
+            <span className="text-xl font-black text-slate-900 leading-none uppercase">Beispiel Immo</span>
+            <span className="text-[10px] text-slate-600 font-bold uppercase tracking-tighter">Ihre Branchen-Lösung für Erfolg</span>
           </div>
         </div>
 
