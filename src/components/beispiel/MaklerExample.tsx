@@ -53,7 +53,7 @@ export function MaklerExampleHeader() {
 
 export function MaklerExampleHero() {
   return (
-    <section className="relative min-h-[90vh] pt-48 pb-48 flex items-center overflow-hidden">
+    <section className="relative min-h-[95vh] pt-48 pb-24 flex items-center">
       {/* Background Image Container */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -64,8 +64,8 @@ export function MaklerExampleHero() {
           priority
         />
         {/* Adjusted gradient for better contrast but preserving image visibility */}
-        <div className="absolute inset-0 bg-white/40" />
-        <div className="absolute inset-0 bg-gradient-to-r from-white/60 via-white/20 to-transparent" />
+        <div className="absolute inset-0 bg-white/20" />
+        <div className="absolute inset-0 bg-gradient-to-r from-white/70 via-white/30 to-transparent" />
       </div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
@@ -135,57 +135,60 @@ export function MaklerExampleHero() {
           </div>
         </div>
       </div>
+    </section>
+  );
+}
 
-      {/* Stats Bar - Better integrated to avoid overlap */}
-      <div className="absolute bottom-0 left-0 right-0 translate-y-1/2 z-20">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="bg-white rounded-[3rem] shadow-2xl border border-slate-100 p-8 grid grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 bg-slate-50 text-slate-900 rounded-2xl flex items-center justify-center">
-                <Users size={24} />
-              </div>
-              <div>
-                <div className="text-2xl font-black text-slate-900 leading-none">150+</div>
-                <div className="text-xs font-bold text-slate-500 uppercase tracking-tighter">Zufriedene Kunden</div>
-              </div>
+export function MaklerExampleStats() {
+  return (
+    <div className="relative z-20 -mt-16 mb-[-64px]">
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="bg-white rounded-[3rem] shadow-2xl border border-slate-100 p-8 grid grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="flex items-center gap-4">
+            <div className="w-12 h-12 bg-slate-50 text-slate-900 rounded-2xl flex items-center justify-center">
+              <Users size={24} />
             </div>
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 bg-slate-50 text-slate-900 rounded-2xl flex items-center justify-center">
-                <Home size={24} />
-              </div>
-              <div>
-                <div className="text-2xl font-black text-slate-900 leading-none">250+</div>
-                <div className="text-xs font-bold text-slate-500 uppercase tracking-tighter">Erfolgreich vermittelt</div>
-              </div>
+            <div>
+              <div className="text-2xl font-black text-slate-900 leading-none">150+</div>
+              <div className="text-xs font-bold text-slate-500 uppercase tracking-tighter">Zufriedene Kunden</div>
             </div>
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 bg-slate-50 text-slate-900 rounded-2xl flex items-center justify-center">
-                <BarChart3 size={24} />
-              </div>
-              <div>
-                <div className="text-2xl font-black text-slate-900 leading-none">15+</div>
-                <div className="text-xs font-bold text-slate-500 uppercase tracking-tighter">Jahre Erfahrung</div>
-              </div>
+          </div>
+          <div className="flex items-center gap-4">
+            <div className="w-12 h-12 bg-slate-50 text-slate-900 rounded-2xl flex items-center justify-center">
+              <Home size={24} />
             </div>
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 bg-slate-50 text-slate-900 rounded-2xl flex items-center justify-center">
-                <ShieldCheck size={24} />
-              </div>
-              <div>
-                <div className="text-2xl font-black text-slate-900 leading-none">100%</div>
-                <div className="text-xs font-bold text-slate-500 uppercase tracking-tighter">Engagement für Sie</div>
-              </div>
+            <div>
+              <div className="text-2xl font-black text-slate-900 leading-none">250+</div>
+              <div className="text-xs font-bold text-slate-500 uppercase tracking-tighter">Erfolgreich vermittelt</div>
+            </div>
+          </div>
+          <div className="flex items-center gap-4">
+            <div className="w-12 h-12 bg-slate-50 text-slate-900 rounded-2xl flex items-center justify-center">
+              <BarChart3 size={24} />
+            </div>
+            <div>
+              <div className="text-2xl font-black text-slate-900 leading-none">15+</div>
+              <div className="text-xs font-bold text-slate-500 uppercase tracking-tighter">Jahre Erfahrung</div>
+            </div>
+          </div>
+          <div className="flex items-center gap-4">
+            <div className="w-12 h-12 bg-slate-50 text-slate-900 rounded-2xl flex items-center justify-center">
+              <ShieldCheck size={24} />
+            </div>
+            <div>
+              <div className="text-2xl font-black text-slate-900 leading-none">100%</div>
+              <div className="text-xs font-bold text-slate-500 uppercase tracking-tighter">Engagement für Sie</div>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 }
 
 export function MaklerExampleSellBanner() {
   return (
-    <section className="bg-slate-900 pt-48 pb-32 overflow-hidden relative">
+    <section className="bg-slate-900 pt-32 pb-32 overflow-hidden relative">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
           <div className="lg:col-span-5">
