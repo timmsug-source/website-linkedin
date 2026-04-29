@@ -327,6 +327,12 @@ export function MaklerExampleProperties() {
                     {prop.tag}
                   </span>
                 </div>
+                {/* Image Placeholder Disclaimer */}
+                <div className="absolute bottom-0 left-0 right-0 bg-black/40 backdrop-blur-sm py-2 px-4">
+                  <p className="text-[9px] text-white/90 font-bold uppercase tracking-widest text-center">
+                    Beispielbild / Platzhalter
+                  </p>
+                </div>
               </div>
 
               {/* Content */}
