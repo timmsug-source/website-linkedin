@@ -192,6 +192,82 @@ export function MaklerExampleHero() {
   );
 }
 
+export function MaklerExampleAbout() {
+  return (
+    <section className="py-24 bg-white overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+          {/* Left: Team Image */}
+          <div className="relative">
+            <div className="relative z-10 rounded-[3rem] overflow-hidden shadow-2xl border-8 border-white">
+              <Image
+                src="/Users/timmschurig/.gemini/antigravity/brain/f48add7c-695d-443c-b1e7-cc8b17c5578a/makler_team_portrait_1777452932712.png"
+                alt="Das Team von Beispiel Immo"
+                width={800}
+                height={1000}
+                className="w-full h-auto object-cover"
+              />
+            </div>
+            {/* Decorative Elements */}
+            <div className="absolute -top-10 -left-10 w-40 h-40 bg-orange-600/10 rounded-full blur-3xl" />
+            <div className="absolute -bottom-10 -right-10 w-60 h-60 bg-orange-600/5 rounded-full blur-3xl" />
+            <div className="absolute top-1/2 -right-10 w-24 h-24 bg-white shadow-xl rounded-2xl flex items-center justify-center p-4 z-20 animate-bounce">
+              <div className="text-center">
+                <span className="block text-2xl font-black text-orange-600">15+</span>
+                <span className="block text-[8px] font-bold text-slate-500 uppercase tracking-widest">Jahre Fokus</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Right: Content */}
+          <div>
+            <p className="text-orange-600 font-black text-sm tracking-[0.3em] mb-6 uppercase">
+              Wer wir sind
+            </p>
+            <h2 className="text-4xl lg:text-5xl font-display font-black text-slate-900 leading-tight mb-8">
+              Expertise trifft auf<br />
+              <span className="text-orange-600">persönliche Beratung.</span>
+            </h2>
+            <div className="space-y-6 text-lg text-slate-600 leading-relaxed font-medium">
+              <p>
+                Hinter Beispiel Immo steht ein Team aus passionierten Immobilien-Experten, die den regionalen Markt seit über 15 Jahren wie ihre Westentasche kennen. Wir glauben nicht an Standard-Lösungen, sondern an individuelle Strategien für jedes Objekt.
+              </p>
+              <p>
+                Unser Ziel ist es, den oft komplexen Prozess des Immobilienkaufs oder -verkaufs für Sie so transparent und stressfrei wie möglich zu gestalten. Dabei setzen wir auf modernste Marketing-Tools und ein tiefes Verständnis für die Bedürfnisse unserer Kunden.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-2 gap-8 mt-12">
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-xl bg-orange-50 flex items-center justify-center text-orange-600 shrink-0">
+                  <ShieldCheck size={24} />
+                </div>
+                <div>
+                  <h4 className="font-black text-slate-900 text-sm uppercase mb-1">Vertrauen</h4>
+                  <p className="text-xs text-slate-500 font-bold">Diskretion & Sicherheit bei jedem Schritt.</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-xl bg-orange-50 flex items-center justify-center text-orange-600 shrink-0">
+                  <Users size={24} />
+                </div>
+                <div>
+                  <h4 className="font-black text-slate-900 text-sm uppercase mb-1">Netzwerk</h4>
+                  <p className="text-xs text-slate-500 font-bold">Direkter Zugang zu exklusiven Käufern.</p>
+                </div>
+              </div>
+            </div>
+
+            <button className="mt-12 bg-slate-900 text-white px-10 py-5 rounded-full font-black text-xs uppercase tracking-widest hover:bg-orange-600 transition-all shadow-xl active:scale-95">
+              Mehr über unser Team erfahren
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export function MaklerExampleSellBanner() {
   return (
     <section className="bg-slate-900 pt-24 pb-32 overflow-hidden relative">
