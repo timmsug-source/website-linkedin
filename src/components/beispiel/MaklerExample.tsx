@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import Image from "next/image";
-import { Search, ChevronDown, Star, Home, Users, Euro, BarChart3, ShieldCheck, Check, Info, ChevronLeft, ChevronRight, Camera, RotateCw, LayoutDashboard, Key } from "lucide-react";
+import { Search, ChevronDown, Star, Home, Users, Euro, BarChart3, ShieldCheck, Check, Info, ChevronLeft, ChevronRight, Camera, RotateCw, LayoutDashboard, Key, ExternalLink } from "lucide-react";
 
 export function MaklerExampleHeader() {
   const menuItems = [
@@ -527,6 +527,96 @@ export function MaklerExampleServices() {
               <div className="absolute -right-4 -bottom-4 w-24 h-24 bg-orange-600/5 rounded-full blur-3xl group-hover:bg-orange-600/10 transition-colors" />
             </div>
           ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function MaklerExampleGoogleReviews() {
+  const reviews = [
+    {
+      name: "Thomas Müller",
+      date: "vor 2 Wochen",
+      text: "Hervorragende Beratung und ein schneller Verkauf zum Wunschpreis. Sehr professionell und jederzeit erreichbar!",
+      rating: 5,
+      initials: "TM"
+    },
+    {
+      name: "Sarah Lechner",
+      date: "vor einem Monat",
+      text: "Die 360°-Tour hat uns absolut überzeugt. Alles lief reibungslos und transparent ab. Vielen Dank an das Team!",
+      rating: 5,
+      initials: "SL"
+    },
+    {
+      name: "Dieter Krause",
+      date: "vor 3 Monaten",
+      text: "Sehr kompetentes Team. Das Eigentümer-Cockpit ist genial, man weiß immer was gerade passiert. Absolute Empfehlung.",
+      rating: 5,
+      initials: "DK"
+    }
+  ];
+
+  return (
+    <section className="py-24 bg-slate-50">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="flex flex-col md:flex-row items-center justify-between mb-16 gap-12">
+          <div className="flex items-center gap-6">
+            <div className="relative w-24 h-24 bg-white rounded-3xl shadow-xl flex items-center justify-center p-4">
+              <Image 
+                src="/images/google_logo.png" 
+                alt="Google Logo" 
+                width={60} 
+                height={60}
+                className="object-contain"
+              />
+            </div>
+            <div>
+              <div className="flex items-center gap-1 mb-2">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} size={20} className="fill-yellow-400 text-yellow-400" />
+                ))}
+              </div>
+              <p className="text-3xl font-black text-slate-900">
+                4.9 / 5.0 <span className="text-slate-400 text-lg font-bold ml-2">Rezensionen</span>
+              </p>
+            </div>
+          </div>
+          <button className="flex items-center gap-3 bg-white border-2 border-slate-200 text-slate-900 px-8 py-4 rounded-2xl font-black hover:border-orange-600 hover:text-orange-600 transition-all shadow-sm active:scale-95">
+            <ExternalLink size={20} />
+            Auf Google bewerten
+          </button>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {reviews.map((review, index) => (
+            <div key={index} className="bg-white p-8 rounded-[2.5rem] shadow-xl border border-slate-100 flex flex-col">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-14 h-14 bg-slate-100 rounded-2xl flex items-center justify-center text-slate-600 font-black text-xl shadow-inner">
+                  {review.initials}
+                </div>
+                <div>
+                  <h4 className="font-black text-slate-900 leading-none mb-1">{review.name}</h4>
+                  <p className="text-slate-400 text-xs font-bold uppercase tracking-widest">{review.date}</p>
+                </div>
+              </div>
+              <div className="flex gap-1 mb-4">
+                {[...Array(review.rating)].map((_, i) => (
+                  <Star key={i} size={14} className="fill-yellow-400 text-yellow-400" />
+                ))}
+              </div>
+              <p className="text-slate-600 text-sm leading-relaxed italic">
+                "{review.text}"
+              </p>
+            </div>
+          ))}
+        </div>
+
+        <div className="text-center mt-12">
+          <p className="text-slate-400 font-bold text-sm">
+            Basierend auf über <span className="text-slate-900">142 verifizierten Kundenbewertungen</span>
+          </p>
         </div>
       </div>
     </section>

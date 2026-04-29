@@ -1,4 +1,4 @@
-import { MaklerExampleHeader, MaklerExampleHero, MaklerExampleSellBanner, MaklerExampleAbout, MaklerExampleProperties, MaklerExampleServices } from "@/components/beispiel/MaklerExample";
+import { MaklerExampleHeader, MaklerExampleHero, MaklerExampleSellBanner, MaklerExampleAbout, MaklerExampleProperties, MaklerExampleServices, MaklerExampleGoogleReviews } from "@/components/beispiel/MaklerExample";
 
 export const metadata = {
   title: "Webdesign für Immobilienmakler: Branchen-Lösung & Portfolio-Referenz",
@@ -31,6 +31,7 @@ export default function MaklerExamplePage() {
         <MaklerExampleAbout />
         <MaklerExampleProperties />
         <MaklerExampleServices />
+        <MaklerExampleGoogleReviews />
         
         {/* Spacer for potential next sections */}
         <div className="py-20" />
