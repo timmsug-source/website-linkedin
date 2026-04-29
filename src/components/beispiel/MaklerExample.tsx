@@ -3,35 +3,6 @@
 import Image from "next/image";
 import { Search, ChevronDown, Star, Home, Users, Euro, BarChart3, ShieldCheck, Check, Info } from "lucide-react";
 
-export function MaklerExampleShowcaseBanner() {
-  return (
-    <div className="bg-slate-900 py-2 border-b border-white/10 relative z-[100]">
-      <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-2">
-        <div className="flex items-center gap-3">
-          <div className="w-6 h-6 rounded-lg bg-orange-600 flex items-center justify-center text-white">
-            <Info size={14} />
-          </div>
-          <p className="text-[11px] font-bold text-slate-200">
-            <span className="text-orange-500">Showcase:</span> Branchen-Lösung für Immobilienmakler & Portfolio-Referenz.
-          </p>
-        </div>
-        <div className="flex items-center gap-6">
-          <div className="hidden lg:flex items-center gap-2">
-            <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
-            <span className="text-[9px] uppercase font-black tracking-widest text-slate-400">Vorschau Modus</span>
-          </div>
-          <a 
-            href="/kontakt" 
-            className="text-[10px] font-black uppercase tracking-widest text-white hover:text-orange-500 transition-colors bg-white/5 px-4 py-1 rounded-full border border-white/10"
-          >
-            Projekt anfragen
-          </a>
-        </div>
-      </div>
-    </div>
-  );
-}
-
 export function MaklerExampleHeader() {
   const menuItems = [
     { name: "Immobilien", hasDropdown: true },
@@ -43,16 +14,44 @@ export function MaklerExampleHeader() {
   ];
 
   return (
-    <header className="absolute top-0 left-0 right-0 z-50 bg-transparent">
+    <header className="absolute top-0 left-0 right-0 z-50">
+      {/* Showcase Banner */}
+      <div className="bg-[#0f172a]/90 backdrop-blur-md py-2.5 border-b border-orange-500/20 shadow-lg">
+        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-2">
+          <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2 bg-orange-600/10 px-2 py-0.5 rounded-full border border-orange-600/20">
+              <Info size={12} className="text-orange-500" />
+              <span className="text-[9px] font-black uppercase tracking-widest text-orange-500">Showcase</span>
+            </div>
+            <p className="text-[11px] font-bold text-slate-300">
+              Branchen-Lösung für Immobilienmakler & Portfolio-Referenz
+            </p>
+          </div>
+          <div className="flex items-center gap-6">
+            <div className="hidden lg:flex items-center gap-2">
+              <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+              <span className="text-[9px] uppercase font-black tracking-widest text-slate-500">Live Vorschau</span>
+            </div>
+            <a 
+              href="/kontakt" 
+              className="text-[9px] font-black uppercase tracking-widest text-white hover:text-orange-500 transition-all bg-orange-600 px-4 py-1.5 rounded-full shadow-lg shadow-orange-600/20"
+            >
+              Projekt anfragen
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* Main Navbar */}
       <div className="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
         {/* Logo */}
-        <div className="flex items-center gap-2 group cursor-pointer bg-white/10 backdrop-blur-sm p-2 rounded-xl border border-white/20">
-          <div className="w-10 h-10 bg-orange-600 rounded-lg flex items-center justify-center text-white shadow-lg">
-            <Home size={24} />
+        <div className="flex items-center gap-3 group cursor-pointer bg-white/10 backdrop-blur-sm p-2 px-4 rounded-2xl border border-white/20">
+          <div className="w-10 h-10 bg-orange-600 rounded-xl flex items-center justify-center text-white shadow-lg group-hover:scale-105 transition-transform">
+            <Home size={22} strokeWidth={2.5} />
           </div>
           <div className="flex flex-col">
-            <span className="text-xl font-black text-slate-900 leading-none uppercase">Beispiel Immo</span>
-            <span className="text-[10px] text-slate-600 font-bold uppercase tracking-tighter">Ihre Branchen-Lösung für Erfolg</span>
+            <span className="text-xl font-black text-slate-900 leading-none tracking-tighter uppercase">Beispiel Immo</span>
+            <span className="text-[9px] text-orange-600 font-black uppercase tracking-[0.1em] mt-0.5">Premium Solution</span>
           </div>
         </div>
 
@@ -82,7 +81,7 @@ export function MaklerExampleHeader() {
 
 export function MaklerExampleHero() {
   return (
-    <section className="relative min-h-screen pt-40 pb-20 flex flex-col justify-between">
+    <section className="relative min-h-screen flex flex-col justify-between overflow-hidden pt-48">
       {/* Background Image Container */}
       <div className="absolute inset-0 z-0">
         <Image

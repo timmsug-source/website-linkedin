@@ -1,4 +1,4 @@
-import { MaklerExampleHeader, MaklerExampleHero, MaklerExampleSellBanner, MaklerExampleShowcaseBanner } from "@/components/beispiel/MaklerExample";
+import { MaklerExampleHeader, MaklerExampleHero, MaklerExampleSellBanner } from "@/components/beispiel/MaklerExample";
 
 export const metadata = {
   title: "Webdesign für Immobilienmakler: Branchen-Lösung & Portfolio-Referenz",
@@ -24,7 +24,6 @@ export default function MaklerExamplePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <MaklerExampleShowcaseBanner />
       <main className="min-h-screen">
         <MaklerExampleHeader />
         <MaklerExampleHero />
