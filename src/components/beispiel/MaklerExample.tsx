@@ -14,65 +14,44 @@ export function MaklerExampleHeader() {
   ];
 
   return (
-    <header className="absolute top-0 left-0 right-0 z-50">
-      {/* Showcase Banner */}
-      <div className="bg-[#0f172a]/90 backdrop-blur-md py-2.5 border-b border-orange-500/20 shadow-lg">
-        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-2">
-          <div className="flex items-center gap-3">
-            <div className="flex items-center gap-2 bg-orange-600/10 px-2 py-0.5 rounded-full border border-orange-600/20">
-              <Info size={12} className="text-orange-500" />
-              <span className="text-[9px] font-black uppercase tracking-widest text-orange-500">Showcase</span>
-            </div>
-            <p className="text-[11px] font-bold text-slate-300">
-              Branchen-Lösung für Immobilienmakler & Portfolio-Referenz
-            </p>
-          </div>
+    <header className="absolute top-0 left-0 right-0 z-50 pt-8">
+      <div className="max-w-[1400px] mx-auto px-6">
+        <div className="bg-white/90 backdrop-blur-xl rounded-full h-20 flex items-center justify-between px-4 md:px-8 border border-white/40 shadow-2xl shadow-slate-900/10">
+          
+          {/* Logo & Portfolio Badge */}
           <div className="flex items-center gap-6">
-            <div className="hidden lg:flex items-center gap-2">
-              <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
-              <span className="text-[9px] uppercase font-black tracking-widest text-slate-500">Live Vorschau</span>
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 bg-orange-600 rounded-xl flex items-center justify-center text-white shadow-lg">
+                <Home size={20} strokeWidth={2.5} />
+              </div>
+              <span className="text-xl font-black text-slate-900 tracking-tighter uppercase whitespace-nowrap">Beispiel Immo</span>
             </div>
-            <a 
-              href="/kontakt" 
-              className="text-[9px] font-black uppercase tracking-widest text-white hover:text-orange-500 transition-all bg-orange-600 px-4 py-1.5 rounded-full shadow-lg shadow-orange-600/20"
-            >
-              Projekt anfragen
-            </a>
+            
+            <div className="hidden xl:flex items-center gap-2 border-l border-slate-200 pl-6">
+              <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+              <span className="text-[10px] font-black uppercase tracking-widest text-slate-400 whitespace-nowrap">Showcase: Branchen-Lösung</span>
+            </div>
           </div>
-        </div>
-      </div>
 
-      {/* Main Navbar */}
-      <div className="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
-        {/* Logo */}
-        <div className="flex items-center gap-3 group cursor-pointer bg-white/10 backdrop-blur-sm p-2 px-4 rounded-2xl border border-white/20">
-          <div className="w-10 h-10 bg-orange-600 rounded-xl flex items-center justify-center text-white shadow-lg group-hover:scale-105 transition-transform">
-            <Home size={22} strokeWidth={2.5} />
-          </div>
-          <div className="flex flex-col">
-            <span className="text-xl font-black text-slate-900 leading-none tracking-tighter uppercase">Beispiel Immo</span>
-            <span className="text-[9px] text-orange-600 font-black uppercase tracking-[0.1em] mt-0.5">Premium Solution</span>
-          </div>
-        </div>
+          {/* Navigation */}
+          <nav className="hidden lg:flex items-center gap-6">
+            {menuItems.map((item) => (
+              <button key={item.name} className="flex items-center gap-1 text-slate-700 font-bold hover:text-orange-600 transition-colors text-[11px] uppercase tracking-wider whitespace-nowrap">
+                {item.name}
+                {item.hasDropdown && <ChevronDown size={12} />}
+              </button>
+            ))}
+          </nav>
 
-        {/* Navigation */}
-        <nav className="hidden lg:flex items-center gap-8 bg-white/40 backdrop-blur-md px-8 h-14 rounded-full border border-white/40 shadow-sm">
-          {menuItems.map((item) => (
-            <button key={item.name} className="flex items-center gap-1 text-slate-900 font-bold hover:text-orange-600 transition-colors text-sm uppercase tracking-wider">
-              {item.name}
-              {item.hasDropdown && <ChevronDown size={14} />}
+          {/* Actions */}
+          <div className="flex items-center gap-4">
+            <button className="hidden sm:flex w-10 h-10 items-center justify-center rounded-full bg-slate-100 text-slate-600 hover:bg-orange-600 hover:text-white transition-all">
+              <Search size={18} />
             </button>
-          ))}
-        </nav>
-
-        {/* Action Buttons */}
-        <div className="flex items-center gap-6">
-          <button className="w-12 h-12 flex items-center justify-center bg-white/40 backdrop-blur-md rounded-full border border-white/40 text-slate-900 hover:text-orange-600 transition-colors shadow-sm">
-            <Search size={20} />
-          </button>
-          <button className="bg-orange-600 hover:bg-orange-700 text-white px-8 h-14 rounded-full font-black transition-all shadow-xl shadow-orange-600/20 active:scale-95">
-            Jetzt kontaktieren &gt;
-          </button>
+            <button className="bg-orange-600 hover:bg-orange-700 text-white px-6 h-12 rounded-full font-black text-[11px] uppercase tracking-widest transition-all shadow-lg shadow-orange-600/20 active:scale-95 whitespace-nowrap">
+              Jetzt kontaktieren &gt;
+            </button>
+          </div>
         </div>
       </div>
     </header>
@@ -81,7 +60,7 @@ export function MaklerExampleHeader() {
 
 export function MaklerExampleHero() {
   return (
-    <section className="relative min-h-screen flex flex-col justify-between overflow-hidden pt-48">
+    <section className="relative min-h-screen flex flex-col justify-between overflow-hidden pt-32">
       {/* Background Image Container */}
       <div className="absolute inset-0 z-0">
         <Image
