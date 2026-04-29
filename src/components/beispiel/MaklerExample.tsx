@@ -326,6 +326,24 @@ export function MaklerExampleProperties() {
       rooms: "12 Zimmer",
       image: "/images/property_office.png",
       tag: "Investment"
+    },
+    {
+      title: "Penthouse-Atelier",
+      location: "Haan, Zentrum",
+      price: "420.000 €",
+      sqm: "75 m²",
+      rooms: "2 Zimmer",
+      image: "/images/property_atelier.png",
+      tag: "Künstler-Refugium"
+    },
+    {
+      title: "Modernes Reihenhaus",
+      location: "Solingen, Wald",
+      price: "495.000 €",
+      sqm: "120 m²",
+      rooms: "4 Zimmer",
+      image: "/images/property_rowhouse.png",
+      tag: "Top-Lage"
     }
   ];
 
@@ -333,8 +351,8 @@ export function MaklerExampleProperties() {
     if (scrollRef.current) {
       const { scrollLeft, clientWidth } = scrollRef.current;
       const scrollTo = direction === 'left' 
-        ? scrollLeft - clientWidth * 0.8 
-        : scrollLeft + clientWidth * 0.8;
+        ? scrollLeft - clientWidth * 0.6 
+        : scrollLeft + clientWidth * 0.6;
       
       scrollRef.current.scrollTo({ left: scrollTo, behavior: 'smooth' });
     }
@@ -374,16 +392,16 @@ export function MaklerExampleProperties() {
         {/* Property Slider */}
         <div 
           ref={scrollRef}
-          className="flex overflow-x-auto snap-x snap-mandatory gap-8 no-scrollbar pb-12 -mx-6 px-6"
+          className="flex overflow-x-auto snap-x snap-mandatory gap-6 no-scrollbar pb-12 -mx-6 px-6"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
           {properties.map((prop, index) => (
             <div 
               key={index} 
-              className="flex-shrink-0 w-[85vw] md:w-[45vw] lg:w-[30vw] snap-start group bg-white rounded-[2.5rem] overflow-hidden shadow-xl hover:shadow-2xl transition-all border border-slate-100 flex flex-col"
+              className="flex-shrink-0 w-[70vw] md:w-[35vw] lg:w-[22vw] snap-start group bg-white rounded-[2.5rem] overflow-hidden shadow-xl hover:shadow-2xl transition-all border border-slate-100 flex flex-col"
             >
               {/* Image Container */}
-              <div className="relative h-72 overflow-hidden">
+              <div className="relative h-80 overflow-hidden">
                 <Image
                   src={prop.image}
                   alt={prop.title}
