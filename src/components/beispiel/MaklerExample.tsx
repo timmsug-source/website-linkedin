@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import Image from "next/image";
-import { Search, ChevronDown, Star, Home, Users, Euro, BarChart3, ShieldCheck, Check, Info, ChevronLeft, ChevronRight } from "lucide-react";
+import { Search, ChevronDown, Star, Home, Users, Euro, BarChart3, ShieldCheck, Check, Info, ChevronLeft, ChevronRight, Camera, RotateCw, LayoutDashboard, Key } from "lucide-react";
 
 export function MaklerExampleHeader() {
   const menuItems = [
@@ -460,6 +460,75 @@ export function MaklerExampleProperties() {
           display: none;
         }
       `}</style>
+    </section>
+  );
+}
+
+export function MaklerExampleServices() {
+  const services = [
+    {
+      title: "Was Ihre Immobilie Wert ist",
+      description: "Erfahren Sie mit unserer datengestützten Immobilienbewertung den optimalen Preis für den Verkauf oder Vermietung.",
+      icon: <BarChart3 className="text-orange-600" size={32} />
+    },
+    {
+      title: "Professionelle Fotografie & Staging",
+      description: "Wir rücken Ihre Immobilie ins beste Licht und erzielen so einen höheren Verkaufspreis.",
+      icon: <Camera className="text-orange-600" size={32} />
+    },
+    {
+      title: "Virtuelle 360°-Touren",
+      description: "Modernste Präsentation und Besichtigung schaffen schnellere und präzise Ergebnisse.",
+      icon: <RotateCw className="text-orange-600" size={32} />
+    },
+    {
+      title: "Jederzeit alles im Blick",
+      description: "Verfolgen Sie alle Vermarktungsaktivitäten in Echtzeit – transparent in Ihrem persönlichen Eigentümer-Cockpit.",
+      icon: <LayoutDashboard className="text-orange-600" size={32} />
+    },
+    {
+      title: "Sorgenfrei Verkaufen & Vermieten",
+      description: "Zählen Sie auf unsere Expertise bei allen Fragen rund um den Immobilienverkauf und die Immobilienvermietung. Wir sorgen für einen sicheren Abschluss.",
+      icon: <ShieldCheck className="text-orange-600" size={32} />
+    },
+    {
+      title: "Die Vermietungs-Flat",
+      description: "Exklusiv für unsere Vermieter: Zieht Ihr Mieter innerhalb des ersten Jahres aus, ist die Anschlussvermietung für Sie kostenfrei.",
+      icon: <Key className="text-orange-600" size={32} />
+    }
+  ];
+
+  return (
+    <section className="py-24 bg-white">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="text-center mb-16">
+          <p className="text-orange-600 font-black text-sm tracking-[0.3em] mb-4 uppercase">
+            Mehrwert für Verkäufer
+          </p>
+          <h2 className="text-4xl lg:text-5xl font-display font-black text-slate-900">
+            Leistungen für <span className="text-orange-600">Eigentümer</span>
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+          {services.map((service, index) => (
+            <div key={index} className="group p-10 rounded-[2.5rem] bg-slate-50 hover:bg-white hover:shadow-2xl transition-all duration-500 border border-transparent hover:border-slate-100 relative overflow-hidden">
+              <div className="w-20 h-20 bg-white rounded-2xl flex items-center justify-center mb-8 shadow-sm group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500 relative z-10">
+                {service.icon}
+              </div>
+              <h3 className="text-xl font-black text-slate-900 mb-4 group-hover:text-orange-600 transition-colors relative z-10">
+                {service.title}
+              </h3>
+              <p className="text-slate-500 text-sm leading-relaxed font-medium relative z-10">
+                {service.description}
+              </p>
+              
+              {/* Subtle background decoration */}
+              <div className="absolute -right-4 -bottom-4 w-24 h-24 bg-orange-600/5 rounded-full blur-3xl group-hover:bg-orange-600/10 transition-colors" />
+            </div>
+          ))}
+        </div>
+      </div>
     </section>
   );
 }
