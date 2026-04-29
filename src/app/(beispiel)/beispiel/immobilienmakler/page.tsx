@@ -7,7 +7,7 @@ export const metadata = {
 
 export default function MaklerExamplePage() {
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen">
       <MaklerExampleHeader />
       <MaklerExampleHero />
       <MaklerExampleSellBanner />

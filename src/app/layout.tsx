@@ -40,11 +40,7 @@ export default function RootLayout({
         <link rel="manifest" href="/manifest.json" />
       </head>
       <body className="bg-white text-slate-900 antialiased">
-        <Navbar />
-        <main id="main-content">{children}</main>
-        <Footer />
-        <WhatsAppButton />
-        <ScrollToTop />
+        {children}
       </body>
     </html>
   );

@@ -53,9 +53,9 @@ export function MaklerExampleHeader() {
 
 export function MaklerExampleHero() {
   return (
-    <section className="relative min-h-screen pt-40 pb-32 flex items-center overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 -z-10">
+    <section className="relative min-h-[90vh] pt-48 pb-48 flex items-center overflow-hidden">
+      {/* Background Image Container */}
+      <div className="absolute inset-0 z-0">
         <Image
           src="/images/makler_example_hero.png"
           alt="Modernes Luxus-Interieur"
@@ -63,7 +63,8 @@ export function MaklerExampleHero() {
           className="object-cover"
           priority
         />
-        {/* Very subtle gradient to ensure text readability on the left */}
+        {/* Adjusted gradient for better contrast but preserving image visibility */}
+        <div className="absolute inset-0 bg-white/40" />
         <div className="absolute inset-0 bg-gradient-to-r from-white/60 via-white/20 to-transparent" />
       </div>
 
@@ -71,10 +72,10 @@ export function MaklerExampleHero() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
           {/* Left: Content */}
           <div className="max-w-2xl">
-            <p className="text-orange-600 font-black text-sm tracking-[0.3em] mb-6 inline-block bg-white/30 backdrop-blur-sm px-4 py-1 rounded-full border border-white/40">
+            <p className="text-orange-600 font-black text-sm tracking-[0.3em] mb-6 inline-block bg-white/50 backdrop-blur-sm px-4 py-1 rounded-full border border-white/60">
               PERSÖNLICH. REGIONAL. KOMPETENT.
             </p>
-            <h1 className="text-5xl lg:text-7xl font-display font-black text-slate-900 leading-[1.05] mb-8 drop-shadow-sm">
+            <h1 className="text-5xl lg:text-7xl font-display font-black text-slate-900 leading-[1.05] mb-8">
               Ihr Immobilienziel.<br />
               <span className="text-orange-600">Unsere Mission.</span>
             </h1>
@@ -83,24 +84,24 @@ export function MaklerExampleHero() {
             </p>
 
             {/* Search Box */}
-            <div className="bg-white/60 backdrop-blur-xl p-3 rounded-[2.5rem] shadow-2xl border border-white max-w-xl">
+            <div className="bg-white/70 backdrop-blur-2xl p-3 rounded-[2.5rem] shadow-2xl border border-white/80 max-w-xl">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
-                <div className="p-4 bg-white/50 rounded-2xl border border-white flex flex-col justify-center">
-                  <span className="text-[10px] uppercase font-black text-slate-400 mb-1">Standort</span>
+                <div className="p-4 bg-white/40 rounded-2xl border border-white/50 flex flex-col justify-center">
+                  <span className="text-[10px] uppercase font-black text-slate-500 mb-1">Standort</span>
                   <div className="flex items-center justify-between">
                     <span className="text-sm font-bold text-slate-900">Stadt, Region...</span>
                     <ChevronDown size={14} className="text-slate-400" />
                   </div>
                 </div>
-                <div className="p-4 bg-white/50 rounded-2xl border border-white flex flex-col justify-center">
-                  <span className="text-[10px] uppercase font-black text-slate-400 mb-1">Typ</span>
+                <div className="p-4 bg-white/40 rounded-2xl border border-white/50 flex flex-col justify-center">
+                  <span className="text-[10px] uppercase font-black text-slate-500 mb-1">Typ</span>
                   <div className="flex items-center justify-between">
                     <span className="text-sm font-bold text-slate-900">Kaufen</span>
                     <ChevronDown size={14} className="text-slate-400" />
                   </div>
                 </div>
-                <div className="p-4 bg-white/50 rounded-2xl border border-white flex flex-col justify-center">
-                  <span className="text-[10px] uppercase font-black text-slate-400 mb-1">Preis</span>
+                <div className="p-4 bg-white/40 rounded-2xl border border-white/50 flex flex-col justify-center">
+                  <span className="text-[10px] uppercase font-black text-slate-500 mb-1">Preis</span>
                   <div className="flex items-center justify-between">
                     <span className="text-sm font-bold text-slate-900">Preis bis</span>
                     <ChevronDown size={14} className="text-slate-400" />
@@ -116,7 +117,7 @@ export function MaklerExampleHero() {
 
           {/* Right: Floating Elements */}
           <div className="hidden lg:flex justify-end">
-            <div className="bg-white/70 backdrop-blur-xl p-10 rounded-[3rem] shadow-2xl border border-white max-w-xs relative animate-bounce-slow">
+            <div className="bg-white/80 backdrop-blur-xl p-10 rounded-[3rem] shadow-2xl border border-white max-w-xs relative animate-bounce-slow">
               <div className="w-16 h-16 bg-orange-100 text-orange-600 rounded-3xl flex items-center justify-center mb-8 shadow-sm">
                 <Star size={32} fill="currentColor" />
               </div>
@@ -135,8 +136,8 @@ export function MaklerExampleHero() {
         </div>
       </div>
 
-      {/* Stats Bar */}
-      <div className="absolute bottom-0 left-0 right-0 transform translate-y-1/2 z-20">
+      {/* Stats Bar - Better integrated to avoid overlap */}
+      <div className="absolute bottom-0 left-0 right-0 translate-y-1/2 z-20">
         <div className="max-w-6xl mx-auto px-6">
           <div className="bg-white rounded-[3rem] shadow-2xl border border-slate-100 p-8 grid grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="flex items-center gap-4">
@@ -184,7 +185,7 @@ export function MaklerExampleHero() {
 
 export function MaklerExampleSellBanner() {
   return (
-    <section className="bg-slate-900 py-32 overflow-hidden relative">
+    <section className="bg-slate-900 pt-48 pb-32 overflow-hidden relative">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
           <div className="lg:col-span-5">
