@@ -27,9 +27,9 @@ export default function MaklerExamplePage() {
       <main className="min-h-screen">
         <MaklerExampleHeader />
         <MaklerExampleHero />
-        <MaklerExampleProperties />
         <MaklerExampleSellBanner />
         <MaklerExampleAbout />
+        <MaklerExampleProperties />
         
         {/* Spacer for potential next sections */}
         <div className="py-20" />
