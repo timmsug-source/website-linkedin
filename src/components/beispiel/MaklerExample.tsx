@@ -268,6 +268,105 @@ export function MaklerExampleAbout() {
   );
 }
 
+export function MaklerExampleProperties() {
+  const properties = [
+    {
+      title: "Moderne Design-Villa mit Pool",
+      location: "Haan, Musikantenviertel",
+      price: "1.250.000 €",
+      sqm: "285 m²",
+      rooms: "6 Zimmer",
+      image: "/images/property_villa.png",
+      tag: "Exklusiv"
+    },
+    {
+      title: "Luxus-Penthouse mit Fernblick",
+      location: "Hilden, Stadtzentrum",
+      price: "895.000 €",
+      sqm: "145 m²",
+      rooms: "3.5 Zimmer",
+      image: "/images/property_penthouse.png",
+      tag: "Neubau"
+    },
+    {
+      title: "Charmantes Einfamilienhaus",
+      location: "Solingen, Ohligs",
+      price: "645.000 €",
+      sqm: "165 m²",
+      rooms: "5 Zimmer",
+      image: "/images/property_house.png",
+      tag: "Familienhit"
+    }
+  ];
+
+  return (
+    <section className="py-24 bg-slate-50">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="text-center mb-16">
+          <p className="text-orange-600 font-black text-sm tracking-[0.3em] mb-4 uppercase">
+            Aktuelle Angebote
+          </p>
+          <h2 className="text-4xl lg:text-5xl font-display font-black text-slate-900">
+            Exklusive <span className="text-orange-600">Immobilien</span>
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          {properties.map((prop, index) => (
+            <div key={index} className="group bg-white rounded-[2.5rem] overflow-hidden shadow-xl hover:shadow-2xl transition-all border border-slate-100 flex flex-col h-full">
+              {/* Image Container */}
+              <div className="relative h-72 overflow-hidden">
+                <Image
+                  src={prop.image}
+                  alt={prop.title}
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-700"
+                />
+                <div className="absolute top-6 left-6">
+                  <span className="bg-orange-600 text-white px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest shadow-lg">
+                    {prop.tag}
+                  </span>
+                </div>
+              </div>
+
+              {/* Content */}
+              <div className="p-8 flex flex-col flex-grow">
+                <p className="text-orange-600 font-black text-[10px] uppercase tracking-widest mb-2">
+                  {prop.location}
+                </p>
+                <h3 className="text-xl font-black text-slate-900 mb-6 group-hover:text-orange-600 transition-colors">
+                  {prop.title}
+                </h3>
+
+                <div className="grid grid-cols-3 gap-4 border-t border-slate-100 pt-6 mt-auto">
+                  <div className="text-center">
+                    <span className="block text-slate-400 text-[10px] font-bold uppercase mb-1">Fläche</span>
+                    <span className="font-black text-slate-900 text-sm">{prop.sqm}</span>
+                  </div>
+                  <div className="text-center border-x border-slate-100">
+                    <span className="block text-slate-400 text-[10px] font-bold uppercase mb-1">Zimmer</span>
+                    <span className="font-black text-slate-900 text-sm">{prop.rooms}</span>
+                  </div>
+                  <div className="text-center">
+                    <span className="block text-slate-400 text-[10px] font-bold uppercase mb-1">Kaufpreis</span>
+                    <span className="font-black text-orange-600 text-sm">{prop.price}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="text-center mt-16">
+          <button className="bg-slate-900 text-white px-10 py-5 rounded-full font-black text-xs uppercase tracking-widest hover:bg-orange-600 transition-all shadow-xl active:scale-95">
+            Alle Immobilien ansehen
+          </button>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export function MaklerExampleSellBanner() {
   return (
     <section className="bg-slate-900 pt-24 pb-32 overflow-hidden relative">
