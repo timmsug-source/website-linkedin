@@ -182,45 +182,66 @@ export default function LinkedInLP() {
       </section>
 
       {/* ── 2. PROBLEM ──────────────────────────────────────────────────── */}
-      <section className="py-24 px-6 bg-slate-900">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16 max-w-4xl mx-auto">
-            <p className="text-accent font-bold text-sm uppercase tracking-[0.2em] mb-4">
-              Das Problem
-            </p>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-extrabold text-white leading-tight mb-8">
-              Die Reichweiten-Falle: <span className="text-slate-400">Warum Sichtbarkeit allein dich nicht weiterbringt</span>
-            </h2>
-            <div className="space-y-6 text-slate-300 text-lg leading-relaxed text-left md:text-center">
-              <p>
-                Du postest täglich, lieferst Mehrwert und sammelst Likes – doch die Anfragen bleiben aus. Das Problem? Dein Content erzeugt zwar Aufmerksamkeit, aber dein digitales Fundament leitet diesen Traffic ins Leere. Wenn Interessenten von LinkedIn auf eine Website treffen, die keine klare Führung bietet, springen sie sofort wieder ab.
+      <section className="py-24 px-6 bg-slate-900 overflow-hidden">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* Left – Content */}
+            <div>
+              <p className="text-accent font-bold text-sm uppercase tracking-[0.2em] mb-4">
+                Das Problem
               </p>
-              <p>
-                Du verbrennst wertvolle Zeit in einem Hamsterrad aus Content-Erstellung, ohne dass daraus messbare Anfragen entstehen. Statt einer Website, die für dich verkauft, hast du eine digitale Visitenkarte, die potenzielle Kunden eher verwirrt als überzeugt. Es fehlt die strategische Verknüpfung zwischen deinem Branding und einem optimierten Sales-Funnel, der Vertrauen in echte Buchungen verwandelt.
-              </p>
-            </div>
-          </div>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-extrabold text-white leading-tight mb-8">
+                Die Reichweiten-Falle:{" "}
+                <span className="text-slate-400">
+                  Warum Sichtbarkeit allein dich nicht weiterbringt
+                </span>
+              </h2>
+              <div className="space-y-6 text-slate-300 text-lg leading-relaxed mb-10">
+                <p>
+                  Du postest täglich, lieferst Mehrwert und sammelst Likes – doch die Anfragen bleiben aus. Das Problem? Dein Content erzeugt zwar Aufmerksamkeit, aber dein digitales Fundament leitet diesen Traffic ins Leere. Wenn Interessenten von LinkedIn auf eine Website treffen, die keine klare Führung bietet, springen sie sofort wieder ab.
+                </p>
+                <p>
+                  Du verbrennst wertvolle Zeit in einem Hamsterrad aus Content-Erstellung, ohne dass daraus messbare Anfragen entstehen. Statt einer Website, die für dich verkauft, hast du eine digitale Visitenkarte, die potenzielle Kunden eher verwirrt als überzeugt. Es fehlt die strategische Verknüpfung zwischen deinem Branding und einem optimierten Sales-Funnel.
+                </p>
+              </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {problems.map((p, i) => {
-              const Icon = p.icon;
-              return (
-                <div
-                  key={i}
-                  className="group bg-slate-800 border border-slate-700 hover:border-accent/30 rounded-3xl p-8 transition-[border-color,box-shadow] hover:shadow-lg hover:shadow-accent/5"
-                >
-                  <div className="w-12 h-12 rounded-2xl bg-accent/10 border border-accent/20 flex items-center justify-center mb-6 group-hover:bg-accent/20 transition-colors">
-                    <Icon size={22} className="text-accent" />
-                  </div>
-                  <h3 className="font-bold text-white text-lg mb-3">
-                    {p.title}
-                  </h3>
-                  <p className="text-slate-400 text-sm leading-relaxed">
-                    {p.description}
-                  </p>
-                </div>
-              );
-            })}
+              {/* Vertical List of Problems */}
+              <div className="space-y-6">
+                {problems.map((p, i) => {
+                  const Icon = p.icon;
+                  return (
+                    <div
+                      key={i}
+                      className="flex items-start gap-5 group"
+                    >
+                      <div className="w-10 h-10 rounded-xl bg-red-500/10 border border-red-500/20 flex items-center justify-center shrink-0 group-hover:bg-red-500/20 transition-colors">
+                        <Icon size={20} className="text-red-400" />
+                      </div>
+                      <div>
+                        <h3 className="font-bold text-white text-base mb-1">
+                          {p.title}
+                        </h3>
+                        <p className="text-slate-400 text-sm leading-relaxed">
+                          {p.description}
+                        </p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Right – Visual */}
+            <div className="relative">
+              <div className="absolute -inset-4 bg-accent/20 rounded-[2.5rem] blur-2xl opacity-30" />
+              <div className="relative bg-slate-800 border border-slate-700 rounded-[2.5rem] p-2 overflow-hidden shadow-2xl">
+                <img
+                  src="/images/reach_trap.png"
+                  alt="LinkedIn Reach Trap Visual"
+                  className="w-full h-auto rounded-[2rem] object-cover"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
