@@ -299,6 +299,8 @@ export default function LinkedInLP() {
                   Statt blindem Posting setzen wir auf ein technisches und inhaltliches Fundament, das für dich arbeitet – auch wenn du gerade nicht online bist. Wir optimieren die User Journey so, dass jeder Klick ein Ziel hat. So machst du dich unabhängig von launischen Algorithmen und baust einen planbaren Kanal für Neukunden auf.
                 </p>
               </div>
+
+              <div className="space-y-6 mb-12">
                 {solutions.map((s, i) => {
                   const Icon = s.icon;
                   return (
