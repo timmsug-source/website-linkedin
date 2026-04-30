@@ -239,6 +239,16 @@ export default function LinkedInLP() {
                   );
                 })}
               </div>
+
+              {/* Action Button */}
+              <div className="mt-12">
+                <a
+                  href={CONTACT_URL}
+                  className="inline-flex items-center gap-3 bg-white text-slate-950 hover:bg-accent hover:text-white rounded-full px-10 py-4 font-bold transition-all shadow-xl shadow-white/5"
+                >
+                  <Search size={20} /> Kostenloser Website-Check
+                </a>
+              </div>
             </div>
 
             {/* Right – Visual */}
