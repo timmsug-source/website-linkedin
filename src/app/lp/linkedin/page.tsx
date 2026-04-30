@@ -39,22 +39,22 @@ const benefits = [
 
 const problems = [
   {
-    icon: ShieldAlert,
-    title: "Vertrauensverlust",
+    icon: TrendingUp,
+    title: "Viel Lärm, kein Ertrag",
     description:
-      "Deine Website hält nicht das Qualitätsversprechen deines Contents.",
+      "Likes zahlen keine Rechnungen; ohne Conversion-Strategie verpufft dein Aufwand.",
   },
   {
     icon: MousePointerClick,
-    title: "Fehlende Führung",
+    title: "Die digitale Sackgasse",
     description:
-      "Besucher wissen nicht, was ihr nächster logischer Schritt ist.",
+      "Interessenten finden keinen klaren Weg zum Erstgespräch und verlassen deine Seite frustriert.",
   },
   {
-    icon: Activity,
-    title: "Abhängigkeit",
+    icon: Search,
+    title: "Unsichtbar bei der Suche",
     description:
-      "Du bist Sklave des Algorithmus, statt über Google aktiv gefunden zu werden.",
+      "Du bist vom Algorithmus abhängig, weil du für aktiv Suchende auf Google nicht existierst.",
   },
 ];
 
@@ -203,15 +203,15 @@ export default function LinkedInLP() {
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-extrabold text-white leading-tight mb-8">
                 Die Reichweiten-Falle:{" "}
                 <span className="text-slate-400">
-                  Warum Sichtbarkeit allein dich nicht weiterbringt
+                  Warum dein Content bisher nicht verkauft
                 </span>
               </h2>
               <div className="space-y-6 text-slate-300 text-lg leading-relaxed mb-10">
                 <p>
-                  Du postest täglich, lieferst Mehrwert und sammelst Likes – doch die Anfragen bleiben aus. Das Problem? Dein Content erzeugt zwar Aufmerksamkeit, aber dein digitales Fundament leitet diesen Traffic ins Leere. Wenn Interessenten von LinkedIn auf eine Website treffen, die keine klare Führung bietet, springen sie sofort wieder ab.
+                  Du investierst Stunden in Content, erhältst Applaus und Likes – doch am Ende des Monats bleibt dein Postfach leer. Das Problem ist nicht deine Sichtbarkeit, sondern der Bruch in deiner Verkaufsstrategie. Wenn potenzielle Kunden von deinem Profil auf deine Website klicken, landen sie in einer Sackgasse. Statt Vertrauen aufzubauen und den Verkauf abzuschließen, sorgt ein unklarer Webauftritt für sofortige Absprünge.
                 </p>
                 <p>
-                  Du verbrennst wertvolle Zeit in einem Hamsterrad aus Content-Erstellung, ohne dass daraus messbare Anfragen entstehen. Statt einer Website, die für dich verkauft, hast du eine digitale Visitenkarte, die potenzielle Kunden eher verwirrt als überzeugt. Es fehlt die strategische Verknüpfung zwischen deinem Branding und einem optimierten Sales-Funnel.
+                  Du verbrennst wertvolle Leads, weil deine Website nicht die Autorität ausstrahlt, die dein Content verspricht. Ohne einen optimierten Funnel und eine klare Positionierung bleibt dein Marketing ein teures Hobby statt ein berechenbarer Umsatzmotor.
                 </p>
               </div>
 
@@ -267,53 +267,71 @@ export default function LinkedInLP() {
       </section>
 
       {/* ── 3. LÖSUNG ───────────────────────────────────────────────────── */}
-      <section className="py-24 px-6 bg-slate-950">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <p className="text-accent font-bold text-sm uppercase tracking-[0.2em] mb-4">
-              Die Lösung
-            </p>
-            <h2 className="text-3xl md:text-4xl font-display font-extrabold text-white leading-tight">
-              Dein LinkedIn-Erfolg braucht{" "}
-              <span className="text-accent">
-                ein Zuhause, das konvertiert.
-              </span>
-            </h2>
-          </div>
+      <section className="py-24 px-6 bg-slate-950 overflow-hidden">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* Left – Visual */}
+            <div className="relative order-2 lg:order-1">
+              <div className="absolute -inset-4 bg-emerald-500/20 rounded-[2.5rem] blur-2xl opacity-30" />
+              <div className="relative bg-slate-900 border border-slate-800 rounded-[2.5rem] p-2 overflow-hidden shadow-2xl">
+                <img
+                  src="/images/lead_machine.png"
+                  alt="Lead Machine Solution Visual"
+                  className="w-full h-auto rounded-[2rem] object-cover"
+                />
+              </div>
+            </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-            {solutions.map((s, i) => {
-              const Icon = s.icon;
-              return (
-                <div
-                  key={i}
-                  className={`group bg-slate-800/80 border ${s.accent} rounded-3xl p-8 transition-[border-color,box-shadow] hover:shadow-xl`}
+            {/* Right – Content */}
+            <div className="order-1 lg:order-2">
+              <p className="text-accent font-bold text-sm uppercase tracking-[0.2em] mb-4">
+                Die Lösung
+              </p>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-extrabold text-white leading-tight mb-8">
+                Dein LinkedIn-Erfolg braucht{" "}
+                <span className="text-accent">
+                  ein Zuhause, das konvertiert.
+                </span>
+              </h2>
+              
+              <div className="space-y-6 mb-12">
+                {solutions.map((s, i) => {
+                  const Icon = s.icon;
+                  return (
+                    <div
+                      key={i}
+                      className="flex items-start gap-6 group p-4 rounded-3xl hover:bg-slate-900/50 transition-colors border border-transparent hover:border-slate-800"
+                    >
+                      <div className={`w-12 h-12 rounded-2xl ${s.iconBg} flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform`}>
+                        <Icon size={24} />
+                      </div>
+                      <div>
+                        <div className="flex items-center gap-3 mb-1">
+                          <h3 className="font-bold text-white text-lg">
+                            {s.title}
+                          </h3>
+                          <span className="text-[10px] font-black uppercase tracking-widest text-slate-500 bg-slate-800 px-2 py-0.5 rounded">
+                            {s.tag}
+                          </span>
+                        </div>
+                        <p className="text-slate-400 text-sm leading-relaxed">
+                          {s.description}
+                        </p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+
+              <div className="text-center lg:text-left">
+                <a
+                  href={CONTACT_URL}
+                  className="inline-flex items-center gap-3 bg-white text-slate-950 hover:bg-accent hover:text-white rounded-full px-10 py-4 font-bold transition-all shadow-xl shadow-white/5"
                 >
-                  <div className="inline-flex items-center gap-2 bg-slate-700 rounded-full px-3 py-1 text-xs font-bold text-slate-300 uppercase tracking-widest mb-6">
-                    <Icon size={11} className={s.iconBg.split(" ")[1]} />
-                    {s.tag}
-                  </div>
-                  <div className={`w-12 h-12 rounded-2xl ${s.iconBg} flex items-center justify-center mb-5`}>
-                    <Icon size={22} />
-                  </div>
-                  <h3 className="font-bold text-white text-xl mb-4">
-                    {s.title}
-                  </h3>
-                  <p className="text-slate-400 text-sm leading-relaxed">
-                    {s.description}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
-
-          <div className="text-center">
-            <a
-              href={CONTACT_URL}
-              className="inline-flex items-center gap-3 bg-white text-slate-950 hover:bg-accent hover:text-white rounded-full px-10 py-4 font-bold transition-all shadow-xl shadow-white/5"
-            >
-              <Search size={20} /> Kostenloser Website-Check
-            </a>
+                  <Search size={20} /> Kostenloser Website-Check
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
