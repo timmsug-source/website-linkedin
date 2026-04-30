@@ -61,28 +61,28 @@ const problems = [
 const solutions = [
   {
     icon: Globe,
-    tag: "Website",
-    title: "Conversion-Websites",
+    tag: "Design",
+    title: "Strategisches Webdesign",
     description:
-      "Deine Website ist kein digitales Visitenkarten-Museum. Wir bauen einen Funnel, der Besucher psychologisch führt und genau eine Handlung provoziert: Die Anfrage.",
+      "Wir bauen Seiten, die nicht nur gut aussehen, sondern durch klare Führung und messbare PageSpeed die Conversion-Rate massiv steigern.",
     accent: "border-blue-500/30 hover:border-blue-400/50",
     iconBg: "bg-blue-500/10 text-blue-400",
   },
   {
     icon: Search,
     tag: "SEO",
-    title: "SEO-Strategie",
+    title: "SEO-Dominanz",
     description:
-      "LinkedIn ist nur ein Kanal. Wir sorgen dafür, dass dein Expertenstatus auch bei Google zementiert wird – damit du passiv Leads generierst, auch wenn du mal nicht postest.",
+      "Wir sorgen dafür, dass du nicht nur im Feed auftauchst, sondern bei den entscheidenden Suchanfragen deiner Zielgruppe ganz oben stehst.",
     accent: "border-emerald-500/30 hover:border-emerald-400/50",
     iconBg: "bg-emerald-500/10 text-emerald-400",
   },
   {
-    icon: MapPin,
-    tag: "GEO",
-    title: "GEO-Optimierung",
+    icon: Zap,
+    tag: "Funnel",
+    title: "Automatisierte Qualifizierung",
     description:
-      "Gerade für lokale oder regional spezifische Kunden ist GEO-Marketing der Hebel. Wir platzieren dich dort, wo Kunden in deiner Nähe nach deiner Expertise suchen.",
+      "Durch gezielte Funnel-Logik landen nur noch die Leads in deinem Kalender, die wirklich zu deinem Angebot passen und kaufbereit sind.",
     accent: "border-orange-500/30 hover:border-orange-400/50",
     iconBg: "bg-orange-500/10 text-orange-400",
   },
@@ -284,17 +284,21 @@ export default function LinkedInLP() {
 
             {/* Right – Content */}
             <div className="order-1 lg:order-2">
-              <p className="text-accent font-bold text-sm uppercase tracking-[0.2em] mb-4">
-                Die Lösung
-              </p>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-extrabold text-white leading-tight mb-8">
-                Dein LinkedIn-Erfolg braucht{" "}
+                Vom Content-Creator zum Experten-Business:{" "}
                 <span className="text-accent">
-                  ein Zuhause, das konvertiert.
+                  Deine Website als Conversion-Maschine
                 </span>
               </h2>
               
-              <div className="space-y-6 mb-12">
+              <div className="space-y-6 text-slate-300 text-lg leading-relaxed mb-10">
+                <p>
+                  Schluss mit Hoffnungs-Marketing. Wir verwandeln deine flüchtige Reichweite in eine digitale Verkaufspsychologie, die Besucher nicht nur informiert, sondern überzeugt. Die Lösung liegt in einem nahtlosen Übergang: Deine Website wird zur logischen Fortsetzung deiner Expertise, die das Vertrauen aus Social Media validiert und direkt in qualifizierte Anfragen übersetzt.
+                </p>
+                <p>
+                  Statt blindem Posting setzen wir auf ein technisches und inhaltliches Fundament, das für dich arbeitet – auch wenn du gerade nicht online bist. Wir optimieren die User Journey so, dass jeder Klick ein Ziel hat. So machst du dich unabhängig von launischen Algorithmen und baust einen planbaren Kanal für Neukunden auf.
+                </p>
+              </div>
                 {solutions.map((s, i) => {
                   const Icon = s.icon;
                   return (
