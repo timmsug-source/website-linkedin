@@ -257,20 +257,17 @@ export default function LinkedInLP() {
       </section>
 
       {/* ── 2.1 CTA: WEBSITE-CHECK ────────────────────────────────────────── */}
-      <section className="py-16 px-6 bg-slate-900/50 border-y border-slate-800/50 relative overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-accent/5 blur-[120px] rounded-full pointer-events-none" />
-        <div className="max-w-5xl mx-auto relative z-10 flex flex-col md:flex-row items-center justify-between gap-10">
-          <div className="text-center md:text-left">
-            <h3 className="text-2xl md:text-3xl font-display font-extrabold text-white mb-3">
-              Bist du unsicher, ob deine Website <span className="text-accent">wirklich</span> verkauft?
-            </h3>
-            <p className="text-slate-400 text-lg max-w-xl">
-              Lass uns deine Seite unter die Lupe nehmen. Wir finden die Conversion-Killer, die deine LinkedIn-Leads ausbremsen.
-            </p>
-          </div>
+      <section className="py-20 px-6 border-y border-slate-800/30">
+        <div className="max-w-4xl mx-auto text-center">
+          <h3 className="text-2xl md:text-3xl font-display font-extrabold text-white mb-4">
+            Bist du unsicher, ob deine Website <span className="text-accent">wirklich</span> verkauft?
+          </h3>
+          <p className="text-slate-400 text-lg mb-8 max-w-2xl mx-auto">
+            Wir analysieren deine Seite kostenlos auf Conversion-Killer, die deine LinkedIn-Leads ausbremsen.
+          </p>
           <a
             href={CONTACT_URL}
-            className="whitespace-nowrap inline-flex items-center gap-3 bg-white text-slate-950 hover:bg-accent hover:text-white rounded-full px-8 py-4 font-bold transition-all shadow-xl shadow-white/5"
+            className="inline-flex items-center gap-3 bg-accent hover:bg-accent/90 text-white rounded-full px-10 py-4 font-bold transition-all shadow-xl shadow-accent/20"
           >
             <Search size={20} /> Kostenloser Website-Check
           </a>
