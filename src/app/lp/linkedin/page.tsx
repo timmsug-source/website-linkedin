@@ -266,24 +266,11 @@ export default function LinkedInLP() {
         </div>
       </section>
 
-      {/* ── 3. LÖSUNG ───────────────────────────────────────────────────── */}
-      <section className="py-24 px-6 bg-slate-950 overflow-hidden">
+      <section className="py-24 px-6 bg-slate-950 overflow-hidden border-y border-slate-800/50">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            {/* Left – Visual */}
-            <div className="relative order-2 lg:order-1">
-              <div className="absolute -inset-4 bg-emerald-500/20 rounded-[2.5rem] blur-2xl opacity-30" />
-              <div className="relative bg-slate-900 border border-slate-800 rounded-[2.5rem] p-2 overflow-hidden shadow-2xl">
-                <img
-                  src="/images/lead_machine.png"
-                  alt="Lead Machine Solution Visual"
-                  className="w-full h-auto rounded-[2rem] object-cover"
-                />
-              </div>
-            </div>
-
-            {/* Right – Content */}
-            <div className="order-1 lg:order-2">
+          {/* Top part: Text & Image */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
+            <div>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-extrabold text-white leading-tight mb-8">
                 Vom Content-Creator zum Experten-Business:{" "}
                 <span className="text-accent">
@@ -291,7 +278,7 @@ export default function LinkedInLP() {
                 </span>
               </h2>
               
-              <div className="space-y-6 text-slate-300 text-lg leading-relaxed mb-10">
+              <div className="space-y-6 text-slate-300 text-lg leading-relaxed">
                 <p>
                   Schluss mit Hoffnungs-Marketing. Wir verwandeln deine flüchtige Reichweite in eine digitale Verkaufspsychologie, die Besucher nicht nur informiert, sondern überzeugt. Die Lösung liegt in einem nahtlosen Übergang: Deine Website wird zur logischen Fortsetzung deiner Expertise, die das Vertrauen aus Social Media validiert und direkt in qualifizierte Anfragen übersetzt.
                 </p>
@@ -299,45 +286,56 @@ export default function LinkedInLP() {
                   Statt blindem Posting setzen wir auf ein technisches und inhaltliches Fundament, das für dich arbeitet – auch wenn du gerade nicht online bist. Wir optimieren die User Journey so, dass jeder Klick ein Ziel hat. So machst du dich unabhängig von launischen Algorithmen und baust einen planbaren Kanal für Neukunden auf.
                 </p>
               </div>
-
-              <div className="space-y-6 mb-12">
-                {solutions.map((s, i) => {
-                  const Icon = s.icon;
-                  return (
-                    <div
-                      key={i}
-                      className="flex items-start gap-6 group p-4 rounded-3xl hover:bg-slate-900/50 transition-colors border border-transparent hover:border-slate-800"
-                    >
-                      <div className={`w-12 h-12 rounded-2xl ${s.iconBg} flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform`}>
-                        <Icon size={24} />
-                      </div>
-                      <div>
-                        <div className="flex items-center gap-3 mb-1">
-                          <h3 className="font-bold text-white text-lg">
-                            {s.title}
-                          </h3>
-                          <span className="text-[10px] font-black uppercase tracking-widest text-slate-500 bg-slate-800 px-2 py-0.5 rounded">
-                            {s.tag}
-                          </span>
-                        </div>
-                        <p className="text-slate-400 text-sm leading-relaxed">
-                          {s.description}
-                        </p>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-
-              <div className="text-center lg:text-left">
-                <a
-                  href={CONTACT_URL}
-                  className="inline-flex items-center gap-3 bg-white text-slate-950 hover:bg-accent hover:text-white rounded-full px-10 py-4 font-bold transition-all shadow-xl shadow-white/5"
-                >
-                  <Search size={20} /> Kostenloser Website-Check
-                </a>
-              </div>
             </div>
+
+            <div className="relative">
+              <div className="absolute -inset-4 bg-accent/20 blur-3xl rounded-full opacity-30" />
+              <img
+                src="/images/lead_machine.png"
+                alt="Lead Machine Solution Visual"
+                className="w-full h-auto rounded-[2rem] object-cover relative z-10 border border-slate-800 shadow-2xl"
+              />
+            </div>
+          </div>
+
+          {/* Bottom part: Solution Points Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+            {solutions.map((s, i) => {
+              const Icon = s.icon;
+              return (
+                <div
+                  key={i}
+                  className="flex flex-col items-start gap-6 group p-8 rounded-[2rem] bg-slate-900/50 border border-slate-800 hover:border-accent/50 transition-all hover:translate-y-[-4px]"
+                >
+                  <div className={`w-14 h-14 rounded-2xl ${s.iconBg} flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform shadow-lg shadow-black/20`}>
+                    <Icon size={28} />
+                  </div>
+                  <div>
+                    <div className="flex items-center gap-3 mb-2">
+                      <h3 className="font-bold text-white text-xl">
+                        {s.title}
+                      </h3>
+                      <span className="text-[10px] font-black uppercase tracking-widest text-slate-500 bg-slate-800 px-2 py-0.5 rounded">
+                        {s.tag}
+                      </span>
+                    </div>
+                    <p className="text-slate-400 text-sm leading-relaxed">
+                      {s.description}
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Final CTA for this section */}
+          <div className="text-center">
+            <a
+              href={CONTACT_URL}
+              className="inline-flex items-center gap-3 bg-white text-slate-950 hover:bg-accent hover:text-white rounded-full px-12 py-5 font-extrabold text-lg transition-all shadow-2xl shadow-white/5"
+            >
+              <Search size={24} /> Kostenloser Website-Check
+            </a>
           </div>
         </div>
       </section>
