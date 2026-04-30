@@ -8,11 +8,34 @@ import {
   TrendingUp,
   Eye,
   AlertCircle,
+  CheckCircle2,
 } from "lucide-react";
 import { WHATSAPP_URL, CONTACT_URL } from "@/lib/utils";
-import { HeroForm } from "./HeroForm";
 
 // ─── Data ────────────────────────────────────────────────────────────────────
+
+const benefits = [
+  {
+    title: "Vom Kontakt zum Kunden",
+    description: "Wir verwandeln deine LinkedIn-Kontakte durch psychologisch optimierte Funnels in zahlende Kunden.",
+    icon: TrendingUp,
+  },
+  {
+    title: "Sichtbarkeit bei Google",
+    description: "Dein Expertenstatus wird durch SEO & GEO-Optimierung auch außerhalb von LinkedIn zementiert.",
+    icon: Search,
+  },
+  {
+    title: "Automatisierte Leads",
+    description: "Deine Website arbeitet 24/7 als deine beste Vertriebskraft und generiert passiv Anfragen.",
+    icon: Zap,
+  },
+  {
+    title: "Messbare Ergebnisse",
+    description: "Schluss mit Hoffnungs-Marketing. Wir liefern Daten, PageSpeed und echte Conversions.",
+    icon: Globe,
+  },
+];
 
 const problems = [
   {
@@ -130,8 +153,30 @@ export default function LinkedInLP() {
               </p>
             </div>
 
-            {/* Right – Client Form */}
-            <HeroForm />
+            {/* Right – Benefits */}
+            <div className="grid grid-cols-1 gap-4">
+              {benefits.map((b, i) => {
+                const Icon = b.icon;
+                return (
+                  <div
+                    key={i}
+                    className="flex items-start gap-5 bg-slate-900/50 border border-slate-800 rounded-3xl p-6 hover:border-accent/30 transition-all group"
+                  >
+                    <div className="w-12 h-12 rounded-2xl bg-accent/10 flex items-center justify-center shrink-0 group-hover:bg-accent/20 transition-colors">
+                      <Icon size={24} className="text-accent" />
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-white text-lg mb-1">
+                        {b.title}
+                      </h3>
+                      <p className="text-slate-400 text-sm leading-relaxed">
+                        {b.description}
+                      </p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
       </section>
