@@ -256,24 +256,6 @@ export default function LinkedInLP() {
         </div>
       </section>
 
-      {/* ── 2.1 CTA: WEBSITE-CHECK ────────────────────────────────────────── */}
-      <section className="py-20 px-6 border-y border-slate-800/30">
-        <div className="max-w-4xl mx-auto text-center">
-          <h3 className="text-2xl md:text-3xl font-display font-extrabold text-white mb-4">
-            Bist du unsicher, ob deine Website <span className="text-accent">wirklich</span> verkauft?
-          </h3>
-          <p className="text-slate-400 text-lg mb-8 max-w-2xl mx-auto">
-            Wir analysieren deine Seite kostenlos auf Conversion-Killer, die deine LinkedIn-Leads ausbremsen.
-          </p>
-          <a
-            href={CONTACT_URL}
-            className="inline-flex items-center gap-3 bg-accent hover:bg-accent/90 text-white rounded-full px-10 py-4 font-bold transition-all shadow-xl shadow-accent/20"
-          >
-            <Search size={20} /> Kostenloser Website-Check
-          </a>
-        </div>
-      </section>
-
       {/* ── 3. LÖSUNG ───────────────────────────────────────────────────── */}
       <section className="py-24 px-6 bg-slate-950">
         <div className="max-w-6xl mx-auto">
@@ -289,7 +271,7 @@ export default function LinkedInLP() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
             {solutions.map((s, i) => {
               const Icon = s.icon;
               return (
@@ -313,6 +295,15 @@ export default function LinkedInLP() {
                 </div>
               );
             })}
+          </div>
+
+          <div className="text-center">
+            <a
+              href={CONTACT_URL}
+              className="inline-flex items-center gap-3 bg-white text-slate-950 hover:bg-accent hover:text-white rounded-full px-10 py-4 font-bold transition-all shadow-xl shadow-white/5"
+            >
+              <Search size={20} /> Kostenloser Website-Check
+            </a>
           </div>
         </div>
       </section>
