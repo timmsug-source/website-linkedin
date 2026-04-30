@@ -229,7 +229,7 @@ export default function LinkedInLP() {
                       </div>
                       <div>
                         <h3 className="font-bold text-white text-base mb-1">
-                          {p.title}
+                          {p.title}:
                         </h3>
                         <p className="text-slate-400 text-sm leading-relaxed">
                           {p.description}
