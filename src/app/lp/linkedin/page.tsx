@@ -6,9 +6,9 @@ import {
   MessageCircle,
   Zap,
   TrendingUp,
-  Eye,
-  AlertCircle,
-  CheckCircle2,
+  ShieldAlert,
+  MousePointerClick,
+  Activity,
 } from "lucide-react";
 import { WHATSAPP_URL, CONTACT_URL } from "@/lib/utils";
 
@@ -39,22 +39,22 @@ const benefits = [
 
 const problems = [
   {
-    icon: TrendingUp,
-    title: "Viel Lärm, kein Ertrag",
+    icon: ShieldAlert,
+    title: "Vertrauensverlust",
     description:
-      "Du postest regelmäßig, bekommst Applaus – aber keine Buchungen. Likes zahlen keine Rechnungen.",
+      "Deine Website hält nicht das Qualitätsversprechen deines Contents.",
   },
   {
-    icon: AlertCircle,
-    title: "Die Sackgasse",
+    icon: MousePointerClick,
+    title: "Fehlende Führung",
     description:
-      "Interessenten klicken auf dein Profil, landen auf einer veralteten Website oder gar keiner – und springen sofort wieder ab.",
+      "Besucher wissen nicht, was ihr nächster logischer Schritt ist.",
   },
   {
-    icon: Eye,
-    title: "Unsichtbar bei der Suche",
+    icon: Activity,
+    title: "Abhängigkeit",
     description:
-      "Wenn jemand nach deiner Lösung googelt, findet er deine Konkurrenz, aber nicht dich. Google kennt dich nicht.",
+      "Du bist Sklave des Algorithmus, statt über Google aktiv gefunden zu werden.",
   },
 ];
 
@@ -184,16 +184,21 @@ export default function LinkedInLP() {
       {/* ── 2. PROBLEM ──────────────────────────────────────────────────── */}
       <section className="py-24 px-6 bg-slate-900">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-16 max-w-4xl mx-auto">
             <p className="text-accent font-bold text-sm uppercase tracking-[0.2em] mb-4">
               Das Problem
             </p>
-            <h2 className="text-3xl md:text-4xl font-display font-extrabold text-white leading-tight">
-              Die Reichweiten-Falle:{" "}
-              <span className="text-slate-400">
-                Warum dein Content bisher nicht verkauft.
-              </span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-extrabold text-white leading-tight mb-8">
+              Die Reichweiten-Falle: <span className="text-slate-400">Warum Sichtbarkeit allein dich nicht weiterbringt</span>
             </h2>
+            <div className="space-y-6 text-slate-300 text-lg leading-relaxed text-left md:text-center">
+              <p>
+                Du postest täglich, lieferst Mehrwert und sammelst Likes – doch die Anfragen bleiben aus. Das Problem? Dein Content erzeugt zwar Aufmerksamkeit, aber dein digitales Fundament leitet diesen Traffic ins Leere. Wenn Interessenten von LinkedIn auf eine Website treffen, die keine klare Führung bietet, springen sie sofort wieder ab.
+              </p>
+              <p>
+                Du verbrennst wertvolle Zeit in einem Hamsterrad aus Content-Erstellung, ohne dass daraus messbare Anfragen entstehen. Statt einer Website, die für dich verkauft, hast du eine digitale Visitenkarte, die potenzielle Kunden eher verwirrt als überzeugt. Es fehlt die strategische Verknüpfung zwischen deinem Branding und einem optimierten Sales-Funnel, der Vertrauen in echte Buchungen verwandelt.
+              </p>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
