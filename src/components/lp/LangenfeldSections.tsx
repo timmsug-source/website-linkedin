@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { MessageCircle, Target, Palette, Code2, CheckCircle2, Rocket, MapPin, Clock, Star, ArrowRight } from "lucide-react";
+import { MessageCircle, Target, Palette, Code2, CheckCircle2, Rocket, MapPin, Clock, Star, ArrowRight, ShieldCheck } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { PHONE_URL } from "@/lib/utils";
@@ -170,34 +170,34 @@ export function LangenfeldAbout() {
 export function LangenfeldSolution() {
   const features = [
     {
-      title: "Lokale Dominanz durch SEO & GEO Optimierung",
-      body: "Wir sorgen dafür, dass die „Unsichtbarkeit“ ein Ende hat. Durch gezielte lokale Suchmaschinenoptimierung wirst du genau dann gefunden, wenn Langenfelder nach deiner Expertise suchen. Wir besetzen die Top-Positionen für Webdesign in Langenfeld und deine spezifischen Leistungen, damit du die erste Wahl in der Region bist.",
+      title: "Lokale SEO-Dominanz",
+      body: "Wir optimieren deine Seite gezielt für Suchbegriffe rund um Webdesign in Langenfeld. So wirst du genau dann gefunden, wenn Kunden aus der Umgebung nach deinen Dienstleistungen suchen – ob in Immigrath, Richrath oder Reusrath.",
       colSpan: "lg:col-span-1",
       icon: Target,
     },
     {
-      title: "Intuitive Nutzerführung (Der Funnel-Effekt)",
-      body: "Schluss mit dem Informations-Chaos. Wir strukturieren deine Seite so, dass der Besucher sanft von seinem Problem zu deiner individuellen Lösung geleitet wird. Jeder Text und jeder Button hat ein Ziel: Den Nutzer ohne Umwege zur Anfrage zu führen.",
-      colSpan: "lg:col-span-1",
-      icon: ArrowRight,
-    },
-    {
-      title: "Modernes Design mit Vertrauensgarantie",
-      body: "Wir ersetzen veraltete Optik durch ein frisches, zeitgemäßes Design, das deine Professionalität widerspiegelt. Ein ästhetischer Auftritt sorgt innerhalb der ersten Sekunde für das nötige Vertrauen, das die Basis für jede Geschäftsbeziehung bildet.",
+      title: "Modernes & Verkaufsstarkes Design",
+      body: "Du erhältst ein individuelles Design, das deine Professionalität unterstreicht und Vertrauen aufbaut. Ein moderner Auftritt sorgt dafür, dass du als Marktführer in deiner Nische wahrgenommen wirst.",
       colSpan: "lg:col-span-1",
       icon: Palette,
     },
     {
-      title: "High-Speed Performance",
-      body: "Während andere noch im „digitalen Stau“ auf der A542 stehen, schaltet deine Website in den Express-Modus. Wir optimieren Ladezeiten auf ein Minimum, da im Jahr 2026 jede Millisekunde über den Verbleib eines Nutzers entscheidet. Eine schnelle Seite ist nicht nur nutzerfreundlich, sondern wird auch von Google mit besseren Rankings belohnt.",
+      title: "Mobile-First & High-Speed",
+      body: "Deine neue Website wird für alle Endgeräte optimiert. Blitzschnelle Ladezeiten sorgen dafür, dass kein potenzieller Kunde die Seite verlässt, bevor er dein Angebot gesehen hat.",
       colSpan: "lg:col-span-1",
       icon: Rocket,
     },
     {
-      title: "Konversionsstarke Strategie",
-      body: "Besucher sind gut, Kunden sind besser. Wir implementieren klare Call-to-Actions und automatisierte Prozesse, die dafür sorgen, dass aus einem bloßen „Vorbeischauen“ eine konkrete Handlung wird. Deine Website arbeitet 24/7 als dein bester Verkäufer.",
-      colSpan: "lg:col-span-2",
+      title: "Conversion-Optimierung",
+      body: "Wir platzieren strategische Kontaktmöglichkeiten und klare Handlungsaufforderungen. Das Ziel ist klar: Mehr Anrufe, mehr E-Mails und mehr Umsatz für dein Unternehmen.",
+      colSpan: "lg:col-span-1",
       icon: CheckCircle2,
+    },
+    {
+      title: "Sicherheit & Wartung",
+      body: "Von der DSGVO-Konformität bis zum SSL-Zertifikat – ich kümmere mich um die Technik, damit du dich voll und ganz auf dein Kerngeschäft konzentrieren kannst.",
+      colSpan: "lg:col-span-2",
+      icon: ShieldCheck,
     },
   ];
 
@@ -209,14 +209,11 @@ export function LangenfeldSolution() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-20">
           <div>
             <h2 className="text-4xl md:text-5xl font-display font-extrabold text-slate-900 leading-tight mb-6">
-              Die Lösung: Dein <span className="text-accent">digitaler Maßanzug</span> mit Funnel-Strategie
+              Die Lösung: Dein Vorsprung durch <span className="text-accent">professionelles Webdesign</span> in Langenfeld
             </h2>
             <div className="space-y-4 text-lg text-slate-600 leading-relaxed">
               <p>
-                Es reicht heute nicht mehr aus, einfach nur „online“ zu sein. Um im Wettbewerb im Kreis Mettmann zu bestehen, muss deine Website ein aktiver Mitarbeiter deines Unternehmens werden. Mein Ansatz für Webdesign in Langenfeld löst die oben genannten Probleme nicht nur oberflächlich, sondern schafft ein technisches Fundament, das Besucher emotional bindet und rational überzeugt.
-              </p>
-              <p>
-                Wir verwandeln deine digitale Sackgasse in eine Schnellstraße zum Erfolg. Anstatt den Nutzer mit wahllosen Informationen zu überfordern, setzen wir auf eine psychologisch fundierte Führung. So eliminieren wir die Reibungspunkte, die bisher dafür gesorgt haben, dass potenzielle Kunden kurz vor dem Klick auf „Senden“ doch noch abgesprungen sind.
+                Es reicht nicht mehr aus, einfach nur „online“ zu sein. Um in der Region wirklich erfolgreich zu sein, brauchst du eine digitale Strategie, die Besucher in loyale Kunden verwandelt. Mein Ansatz für Webdesign in Langenfeld kombiniert Ästhetik mit messbarer Performance.
               </p>
             </div>
           </div>
@@ -239,7 +236,7 @@ export function LangenfeldSolution() {
         {/* Tiles / Kacheln */}
         <div className="mb-16">
           <h3 className="text-2xl font-display font-bold text-slate-900 mb-8">
-            Wie wir dein Business in Langenfeld nach vorne bringen:
+            So verwandeln wir deine Website in eine Anfragemaschine:
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {features.map((feature, i) => (
@@ -278,9 +275,21 @@ export function LangenfeldSolution() {
         <div className="bg-slate-900 text-white rounded-[2.5rem] p-8 md:p-12 text-center max-w-4xl mx-auto shadow-2xl border border-slate-800 relative overflow-hidden group">
           <div className="absolute top-0 right-0 w-32 h-32 bg-accent/10 blur-[80px] rounded-full" />
           <div className="absolute bottom-0 left-0 w-32 h-32 bg-accent/10 blur-[80px] rounded-full" />
-          <p className="text-xl md:text-2xl font-medium leading-relaxed relative z-10">
-            Mit dieser Kombination aus lokaler Relevanz und technischer Exzellenz machen wir dein Unternehmen zur <strong className="font-extrabold text-accent">digitalen Benchmark in Langenfeld</strong>. Wir bauen keine Seite, die nur gut aussieht – wir bauen ein System, das dein Wachstum nachhaltig sichert.
-          </p>
+          <div className="relative z-10 space-y-8">
+            <div>
+              <h3 className="text-2xl md:text-3xl font-display font-bold text-accent mb-4">Warum lokales Webdesign den Unterschied macht</h3>
+              <p className="text-lg md:text-xl font-medium leading-relaxed opacity-90">
+                Ein Partner vor Ort versteht den Markt. Wenn wir gemeinsam dein Projekt für Webdesign in Langenfeld umsetzen, profitierst du von kurzen Kommunikationswegen und einer Lösung, die exakt auf die Bedürfnisse der Zielgruppe in unserer Region zugeschnitten ist.
+              </p>
+            </div>
+            
+            <div className="pt-8 border-t border-white/10">
+              <p className="text-xl md:text-2xl font-display font-bold mb-6">Lass uns deine Sichtbarkeit stärken.</p>
+              <p className="text-lg opacity-80 mb-8">
+                Bereit für einen digitalen Auftritt, der wirklich funktioniert? Vereinbare jetzt ein unverbindliches Beratungsgespräch und wir planen deinen Erfolg in Langenfeld.
+              </p>
+            </div>
+          </div>
         </div>
 
       </div>
