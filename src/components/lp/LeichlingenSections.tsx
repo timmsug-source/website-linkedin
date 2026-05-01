@@ -246,9 +246,11 @@ export function LeichlingenSolution() {
         </div>
 
         {/* Outro */}
-        <div className="bg-accent text-white rounded-3xl p-8 md:p-12 text-center max-w-4xl mx-auto shadow-2xl">
-          <p className="text-xl md:text-2xl font-medium leading-relaxed">
-            Mit dieser Kombination aus lokaler Relevanz und technischer Exzellenz machen wir dein Unternehmen zur <strong className="font-extrabold">digitalen Benchmark in Leichlingen</strong>. Wir bauen keine Seite, die nur gut aussieht – wir bauen ein System, das dein Wachstum nachhaltig sichert.
+        <div className="bg-slate-900 text-white rounded-[2.5rem] p-8 md:p-12 text-center max-w-4xl mx-auto shadow-2xl border border-slate-800 relative overflow-hidden group">
+          <div className="absolute top-0 right-0 w-32 h-32 bg-accent/10 blur-[80px] rounded-full" />
+          <div className="absolute bottom-0 left-0 w-32 h-32 bg-accent/10 blur-[80px] rounded-full" />
+          <p className="text-xl md:text-2xl font-medium leading-relaxed relative z-10">
+            Mit dieser Kombination aus lokaler Relevanz und technischer Exzellenz machen wir dein Unternehmen zur <strong className="font-extrabold text-accent">digitalen Benchmark in Leichlingen</strong>. Wir bauen keine Seite, die nur gut aussieht – wir bauen ein System, das dein Wachstum nachhaltig sichert.
           </p>
         </div>
 

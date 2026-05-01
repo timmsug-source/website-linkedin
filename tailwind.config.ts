@@ -10,16 +10,16 @@ const config: Config = {
     extend: {
       colors: {
         accent: {
-          DEFAULT: "#00bc7d",
+          DEFAULT: "#10b981",
           foreground: "#ffffff",
         },
         border: "hsl(240 5.9% 90%)",
         input: "hsl(240 5.9% 90%)",
-        ring: "#00bc7d",
+        ring: "#10b981",
         background: "hsl(0 0% 100%)",
         foreground: "hsl(240 10% 3.9%)",
         primary: {
-          DEFAULT: "#00bc7d",
+          DEFAULT: "#10b981",
           foreground: "#ffffff",
         },
         secondary: {
