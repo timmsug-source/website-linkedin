@@ -342,6 +342,15 @@ export default function LinkedInLP() {
               <Search size={24} /> Kostenloser Website-Check
             </a>
           </div>
+
+          <div className="mt-16 text-center">
+            <a
+              href="#contact-form"
+              className="inline-flex items-center gap-3 bg-accent hover:bg-accent/90 text-white rounded-full px-10 py-4 font-bold transition-all shadow-lg shadow-accent/20"
+            >
+              Jetzt unverbindlich anfragen <ArrowRight size={18} />
+            </a>
+          </div>
         </div>
       </section>
 

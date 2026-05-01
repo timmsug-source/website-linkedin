@@ -265,6 +265,15 @@ export function LeichlingenSolution() {
           </div>
         </div>
 
+        <div className="text-center mb-16">
+          <a
+            href="#contact-form"
+            className="inline-flex items-center gap-3 bg-slate-900 hover:bg-slate-800 text-white rounded-full px-10 py-4 font-bold transition-all shadow-xl"
+          >
+            Lösung jetzt anfragen <ArrowRight size={18} className="text-accent" />
+          </a>
+        </div>
+
         {/* Outro */}
         <div className="bg-slate-900 text-white rounded-[2.5rem] p-8 md:p-12 text-center max-w-4xl mx-auto shadow-2xl border border-slate-800 relative overflow-hidden group">
           <div className="absolute top-0 right-0 w-32 h-32 bg-accent/10 blur-[80px] rounded-full" />
