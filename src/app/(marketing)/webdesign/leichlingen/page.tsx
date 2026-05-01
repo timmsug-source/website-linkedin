@@ -114,25 +114,7 @@ export default function LeichlingenPage() {
 
 
 
-      {/* 6. CTA + ÜBER MICH (Customized for Leichlingen) */}
-      <section className="py-12 px-6 bg-white">
-        <div className="max-w-5xl mx-auto">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-6 bg-slate-900 rounded-2xl px-8 py-6">
-            <p className="text-white font-bold text-lg text-center sm:text-left">
-              Bereit dein Webdesign in Leichlingen zu verbessern?
-            </p>
-            <a
-              href={CONTACT_URL}
-              target="_blank"
-              rel="noreferrer noopener"
-              className="inline-flex items-center gap-2 bg-accent hover:bg-accent/90 text-white rounded-full px-7 py-3 font-bold text-sm whitespace-nowrap transition-[background-color] shadow-lg shadow-accent/20 shrink-0"
-            >
-              Jetzt Erstgespräch anfragen
-              <ArrowRight size={16} />
-            </a>
-          </div>
-        </div>
-      </section>
+      {/* 6. ÜBER MICH (Customized for Leichlingen) */}
 
       {/* 7. ÜBER MICH (Customized for Leichlingen) */}
       <LeichlingenAbout />
