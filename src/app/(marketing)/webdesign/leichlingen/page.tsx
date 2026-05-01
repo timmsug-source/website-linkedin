@@ -68,20 +68,36 @@ const leichlingenService = {
   ],
   faq: [
     {
-      q: "Was unterscheidet einen Funnel von einer normalen Website?",
-      a: "Eine normale Website ist oft ein reines Informationsarchiv. Ein Funnel hingegen ist ein geführter Prozess, der darauf optimiert ist, den Besucher zu einer bestimmten Handlung zu bewegen. Das erhöht die Conversion-Rate drastisch."
+      q: "Warum sollte ich auf lokales Webdesign in Leichlingen setzen?",
+      a: "Ein Webauftritt „von der Stange“ ignoriert oft die regionalen Gegebenheiten. Wenn wir dein Webdesign in Leichlingen umsetzen, achten wir darauf, dass du genau die Kunden aus der Blütenstadt und dem Umland (wie Witzhelden, Langenfeld oder Solingen) ansprichst. Lokale Nähe schafft Vertrauen – und wir sorgen dafür, dass dieses Vertrauen digital sofort spürbar ist."
     },
     {
-      q: "Wie wichtig ist lokales SEO für mein Unternehmen in Leichlingen?",
-      a: "Extrem wichtig! Wenn jemand nach „Webdesign in Leichlingen“ oder deiner Dienstleistung sucht, entscheidet oft die Platzierung unter den ersten drei Ergebnissen über den Auftrag. Ich sorge dafür, dass du lokal gefunden wirst."
+      q: "Wie schnell ist meine neue Website live?",
+      a: "Qualität braucht ein solides Fundament, aber wir trödeln nicht. In der Regel steht dein neues Webdesign in Leichlingen innerhalb von 4 bis 6 Wochen. Das hängt natürlich vom Umfang ab, aber durch kurze Kommunikationswege kommen wir meist sehr zügig ans Ziel."
     },
     {
-      q: "Kann ich die Inhalte meiner Website später selbst ändern?",
-      a: "Natürlich. Ich baue deine Seite auf einem benutzerfreundlichen System auf, mit dem du Texte und Bilder ganz einfach selbst pflegen kannst, ohne programmieren zu lernen. Eine Einweisung von mir ist immer inklusive."
+      q: "Wird meine Seite bei Google in Leichlingen und Umgebung gefunden?",
+      a: "Ja, das ist der Plan! Jedes Projekt wird von Beginn an für Suchmaschinen optimiert. Wir fokussieren uns darauf, dass du bei Begriffen wie „Handwerker Leichlingen“ oder „Praxis in Leichlingen“ ganz oben auftauchst. Ohne SEO ist Webdesign heute nur die halbe Miete."
     },
     {
-      q: "Was passiert, wenn sich SEO-Trends im Jahr 2026 ändern?",
-      a: "Die digitale Welt ist im stetigen Wandel. Deshalb sind meine Seiten so konzipiert, dass sie flexibel an neue Algorithmen angepasst werden können. Zudem biete ich laufende Betreuung an."
+      q: "Was kostet ein professionelles Webdesign in Leichlingen?",
+      a: "Pauschalpreise sind im Handwerk schwierig – und im Webdesign auch. Ein kleiner Blumenladen in der Innenstadt hat andere Anforderungen als ein Industriebetrieb im Gewerbegebiet. Nach unserem ersten Gespräch erstelle ich dir ein faires Festpreis-Angebot, das exakt zu deinem Budget und deinen Zielen passt."
+    },
+    {
+      q: "Sieht meine Website auch auf dem Smartphone gut aus?",
+      a: "Definitiv. „Mobile First“ ist bei mir Gesetz. Da die meisten Menschen heute von unterwegs in der Leichlinger Innenstadt oder beim Pendeln nach Köln/Düsseldorf suchen, optimieren wir dein Webdesign in Leichlingen perfekt für alle Endgeräte – vom Smartphone bis zum großen Desktop-Monitor."
+    },
+    {
+      q: "Kann ich Inhalte später selbst anpassen?",
+      a: "Klar! Ich baue deine Seite so auf, dass du kein IT-Studium brauchst, um mal einen Text zu ändern oder ein neues Foto hochzuladen. Nach dem Launch gebe ich dir eine kurze Einweisung, damit du die volle Kontrolle über deinen Internetauftritt behältst."
+    },
+    {
+      q: "Können wir uns für die Planung persönlich treffen?",
+      a: "Sehr gerne. Das ist ja der Vorteil an regionalem Webdesign in Leichlingen. Ob auf einen Kaffee in der Stadt oder direkt bei dir im Betrieb – ein persönliches Gespräch hilft oft dabei, die Vision deines Unternehmens noch besser zu verstehen."
+    },
+    {
+      q: "Lohnt sich eine neue Website auch für kleine Betriebe oder Vereine?",
+      a: "Gerade für kleine Unternehmen ist die digitale Sichtbarkeit oft der entscheidende Faktor gegen die große Konkurrenz aus den Nachbarstädten. Ein professionelles Auftreten sorgt dafür, dass du als lokaler Experte wahrgenommen wirst – egal, wie groß dein Team ist."
     }
   ],
   relatedServices: []
