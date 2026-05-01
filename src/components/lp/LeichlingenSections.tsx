@@ -63,7 +63,7 @@ export function LeichlingenFlow() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 mb-16">
           {leichlingenSteps.map((step, index) => {
             const Icon = step.icon;
             return (
@@ -89,6 +89,20 @@ export function LeichlingenFlow() {
             );
           })}
         </div>
+
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center"
+        >
+          <a
+            href="#contact-form"
+            className="inline-flex items-center gap-3 bg-slate-900 hover:bg-slate-800 text-white rounded-full px-10 py-4 font-bold transition-all shadow-xl"
+          >
+            Projekt jetzt starten <ArrowRight size={18} className="text-accent" />
+          </a>
+        </motion.div>
       </div>
     </section>
   );
@@ -140,6 +154,12 @@ export function LeichlingenAbout() {
                 </div>
               ))}
             </div>
+            <a
+              href="#contact-form"
+              className="inline-flex items-center gap-3 bg-accent hover:bg-accent/90 text-white rounded-full px-8 py-4 font-bold transition-[background-color] shadow-lg shadow-accent/20"
+            >
+              Kostenloses Erstgespräch anfordern <ArrowRight size={18} />
+            </a>
           </div>
         </div>
       </div>
