@@ -383,7 +383,7 @@ export default function LinkedInLP() {
       </section>
       
       {/* ── 4.5 KONTAKT-FORMULAR ────────────────────────────────────────── */}
-      <ContactForm pageName="LinkedIn Landingpage" />
+      <ContactForm pageName="LinkedIn Landingpage" variant="dark" />
 
       {/* ── 5. VISION / ERGEBNIS ────────────────────────────────────────── */}
       <section className="py-24 px-6 bg-slate-950">

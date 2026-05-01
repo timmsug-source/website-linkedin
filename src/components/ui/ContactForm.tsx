@@ -6,9 +6,10 @@ import { Send, CheckCircle2, AlertCircle, Loader2, Sparkles } from "lucide-react
 
 interface ContactFormProps {
   pageName: string;
+  variant?: "light" | "dark";
 }
 
-export function ContactForm({ pageName }: ContactFormProps) {
+export function ContactForm({ pageName, variant = "light" }: ContactFormProps) {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [formData, setFormData] = useState({
     name: "",
@@ -39,7 +40,10 @@ export function ContactForm({ pageName }: ContactFormProps) {
   };
 
   return (
-    <section className="py-24 px-6 bg-slate-950" id="contact-form">
+    <section 
+      className={`py-24 px-6 ${variant === "dark" ? "bg-slate-950" : "bg-white"}`} 
+      id="contact-form"
+    >
       <div className="max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
