@@ -170,7 +170,7 @@ export function LeichlingenAbout() {
 export function LeichlingenSolution() {
   const features = [
     {
-      title: "Lokale Dominanz durch SEO & GEO-Trends 2026",
+      title: "Lokale Dominanz durch SEO & GEO Optimierung",
       body: "Wir sorgen dafür, dass die „Unsichtbarkeit“ ein Ende hat. Durch gezielte lokale Suchmaschinenoptimierung wirst du genau dann gefunden, wenn Leichlinger nach deiner Expertise suchen. Wir besetzen die Top-Positionen für Webdesign in Leichlingen und deine spezifischen Leistungen, damit du die erste Wahl in der Region bist.",
       colSpan: "lg:col-span-1",
       icon: Target,
