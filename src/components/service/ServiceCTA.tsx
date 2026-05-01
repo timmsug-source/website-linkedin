@@ -45,8 +45,6 @@ export function ServiceCTA({ service }: { service: Service }) {
                 <div className="flex flex-col sm:flex-row lg:flex-col xl:flex-row items-center gap-6 w-full">
                   <a
                     href={CONTACT_URL}
-                    target="_blank"
-                    rel="noreferrer noopener"
                     className="inline-flex items-center justify-center bg-accent hover:bg-accent/90 text-white rounded-full px-10 h-16 text-xl font-bold w-full sm:w-auto shadow-lg shadow-accent/20 transition-[background-color,box-shadow]"
                   >
                     Kostenloses Erstgespräch

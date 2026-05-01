@@ -111,8 +111,6 @@ export function ServiceSolution({ service }: { service: Service }) {
 
             <a
               href={CONTACT_URL}
-              target="_blank"
-              rel="noreferrer noopener"
               className="inline-flex items-center gap-2 bg-slate-900 text-white hover:bg-slate-800 px-8 py-4 rounded-full font-bold transition-[background-color] shadow-lg"
             >
               Jetzt Beratung anfordern <ArrowRight size={18} />

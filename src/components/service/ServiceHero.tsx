@@ -39,8 +39,6 @@ export function ServiceHero({ service }: { service: Service }) {
             <div className="flex flex-col sm:flex-row gap-4">
               <a
                 href={CONTACT_URL}
-                target="_blank"
-                rel="noreferrer noopener"
                 className="inline-flex items-center justify-center bg-accent hover:bg-accent/90 text-white rounded-full px-8 h-14 text-lg font-bold shadow-lg shadow-accent/20 transition-[box-shadow,background-color]"
               >
                 Kostenloses Erstgespräch
