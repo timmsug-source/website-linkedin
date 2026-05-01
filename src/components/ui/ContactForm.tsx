@@ -39,7 +39,7 @@ export function ContactForm({ pageName }: ContactFormProps) {
   };
 
   return (
-    <section className="py-24 px-6 bg-white" id="contact-form">
+    <section className="py-24 px-6 bg-slate-950" id="contact-form">
       <div className="max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

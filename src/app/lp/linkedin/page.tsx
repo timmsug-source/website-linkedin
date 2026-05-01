@@ -377,6 +377,9 @@ export default function LinkedInLP() {
           </div>
         </div>
       </section>
+      
+      {/* ── 4.5 KONTAKT-FORMULAR ────────────────────────────────────────── */}
+      <ContactForm pageName="LinkedIn Landingpage" />
 
       {/* ── 5. VISION / ERGEBNIS ────────────────────────────────────────── */}
       <section className="py-24 px-6 bg-slate-950">
@@ -457,8 +460,18 @@ export default function LinkedInLP() {
         </div>
       </section>
 
-      {/* ── 7. KONTAKT-FORMULAR ────────────────────────────────────────── */}
-      <ContactForm pageName="LinkedIn Landingpage" />
+      {/* ── 7. FOOTER ───────────────────────────────────────────────────── */}
+      <footer className="py-12 px-6 border-t border-slate-900 bg-slate-950 text-center">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+          <p className="text-slate-500 text-sm">
+            © {new Date().getFullYear()} Timm Schurig. Alle Rechte vorbehalten.
+          </p>
+          <div className="flex items-center gap-8 text-slate-500 text-sm">
+            <Link href="/impressum" className="hover:text-accent transition-colors">Impressum</Link>
+            <Link href="/datenschutz" className="hover:text-accent transition-colors">Datenschutz</Link>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
