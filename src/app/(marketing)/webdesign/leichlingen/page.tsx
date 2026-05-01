@@ -9,7 +9,7 @@ import { ServiceSolution } from "@/components/service/ServiceSolution";
 import { ServiceInfo } from "@/components/service/ServiceInfo";
 import { WebdesignReasons } from "@/components/service/WebdesignReasons";
 import { WebdesignCities } from "@/components/service/WebdesignCities";
-import { LeichlingenFlow, LeichlingenAbout, LeichlingenSolution } from "@/components/lp/LeichlingenSections";
+import { LeichlingenFlow, LeichlingenAbout, LeichlingenSolution, LeichlingenWhyNow } from "@/components/lp/LeichlingenSections";
 import { ContactForm } from "@/components/ui/ContactForm";
 const leichlingenService = {
   id: "webdesign-leichlingen",
@@ -111,6 +111,9 @@ export default function LeichlingenPage() {
 
       {/* 5. KONTAKT-FORMULAR */}
       <ContactForm pageName="Leichlingen Landingpage" />
+
+      {/* 6. WARUM JETZT */}
+      <LeichlingenWhyNow />
 
 
 

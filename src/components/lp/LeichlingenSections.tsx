@@ -287,3 +287,102 @@ export function LeichlingenSolution() {
     </section>
   );
 }
+
+export function LeichlingenWhyNow() {
+  const points = [
+    {
+      title: "Top-Platzierungen auf Google: Wer nicht scrollt, findet dich.",
+      body: "Was bringt die schönste Website, wenn sie auf Seite 10 der Suchergebnisse verstaubt? Durch gezielte lokale Optimierung sorgen wir dafür, dass du bei Suchanfragen wie „[Deine Dienstleistung] in Leichlingen“ oder „Witzhelden“ ganz oben auftauchst. Wir bringen dich genau dorthin, wo deine Kunden suchen – direkt auf die erste Seite von Google.",
+      image: "/brain/f48add7c-695d-443c-b1e7-cc8b17c5578a/google_ranking_leichlingen_1777664893783.png",
+      reverse: false
+    },
+    {
+      title: "Dein entscheidender Wettbewerbsvorteil: Der erste Eindruck zählt.",
+      body: "Viele Unternehmen in Leichlingen und dem angrenzenden Umland verlassen sich noch auf veraltete Webauftritte. Mit einem modernen, schnellen und mobil-optimierten Design hebst du dich sofort von der Konkurrenz ab. Du zeigst Professionalität und sicherst dir das Vertrauen der Kunden, während andere noch mit Ladezeiten und unleserlichen Texten auf dem Smartphone kämpfen.",
+      image: "/brain/f48add7c-695d-443c-b1e7-cc8b17c5578a/modern_vs_old_design_leichlingen_1777664917384.png",
+      reverse: true
+    },
+    {
+      title: "Messbare Ergebnisse: Daten statt Bauchgefühl.",
+      body: "Gutes Design ist kein Selbstzweck. Wir bauen deine Website so auf, dass Erfolg messbar wird. Durch klares Tracking siehst du genau, wie viele Anfragen über dein Kontaktformular kommen und welche Inhalte deine Kunden wirklich interessieren. So wird dein Webdesign zu einer Investition, die sich durch echte Neukunden und steigende Umsätze in Leichlingen bezahlt macht.",
+      image: "/brain/f48add7c-695d-443c-b1e7-cc8b17c5578a/messbare_ergebnisse_leichlingen_1777664941505.png",
+      reverse: false
+    }
+  ];
+
+  return (
+    <section className="py-24 px-6 bg-white overflow-hidden">
+      <div className="max-w-7xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-20"
+        >
+          <h2 className="text-3xl md:text-5xl font-display font-extrabold text-slate-900 leading-tight mb-6">
+            Warum optimiertes Webdesign in Leichlingen <br className="hidden md:block" />
+            heutzutage ein <span className="text-accent">absolutes Muss</span> ist
+          </h2>
+          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+            Werde in Leichlingen und Umgebung zum digitalen Vorreiter. In einer Stadt, die für ihre Tradition und Lebensqualität bekannt ist, entscheiden sich Kunden heute trotzdem digital.
+          </p>
+        </motion.div>
+
+        <div className="space-y-32">
+          {points.map((point, index) => (
+            <div 
+              key={index}
+              className={`flex flex-col ${point.reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-12 lg:gap-24 items-center`}
+            >
+              <motion.div 
+                initial={{ opacity: 0, x: point.reverse ? 50 : -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                className="flex-1 space-y-6"
+              >
+                <h3 className="text-2xl md:text-3xl font-display font-bold text-slate-900 leading-tight">
+                  {point.title}
+                </h3>
+                <p className="text-lg text-slate-600 leading-relaxed">
+                  {point.body}
+                </p>
+              </motion.div>
+              
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                className="flex-1 w-full"
+              >
+                <div className="relative aspect-[4/3] rounded-[2.5rem] overflow-hidden shadow-2xl border border-slate-100">
+                  <Image 
+                    src={point.image} 
+                    alt={point.title}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              </motion.div>
+            </div>
+          ))}
+        </div>
+
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-32 text-center"
+        >
+          <div className="inline-block px-8 py-4 rounded-3xl bg-slate-50 border border-slate-100">
+            <p className="text-2xl font-display font-bold text-slate-900 italic">
+              „Lokal verwurzelt, digital unschlagbar.“
+            </p>
+          </div>
+          <p className="mt-8 text-lg text-slate-600 max-w-2xl mx-auto">
+            Nutze den Heimvorteil in der Blütenstadt. Gemeinsam verwandeln wir deine Website in ein Werkzeug, das nicht nur gut aussieht, sondern dein Business in Leichlingen nachhaltig wachsen lässt.
+          </p>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
