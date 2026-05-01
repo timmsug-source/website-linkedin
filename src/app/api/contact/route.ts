@@ -50,7 +50,7 @@ export async function POST(req: NextRequest) {
 
     // 2. E-Mail senden
     await resend.emails.send({
-      from: "Website <onboarding@timmschurig.com>",
+      from: "Website <onboarding@resend.dev>",
       to: "timm.sug@gmail.com",
       subject: `🔔 Neue Anfrage von ${name}`,
       html: `
