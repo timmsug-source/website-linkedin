@@ -293,19 +293,19 @@ export function LeichlingenWhyNow() {
     {
       title: "Top-Platzierungen auf Google: Wer nicht scrollt, findet dich.",
       body: "Was bringt die schönste Website, wenn sie auf Seite 10 der Suchergebnisse verstaubt? Durch gezielte lokale Optimierung sorgen wir dafür, dass du bei Suchanfragen wie „[Deine Dienstleistung] in Leichlingen“ oder „Witzhelden“ ganz oben auftauchst. Wir bringen dich genau dorthin, wo deine Kunden suchen – direkt auf die erste Seite von Google.",
-      image: "/brain/f48add7c-695d-443c-b1e7-cc8b17c5578a/google_ranking_leichlingen_1777664893783.png",
+      image: "/images/leichlingen/google-ranking.png",
       reverse: false
     },
     {
       title: "Dein entscheidender Wettbewerbsvorteil: Der erste Eindruck zählt.",
       body: "Viele Unternehmen in Leichlingen und dem angrenzenden Umland verlassen sich noch auf veraltete Webauftritte. Mit einem modernen, schnellen und mobil-optimierten Design hebst du dich sofort von der Konkurrenz ab. Du zeigst Professionalität und sicherst dir das Vertrauen der Kunden, während andere noch mit Ladezeiten und unleserlichen Texten auf dem Smartphone kämpfen.",
-      image: "/brain/f48add7c-695d-443c-b1e7-cc8b17c5578a/modern_vs_old_design_leichlingen_1777664917384.png",
+      image: "/images/leichlingen/design-comparison.png",
       reverse: true
     },
     {
       title: "Messbare Ergebnisse: Daten statt Bauchgefühl.",
       body: "Gutes Design ist kein Selbstzweck. Wir bauen deine Website so auf, dass Erfolg messbar wird. Durch klares Tracking siehst du genau, wie viele Anfragen über dein Kontaktformular kommen und welche Inhalte deine Kunden wirklich interessieren. So wird dein Webdesign zu einer Investition, die sich durch echte Neukunden und steigende Umsätze in Leichlingen bezahlt macht.",
-      image: "/brain/f48add7c-695d-443c-b1e7-cc8b17c5578a/messbare_ergebnisse_leichlingen_1777664941505.png",
+      image: "/images/leichlingen/analytics.png",
       reverse: false
     }
   ];
