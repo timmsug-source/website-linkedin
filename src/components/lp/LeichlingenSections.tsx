@@ -211,7 +211,7 @@ export function LeichlingenSolution() {
               src="/images/mockups-grid.jpg"
               alt="Webdesign Leichlingen Mockups"
               fill
-              className="object-cover object-center"
+              className="object-contain object-center"
             />
           </motion.div>
         </div>

@@ -10,6 +10,7 @@ import { ServiceInfo } from "@/components/service/ServiceInfo";
 import { WebdesignReasons } from "@/components/service/WebdesignReasons";
 import { WebdesignCities } from "@/components/service/WebdesignCities";
 import { LeichlingenFlow, LeichlingenAbout, LeichlingenSolution } from "@/components/lp/LeichlingenSections";
+import { ContactForm } from "@/components/ui/ContactForm";
 const leichlingenService = {
   id: "webdesign-leichlingen",
   title: "Webdesign Leichlingen",
@@ -107,6 +108,9 @@ export default function LeichlingenPage() {
 
       {/* 4. ABLAUF (Customized for Leichlingen) */}
       <LeichlingenFlow />
+
+      {/* 5. KONTAKT-FORMULAR */}
+      <ContactForm pageName="Leichlingen Landingpage" />
 
 
 

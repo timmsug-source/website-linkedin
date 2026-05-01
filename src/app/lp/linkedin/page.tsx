@@ -11,6 +11,7 @@ import {
   Activity,
 } from "lucide-react";
 import { WHATSAPP_URL, CONTACT_URL } from "@/lib/utils";
+import { ContactForm } from "@/components/ui/ContactForm";
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
@@ -455,6 +456,9 @@ export default function LinkedInLP() {
           </p>
         </div>
       </section>
+
+      {/* ── 7. KONTAKT-FORMULAR ────────────────────────────────────────── */}
+      <ContactForm pageName="LinkedIn Landingpage" />
     </div>
   );
 }
