@@ -51,7 +51,7 @@ export function ContactForm({
 
   return (
     <section 
-      className={`py-24 px-6 ${variant === "dark" ? "bg-slate-950" : "bg-white"}`} 
+      className={`py-12 px-6 ${variant === "dark" ? "bg-slate-950" : "bg-white"}`} 
       id="contact-form"
     >
       <div className="max-w-4xl mx-auto">
@@ -59,60 +59,60 @@ export function ContactForm({
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="relative bg-slate-900 rounded-[3rem] p-8 md:p-16 overflow-hidden shadow-2xl border border-slate-800"
+          className="relative bg-slate-900 rounded-[2.5rem] p-6 md:p-10 overflow-hidden shadow-2xl border border-slate-800"
         >
           {/* Decorative blobs */}
           <div className="absolute top-0 right-0 w-64 h-64 bg-accent/20 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2" />
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-500/10 rounded-full blur-[80px] translate-y-1/2 -translate-x-1/2" />
 
           <div className="relative z-10">
-            <div className="text-center mb-12">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 text-accent text-xs font-bold uppercase tracking-widest mb-6">
-                <Sparkles size={14} />
+            <div className="text-center mb-8">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent/10 text-accent text-[10px] font-bold uppercase tracking-widest mb-4">
+                <Sparkles size={12} />
                 <span>Kostenloser Website-Check</span>
               </div>
-              <h2 className="text-3xl md:text-5xl font-display font-extrabold text-white mb-6 whitespace-pre-line">
+              <h2 className="text-2xl md:text-4xl font-display font-extrabold text-white mb-3 whitespace-pre-line">
                 {title}
               </h2>
-              <p className="text-slate-400 text-lg max-w-xl mx-auto">
+              <p className="text-slate-400 text-base max-w-xl mx-auto">
                 {subline}
               </p>
             </div>
 
-            <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {/* Name */}
-              <div className="space-y-2">
-                <label className="text-sm font-bold text-slate-300 ml-1">Dein Name</label>
+              <div className="space-y-1.5">
+                <label className="text-xs font-bold text-slate-300 ml-1">Dein Name</label>
                 <input
                   required
                   type="text"
                   placeholder="Max Mustermann"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full bg-white/5 border border-slate-700 rounded-2xl px-6 py-4 text-white placeholder:text-slate-500 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all"
+                  className="w-full bg-white/5 border border-slate-700 rounded-xl px-5 py-3 text-white placeholder:text-slate-500 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all text-sm"
                 />
               </div>
 
               {/* Contact */}
-              <div className="space-y-2">
-                <label className="text-sm font-bold text-slate-300 ml-1">WhatsApp / Telefon</label>
+              <div className="space-y-1.5">
+                <label className="text-xs font-bold text-slate-300 ml-1">WhatsApp / Telefon</label>
                 <input
                   required
                   type="text"
                   placeholder="0151 / ..."
                   value={formData.contact}
                   onChange={(e) => setFormData({ ...formData, contact: e.target.value })}
-                  className="w-full bg-white/5 border border-slate-700 rounded-2xl px-6 py-4 text-white placeholder:text-slate-500 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all"
+                  className="w-full bg-white/5 border border-slate-700 rounded-xl px-5 py-3 text-white placeholder:text-slate-500 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all text-sm"
                 />
               </div>
 
               {/* Project Type */}
-              <div className="space-y-2">
-                <label className="text-sm font-bold text-slate-300 ml-1">Dein Vorhaben</label>
+              <div className="space-y-1.5">
+                <label className="text-xs font-bold text-slate-300 ml-1">Dein Vorhaben</label>
                 <select
                   value={formData.projectType}
                   onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
-                  className="w-full bg-white/5 border border-slate-700 rounded-2xl px-6 py-4 text-white focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all appearance-none cursor-pointer"
+                  className="w-full bg-white/5 border border-slate-700 rounded-xl px-5 py-3 text-white focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all appearance-none cursor-pointer text-sm"
                 >
                   <option value="neu" className="bg-slate-900">Neue Website</option>
                   <option value="redesign" className="bg-slate-900">Redesign (Bestehende Seite)</option>
@@ -122,12 +122,12 @@ export function ContactForm({
               </div>
 
               {/* Budget */}
-              <div className="space-y-2">
-                <label className="text-sm font-bold text-slate-300 ml-1">Budget-Rahmen</label>
+              <div className="space-y-1.5">
+                <label className="text-xs font-bold text-slate-300 ml-1">Budget-Rahmen</label>
                 <select
                   value={formData.budget}
                   onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
-                  className="w-full bg-white/5 border border-slate-700 rounded-2xl px-6 py-4 text-white focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all appearance-none cursor-pointer"
+                  className="w-full bg-white/5 border border-slate-700 rounded-xl px-5 py-3 text-white focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all appearance-none cursor-pointer text-sm"
                 >
                   <option value="small" className="bg-slate-900">bis 500 €</option>
                   <option value="medium" className="bg-slate-900">500 – 1.500 €</option>
@@ -137,26 +137,26 @@ export function ContactForm({
               </div>
 
               {/* Message */}
-              <div className="md:col-span-2 space-y-2">
-                <label className="text-sm font-bold text-slate-300 ml-1">Deine Nachricht (Optional)</label>
+              <div className="md:col-span-2 space-y-1.5">
+                <label className="text-xs font-bold text-slate-300 ml-1">Deine Nachricht (Optional)</label>
                 <textarea
-                  rows={4}
+                  rows={3}
                   placeholder="Erzähl mir kurz von deinem Projekt..."
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="w-full bg-white/5 border border-slate-700 rounded-2xl px-6 py-4 text-white placeholder:text-slate-500 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all resize-none"
+                  className="w-full bg-white/5 border border-slate-700 rounded-xl px-5 py-3 text-white placeholder:text-slate-500 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all resize-none text-sm"
                 />
               </div>
 
               {/* Submit Button */}
-              <div className="md:col-span-2 mt-4">
+              <div className="md:col-span-2 mt-2">
                 <button
                   type="submit"
                   disabled={status === "loading" || status === "success"}
-                  className={`w-full h-16 rounded-2xl font-bold text-lg flex items-center justify-center gap-3 transition-all ${
+                  className={`w-full h-14 rounded-xl font-bold text-base flex items-center justify-center gap-3 transition-all ${
                     status === "success"
                       ? "bg-emerald-500 text-white cursor-default"
-                      : "bg-accent hover:bg-accent/90 text-white shadow-xl shadow-accent/20 active:scale-95 disabled:opacity-70"
+                      : "bg-accent hover:bg-accent/90 text-white shadow-lg shadow-accent/20 active:scale-95 disabled:opacity-70"
                   }`}
                 >
                   <AnimatePresence mode="wait">
