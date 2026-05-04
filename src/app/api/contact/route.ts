@@ -26,7 +26,7 @@ export async function POST(req: NextRequest) {
 
   try {
     const body = await req.json();
-    const { name, contact, projectType, budget, page } = body;
+    const { name, contact, projectType, budget, page, message } = body;
 
     if (!name || !contact) {
       return NextResponse.json({ error: "Fehlende Pflichtfelder" }, { status: 400 });
@@ -40,6 +40,7 @@ export async function POST(req: NextRequest) {
         contact,
         project_type: projectType,
         budget,
+        message: message ?? "",
         page: page ?? "unbekannt",
         status: "neu",
       });
@@ -74,9 +75,13 @@ export async function POST(req: NextRequest) {
               <td style="padding: 12px 0; color: #64748b; font-size: 14px;">Projektart</td>
               <td style="padding: 12px 0; color: #0f172a; font-size: 14px; font-weight: 600;">${projectLabels[projectType] ?? projectType}</td>
             </tr>
-            <tr>
+            <tr style="border-bottom: 1px solid #e2e8f0;">
               <td style="padding: 12px 0; color: #64748b; font-size: 14px;">Budget</td>
               <td style="padding: 12px 0; color: #0f172a; font-size: 14px; font-weight: 600;">${budgetLabels[budget] ?? budget}</td>
+            </tr>
+            <tr>
+              <td style="padding: 12px 0; color: #64748b; font-size: 14px;">Nachricht</td>
+              <td style="padding: 12px 0; color: #0f172a; font-size: 14px; font-weight: 600;">${message || "<em>Keine Nachricht hinterlassen</em>"}</td>
             </tr>
           </table>
 

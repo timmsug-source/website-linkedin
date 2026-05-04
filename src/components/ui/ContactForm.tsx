@@ -25,6 +25,7 @@ export function ContactForm({
     contact: "",
     projectType: "neu",
     budget: "medium",
+    message: "",
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -41,7 +42,7 @@ export function ContactForm({
       if (!res.ok) throw new Error("Fehler beim Senden");
       
       setStatus("success");
-      setFormData({ name: "", contact: "", projectType: "neu", budget: "medium" });
+      setFormData({ name: "", contact: "", projectType: "neu", budget: "medium", message: "" });
     } catch (err) {
       setStatus("error");
       setTimeout(() => setStatus("idle"), 5000);
@@ -133,6 +134,18 @@ export function ContactForm({
                   <option value="large" className="bg-slate-900">1.500 – 3.000 €</option>
                   <option value="xl" className="bg-slate-900">3.000 € +</option>
                 </select>
+              </div>
+
+              {/* Message */}
+              <div className="md:col-span-2 space-y-2">
+                <label className="text-sm font-bold text-slate-300 ml-1">Deine Nachricht (Optional)</label>
+                <textarea
+                  rows={4}
+                  placeholder="Erzähl mir kurz von deinem Projekt..."
+                  value={formData.message}
+                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                  className="w-full bg-white/5 border border-slate-700 rounded-2xl px-6 py-4 text-white placeholder:text-slate-500 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all resize-none"
+                />
               </div>
 
               {/* Submit Button */}
