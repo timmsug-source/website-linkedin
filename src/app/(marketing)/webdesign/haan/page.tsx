@@ -27,14 +27,14 @@ const haanService = {
     { value: "1–2 Wo.", label: "bis sie live ist" },
     { value: "100 %", label: "PageSpeed Score" },
   ],
-  problemHeadline: "Warum die meisten Websites in Haan unter ihren Möglichkeiten bleiben",
-  problemSubline: "Vielleicht kennst du das: Du hast eine Website, aber die Anfragen über das Kontaktformular bleiben aus. Im Jahr 2026 ist die Aufmerksamkeitsspanne kürzer denn je.",
+  problemHeadline: "Warum die meisten Websites unter ihren Möglichkeiten bleiben",
+  problemSubline: "Du suchst nach professionellem Webdesign in Haan, weil dir folgendes bekannt vorkommt: Die Website ist zwar online, aber die Anfragen über das Kontaktformular bleiben aus. Im Jahr 2026 ist die Aufmerksamkeitsspanne kürzer denn je – und kleine Fehler kosten dich bares Geld.",
   problemPoints: [
-    "Unsichtbarkeit bei Google-Suchen nach „Webdesign in Haan“.",
-    "Keine klare Nutzerführung – Besucher werden mit Infos erschlagen.",
-    "Ladezeiten, die langsamer sind als der Feierabendverkehr auf der A46.",
-    "Veraltetes Design schreckt potenzielle Kunden ab.",
-    "Keine Strategie: Besucher kommen, aber gehen ohne Handlung."
+    "Unsichtbarkeit bei Google: Deine potenziellen Kunden finden die Konkurrenz, aber nicht dich.",
+    "Keine klare Nutzerführung: Besucher werden mit Infos erschlagen und wissen nicht, was sie tun sollen.",
+    "Schneckentempo: Ladezeiten, die langsamer sind als der Feierabendverkehr auf der A46.",
+    "Vertrauensverlust: Ein veraltetes Design wirkt unprofessionell und schreckt ab.",
+    "Keine Strategie: Besucher kommen, aber verlassen die Seite ohne eine Handlung."
   ],
   solutionHeadline: "Die Lösung: Der Funnel-Ansatz – Webdesign mit psychologischer Tiefe",
   solution: "Mein Ansatz für Webdesign in Haan geht weit über das Visuelle hinaus. Ich kombiniere modernes Design mit Verkaufspsychologie und modernster Technik.",

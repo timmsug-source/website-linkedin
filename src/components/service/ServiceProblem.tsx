@@ -25,7 +25,7 @@ export function ServiceProblem({ service }: { service: Service }) {
               <div className="inline-flex items-center gap-3 bg-red-500/10 border border-red-500/20 rounded-2xl px-5 py-3 mb-8">
                 <AlertCircle size={20} className="text-red-400" aria-hidden="true" />
                 <span className="text-red-400 font-bold text-sm uppercase tracking-widest">
-                  Das Problem
+                  DAS PROBLEM
                 </span>
               </div>
 
