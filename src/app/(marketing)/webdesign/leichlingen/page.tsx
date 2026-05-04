@@ -126,7 +126,12 @@ export default function LeichlingenPage() {
       <LeichlingenFlow />
 
       {/* 5. KONTAKT-FORMULAR */}
-      <ContactForm pageName="Leichlingen Landingpage" />
+      <ContactForm 
+        pageName="Leichlingen Landingpage" 
+        title={<>Deine <span className="text-accent">Lösung</span> für digitales Wachstum</>}
+        subline="Trage kurz deine Daten ein und wir besprechen, wie wir dein Projekt in Leichlingen zum Erfolg führen."
+        buttonText="Lösung jetzt anfragen"
+      />
 
       {/* 6. WARUM JETZT */}
       <LeichlingenWhyNow />

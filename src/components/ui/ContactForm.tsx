@@ -7,9 +7,18 @@ import { Send, CheckCircle2, AlertCircle, Loader2, Sparkles } from "lucide-react
 interface ContactFormProps {
   pageName: string;
   variant?: "light" | "dark";
+  title?: React.ReactNode;
+  subline?: string;
+  buttonText?: string;
 }
 
-export function ContactForm({ pageName, variant = "light" }: ContactFormProps) {
+export function ContactForm({ 
+  pageName, 
+  variant = "light",
+  title = <>Lass uns deine <span className="text-accent">Maschine bauen.</span></>,
+  subline = "Trage kurz deine Daten ein und ich melde mich innerhalb von 2 Stunden persönlich bei dir.",
+  buttonText = "Anfrage jetzt absenden"
+}: ContactFormProps) {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [formData, setFormData] = useState({
     name: "",
@@ -61,11 +70,11 @@ export function ContactForm({ pageName, variant = "light" }: ContactFormProps) {
                 <Sparkles size={14} />
                 <span>Kostenloser Website-Check</span>
               </div>
-              <h2 className="text-3xl md:text-5xl font-display font-extrabold text-white mb-6">
-                Lass uns deine <span className="text-accent">Maschine bauen.</span>
+              <h2 className="text-3xl md:text-5xl font-display font-extrabold text-white mb-6 whitespace-pre-line">
+                {title}
               </h2>
               <p className="text-slate-400 text-lg max-w-xl mx-auto">
-                Trage kurz deine Daten ein und ich melde mich innerhalb von 2 Stunden persönlich bei dir.
+                {subline}
               </p>
             </div>
 
@@ -167,7 +176,7 @@ export function ContactForm({ pageName, variant = "light" }: ContactFormProps) {
                         className="flex items-center gap-2"
                       >
                         <Send size={20} />
-                        Anfrage jetzt absenden
+                        {buttonText}
                       </motion.div>
                     )}
                   </AnimatePresence>
