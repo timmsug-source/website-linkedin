@@ -1,367 +1,387 @@
 "use client";
 
+import { motion } from "framer-motion";
+import { MessageCircle, Target, Palette, Code2, CheckCircle2, Rocket, MapPin, Clock, Star, ArrowRight } from "lucide-react";
 import Image from "next/image";
-import { AlertCircle, EyeOff, SearchX, TrendingDown } from "lucide-react";
+import Link from "next/link";
+import { PHONE_URL } from "@/lib/utils";
 
-export function HaanProblem() {
-  const painPoints = [
-    {
-      icon: SearchX,
-      title: "Keine lokale Sichtbarkeit",
-      text: "Wenn jemand in Haan nach deinen Leistungen sucht, finden sie nur die Konkurrenz."
-    },
-    {
-      icon: EyeOff,
-      title: "Schlechter Ersteindruck",
-      text: "Eine veraltete Website lässt selbst das beste Angebot unprofessionell wirken."
-    },
-    {
-      icon: TrendingDown,
-      title: "Verschenktes Potenzial",
-      text: "Besucher verlassen die Seite schnell wieder, weil die Führung fehlt."
-    }
-  ];
+const haanSteps = [
+  {
+    number: "01",
+    title: "Die Analyse-Phase",
+    body: "Wir setzen uns zusammen (gerne auch persönlich in Haan) und besprechen deine Ziele. Wer ist dein Idealkunde? Was soll die Website primär erreichen?",
+    icon: MessageCircle,
+    color: "bg-blue-50 text-blue-600",
+  },
+  {
+    number: "02",
+    title: "Die Funnel-Strategie",
+    body: "Ich entwerfe die Struktur. Wir legen fest, welche Inhalte der Besucher sehen muss, um überzeugt zu werden. Hier planen wir bereits die SEO-Keywords für den Markt in Haan ein.",
+    icon: Target,
+    color: "bg-purple-50 text-purple-600",
+  },
+  {
+    number: "03",
+    title: "Kreative Umsetzung",
+    body: "Jetzt entsteht das Design. Modern, schnell und natürlich „Mobile First“ optimiert. Du erhältst regelmäßige Updates zum Stand der Dinge.",
+    icon: Palette,
+    color: "bg-pink-50 text-pink-600",
+  },
+  {
+    number: "04",
+    title: "Technisches SEO-Finish",
+    body: "Ich optimiere die Seite für Suchmaschinen, damit du in Haan ganz oben landest. Schnelle Ladezeiten und saubere Metadaten sind hier Pflicht.",
+    icon: Code2,
+    color: "bg-orange-50 text-orange-600",
+  },
+  {
+    number: "05",
+    title: "Launch & Optimierung",
+    body: "Nach deiner Abnahme geht die Seite live. Aber damit hört es nicht auf: Ich überwache die ersten Ergebnisse und stelle sicher, dass der Funnel perfekt funktioniert.",
+    icon: CheckCircle2,
+    color: "bg-green-50 text-green-600",
+  },
+];
 
+export function HaanFlow() {
   return (
-    <section className="py-24 px-6 bg-slate-50 relative overflow-hidden border-t border-slate-100">
-      <div className="max-w-6xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-          
-          {/* Text Content */}
-          <div>
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-100 text-red-700 text-sm font-bold mb-8">
-              <AlertCircle size={16} /> Das Problem
-            </div>
-            
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-extrabold text-slate-900 mb-8 leading-tight">
-              Unsichtbar in Haan? Warum deine Website keine Kunden bringt.
-            </h2>
-            
-            <div className="space-y-6 text-lg text-slate-600 mb-12">
-              <p>
-                Du bist Experte in deinem Fach, aber bei der Suche nach „[Deine Branche] in Haan“ tauchen nur deine Mitbewerber auf? 
-                Eine Website ohne Strategie ist wie ein Flyer im Briefkasten eines leerstehenden Hauses: Niemand sieht ihn.
-              </p>
-              <p className="font-medium text-slate-800 bg-white p-6 rounded-2xl border border-slate-100 shadow-sm relative">
-                <span className="absolute top-0 left-0 w-1 h-full bg-red-500 rounded-l-2xl"></span>
-                Ohne gezieltes Webdesign und lokales SEO bleibt dein Business für Neukunden in der Region unsichtbar. 
-                Du verschenkst wertvolles Potenzial an Unternehmen, die online einfach präsenter sind – 
-                auch wenn sie vielleicht weniger Erfahrung haben als du.
-              </p>
-            </div>
+    <section className="py-24 px-6 bg-white" aria-label="Der Ablauf in Haan">
+      <div className="max-w-7xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-20"
+        >
+          <p className="text-accent font-bold text-sm uppercase tracking-[0.2em] mb-4">Der Ablauf</p>
+          <h2 className="text-4xl md:text-5xl font-display font-extrabold text-slate-900">
+            Dein Weg zur neuen <span className="text-accent">Performance-Website</span>
+          </h2>
+          <p className="mt-4 text-slate-600 max-w-2xl mx-auto text-lg">
+            Der Prozess ist für dich denkbar einfach und transparent gestaltet, damit du dich voll auf dein Kerngeschäft konzentrieren kannst.
+          </p>
+        </motion.div>
 
-            {/* Bullet Points */}
-            <div className="space-y-6">
-              {painPoints.map((point, i) => (
-                <div key={i} className="flex gap-4 group">
-                  <div className="w-12 h-12 rounded-2xl bg-white shadow-sm border border-slate-100 flex items-center justify-center shrink-0 text-slate-400 group-hover:text-red-500 group-hover:border-red-100 group-hover:bg-red-50 transition-all">
-                    <point.icon size={20} />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 mb-16">
+          {haanSteps.map((step, index) => {
+            const Icon = step.icon;
+            return (
+              <motion.div
+                key={step.number}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="group relative bg-white border border-slate-100 rounded-3xl p-6 shadow-sm hover:shadow-2xl hover:-translate-y-2 hover:border-accent/20 transition-all duration-300 flex flex-col"
+              >
+                <div className="flex justify-between items-start mb-6">
+                  <div className={`w-14 h-14 rounded-2xl ${step.color} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
+                    <Icon size={24} />
                   </div>
-                  <div>
-                    <h4 className="font-bold text-slate-900 mb-1">{point.title}</h4>
-                    <p className="text-sm text-slate-500 leading-relaxed">{point.text}</p>
-                  </div>
+                  <span className="text-slate-100 font-display font-bold text-5xl group-hover:text-accent/20 transition-colors duration-300 -mt-2 -mr-2">
+                    {step.number}
+                  </span>
                 </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Image Content */}
-          <div className="relative mt-12 lg:mt-0">
-            {/* Background elements */}
-            <div className="absolute -inset-4 bg-slate-200/50 rounded-[3rem] transform rotate-3" />
-            <div className="absolute -inset-4 bg-white rounded-[3rem] transform -rotate-2 shadow-xl border border-slate-100" />
-            
-            <div className="relative rounded-[2rem] overflow-hidden bg-slate-900 aspect-square shadow-2xl">
-              <Image 
-                src="/images/haan-problem.png"
-                alt="Unsichtbar in Haan Suchergebnissen"
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
-              <div className="absolute inset-0 bg-gradient-to-tr from-slate-900/40 to-transparent pointer-events-none" />
-            </div>
-
-            {/* Floating badge */}
-            <div className="absolute -bottom-6 -left-6 md:-left-12 bg-white rounded-2xl p-6 shadow-xl border border-slate-100 max-w-[240px] z-10 hidden sm:block">
-              <div className="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center mb-3">
-                <AlertCircle size={20} className="text-red-600" />
-              </div>
-              <p className="text-sm font-bold text-slate-900">
-                Verlierst du Kunden?
-              </p>
-              <p className="text-xs text-slate-500 mt-1 leading-relaxed">
-                Deine Konkurrenz schläft nicht. Wer online nicht gefunden wird, existiert für Neukunden nicht.
-              </p>
-            </div>
-          </div>
-
+                <h3 className="text-lg font-bold text-slate-900 mb-3 group-hover:text-accent transition-colors duration-300">{step.title}</h3>
+                <p className="text-slate-600 leading-relaxed text-sm flex-1">{step.body}</p>
+              </motion.div>
+            );
+          })}
         </div>
+
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center"
+        >
+          <a
+            href="#contact-form"
+            className="inline-flex items-center gap-3 bg-slate-900 hover:bg-slate-800 text-white rounded-full px-10 py-4 font-bold transition-all shadow-xl"
+          >
+            Projekt jetzt starten <ArrowRight size={18} className="text-accent" />
+          </a>
+        </motion.div>
       </div>
     </section>
   );
 }
 
-import { CheckCircle2, MapPin, ShieldCheck, Zap, Quote } from "lucide-react";
+export function HaanAbout() {
+  return (
+    <section className="py-24 px-6 bg-white" aria-label="Über Timm Schurig - Webdesign Haan">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="relative">
+            <div className="relative rounded-[2.5rem] overflow-hidden aspect-[4/5] max-w-md mx-auto lg:mx-0 shadow-2xl">
+              <Image src="/images/timm-portrait.jpeg" alt="Timm Schurig – Dein Partner für Webdesign in Haan" fill className="object-cover object-top" />
+              <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-slate-900/40 to-transparent" />
+            </div>
+            <div className="absolute -bottom-6 left-6 lg:left-0 bg-white rounded-2xl shadow-xl border border-slate-100 px-5 py-4 flex items-center gap-4">
+              <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center shrink-0">
+                <MapPin size={18} className="text-accent" />
+              </div>
+              <div>
+                <p className="text-xs text-slate-400 font-medium">Region</p>
+                <p className="font-bold text-slate-900 text-sm">Haan & Umland</p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <p className="text-accent font-bold text-sm uppercase tracking-[0.2em] mb-4">Dein Partner vor Ort</p>
+            <h2 className="text-4xl md:text-5xl font-display font-extrabold text-slate-900 leading-tight mb-8">
+              Dein Partner für <span className="text-accent">digitalen Erfolg</span> vor Ort.
+            </h2>
+            <div className="space-y-6 mb-10">
+              <p className="text-lg text-slate-600 leading-relaxed">
+                Ich bin dein Experte für digitales Wachstum direkt aus der Region. Für mich ist Webdesign in Haan eine Herzensangelegenheit, denn ich kenne den lokalen Markt und die Bedürfnisse der mittelständischen Unternehmen in der Gartenstadt genau.
+              </p>
+              <p className="text-slate-600 leading-relaxed text-base">
+                Statt anonymem Agentur-Flair bekommst du bei mir eine persönliche Beratung auf Augenhöhe. Ich verstehe mich nicht nur als dein Designer, sondern als dein strategischer Partner. Gemeinsam sorgen wir dafür, dass dein Unternehmen nicht nur online präsent ist, sondern die digitale Landschaft in Haan aktiv mitgestaltet.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-4 mb-10">
+              {[
+                { icon: Clock, label: "5+ Jahre Erfahrung" },
+                { icon: Star, label: "Lokale Expertise" },
+                { icon: MapPin, label: "Haan & Gruiten" },
+              ].map(({ icon: Icon, label }) => (
+                <div key={label} className="inline-flex items-center gap-2 bg-slate-50 border border-slate-100 rounded-full px-4 py-2 text-sm font-semibold text-slate-700">
+                  <Icon size={15} className="text-accent" />
+                  {label}
+                </div>
+              ))}
+            </div>
+            <a
+              href="#contact-form"
+              className="inline-flex items-center gap-3 bg-accent hover:bg-accent/90 text-white rounded-full px-8 py-4 font-bold transition-[background-color] shadow-lg shadow-accent/20"
+            >
+              Lösung jetzt anfragen <ArrowRight size={18} />
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
 
 export function HaanSolution() {
-  const solutionPoints = [
+  const features = [
     {
-      icon: CheckCircle2,
-      title: "Strategisches Webdesign für Haan",
-      text: "Wir bauen eine Seite, die nicht nur schick aussieht, sondern gezielt zur Kontaktaufnahme führt."
+      title: "Lokale Dominanz durch SEO & GEO Optimierung",
+      body: "Wir sorgen dafür, dass die „Unsichtbarkeit“ ein Ende hat. Durch gezielte lokale Suchmaschinenoptimierung wirst du genau dann gefunden, wenn Haaner nach deiner Expertise suchen. Wir besetzen die Top-Positionen für Webdesign in Haan und deine spezifischen Leistungen, damit du die erste Wahl in der Region bist.",
+      colSpan: "lg:col-span-1",
+      icon: Target,
     },
     {
-      icon: MapPin,
-      title: "Lokale Dominanz durch SEO",
-      text: "Durch Optimierung auf „Webdesign in Haan“ wirst du zur ersten Anlaufstelle."
+      title: "Intuitive Nutzerführung (Der Funnel-Effekt)",
+      body: "Schluss mit dem Informations-Chaos. Wir strukturieren deine Seite so, dass der Besucher sanft von seinem Problem zu deiner individuellen Lösung geleitet wird. Jeder Text und jeder Button hat ein Ziel: Den Nutzer ohne Umwege zur Anfrage zu führen.",
+      colSpan: "lg:col-span-1",
+      icon: ArrowRight,
     },
     {
-      icon: ShieldCheck,
-      title: "Vertrauensvorsprung",
-      text: "Ein moderner, seriöser Auftritt signalisiert: Hier arbeitet ein Profi."
+      title: "Modernes Design mit Vertrauensgarantie",
+      body: "Wir ersetzen veraltete Optik durch ein frisches, zeitgemäßes Design, das deine Professionalität widerspiegelt. Ein ästhetischer Auftritt sorgt innerhalb der ersten Sekunde für das nötige Vertrauen, das die Basis für jede Geschäftsbeziehung bildet.",
+      colSpan: "lg:col-span-1",
+      icon: Palette,
     },
     {
-      icon: Zap,
-      title: "Technik, die begeistert",
-      text: "Maximale Ladegeschwindigkeit und perfekte Darstellung auf allen Endgeräten."
-    }
-  ];
-
-  return (
-    <section className="py-24 px-6 bg-slate-900 relative overflow-hidden">
-      {/* Subtle Background Glow */}
-      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-accent/10 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-[120px] pointer-events-none" />
-
-      <div className="max-w-6xl mx-auto relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-          
-          {/* Image Content (Left Side) */}
-          <div className="relative order-2 lg:order-1 mt-12 lg:mt-0">
-            {/* Background elements */}
-            <div className="absolute -inset-4 bg-accent/20 rounded-[3rem] transform -rotate-3" />
-            <div className="absolute -inset-4 bg-slate-800 rounded-[3rem] transform rotate-2 shadow-2xl border border-white/5" />
-            
-            <div className="relative rounded-[2rem] overflow-hidden bg-slate-950 aspect-[4/5] shadow-2xl">
-              <Image 
-                src="/images/haan-solution.png"
-                alt="Digitale Dominanz in Haan"
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-80" />
-              
-              {/* Overlay Quote */}
-              <div className="absolute bottom-0 left-0 right-0 p-8">
-                <Quote size={32} className="text-accent/50 mb-4" />
-                <p className="text-lg font-medium text-white leading-relaxed">
-                  „Design ist erst dann gut, wenn es deine Kasse klingeln lässt.“
-                </p>
-                <p className="text-sm text-slate-400 mt-2">
-                  Deine Website als stärkster Vertriebskanal.
-                </p>
-              </div>
-            </div>
-
-            {/* Floating badge */}
-            <div className="absolute top-12 -right-6 md:-right-12 bg-slate-800/90 backdrop-blur-md rounded-2xl p-6 shadow-2xl border border-white/10 max-w-[220px] z-10 hidden sm:block">
-              <div className="flex gap-1 text-accent mb-2">
-                <TrendingDown size={20} className="hidden" /> {/* just importing to satisfy linter if not used, but using Check here */}
-                <CheckCircle2 size={24} className="text-accent" />
-              </div>
-              <p className="text-sm font-bold text-white">
-                Sichtbarkeit maximiert
-              </p>
-              <p className="text-xs text-slate-400 mt-1 leading-relaxed">
-                Werde die klare Nummer 1 in Haan und Umgebung.
-              </p>
-            </div>
-          </div>
-
-          {/* Text Content (Right Side) */}
-          <div className="order-1 lg:order-2">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20 text-accent text-sm font-bold mb-8">
-              <CheckCircle2 size={16} /> Die Lösung
-            </div>
-            
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-extrabold text-white mb-8 leading-tight">
-              Vom digitalen Blindspot zum lokalen Marktführer.
-            </h2>
-            
-            <p className="text-lg text-slate-400 mb-12 leading-relaxed">
-              Schluss mit dem Versteckspiel. Wir sorgen dafür, dass deine Website nicht nur existiert, sondern aktiv für dich arbeitet. Mein Webdesign-Ansatz für Unternehmen in Haan verbindet moderne Ästhetik mit einer glasklaren Strategie, damit du genau dort auftauchst, wo deine Kunden suchen.
-            </p>
-
-            {/* Feature Grid */}
-            <div className="grid sm:grid-cols-2 gap-6">
-              {solutionPoints.map((point, i) => (
-                <div key={i} className="bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 hover:border-accent/30 transition-all group">
-                  <div className="w-12 h-12 rounded-xl bg-slate-800 border border-white/5 flex items-center justify-center mb-4 text-slate-400 group-hover:text-accent group-hover:border-accent/20 transition-colors">
-                    <point.icon size={20} />
-                  </div>
-                  <h4 className="font-bold text-white mb-2 text-sm md:text-base">{point.title}</h4>
-                  <p className="text-sm text-slate-400 leading-relaxed">{point.text}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-  );
-}
-
-import { MessageSquare, PenTool, Code2, Rocket } from "lucide-react";
-
-export function HaanProcess() {
-  const processSteps = [
-    {
-      icon: MessageSquare,
-      title: "1. Strategie-Gespräch & Analyse",
-      text: "Bevor ich das erste Design entwerfe, will ich dein Business verstehen. Wer ist deine Zielgruppe in Haan und Umgebung? Wer sind deine Wettbewerber? Wir definieren die Ziele deiner Website, damit sie später nicht nur gut aussieht, sondern echte Anfragen generiert."
-    },
-    {
-      icon: PenTool,
-      title: "2. Konzept & Design-Entwurf",
-      text: "Auf Basis unserer Strategie erstelle ich ein modernes Design-Konzept. Hierbei achte ich auf eine klare Benutzerführung (UX) und eine Optik, die deine Marke perfekt widerspiegelt. Du bekommst einen ersten Entwurf und wir schleifen so lange am Design, bis du zu 100 % überzeugt bist."
-    },
-    {
-      icon: Code2,
-      title: "3. Entwicklung & Lokale Optimierung",
-      text: "Jetzt wird es technisch. Ich erwecke das Design zum Leben – mit schnellen Ladezeiten, mobil-optimiert und DSGVO-konform. Parallel implementiere ich die SEO-Grundlagen für dein Haupt-Keyword „Webdesign in Haan“, damit du lokal auch wirklich gefunden wirst."
-    },
-    {
+      title: "High-Speed Performance",
+      body: "Während andere noch im „digitalen Stau“ auf der A46 stehen, schaltet deine Website in den Express-Modus. Wir optimieren Ladezeiten auf ein Minimum, da im Jahr 2026 jede Millisekunde über den Verbleib eines Nutzers entscheidet. Eine schnelle Seite ist nicht nur nutzerfreundlich, sondern wird auch von Google mit besseren Rankings belohnt.",
+      colSpan: "lg:col-span-1",
       icon: Rocket,
-      title: "4. Launch & Betreuung",
-      text: "Der große Moment: Deine Website geht live! Aber ich lasse dich danach nicht im Regen stehen. Ich schule dich kurz im Umgang mit deiner neuen Seite und sorge auf Wunsch dafür, dass technisch alles aktuell bleibt, während du dich um dein Kerngeschäft kümmerst."
-    }
+    },
+    {
+      title: "Konversionsstarke Strategie",
+      body: "Besucher sind gut, Kunden sind besser. Wir implementieren klare Call-to-Actions und automatisierte Prozesse, die dafür sorgen, dass aus einem bloßen „Vorbeischauen“ eine konkrete Handlung wird. Deine Website arbeitet 24/7 als dein bester Verkäufer.",
+      colSpan: "lg:col-span-2",
+      icon: CheckCircle2,
+    },
   ];
 
   return (
-    <section className="py-24 px-6 bg-white relative overflow-hidden border-t border-slate-100">
+    <section className="py-24 px-6 bg-slate-50" aria-label="Die Lösung für Haan">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center max-w-3xl mx-auto mb-20">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100 text-slate-700 text-sm font-bold mb-6">
-            <Rocket size={16} /> Transparenter Ablauf
+        
+        {/* Intro & Image */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-20">
+          <div>
+            <h2 className="text-4xl md:text-5xl font-display font-extrabold text-slate-900 leading-tight mb-6">
+              Die Lösung: Dein <span className="text-accent">digitaler Maßanzug</span> mit Funnel-Strategie
+            </h2>
+            <div className="space-y-4 text-lg text-slate-600 leading-relaxed">
+              <p>
+                Es reicht heute nicht mehr aus, einfach nur „online“ zu sein. Um im Wettbewerb im Kreis Mettmann zu bestehen, muss deine Website ein aktiver Mitarbeiter deines Unternehmens werden. Mein Ansatz für Webdesign in Haan löst die oben genannten Probleme nicht nur oberflächlich, sondern schafft ein technisches Fundament, das Besucher emotional bindet und rational überzeugt.
+              </p>
+              <p>
+                Wir verwandeln deine digitale Sackgasse in eine Schnellstraße zum Erfolg. Durch modernes Webdesign in Haan setzen wir auf eine psychologisch fundierte Führung, anstatt den Nutzer mit wahllosen Informationen zu überfordern. So eliminieren wir die Reibungspunkte, die bisher dafür gesorgt haben, dass potenzielle Kunden kurz vor dem Klick auf „Senden“ doch noch abgesprungen sind.
+              </p>
+            </div>
           </div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-extrabold text-slate-900 mb-6 leading-tight">
-            In 4 Schritten zu deinem digitalen Erfolg in Haan
-          </h2>
-          <p className="text-lg text-slate-600 leading-relaxed">
-            Ein Projekt ohne Plan führt selten zum Ziel. Deshalb arbeiten wir nach einem bewährten Prozess, bei dem du genau weißt, wo wir gerade stehen.
+          
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="relative w-full aspect-video lg:aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border border-slate-100"
+          >
+            <Image
+              src="/images/mockups-grid.jpg"
+              alt="Webdesign Haan Mockups"
+              fill
+              className="object-contain object-center"
+            />
+          </motion.div>
+        </div>
+
+        {/* Tiles / Kacheln */}
+        <div className="mb-16">
+          <h3 className="text-2xl font-display font-bold text-slate-900 mb-8">
+            Wie wir dein Business in Haan nach vorne bringen:
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {features.map((feature, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className={`relative bg-white rounded-3xl p-8 shadow-sm border border-slate-100 overflow-hidden flex flex-col ${feature.colSpan}`}
+              >
+                <div className="relative z-10 flex-1">
+                  <div className="w-12 h-12 rounded-2xl bg-accent/10 flex items-center justify-center mb-6">
+                    <feature.icon size={24} className="text-accent" />
+                  </div>
+                  <h4 className="text-xl font-bold text-slate-900 mb-4">{feature.title}</h4>
+                  <p className="text-slate-600 leading-relaxed">
+                    {feature.body}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
+        <div className="text-center mb-16">
+          <a
+            href="#contact-form"
+            className="inline-flex items-center gap-3 bg-slate-900 hover:bg-slate-800 text-white rounded-full px-10 py-4 font-bold transition-all shadow-xl"
+          >
+            Lösung jetzt anfragen <ArrowRight size={18} className="text-accent" />
+          </a>
+        </div>
+
+        {/* Outro */}
+        <div className="bg-slate-900 text-white rounded-[2.5rem] p-8 md:p-12 text-center max-w-4xl mx-auto shadow-2xl border border-slate-800 relative overflow-hidden group">
+          <div className="absolute top-0 right-0 w-32 h-32 bg-accent/10 blur-[80px] rounded-full" />
+          <div className="absolute bottom-0 left-0 w-32 h-32 bg-accent/10 blur-[80px] rounded-full" />
+          <p className="text-xl md:text-2xl font-medium leading-relaxed relative z-10">
+            Mit dieser Kombination aus lokaler Relevanz und technischer Exzellenz machen wir dein Unternehmen zur <strong className="font-extrabold text-accent">digitalen Benchmark in Haan</strong>. Wir bauen keine Seite, die nur gut aussieht – wir bauen ein System, das dein Wachstum nachhaltig sichert.
           </p>
         </div>
 
-        <div className="max-w-4xl mx-auto space-y-6 relative">
-          {/* Vertical connecting line (desktop only) */}
-          <div className="hidden md:block absolute top-12 bottom-12 left-14 w-0.5 bg-gradient-to-b from-transparent via-slate-200 to-transparent z-0" />
-
-          {processSteps.map((step, i) => (
-            <div key={i} className="relative z-10 group">
-              <div className="bg-white rounded-3xl p-6 md:p-8 border border-slate-100 shadow-sm hover:shadow-xl hover:border-slate-300 transition-all duration-300 flex flex-col md:flex-row gap-6 md:gap-8 items-start md:items-center">
-                <div className="w-20 h-20 shrink-0 rounded-2xl bg-slate-50 border border-slate-100 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 group-hover:bg-accent/5 group-hover:border-accent/20 group-hover:text-accent text-slate-400">
-                  <step.icon size={32} />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-3">{step.title}</h3>
-                  <p className="text-slate-600 leading-relaxed">
-                    {step.text}
-                  </p>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
       </div>
     </section>
   );
 }
 
-import { Users, Compass, Sliders } from "lucide-react";
-
-export function HaanRegional() {
-  const benefits = [
+export function HaanWhyNow() {
+  const points = [
     {
-      title: "Regionaler Fokus",
-      text: "Ich kenne das wirtschaftliche Umfeld in Haan und Umgebung genau. Dieses Wissen fließt direkt in deine SEO-Strategie ein, damit du in den lokalen Suchergebnissen ganz oben stehst.",
-      icon: MapPin
+      title: "Top-Platzierungen auf Google: Wer nicht scrollt, findet dich.",
+      body: "Was bringt die schönste Website, wenn sie auf Seite 10 der Suchergebnisse verstaubt? Durch gezielte lokale Optimierung sorgen wir dafür, dass du bei Suchanfragen wie „[Deine Dienstleistung] in Haan“ oder „Gruiten“ ganz oben auftauchst. Ein durchdachtes Webdesign in Haan bringt dich genau dorthin, wo deine Kunden suchen – direkt auf die erste Seite von Google.",
+      image: "/images/haan-problem.png",
+      reverse: false
     },
     {
-      title: "Flexibilität & Nähe",
-      text: "Auch wenn mein Hauptsitz nicht direkt in Haan ist, bin ich für meine Kunden in der Region immer schnell erreichbar – ob per Video-Call oder für ein persönliches Treffen vor Ort.",
-      icon: Users
+      title: "Dein entscheidender Wettbewerbsvorteil: Der erste Eindruck zählt.",
+      body: "Viele Unternehmen in Haan und dem angrenzenden Umland verlassen sich noch auf veraltete Webauftritte. Mit modernem Webdesign in Haan hebst du dich sofort von der Konkurrenz ab. Du zeiger Professionalität und sicherst dir das Vertrauen der Kunden, während andere noch mit Ladezeiten und unleserlichen Texten auf dem Smartphone kämpfen.",
+      image: "/images/haan-solution.png",
+      reverse: true
     },
     {
-      title: "Blick über den Tellerrand",
-      text: "Durch meine Arbeit mit verschiedenen Unternehmen in der Region weiß ich, wie wir dein Business von den Mitbewerbern in Haan, Solingen und Hilden abheben.",
-      icon: Compass
-    },
-    {
-      title: "Keine Agentur-Massenabfertigung",
-      text: "Du bekommst eine individuelle Lösung, die exakt auf die Bedürfnisse der Haaner Zielgruppe zugeschnitten ist – professionell, modern und verkaufsstark.",
-      icon: Sliders
+      title: "Messbare Ergebnisse: Daten statt Bauchgefühl.",
+      body: "Gutes Design ist kein Selbstzweck. Wir bauen deine Website so auf, dass Erfolg messbar wird. Durch klares Tracking siehst du genau, wie viele Anfragen über dein Kontaktformular kommen und welche Inhalte deine Kunden wirklich interessieren. So wird dein Webdesign in Haan zu einer Investition, die sich durch echte Neukunden und steigende Umsätze in der Gartenstadt bezahlt macht.",
+      image: "/images/haan-regional.png",
+      reverse: false
     }
   ];
 
   return (
-    <section className="py-24 px-6 bg-slate-50 relative overflow-hidden">
+    <section className="py-24 px-6 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-          
-          <div className="relative">
-            <div className="absolute inset-0 bg-accent/10 blur-[100px] rounded-full" />
-            <div className="relative rounded-[2rem] overflow-hidden border border-slate-200/50 shadow-2xl">
-              <div className="aspect-[4/5] md:aspect-square relative">
-                <Image
-                  src="/images/haan-regional.png"
-                  alt="Digitale Vernetzung in Haan und dem Bergischen Land"
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12">
-                  <p className="text-accent font-bold mb-3 tracking-wider text-sm md:text-base uppercase">Local SEO & Modernes Design</p>
-                  <p className="text-white text-lg md:text-xl font-medium leading-relaxed">
-                    „Ich sorge dafür, dass Kunden in Haan dich nicht nur finden, sondern auch von deiner Professionalität überzeugt werden. Lass uns gemeinsam dafür sorgen, dass dein Unternehmen in der Region die Aufmerksamkeit bekommt, die es verdient.“
-                  </p>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-20"
+        >
+          <h2 className="text-3xl md:text-5xl font-display font-extrabold text-slate-900 leading-tight mb-6">
+            Warum optimiertes Webdesign in Haan <br className="hidden md:block" />
+            heutzutage ein <span className="text-accent">absolutes Muss</span> ist
+          </h2>
+          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+            Werde in Haan und Umgebung zum digitalen Vorreiter. In einer Stadt, die für ihre Gartenstadt-Idylle bekannt ist, entscheiden sich Kunden heute trotzdem digital.
+          </p>
+        </motion.div>
+
+        <div className="space-y-32">
+          {points.map((point, index) => (
+            <div 
+              key={index}
+              className={`flex flex-col ${point.reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-12 lg:gap-24 items-center`}
+            >
+              <motion.div 
+                initial={{ opacity: 0, x: point.reverse ? 50 : -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                className="flex-1 space-y-6"
+              >
+                <h3 className="text-2xl md:text-3xl font-display font-bold text-slate-900 leading-tight">
+                  {point.title}
+                </h3>
+                <p className="text-lg text-slate-600 leading-relaxed">
+                  {point.body}
+                </p>
+              </motion.div>
+              
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                className="flex-1 w-full"
+              >
+                <div className="relative aspect-[4/3] rounded-[2.5rem] overflow-hidden shadow-2xl border border-slate-100">
+                  <Image 
+                    src={point.image} 
+                    alt={point.title}
+                    fill
+                    className="object-cover"
+                  />
                 </div>
-              </div>
+              </motion.div>
             </div>
-          </div>
-
-          <div>
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 text-slate-700 text-sm font-bold mb-6 shadow-sm">
-              <MapPin size={16} className="text-accent" /> Haan & Bergisches Land
-            </div>
-            
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-extrabold text-slate-900 mb-6 leading-tight">
-              Digitale Exzellenz für Haan – <span className="text-accent">mit dem Blick für das Regionale.</span>
-            </h2>
-            
-            <p className="text-lg text-slate-600 leading-relaxed mb-10">
-              Du suchst keinen anonymen Dienstleister vom anderen Ende Deutschlands, sondern jemanden, der den Markt im Kreis Mettmann und im Bergischen Land versteht? Ich unterstütze Unternehmen in der Gartenstadt Haan, ihre digitale Sichtbarkeit massiv zu steigern.
-            </p>
-
-            <div className="space-y-8">
-              {benefits.map((benefit, i) => (
-                <div key={i} className="flex gap-5 group">
-                  <div className="w-12 h-12 shrink-0 rounded-xl bg-white border border-slate-200 shadow-sm flex items-center justify-center text-slate-400 group-hover:text-accent group-hover:border-accent/30 group-hover:bg-accent/5 transition-all duration-300">
-                    <benefit.icon size={24} />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-slate-900 mb-2 text-lg">{benefit.title}</h3>
-                    <p className="text-slate-600 leading-relaxed">{benefit.text}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
+          ))}
         </div>
+
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-32 text-center"
+        >
+          <div className="inline-block px-8 py-4 rounded-3xl bg-slate-50 border border-slate-100">
+            <p className="text-2xl font-display font-bold text-slate-900 italic">
+              „Lokal verwurzelt, digital unschlagbar.“
+            </p>
+          </div>
+          <p className="mt-8 text-lg text-slate-600 max-w-2xl mx-auto">
+            Nutze den Heimvorteil in der Gartenstadt. Gemeinsam verwandeln wir deine Website in ein Werkzeug, das nicht nur gut aussieht, sondern dein Business in Haan nachhaltig wachsen lässt.
+          </p>
+        </motion.div>
       </div>
     </section>
   );

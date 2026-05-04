@@ -3,15 +3,18 @@ import { ArrowRight, Clock } from "lucide-react";
 import { buildMetadata } from "@/lib/seo";
 import { SITE_URL, PHONE_URL, CONTACT_URL } from "@/lib/utils";
 import { ServiceHero } from "@/components/service/ServiceHero";
-import { HaanProblem, HaanSolution, HaanProcess, HaanRegional } from "@/components/lp/HaanSections";
+import { ServiceProblem } from "@/components/service/ServiceProblem";
+import { ServiceInfo } from "@/components/service/ServiceInfo";
+import { HaanFlow, HaanAbout, HaanSolution, HaanWhyNow } from "@/components/lp/HaanSections";
+import { ContactForm } from "@/components/ui/ContactForm";
 
 const haanService = {
   id: "webdesign-haan",
-  title: "Webdesign in Haan",
+  title: "Webdesign Haan",
   badge: "Webdesign & Funnel-Marketing Haan",
   floatingBadge: "Live in 1–2 Wochen",
   heroHeadline: "Professionelles Webdesign in Haan",
-  heroSubline: "Ich entwickle für dich maßgeschneiderte High-End-Websites, die auf einem durchdachten Funnel-System basieren. Mein Ziel ist es, deine Marke in der Region Haan, Erkrath und Umgebung an die Spitze zu bringen.",
+  heroSubline: "Ich entwickle für dich professionelles Webdesign in Haan, das durch maßgeschneiderte High-End-Websites überzeugt. Mein Ansatz basiert auf einem durchdachten Funnel-System, das Besucher nicht nur informiert, sondern gezielt zu Kunden macht.\n\nMein Ziel ist es, deine Marke in Haan, Gruiten und dem gesamten Kreis Mettmann sichtbar zu machen und dich nachhaltig an die Spitze zu bringen.",
   heroChecklist: [
     "Maßgeschneidertes High-End-Design",
     "Durchdachtes Funnel-System",
@@ -19,58 +22,142 @@ const haanService = {
     "Vertrauensaufbau & Conversion",
     "Mobile-First & Blitzschnell"
   ],
+
   heroStat: [
     { value: "1–2 Wo.", label: "bis sie live ist" },
     { value: "100 %", label: "PageSpeed Score" },
   ],
-  
-  // Leere Fallbacks für Felder, die aktuell nicht gerendert werden müssen
-  problemHeadline: "",
-  problemSubline: "",
-  problemPoints: [],
-  solutionHeadline: "",
-  solution: "",
-  solutionPoints: [],
-  process: [],
-  solutionIntro: [],
-  ctaHeadline: "",
-  ctaSubline: "",
-  features: [],
-  faq: [],
+  problemHeadline: "Warum die meisten Websites in Haan unter ihren Möglichkeiten bleiben",
+  problemSubline: "Vielleicht kennst du das: Du hast eine Website, aber die Anfragen über das Kontaktformular bleiben aus. Im Jahr 2026 ist die Aufmerksamkeitsspanne kürzer denn je.",
+  problemPoints: [
+    "Unsichtbarkeit bei Google-Suchen nach „Webdesign in Haan“.",
+    "Keine klare Nutzerführung – Besucher werden mit Infos erschlagen.",
+    "Ladezeiten, die langsamer sind als der Feierabendverkehr auf der A46.",
+    "Veraltetes Design schreckt potenzielle Kunden ab.",
+    "Keine Strategie: Besucher kommen, aber gehen ohne Handlung."
+  ],
+  solutionHeadline: "Die Lösung: Der Funnel-Ansatz – Webdesign mit psychologischer Tiefe",
+  solution: "Mein Ansatz für Webdesign in Haan geht weit über das Visuelle hinaus. Ich kombiniere modernes Design mit Verkaufspsychologie und modernster Technik.",
+  solutionPoints: [
+    "Präzises lokales SEO für die Region Haan",
+    "Strategisch platzierte Vertrauenselemente",
+    "Intuitive Nutzerführung zum Ziel (Anruf/Anfrage)",
+    "Moderner Technik-Stack für maximale Speed",
+    "Psychologisch fundierter Informationsaufbau"
+  ],
+  process: [
+    { title: "Analyse & Strategie", desc: "Zielgruppe, USP und Conversion-Ziele definieren." },
+    { title: "Design & Konzept", desc: "Individuelles Design nach deinem Branding." },
+    { title: "Entwicklung", desc: "Technisch saubere Umsetzung mit Next.js." },
+    { title: "Launch & SEO", desc: "Live-Schaltung und Grundoptimierung für Google." },
+  ],
+  solutionIntro: [
+    "Schluss mit Kompromissen. Während herkömmliche Websites oft nur digitale Visitenkarten ohne messbaren Nutzen sind, entwickeln wir Lösungen, die strategisch auf deinen Erfolg einzahlen. Wir kombinieren technisches High-End-Webdesign mit intelligenter Verkaufspsychologie und zukunftssicherer KI-Optimierung.",
+    "Das Ergebnis ist eine Online-Präsenz, die nicht nur durch Ästhetik überzeugt, sondern aktiv für dich arbeitet: Sie zieht die richtigen Besucher an, überzeugt sie von deiner Expertise und verwandelt sie automatisiert in loyale Kunden. So definieren wir gemeinsam den neuen Standard für dein Business.",
+  ],
+  ctaHeadline: "Starte jetzt dein digitales Upgrade!",
+  ctaSubline: "Lass uns gemeinsam dafür sorgen, dass dein Webdesign in Haan zum echten Wettbewerbsvorteil wird.",
+  features: [
+    { title: "Lokale Expertise", desc: "Ich kenne den Markt in Haan und Gruiten genau." },
+    { title: "Funnel-Struktur", desc: "Keine digitale Visitenkarte, sondern ein echter Vertriebskanal." },
+    { title: "SEO-Dominanz", desc: "Top-Platzierungen bei lokalen Suchen in der Gartenstadt." },
+    { title: "Persönliche Beratung", desc: "Kein Agentur-Flair, sondern Partnerschaft auf Augenhöhe." }
+  ],
+  faq: [
+    {
+      q: "Warum sollte ich auf lokales Webdesign in Haan setzen?",
+      a: "Ein Webauftritt „von der Stange“ ignoriert oft die regionalen Gegebenheiten. Wenn wir dein Webdesign in Haan umsetzen, achten wir darauf, dass du genau die Kunden aus der Gartenstadt und dem Umland (wie Gruiten, Hilden oder Erkrath) ansprichst. Lokale Nähe schafft Vertrauen – und wir sorgen dafür, dass dieses Vertrauen digital sofort spürbar ist."
+    },
+    {
+      q: "Wie schnell ist meine neue Website live?",
+      a: "Qualität braucht ein solides Fundament, aber wir trödeln nicht. In der Regel steht dein neues Webdesign in Haan innerhalb von 4 bis 6 Wochen. Das hängt natürlich vom Umfang ab, aber durch kurze Kommunikationswege kommen wir meist sehr zügig ans Ziel."
+    },
+    {
+      q: "Wird meine Seite bei Google in Haan und Umgebung gefunden?",
+      a: "Ja, das ist der Plan! Jedes Projekt wird von Beginn an für Suchmaschinen optimiert. Wir fokussieren uns darauf, dass du bei Begriffen wie „Handwerker Haan“ oder „Praxis in Haan“ ganz oben auftauchst. Ohne SEO ist Webdesign heute nur die halbe Miete."
+    },
+    {
+      q: "Was kostet ein professionelles Webdesign in Haan?",
+      a: "Pauschalpreise sind im Handwerk schwierig – und im Webdesign auch. Ein kleiner Laden in der Innenstadt hat andere Anforderungen als ein Industriebetrieb im Gewerbegebiet. Nach unserem ersten Gespräch erstelle ich dir ein faires Festpreis-Angebot, das exakt zu deinem Budget und deinen Zielen passt."
+    },
+    {
+      q: "Sieht meine Website auch auf dem Smartphone gut aus?",
+      a: "Definitiv. „Mobile First“ ist bei mir Gesetz. Da die meisten Menschen heute von unterwegs in der Haaner Innenstadt oder beim Pendeln nach Wuppertal/Düsseldorf suchen, optimieren wir dein Webdesign in Haan perfekt für alle Endgeräte – vom Smartphone bis zum großen Desktop-Monitor."
+    },
+    {
+      q: "Kann ich Inhalte später selbst anpassen?",
+      a: "Klar! Ich baue deine Seite so auf, dass du kein IT-Studium brauchst, um mal einen Text zu ändern oder ein neues Foto hochzuladen. Nach dem Launch gebe ich dir eine kurze Einweisung, damit du die volle Kontrolle über deinen Internetauftritt behältst."
+    },
+    {
+      q: "Können wir uns für die Planung persönlich treffen?",
+      a: "Sehr gerne. Das ist ja der Vorteil an regionalem Webdesign in Haan. Ob auf einen Kaffee in der Stadt oder direkt bei dir im Betrieb – ein persönliches Gespräch hilft oft dabei, die Vision deines Unternehmens noch besser zu verstehen."
+    },
+    {
+      q: "Lohnt sich eine neue Website auch für kleine Betriebe oder Vereine?",
+      a: "Gerade für kleine Unternehmen ist die digitale Sichtbarkeit oft der entscheidende Faktor gegen die große Konkurrenz aus den Nachbarstädten. Ein professionelles Auftreten sorgt dafür, dass du als lokaler Experte wahrgenommen wirst – egal, wie groß dein Team ist."
+    }
+  ],
   relatedServices: []
 };
 
 export const metadata: Metadata = buildMetadata({
-  title: "Webdesign in Haan – Deine Website als Kundenmaschine",
+  title: "Webdesign Haan – Deine Website als Kundenmaschine",
   description: "Professionelles Webdesign in Haan. Ich entwickle High-End-Websites mit Funnel-System & SEO für messbare Ergebnisse. Jetzt Termin anfragen.",
-  keywords: ["Webdesign in Haan", "Website erstellen lassen Haan", "SEO Haan", "Haan Webdesign"],
+  keywords: ["Webdesign Haan", "Website erstellen lassen Haan", "SEO Haan", "Haan Webdesign"],
   alternates: { canonical: `${SITE_URL}/webdesign/haan` }
 });
 
 export default function HaanPage() {
   return (
     <>
+      {/* 1. HERO */}
       <ServiceHero service={haanService as any} />
-      <HaanProblem />
+
+      {/* 2. PROBLEM */}
+      <ServiceProblem service={haanService as any} />
+
+      {/* 3. LÖSUNG */}
       <HaanSolution />
-      <HaanProcess />
-      <HaanRegional />
+
+      {/* 4. ABLAUF (Customized for Haan) */}
+      <HaanFlow />
+
+      {/* 5. KONTAKT-FORMULAR */}
+      <ContactForm 
+        pageName="Haan Landingpage" 
+        title={<>Deine <span className="text-accent">Lösung</span> für digitales Wachstum</>}
+        subline="Trage kurz deine Daten ein und wir besprechen, wie wir dein Projekt in Haan zum Erfolg führen."
+        buttonText="Lösung jetzt anfragen"
+      />
+
+      {/* 6. WARUM JETZT */}
+      <HaanWhyNow />
+
+      {/* 7. ÜBER MICH (Customized for Haan) */}
+      <HaanAbout />
+
+      {/* 10. ALLGEMEINE INFOS & FAQ */}
+      <ServiceInfo 
+        service={haanService as any} 
+        hideFeatures={true} 
+        hideRelated={true} 
+      />
 
       {/* CTA Final */}
       <section className="py-24 px-6 bg-white border-t border-slate-200">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-4xl font-display font-extrabold text-slate-900 mb-6">
-            Bereit für dein Webdesign in Haan?
+            Starte jetzt dein digitales Upgrade!
           </h2>
           <p className="text-lg text-slate-600 mb-10">
-            Klicke auf den Button unten und vereinbare dein kostenloses Erstgespräch. Lass uns gemeinsam dafür sorgen, dass dein Unternehmen in Haan die Aufmerksamkeit bekommt, die es verdient!
+            Klicke auf den Button unten und vereinbare dein kostenloses Erstgespräch. Ich freue mich darauf, dein Projekt in der Gartenstadt nach vorne zu bringen!
           </p>
           <div className="flex flex-col items-center gap-6">
             <a 
-              href={CONTACT_URL}
+              href="#contact-form"
               className="inline-flex items-center justify-center bg-accent hover:bg-accent/90 text-white rounded-full px-10 py-5 text-xl font-bold shadow-xl shadow-accent/20 transition-all group"
             >
-              Jetzt unverbindliches Strategiegespräch buchen
+              Lösung jetzt anfragen
               <ArrowRight size={20} className="ml-2 group-hover:translate-x-1 transition-transform" />
             </a>
             <p className="text-slate-500 font-medium flex items-center gap-2">
