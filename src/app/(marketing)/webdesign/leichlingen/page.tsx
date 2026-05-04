@@ -163,10 +163,10 @@ export default function LeichlingenPage() {
           </p>
           <div className="flex flex-col items-center gap-6">
             <a 
-              href={CONTACT_URL}
+              href="#contact-form"
               className="inline-flex items-center justify-center bg-accent hover:bg-accent/90 text-white rounded-full px-10 py-5 text-xl font-bold shadow-xl shadow-accent/20 transition-all group"
             >
-              Jetzt unverbindliches Strategiegespräch buchen
+              Lösung jetzt anfragen
               <ArrowRight size={20} className="ml-2 group-hover:translate-x-1 transition-transform" />
             </a>
             <p className="text-slate-500 font-medium flex items-center gap-2">

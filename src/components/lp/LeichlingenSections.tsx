@@ -158,7 +158,7 @@ export function LeichlingenAbout() {
               href="#contact-form"
               className="inline-flex items-center gap-3 bg-accent hover:bg-accent/90 text-white rounded-full px-8 py-4 font-bold transition-[background-color] shadow-lg shadow-accent/20"
             >
-              Kostenloses Erstgespräch anfordern <ArrowRight size={18} />
+              Lösung jetzt anfragen <ArrowRight size={18} />
             </a>
           </div>
         </div>
