@@ -177,19 +177,19 @@ export function HaanSolution() {
     },
     {
       title: "Intuitive Nutzerführung (Der Funnel-Effekt)",
-      body: "Schluss mit dem Informations-Chaos. Wir strukturieren deine Seite so, dass der Besucher sanft von seinem Problem zu deiner individuellen Lösung geleitet wird. Jeder Text und jeder Button hat ein Ziel: Den Nutzer ohne Umwege zur Anfrage zu führen.",
+      body: "Schluss mit dem Informations-Chaos. Wir strukturieren deine Seite so, dass der Besucher sanft von seinem Problem zu deiner individuellen Lösung geleitet wird. Jeder Text und jeder Button beim Webdesign in Haan hat ein klares Ziel: Den Nutzer ohne Umwege zur Anfrage zu führen.",
       colSpan: "lg:col-span-1",
       icon: ArrowRight,
     },
     {
       title: "Modernes Design mit Vertrauensgarantie",
-      body: "Wir ersetzen veraltete Optik durch ein frisches, zeitgemäßes Design, das deine Professionalität widerspiegelt. Ein ästhetischer Auftritt sorgt innerhalb der ersten Sekunde für das nötige Vertrauen, das die Basis für jede Geschäftsbeziehung bildet.",
+      body: "Wir ersetzen veraltete Optik durch ein frisches, zeitgemäßes Design, das deine Professionalität widerspiegelt. Ein ästhetischer Auftritt sorgt innerhalb der ersten Sekunde für das nötige Vertrauen – die Basis für jede Geschäftsbeziehung in Haan und darüber hinaus.",
       colSpan: "lg:col-span-1",
       icon: Palette,
     },
     {
       title: "High-Speed Performance",
-      body: "Während andere noch im „digitalen Stau“ auf der A46 stehen, schaltet deine Website in den Express-Modus. Wir optimieren Ladezeiten auf ein Minimum, da im Jahr 2026 jede Millisekunde über den Verbleib eines Nutzers entscheidet. Eine schnelle Seite ist nicht nur nutzerfreundlich, sondern wird auch von Google mit besseren Rankings belohnt.",
+      body: "Während andere noch im „digitalen Stau“ auf der A46 stehen, schaltet deine Website in den Express-Modus. Da im Jahr 2026 jede Millisekunde zählt, ist eine schnelle Seite bei meinem Webdesign in Haan Standard – das freut die Nutzer und wird von Google mit besseren Rankings belohnt.",
       colSpan: "lg:col-span-1",
       icon: Rocket,
     },
@@ -213,10 +213,10 @@ export function HaanSolution() {
             </h2>
             <div className="space-y-4 text-lg text-slate-600 leading-relaxed">
               <p>
-                Es reicht heute nicht mehr aus, einfach nur „online“ zu sein. Um im Wettbewerb im Kreis Mettmann zu bestehen, muss deine Website ein aktiver Mitarbeiter deines Unternehmens werden. Mein Ansatz für Webdesign in Haan löst die oben genannten Probleme nicht nur oberflächlich, sondern schafft ein technisches Fundament, das Besucher emotional bindet und rational überzeugt.
+                Es reicht heute nicht mehr aus, einfach nur „online“ zu sein. Um im Wettbewerb im Kreis Mettmann zu bestehen, muss deine Website ein aktiver Mitarbeiter deines Unternehmens werden. Mein Ansatz für Webdesign in Haan löst Probleme nicht nur oberflächlich, sondern schafft ein technisches Fundament, das Besucher emotional bindet und rational überzeugt.
               </p>
               <p>
-                Wir verwandeln deine digitale Sackgasse in eine Schnellstraße zum Erfolg. Durch modernes Webdesign in Haan setzen wir auf eine psychologisch fundierte Führung, anstatt den Nutzer mit wahllosen Informationen zu überfordern. So eliminieren wir die Reibungspunkte, die bisher dafür gesorgt haben, dass potenzielle Kunden kurz vor dem Klick auf „Senden“ doch noch abgesprungen sind.
+                Wir verwandeln deine digitale Sackgasse in eine Schnellstraße zum Erfolg. Durch strategisches Webdesign in Haan setzen wir auf eine psychologisch fundierte Führung, anstatt den Nutzer mit wahllosen Informationen zu überfordern. So eliminieren wir die Reibungspunkte, die potenzielle Kunden bisher kurz vor dem Klick auf „Senden“ haben abspringen lassen.
               </p>
             </div>
           </div>
@@ -279,7 +279,7 @@ export function HaanSolution() {
           <div className="absolute top-0 right-0 w-32 h-32 bg-accent/10 blur-[80px] rounded-full" />
           <div className="absolute bottom-0 left-0 w-32 h-32 bg-accent/10 blur-[80px] rounded-full" />
           <p className="text-xl md:text-2xl font-medium leading-relaxed relative z-10">
-            Mit dieser Kombination aus lokaler Relevanz und technischer Exzellenz machen wir dein Unternehmen zur <strong className="font-extrabold text-accent">digitalen Benchmark in Haan</strong>. Wir bauen keine Seite, die nur gut aussieht – wir bauen ein System, das dein Wachstum nachhaltig sichert.
+            Mit dieser Kombination aus lokaler Relevanz und technischer Exzellenz machen wir dein Unternehmen zur neuen Benchmark für Webdesign in Haan. Wir bauen keine Seite, die nur gut aussieht – wir bauen ein System, das dein Wachstum nachhaltig sichert.
           </p>
         </div>
 
