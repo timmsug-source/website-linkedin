@@ -32,7 +32,7 @@ export function ServiceHero({ service }: { service: Service }) {
               {service.heroHeadline}
             </h1>
 
-            <p className="text-xl text-slate-600 leading-relaxed max-w-xl mb-10">
+            <p className="text-xl text-slate-600 leading-relaxed max-w-xl mb-10 whitespace-pre-line">
               {service.heroSubline}
             </p>
 

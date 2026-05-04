@@ -17,7 +17,7 @@ const leichlingenService = {
   badge: "Webdesign & Funnel-Marketing Leichlingen",
   floatingBadge: "Live in 1–2 Wochen",
   heroHeadline: "Professionelles Webdesign in Leichlingen",
-  heroSubline: "Ich entwickle für dich maßgeschneiderte High-End-Websites, die auf einem durchdachten Funnel-System basieren. Mein Ziel ist es, deine Marke in der Region Leichlingen, Witzhelden und dem gesamten Rheinisch-Bergischen Kreis an die Spitze zu bringen.",
+  heroSubline: "Ich entwickle für dich professionelles Webdesign in Leichlingen, das durch maßgeschneiderte High-End-Websites überzeugt. Mein Ansatz basiert auf einem durchdachten Funnel-System, das Besucher nicht nur informiert, sondern gezielt zu Kunden macht.\n\nMein Ziel ist es, deine Marke in Leichlingen, Witzhelden und dem gesamten Rheinisch-Bergischen Kreis sichtbar zu machen und dich nachhaltig an die Spitze zu bringen.",
   heroChecklist: [
     "Maßgeschneidertes High-End-Design",
     "Durchdachtes Funnel-System",
