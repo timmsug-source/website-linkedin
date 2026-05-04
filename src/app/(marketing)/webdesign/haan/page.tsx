@@ -13,8 +13,8 @@ const haanService = {
   title: "Webdesign Haan",
   badge: "Webdesign & Funnel-Marketing Haan",
   floatingBadge: "Live in 1–2 Wochen",
-  heroHeadline: "Professionelles Webdesign in Haan",
-  heroSubline: "Ich entwickle für dich professionelles Webdesign in Haan, das durch maßgeschneiderte High-End-Websites überzeugt. Mein Ansatz basiert auf einem durchdachten Funnel-System, das Besucher nicht nur informiert, sondern gezielt zu Kunden macht.\n\nMein Ziel ist es, deine Marke in Haan, Gruiten und dem gesamten Kreis Mettmann sichtbar zu machen und dich nachhaltig an die Spitze zu bringen.",
+  heroHeadline: "Professionelles Webdesign in Haan, das für dich verkauft.",
+  heroSubline: "Du suchst erstklassiges Webdesign in Haan, um deine Konkurrenz hinter dir zu lassen? Ich mache deine Marke in Haan, Gruiten und dem gesamten Kreis Mettmann sichtbar und bringe dich mit einer verkaufsstarken Website nachhaltig an die Spitze.",
   heroChecklist: [
     "Maßgeschneidertes High-End-Design",
     "Durchdachtes Funnel-System",
